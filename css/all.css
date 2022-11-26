@@ -208,11 +208,14 @@ header {
 
 header .layout {
   width: 1074px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 header .layout .logo {
   margin-right: 57px;
-  display: inline-block;
+  display: block;
 }
 
 header .layout .logo a {
@@ -222,6 +225,10 @@ header .layout .logo a {
   background: url("../images/image-logo-green.png");
 }
 
+header .layout .logo a:hover {
+  background: url("../images/image-logo-black.png");
+}
+
 header h1 {
   text-indent: -1111px;
   position: absolute;
@@ -229,19 +236,38 @@ header h1 {
 }
 
 header nav {
-  display: inline-block;
+  width: 564px;
 }
 
-header nav ul {}
+header nav ul {
+  border-bottom: solid 1px var(--accent);
+}
 
 header nav ul li {
   display: inline-block;
   vertical-align: middle;
-  height: 144px;
 }
 
 header nav ul li a {
   color: var(--text);
+  font-family: 'Candara';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 26px;
+  line-height: 32px;
+  cursor: pointer;
+}
+
+header nav ul :not(li:nth-last-child(1)) a {
+  margin-right: 25px;
+}
+
+header nav ul li a:hover {
+  color: var(--accent);
+}
+
+header .interface {
+  width: 148px;
 }
 
 /*
