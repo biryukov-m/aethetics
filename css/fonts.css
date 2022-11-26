@@ -1,4 +1,4 @@
-/* Example */ 
+/* Example */
 /* @font-face {
     font-family: 'Corbel';
     src: url('../fonts/Corbel.eot');
@@ -10,3 +10,14 @@
     font-style: normal;
 }
 */
+/* Example */
+@font-face {
+    font-family: 'Candara';
+    src: url('../fonts/Candara.ttf'),
+        url('../fonts/Candara_Bold.ttf'),
+        url('../fonts/Candara_Bold_Italic.ttf'),
+        url('../fonts/Candara_Italic.ttf');
+
+    font-weight: normal;
+    font-style: normal;
+}
