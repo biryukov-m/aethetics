@@ -207,16 +207,13 @@ header {
 }
 
 header .layout {
-  width: 1074px;
+  max-width: 1072px;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-header .layout .logo {
-  margin-right: 57px;
-  display: block;
-}
+header .layout .logo {}
 
 header .layout .logo a {
   width: 246px;
@@ -236,17 +233,19 @@ header h1 {
 }
 
 header nav {
+  border-bottom: solid 1px var(--accent);
   width: 564px;
+  height: 32px;
 }
 
 header nav ul {
-  border-bottom: solid 1px var(--accent);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 25px;
 }
 
-header nav ul li {
-  display: inline-block;
-  vertical-align: middle;
-}
+header nav ul li {}
 
 header nav ul li a {
   color: var(--text);
@@ -254,12 +253,7 @@ header nav ul li a {
   font-style: normal;
   font-weight: 400;
   font-size: 26px;
-  line-height: 32px;
   cursor: pointer;
-}
-
-header nav ul :not(li:nth-last-child(1)) a {
-  margin-right: 25px;
 }
 
 header nav ul li a:hover {
@@ -270,47 +264,46 @@ header .interface {
   width: 148px;
 }
 
-header .interface ul {}
+header .interface ul {
+  display: flex;
+  gap: 15px;
+  width: 148px;
+}
 
-header .interface ul li {
-  display: inline-block;
+header .interface ul li a {
+  display: block;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
   background-repeat: no-repeat;
   background-position: 50%;
 }
 
-header .interface ul li.cabinet {
+header .interface ul li.cabinet a {
   background-image: url(../images/icon-cabinet-default.png);
 }
 
-header .interface ul li.favourite {
+header .interface ul li.favourite a {
   background-image: url(../images/icon-fav-default.png);
 }
 
-header .interface ul li.basket {
+header .interface ul li.basket a {
   background-image: url(../images/icon-basket-default.png);
 }
 
-
-
-header .interface ul li.cabinet:hover {
+header .interface ul li.cabinet a:hover {
   background-image: url(../images/icon-cabinet-hover.png);
 }
 
-header .interface ul li.favourite:hover {
+header .interface ul li.favourite a:hover {
   background-image: url(../images/icon-fav-hover.png);
 }
 
-header .interface ul li.basket:hover {
+header .interface ul li.basket a:hover {
   background-image: url(../images/icon-basket-hover.png);
 }
 
-header .interface ul li a {
-  display: inline-block;
-  vertical-align: middle;
-  width: 40px;
-  height: 40px;
-  cursor: pointer;
-}
+
 
 /*
 @media (min-width: 1921px){}
