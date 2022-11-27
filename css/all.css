@@ -207,7 +207,7 @@ header {
 }
 
 header .layout {
-  max-width: 1072px;
+  max-width: 1074px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -236,16 +236,17 @@ header nav {
   border-bottom: solid 1px var(--accent);
   width: 564px;
   height: 32px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 header nav ul {
   display: flex;
-  justify-content: center;
-  align-items: center;
   gap: 25px;
+  height: 32px;
 }
-
-header nav ul li {}
 
 header nav ul li a {
   color: var(--text);
@@ -254,6 +255,7 @@ header nav ul li a {
   font-weight: 400;
   font-size: 26px;
   cursor: pointer;
+  letter-spacing: -0.19px;
 }
 
 header nav ul li a:hover {
@@ -261,13 +263,12 @@ header nav ul li a:hover {
 }
 
 header .interface {
-  width: 148px;
+  width: 150px;
 }
 
 header .interface ul {
   display: flex;
-  gap: 15px;
-  width: 148px;
+  justify-content: space-between;
 }
 
 header .interface ul li a {
@@ -276,7 +277,7 @@ header .interface ul li a {
   height: 40px;
   cursor: pointer;
   background-repeat: no-repeat;
-  background-position: 50%;
+  background-position: center;
 }
 
 header .interface ul li.cabinet a {
@@ -290,6 +291,7 @@ header .interface ul li.favourite a {
 header .interface ul li.basket a {
   background-image: url(../images/icon-basket-default.png);
 }
+
 
 header .interface ul li.cabinet a:hover {
   background-image: url(../images/icon-cabinet-hover.png);
