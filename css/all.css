@@ -167,7 +167,7 @@ input:focus::-webkit-input-placeholder {
 #wrapper {
   display: block;
   position: relative;
-  width: 100%;
+  max-width: 1920px;
   height: 100%;
 }
 
@@ -175,7 +175,7 @@ input:focus::-webkit-input-placeholder {
   display: block;
   position: relative;
   overflow: hidden;
-  width: 1920px;
+  width: 1074px;
   margin: 0 auto 0 auto;
 }
 
@@ -200,6 +200,23 @@ section {
   --creamy: #FFFBF5;
   --accent: #4B6049;
   --text: #484847;
+}
+
+h2 {
+  font-family: 'Poiret One';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 60px;
+  line-height: 70px;
+  color: var(--text);
+}
+
+h4 {
+  font-family: 'Candara';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 26px;
+  line-height: 32px;
 }
 
 header {
@@ -305,7 +322,29 @@ header .interface ul li.basket a:hover {
   background-image: url(../images/icon-basket-hover.png);
 }
 
+#content {}
 
+
+#content .first-view {}
+
+#content .first-view article {
+  margin: 75px 0 92px 0;
+}
+
+#content .first-view article h2 {
+  width: 570px;
+  margin-bottom: 92px;
+}
+
+#content .first-view article h4 {
+  width: 490px;
+}
+
+#content .first-view .button-catalogue {}
+
+#content .first-view .img-holder {}
+
+#content .first-view .img-holder img {}
 
 /*
 @media (min-width: 1921px){}
