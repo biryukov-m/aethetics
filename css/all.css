@@ -219,7 +219,50 @@ h4 {
   font-weight: 400;
   font-size: 26px;
   line-height: 32px;
+  color: var(--text);
 }
+
+.btn {
+  width: 219px;
+  height: 59px;
+  background: var(--accent);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  position: relative;
+  transition: transform 0.2s ease-in;
+}
+
+.btn .text {
+  font-family: 'Candara';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 26px;
+  padding-bottom: 6px;
+  color: var(--creamy);
+}
+
+.btn::before {
+  content: '';
+  display: block;
+  position: absolute;
+  transform: translate(8px, -8px);
+  border: 1px solid var(--accent);
+  width: 217px;
+  height: 57px;
+  transition: transform 0.2s ease-in;
+}
+
+.btn:hover {
+  transform: translate(8px, -8px);
+}
+
+.btn:hover::before {
+  transform: none;
+}
+
+
 
 header {
   margin-top: 11px;
@@ -273,6 +316,7 @@ header nav ul li a {
   font-style: normal;
   font-weight: 400;
   font-size: 26px;
+  color: var(--text);
   cursor: pointer;
   letter-spacing: -0.19px;
 }
@@ -326,7 +370,6 @@ header .interface ul li.basket a:hover {
 
 #content {}
 
-
 #content .first-view .layout {
   overflow: visible;
 }
@@ -336,7 +379,7 @@ header .interface ul li.basket a:hover {
 }
 
 #content .first-view article {
-  margin: 75px 0 92px 0;
+  margin-top: 75px;
   z-index: 2;
 }
 
@@ -348,9 +391,12 @@ header .interface ul li.basket a:hover {
 
 #content .first-view article h4 {
   width: 490px;
+  margin-bottom: 103px;
 }
 
-#content .first-view .button-catalogue {}
+#content .first-view .button-catalogue {
+  margin-bottom: 75px;
+}
 
 #content .first-view .image-holder {
   margin-left: -196px;
@@ -358,8 +404,8 @@ header .interface ul li.basket a:hover {
 }
 
 #content .first-view .image-holder img {
-
-  max-width: none;
+  max-width: fit-content;
+  position: absolute;
 }
 
 /*
