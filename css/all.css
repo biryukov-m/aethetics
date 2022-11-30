@@ -168,6 +168,8 @@ input:focus::-webkit-input-placeholder {
   display: block;
   position: relative;
   max-width: 1920px;
+  margin: 0 auto;
+  overflow: none;
   height: 100%;
 }
 
@@ -325,15 +327,23 @@ header .interface ul li.basket a:hover {
 #content {}
 
 
-#content .first-view {}
+#content .first-view .layout {
+  overflow: visible;
+}
+
+#content .first-view .wrapper {
+  display: flex;
+}
 
 #content .first-view article {
   margin: 75px 0 92px 0;
+  z-index: 2;
 }
 
 #content .first-view article h2 {
   width: 570px;
-  margin-bottom: 92px;
+  margin-bottom: 89px;
+  letter-spacing: -0.9px;
 }
 
 #content .first-view article h4 {
@@ -342,9 +352,15 @@ header .interface ul li.basket a:hover {
 
 #content .first-view .button-catalogue {}
 
-#content .first-view .img-holder {}
+#content .first-view .image-holder {
+  margin-left: -196px;
+  z-index: 1;
+}
 
-#content .first-view .img-holder img {}
+#content .first-view .image-holder img {
+
+  max-width: none;
+}
 
 /*
 @media (min-width: 1921px){}
