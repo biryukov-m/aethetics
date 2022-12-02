@@ -177,7 +177,7 @@ input:focus::-webkit-input-placeholder {
   display: block;
   position: relative;
   overflow: hidden;
-  width: 1074px;
+  max-width: 1074px;
   margin: 0 auto 0 auto;
 }
 
@@ -417,30 +417,105 @@ header .interface ul li.basket a:hover {
   position: absolute;
 }
 
-#content .slider {}
+#content .slider {
+  margin-bottom: 100px;
+}
 
 #content .slider .slide {}
 
-#content .slider .slide .image-holder {
+#content .slider .slide .wrapper {
   position: relative;
+  margin-bottom: 55px;
 }
 
-#content .slider .slide .image-holder img {}
+#content .slider .slide .wrapper img {}
 
-#content .slider .slide .image-holder article {
+#content .slider .slide .wrapper article {
   position: absolute;
   top: 5%;
   right: 50%;
   margin-right: 76px;
 }
 
-#content .slider .slide .image-holder article h2 {
+#content .slider .slide .wrapper article h2 {
   margin-bottom: 58px;
 }
 
-#content .slider .slide .image-holder article h4 {
+#content .slider .slide .wrapper article h4 {
   width: 98px;
 }
+
+#content .slider .slide .wrapper .slider-controls {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  bottom: 1.5%;
+  width: 100%;
+}
+
+#content .slider .slide .wrapper .slider-controls .radio {
+  width: 20px;
+  height: 20px;
+  background: url(../images/icon-radio-unchecked.png);
+  cursor: pointer;
+}
+
+#content .slider .slide .wrapper .slider-controls .radio.active {
+  background: url(../images/icon-radio-checked.png);
+}
+
+#content .slider .slide .wrapper .slider-controls .radio:hover {
+  transform: translate(0, -2px);
+}
+
+#content .slider .slide .button-catalogue {
+  display: flex;
+  justify-content: center;
+}
+
+#content .blog {}
+
+#content .blog .layout {}
+
+#content .blog article {
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
+
+}
+
+#content .blog article .image-holder {
+  width: calc((100%-15px)/2);
+}
+
+#content .blog article .text {
+  width: calc((100%-15px)/2);
+}
+
+#content .blog article .text h3 {
+  margin-bottom: 18px;
+  line-height: 1;
+}
+
+#content .blog article .text h4 {
+  margin-bottom: 12px;
+}
+
+#content .blog article .button-show-details {}
+
+#content .blog article.first {}
+
+#content .blog article.second {}
+
+#content .blog article.third {}
+
+#content .blog article {}
+
+#content .blog .button-show-more {}
+
+
 
 /*
 @media (min-width: 1921px){}
