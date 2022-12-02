@@ -213,6 +213,15 @@ h2 {
   color: var(--text);
 }
 
+h3 {
+  font-family: 'Candara';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 40px;
+  line-height: 49px;
+  color: var(--text);
+}
+
 h4 {
   font-family: 'Candara';
   font-style: normal;
@@ -406,6 +415,31 @@ header .interface ul li.basket a:hover {
 #content .first-view .image-holder img {
   max-width: fit-content;
   position: absolute;
+}
+
+#content .slider {}
+
+#content .slider .slide {}
+
+#content .slider .slide .image-holder {
+  position: relative;
+}
+
+#content .slider .slide .image-holder img {}
+
+#content .slider .slide .image-holder article {
+  position: absolute;
+  top: 5%;
+  right: 50%;
+  margin-right: 76px;
+}
+
+#content .slider .slide .image-holder article h2 {
+  margin-bottom: 58px;
+}
+
+#content .slider .slide .image-holder article h4 {
+  width: 98px;
 }
 
 /*
