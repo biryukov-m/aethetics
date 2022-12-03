@@ -271,7 +271,43 @@ h4 {
   transform: none;
 }
 
+.btn-arrow-right {
+  width: 200px;
+  height: 50px;
+  border: 2px solid var(--accent);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  position: relative;
+  transition: transform 0.2s ease-in;
+}
 
+.btn-arrow-right .text {
+  font-family: 'Candara';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  padding-bottom: 6px;
+  color: var(--accent);
+  position: relative;
+  left: -1px;
+}
+
+.btn-arrow-right::before {
+  content: '';
+  display: block;
+  position: absolute;
+  width: 71px;
+  height: 12px;
+  background: url('../images/icon-button-arrow-right.png');
+  right: -38px;
+  transition: transform 0.2s ease-in;
+}
+
+.btn-arrow-right:hover::before {
+  transform: translate(4px, 0);
+}
 
 header {
   margin-top: 11px;
@@ -483,7 +519,13 @@ header .interface ul li.basket a:hover {
   display: flex;
   flex-direction: row;
   gap: 30px;
+  margin-bottom: 120px;
+}
 
+
+#content .blog article:nth-of-type(2n) {
+  flex-direction: row-reverse;
+  margin-bottom: 208px;
 }
 
 #content .blog article .image-holder {
@@ -497,10 +539,11 @@ header .interface ul li.basket a:hover {
 #content .blog article .text h3 {
   margin-bottom: 18px;
   line-height: 1;
+  color: #000;
 }
 
 #content .blog article .text h4 {
-  margin-bottom: 12px;
+  margin-bottom: 15px;
 }
 
 #content .blog article .button-show-details {}
