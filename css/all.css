@@ -646,6 +646,41 @@ header .interface ul li.basket a:hover {
   background: url("../images/icon-address-hover.png");
 }
 
+footer {
+  background: var(--accent);
+}
+
+footer .wrapper {}
+
+footer .wrapper .logo-bottom {}
+
+footer .wrapper .logo-bottom a {}
+
+footer .wrapper .menu {}
+
+footer .wrapper .menu li {}
+
+footer .wrapper .menu li a {}
+
+footer .wrapper .working-hours {}
+
+footer .wrapper .working-hours p {}
+
+footer .wrapper .confidential {}
+
+footer .wrapper .confidential p {}
+
+footer .wrapper .phones {}
+
+footer .wrapper .phones p {}
+
+footer .wrapper .payment-methods {}
+
+footer .wrapper .payment-methods ul {}
+
+footer .wrapper .payment-methods ul li {}
+
+footer .wrapper .payment-methods ul li a {}
 
 
 /*
