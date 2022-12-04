@@ -181,6 +181,17 @@ input:focus::-webkit-input-placeholder {
   margin: 0 auto 0 auto;
 }
 
+@media (min-width: 320px) and (max-width: 374px) {
+  #wrapper {
+    max-width: 100%;
+  }
+
+  .layout {
+    max-width: 324px;
+    margin: 0 auto 0 auto;
+  }
+}
+
 header,
 main,
 footer,
@@ -358,12 +369,19 @@ header .layout {
   align-items: center;
 }
 
+header .logo {
+  width: 246px;
+  max-height: 144px;
+}
 
 header .logo a {
-  width: 246px;
-  height: 144px;
   display: block;
-  background: url("../images/image-logo-green.png");
+}
+
+@media (min-width: 320px) and (max-width: 374px) {
+  header .logo {
+    width: 150px;
+  }
 }
 
 header h1 {
