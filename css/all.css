@@ -378,11 +378,7 @@ header .logo a {
   display: block;
 }
 
-@media (min-width: 320px) and (max-width: 374px) {
-  header .logo {
-    width: 150px;
-  }
-}
+
 
 header h1 {
   text-indent: -1111px;
@@ -437,6 +433,11 @@ header .interface ul li a {
   cursor: pointer;
   background-repeat: no-repeat;
   background-position: center;
+  background-size: contain;
+}
+
+header .interface ul li.burger {
+  display: none;
 }
 
 header .interface ul li.cabinet a {
@@ -449,6 +450,10 @@ header .interface ul li.favourite a {
 
 header .interface ul li.basket a {
   background-image: url(../images/icon-basket-default.png);
+}
+
+header .interface ul li.burger a {
+  background-image: url(../images/icon-burger.png);
 }
 
 
@@ -464,6 +469,48 @@ header .interface ul li.basket a:hover {
   background-image: url(../images/icon-basket-hover.png);
 }
 
+@media (min-width: 320px) and (max-width: 374px) {
+  header {
+    margin-top: 0;
+    margin-bottom: -5px;
+  }
+
+  header .layout {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
+  header .logo {
+    width: 150px;
+  }
+
+  header nav {
+    display: none;
+  }
+
+  header .interface {
+    margin-top: 27px;
+  }
+
+  header .interface ul {
+    gap: 21px;
+    justify-content: flex-end;
+  }
+
+  header .interface ul li.burger {
+    display: block;
+  }
+
+  header .interface li.favourite {
+    display: none;
+  }
+
+  header .interface ul li a {
+    width: 24px;
+    height: 24px;
+  }
+}
 
 .first-view .layout {
   overflow: visible;
@@ -501,6 +548,28 @@ header .interface ul li.basket a:hover {
 .first-view .image-holder img {
   max-width: fit-content;
   position: absolute;
+}
+
+@media (min-width: 320px) and (max-width: 374px) {
+  .first-view .layout {
+    max-width: 100%;
+  }
+
+  .first-view .wrapper {
+    flex-direction: column-reverse;
+  }
+
+  .first-view .image-holder {
+    margin-left: 0;
+    width: 100%;
+    height: 238px;
+    background-image: url("../images/image-360-main-page-hero.png");
+    background-size: contain;
+  }
+
+  .first-view .image-holder img {
+    display: none;
+  }
 }
 
 .slider {
@@ -659,6 +728,7 @@ header .interface ul li.basket a:hover {
 
 footer {
   background: var(--accent);
+  padding-bottom: 11px;
 }
 
 footer .wrapper {
