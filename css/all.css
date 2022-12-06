@@ -242,22 +242,6 @@ h4 {
   color: var(--text);
 }
 
-/* @media (min-width: 320px) and (max-width: 374px) {
-  h2 {
-    font-size: 60px;
-    line-height: 70px;
-  }
-
-  h3 {
-    font-size: 18px;
-    line-height: 22px;
-  }
-
-  h4 {
-    font-size: 26px;
-    line-height: 32px;
-  }
-} */
 
 .btn {
   width: 219px;
@@ -456,8 +440,6 @@ header .logo a {
   display: block;
 }
 
-
-
 header h1 {
   text-indent: -1111px;
   position: absolute;
@@ -483,8 +465,7 @@ header nav ul {
 header nav ul li a {
   color: var(--text);
   font-family: 'Candara';
-  font-style: normal;
-  font-weight: 400;
+  font-weight: 200;
   font-size: 26px;
   color: var(--text);
   cursor: pointer;
@@ -692,17 +673,24 @@ header .interface ul li.basket a:hover {
 
 .slider .slide article {
   position: absolute;
-  top: 5%;
+  top: 7.4%;
   right: 50%;
-  margin-right: 76px;
+  margin-right: 6.3%;
 }
 
 .slider .slide article h2 {
-  margin-bottom: 58px;
+  margin-bottom: 53px;
+  float: right;
 }
 
 .slider .slide article h4 {
-  width: 270px;
+  width: 423px;
+  font-family: 'Candara';
+  font-style: normal;
+  font-weight: 200;
+  font-size: 40px;
+  line-height: 49px;
+  float: right;
 }
 
 .slider .slide .slider-controls {
@@ -768,6 +756,7 @@ header .interface ul li.basket a:hover {
     font-weight: 400;
     font-size: 18px;
     line-height: 22px;
+    float: none;
   }
 
   .slider .slide article h4 {
@@ -775,6 +764,7 @@ header .interface ul li.basket a:hover {
     font-size: 14px;
     line-height: 17px;
     width: unset;
+    float: none;
   }
 
   .slider .slide .slider-controls {
@@ -791,6 +781,17 @@ header .interface ul li.basket a:hover {
 
   .slider .button-catalogue {
     display: none;
+  }
+}
+
+@media (min-width: 1280px) and (max-width: 1439px) {
+
+  .slider .slide article h2 {
+    font-size: 50px;
+  }
+
+  .slider .slide article h4 {
+    font-size: 38px;
   }
 }
 
@@ -830,6 +831,11 @@ header .interface ul li.basket a:hover {
 
 .blog article .text h4 {
   margin-bottom: 15px;
+}
+
+.blog .button-show-more {
+  margin: 0 auto;
+  width: fit-content;
 }
 
 
@@ -952,7 +958,7 @@ header .interface ul li.basket a:hover {
 
 @media (min-width: 320px) and (max-width: 374px) {
   .contacts {
-    margin-bottom: 8px;
+    margin-bottom: 3px;
   }
 
   .contacts .layout {
@@ -969,22 +975,6 @@ header .interface ul li.basket a:hover {
     width: 30px;
     height: 30px;
   }
-
-  .contacts ul li a {}
-
-  .contacts ul li a {}
-
-  .contacts ul li a img {
-    max-width: 100%;
-    max-height: 100%;
-  }
-
-  .contacts ul li:hover a img {
-    display: none;
-  }
-
-
-
 }
 
 footer {
@@ -1041,7 +1031,6 @@ footer .wrapper .working-hours {
   margin-left: 37px;
 }
 
-
 footer .wrapper .column {
   margin-left: 50px;
 }
@@ -1051,7 +1040,6 @@ footer .wrapper .confidential {
   margin-bottom: 9px;
 }
 
-
 footer .wrapper .phones {
   margin-bottom: 24px;
 }
@@ -1059,7 +1047,6 @@ footer .wrapper .phones {
 footer .wrapper .phones p {
   margin-bottom: 6px;
 }
-
 
 footer .wrapper .payment-methods ul {
   display: flex;
@@ -1086,6 +1073,7 @@ footer .wrapper .payment-methods ul li.mastercard {
 
 footer .wrapper .payment-methods ul li.mastercard:hover a {
   background: url(../images/icon-mastercard-hover.png);
+  background-size: cover;
 }
 
 footer .wrapper .payment-methods ul li.visa {
@@ -1095,6 +1083,7 @@ footer .wrapper .payment-methods ul li.visa {
 
 footer .wrapper .payment-methods ul li.visa:hover a {
   background: url(../images/icon-visa-hover.png);
+  background-size: cover;
 }
 
 footer .wrapper .payment-methods ul li.apple-pay {
@@ -1104,16 +1093,132 @@ footer .wrapper .payment-methods ul li.apple-pay {
 
 footer .wrapper .payment-methods ul li.apple-pay:hover a {
   background: url(../images/icon-apay-hover.png);
+  background-size: cover;
 }
-
 
 footer .wrapper .payment-methods ul li a img {
   width: 100%;
   height: 100%;
 }
 
+footer .wrapper .payment-methods ul li a img.mobile {
+  display: none;
+}
+
 footer .wrapper .payment-methods ul li:hover a img {
   display: none;
+}
+
+@media (min-width: 320px) and (max-width: 374px) {
+
+  footer .layout {
+    max-width: 328px;
+  }
+
+  footer .wrapper {
+    grid-template-columns: 47.5% 1fr;
+    padding-bottom: 13px;
+    position: relative;
+  }
+
+  footer .wrapper .logo-bottom {
+    margin: 19px 0 15px;
+    grid-column: 1/3;
+    width: 100px;
+  }
+
+  footer .wrapper p,
+  footer .wrapper a {
+    font-size: 14px;
+    line-height: 17px;
+  }
+
+  footer .wrapper .menu {
+    grid-column: 1;
+    grid-row: 3;
+    gap: 3px;
+    margin: 0;
+  }
+
+
+  footer .wrapper .working-hours {
+    grid-column: 1;
+    grid-row: 2;
+    gap: 2px;
+    margin: 0 0 19px 0;
+  }
+
+  footer .wrapper .column {
+    margin-left: 0;
+    grid-column: 2;
+    grid-row: 2/4;
+    display: flex;
+    flex-direction: column;
+  }
+
+  footer .wrapper .confidential {
+    margin: 0;
+    order: 2;
+  }
+
+  footer .wrapper .phones {
+    margin-bottom: 34px;
+    order: 1;
+  }
+
+  footer .wrapper .phones p {
+    margin-bottom: 3px;
+  }
+
+  footer .wrapper .payment-methods {
+    order: 3;
+    position: absolute;
+    bottom: 0;
+    left: 45.3%;
+  }
+
+  footer .wrapper .payment-methods ul {
+    gap: 14px;
+  }
+
+  footer .wrapper .payment-methods ul li.mastercard {
+    width: 37px;
+    height: 24px;
+    order: 1;
+  }
+
+  footer .wrapper .payment-methods ul li.mastercard:hover a {
+    background: url(../images/icon-360-mastercard-hover.png) no-repeat;
+  }
+
+  footer .wrapper .payment-methods ul li.visa {
+    width: 54px;
+    height: 18px;
+    order: 3;
+  }
+
+  footer .wrapper .payment-methods ul li.apple-pay {
+    width: 59px;
+    height: 24px;
+    order: 2;
+  }
+
+
+
+  footer .wrapper .payment-methods ul li a img.desktop {
+    display: none;
+  }
+
+  footer .wrapper .payment-methods ul li a img.mobile {
+    display: block;
+  }
+
+  footer .wrapper .payment-methods ul li:hover a img {
+    display: none;
+  }
+
+
+
 }
 
 
