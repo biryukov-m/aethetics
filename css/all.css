@@ -242,6 +242,15 @@ h4 {
   color: var(--text);
 }
 
+p {
+  font-family: 'Candara';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 24px;
+  color: var(--text);
+}
+
 
 .btn {
   width: 219px;
@@ -1216,10 +1225,56 @@ footer .wrapper .payment-methods ul li:hover a img {
   footer .wrapper .payment-methods ul li:hover a img {
     display: none;
   }
-
-
-
 }
+
+/* CATALOG.html start */
+
+.sorting {
+  margin: 64px 0 23px;
+}
+
+.sorting .wrapper {
+  margin-left: 234px;
+}
+
+.sorting .wrapper p {
+  display: inline-block;
+  cursor: pointer;
+  position: relative;
+  padding-right: 14px;
+}
+
+.sorting .wrapper p::after {
+  display: block;
+  content: '';
+  position: absolute;
+  background: var(--text);
+  height: 1px;
+  left: 0;
+  bottom: 3px;
+  right: 14px;
+}
+
+.sorting .wrapper p::before {
+  display: block;
+  content: '';
+  position: absolute;
+  width: 13px;
+  height: 6px;
+  background: url("../images/icon-expand-more.png");
+  right: 0px;
+  top: 12px;
+}
+
+.sorting .wrapper p:hover {
+  transform: translate(-2px, -2px);
+  transition: all 0.2s ease-in;
+}
+
+.sorting .wrapper .inactive {
+  display: none;
+}
+
 
 
 /*
