@@ -1282,21 +1282,21 @@ footer .wrapper .payment-methods ul li:hover a img {
   gap: 6px;
 }
 
-.catalogue .flex aside {
+.catalogue aside {
   max-width: 228px;
 }
 
-.catalogue .flex aside .filters {}
+.catalogue aside .filters {}
 
-.catalogue .flex aside .filters .group {
+.catalogue aside .filters .group {
   margin-bottom: 8px;
 }
 
-.catalogue .flex aside .filters .group.inactive {
+.catalogue aside .filters .group.inactive {
   margin-bottom: -5px;
 }
 
-.catalogue .flex aside .filters .group .header {
+.catalogue aside .filters .group .header {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -1304,39 +1304,39 @@ footer .wrapper .payment-methods ul li:hover a img {
   margin-right: 3px;
 }
 
-.catalogue .flex aside .filters .group.price .header {
+.catalogue aside .filters .group.price .header {
   margin-bottom: 10px;
 }
 
-.catalogue .flex aside .filters .group .header h4 {}
+.catalogue aside .filters .group .header h4 {}
 
-.catalogue .flex aside .filters .group .header span {
+.catalogue aside .filters .group .header span {
   display: block;
   width: 11px;
   height: 11px;
   position: relative;
 }
 
-.catalogue .flex aside .filters .group.active .header span {
+.catalogue aside .filters .group.active .header span {
   background: url(../images/icon-filter-close.png);
   top: 6px;
 }
 
-.catalogue .flex aside .filters .group.inactive .header span {
+.catalogue aside .filters .group.inactive .header span {
   background: url(../images/icon-filter-open.png);
   top: 3px;
 }
 
-.catalogue .flex aside .filters .group ul {
+.catalogue aside .filters .group ul {
   display: none;
 }
 
-.catalogue .flex aside .filters .group.active ul {
+.catalogue aside .filters .group.active ul {
   display: block;
   margin-bottom: 8px;
 }
 
-.catalogue .flex aside .filters .group ul li {
+.catalogue aside .filters .group ul li {
   font-family: 'Candara';
   font-style: normal;
   font-weight: 400;
@@ -1349,7 +1349,7 @@ footer .wrapper .payment-methods ul li:hover a img {
 
 }
 
-.catalogue .flex aside .filters .group ul li:before {
+.catalogue aside .filters .group ul li:before {
   display: block;
   content: '';
   position: absolute;
@@ -1360,19 +1360,17 @@ footer .wrapper .payment-methods ul li:hover a img {
   background: url(../images/icon-checkbox-default.png);
 }
 
-.catalogue .flex aside .filters .group ul li.checked:before {
+.catalogue aside .filters .group ul li.checked:before {
   background: url(../images/icon-checkbox-alt-checked.png);
 }
 
-.catalogue .flex aside .filters .group ul li.checked:before {
+.catalogue aside .filters .group ul li.checked:before {
   background: url(../images/icon-checkbox-default.png);
 }
 
-.catalogue .flex aside .filters .group.price .wrapper {
-  /* display: flex; */
-}
 
-.catalogue .flex aside .filters .group.price .wrapper input {
+
+.catalogue aside .filters .group.price input {
   width: 90px;
   height: 24px;
   padding: 16px 2px 25px;
@@ -1385,7 +1383,7 @@ footer .wrapper .payment-methods ul li:hover a img {
   position: relative;
 }
 
-.catalogue .flex aside .filters .group.price .wrapper span {
+.catalogue aside .filters .group.price span {
   display: inline-block;
   width: 15px;
   height: 1px;
@@ -1393,7 +1391,7 @@ footer .wrapper .payment-methods ul li:hover a img {
   margin: 0 7px;
 }
 
-.catalogue .flex aside .filters .group.price .wrapper input::placeholder {
+.catalogue aside .filters .group.price input::placeholder {
   color: rgba(72, 72, 71, 0.5);
   font-family: 'Candara';
   font-style: normal;
@@ -1401,6 +1399,54 @@ footer .wrapper .payment-methods ul li:hover a img {
   font-size: 20px;
   line-height: 24px;
 }
+
+/* Main section */
+.catalogue .column {}
+
+.catalogue .column .items {}
+
+.catalogue .column .items {}
+
+.catalogue .column .items .item {}
+
+.catalogue .column .items .item {}
+
+.catalogue .column .items .item .image-holder {}
+
+.catalogue .column .items .item .image-holder img {}
+
+.catalogue .column .items .item .image-holder .heart {}
+
+.catalogue .column .items .item .image-holder .name {}
+
+.catalogue .column .items .item .image-holder .name p {}
+
+.catalogue .column .items .item .image-holder .price {}
+
+.catalogue .column .items .item .image-holder .controls {}
+
+.catalogue .column .items .item .image-holder .controls a {}
+
+.catalogue .column .items .item .image-holder .controls .btn {}
+
+.catalogue .column .items .item .image-holder .controls .btn span {}
+
+.catalogue .column .button-show-more {}
+
+/* Recentrly viewed section */
+.recently-viewed {}
+
+.recently-viewed .recent-items {}
+
+.recently-viewed .recent-items .recent-item {}
+
+.recently-viewed .recent-items .recent-item .image-holder {}
+
+.recently-viewed .recent-items .recent-item .image-holder img {}
+
+.recently-viewed .recent-items .recent-item h4 {}
+
+.recently-viewed .recent-items .recent-item p {}
 
 /*
 @media (min-width: 1921px){}
