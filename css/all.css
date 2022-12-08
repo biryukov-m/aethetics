@@ -252,6 +252,7 @@ p {
 }
 
 .btn {
+  display: block;
   width: 219px;
   height: 59px;
   background: var(--accent);
@@ -261,9 +262,6 @@ p {
   cursor: pointer;
   position: relative;
   transition: transform 0.2s ease-in;
-}
-
-.btn span {
   font-family: 'Candara';
   font-style: normal;
   font-weight: 400;
@@ -527,7 +525,6 @@ header nav ul li a {
 
 header nav ul li a:hover {
   color: var(--accent);
-
   transform: translate(0, -2px);
 }
 
@@ -1480,6 +1477,12 @@ footer .wrapper .payment-methods ul li:hover a img {
   width: 260px;
   padding: 13px 13px 8px;
 }
+
+.catalogue .items .item:hover {
+  background-color: var(--creamy);
+  border: 2px solid var(--accent);
+}
+
 
 .catalogue .items .item .image-holder {
   width: 100%;
