@@ -14,7 +14,9 @@
 
 @font-face {
     font-family: 'Poiret One';
-    src: url('../fonts/PoiretOne-Regular.ttf');
+    src: url('../fonts/PoiretOne-Regular.woff2') format('woff2'),
+        url('../fonts/PoiretOne-Regular.woff') format('woff');
     font-weight: normal;
     font-style: normal;
+    font-display: swap;
 }
