@@ -1,0 +1,95 @@
+.product-card {
+  margin-bottom: 43px;
+  margin-top: -1px;
+  .layout {
+    overflow: visible;
+    .top-controls {
+      margin-bottom: 14px;
+      .go-back {
+        display: block;
+        width: 36px;
+        height: 36px;
+        background: url("../images/icon-product-card-back-arrow-left.png")
+          no-repeat;
+        transition: transform 0.2s ease-in;
+        &:hover {
+          transform: translate(-2px, 0);
+        }
+      }
+    }
+    .flex {
+      display: flex;
+      gap: 3px;
+      justify-content: space-between;
+      .image-column {
+        width: 42.84%;
+        .image-holder {
+          width: 100%;
+          overflow: hidden;
+          img {
+            background-size: cover;
+          }
+        }
+      }
+      .product-column {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        width: 51.4%;
+        .name {
+          display: block;
+          margin-bottom: 16px;
+          line-height: 1;
+        }
+        .rating {
+          margin-bottom: 6px;
+        }
+        .description {
+          margin-bottom: 44px;
+          padding-right: 16px;
+          p {
+            line-height: 24.4px;
+          }
+        }
+        .controls {
+          display: flex;
+          flex-direction: column;
+          padding-right: 8px;
+          .row {
+            display: flex;
+            justify-content: space-between;
+            &:nth-of-type(1) {
+              margin-bottom: 37px;
+            }
+            &:nth-of-type(2) {
+              align-items: center;
+            }
+            .favourite {
+              width: 36px;
+              height: 36px;
+              background: url("../images/icon-fav-default.png");
+              cursor: pointer;
+              &:hover {
+                background: url("../images/icon-fav-alt-hover.png") no-repeat;
+                position: relative;
+                top: 5px;
+                left: 1px;
+              }
+            }
+            .quantity {
+              width: 86px;
+              height: 49px;
+              padding: 0 15px;
+              font-family: "Candara";
+              font-weight: 400;
+              font-size: 26px;
+            }
+            .btn {
+              top: -5px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

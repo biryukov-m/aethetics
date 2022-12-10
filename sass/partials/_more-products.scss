@@ -1,0 +1,40 @@
+.more-products {
+  margin-bottom: 141px;
+  h3 {
+    margin-bottom: 48px;
+  }
+  .items {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  .item {
+    width: 260px;
+    border: solid 1px #fff;
+    transition: all 150ms ease-in;
+    &:hover {
+      background: var(--creamy);
+      border-color: var(--accent);
+      cursor: pointer;
+    }
+    .image-holder {
+      width: 100%;
+      padding: 13px 13px 7px 13px;
+      img {
+        background-size: cover;
+      }
+    }
+    p {
+      margin: 0 13px;
+      line-height: 150%;
+      &.name {
+        margin-right: 24px;
+        height: 60px;
+      }
+      &.price {
+        text-align: right;
+      }
+    }
+  }
+}
