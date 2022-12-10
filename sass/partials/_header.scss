@@ -98,27 +98,27 @@ header {
       display: flex;
       justify-content: space-between;
       align-items: flex-start;
-    }
-    .logo {
-      width: 150px;
-    }
-    nav {
-      display: none;
-    }
-    .interface {
-      margin-top: 27px;
-      ul {
-        gap: 21px;
-        justify-content: flex-end;
-        li.burger {
-          display: block;
-        }
-        li.favourite {
-          display: none;
-        }
-        li a {
-          width: 24px;
-          height: 24px;
+      .logo {
+        width: 150px;
+      }
+      nav {
+        display: none;
+      }
+      .interface {
+        margin-top: 27px;
+        ul {
+          gap: 21px;
+          justify-content: flex-end;
+          li.burger {
+            display: block;
+          }
+          li.favourite {
+            display: none;
+          }
+          li a {
+            width: 24px;
+            height: 24px;
+          }
         }
       }
     }

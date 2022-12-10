@@ -1,0 +1,121 @@
+.slider {
+  margin-bottom: 100px;
+  .slide {
+    position: relative;
+    margin-bottom: 55px;
+    img.mobile {
+      display: none;
+    }
+    article {
+      position: absolute;
+      top: 7.4%;
+      right: 50%;
+      margin-right: 6.3%;
+      h2 {
+        margin-bottom: 53px;
+        float: right;
+      }
+      h4 {
+        width: 423px;
+        font-family: "Candara";
+        font-style: normal;
+        font-weight: 200;
+        font-size: 40px;
+        line-height: 49px;
+        float: right;
+      }
+    }
+    .slider-controls {
+      position: absolute;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+      bottom: 1.5%;
+      width: 100%;
+      .radio {
+        width: 20px;
+        height: 20px;
+        background: url(../images/icon-radio-unchecked.png);
+        cursor: pointer;
+        &.active {
+          background: url(../images/icon-radio-checked.png);
+        }
+        &:hover {
+          transform: translate(0, -2px);
+        }
+      }
+    }
+  }
+  .button-catalogue {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+@media (min-width: 320px) and (max-width: 374px) {
+  .slider {
+    margin-bottom: 0;
+    .slide {
+      margin-bottom: 38px;
+      img.mobile {
+        display: block;
+        width: 360px;
+        margin: 0 auto;
+      }
+      img.desktop {
+        display: none;
+      }
+      article {
+        top: 6px;
+        right: 0;
+        margin-right: 0;
+        left: 16px;
+        h2 {
+          margin-bottom: 33px;
+          font-family: "Candara";
+          font-style: normal;
+          font-weight: 400;
+          font-size: 18px;
+          line-height: 22px;
+          float: none;
+        }
+        h4 {
+          max-width: 42.1%;
+          font-size: 14px;
+          line-height: 17px;
+          width: unset;
+          float: none;
+        }
+      }
+      .slider-controls {
+        gap: 15px;
+        bottom: 2.2%;
+        .radio,
+        .radio.active {
+          width: 10px;
+          height: 10px;
+          background-size: cover;
+        }
+      }
+    }
+    .button-catalogue {
+      display: none;
+    }
+  }
+}
+
+@media (min-width: 1280px) and (max-width: 1439px) {
+  .slider {
+    .slide {
+      article {
+        h2 {
+          font-size: 50px;
+        }
+        h4 {
+          font-size: 38px;
+        }
+      }
+    }
+  }
+}

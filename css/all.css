@@ -602,35 +602,549 @@ header .interface ul li.basket a:hover {
     justify-content: space-between;
     align-items: flex-start;
   }
-  header .logo {
+  header .layout .logo {
     width: 150px;
   }
-  header nav {
+  header .layout nav {
     display: none;
   }
-  header .interface {
+  header .layout .interface {
     margin-top: 27px;
   }
-  header .interface ul {
+  header .layout .interface ul {
     gap: 21px;
     justify-content: flex-end;
   }
-  header .interface ul li.burger {
+  header .layout .interface ul li.burger {
     display: block;
   }
-  header .interface ul li.favourite {
+  header .layout .interface ul li.favourite {
     display: none;
   }
-  header .interface ul li a {
+  header .layout .interface ul li a {
     width: 24px;
     height: 24px;
   }
 }
-footer {
-  display: block;
-  position: relative;
-  overflow: hidden;
+/* First view */
+.first-view .layout {
+  overflow: visible;
+}
+.first-view .layout .wrapper {
+  display: flex;
+}
+.first-view .layout .wrapper article {
+  margin-top: 75px;
+  z-index: 2;
+}
+.first-view .layout .wrapper article h2 {
+  width: 570px;
+  margin-bottom: 89px;
+  letter-spacing: -0.9px;
+}
+.first-view .layout .wrapper article h4 {
+  width: 490px;
+  margin-bottom: 103px;
+}
+.first-view .layout .wrapper article .button-catalogue {
+  margin-bottom: 75px;
+}
+.first-view .layout .wrapper .image-holder {
+  background: url("../images/image-main-page-hero.png") no-repeat -162px;
+  height: 100%;
   width: 100%;
-  box-sizing: border-box;
-  height: auto;
+  position: absolute;
+  left: 50%;
+  right: 0;
+}
+
+@media (min-width: 320px) and (max-width: 374px) {
+  .first-view .layout {
+    max-width: 100%;
+  }
+  .first-view .layout .wrapper {
+    flex-direction: column-reverse;
+  }
+  .first-view .layout .wrapper article {
+    max-width: 328px;
+    margin: 15px auto 0;
+  }
+  .first-view .layout .wrapper article h2 {
+    width: 100%;
+    margin-bottom: 13px;
+    font-size: 32px;
+    line-height: 37px;
+    font-weight: 600;
+    letter-spacing: 0;
+  }
+  .first-view .layout .wrapper article h4 {
+    width: 100%;
+    margin-bottom: 21px;
+    font-size: 18px;
+    line-height: 22px;
+    letter-spacing: 0.1px;
+  }
+  .first-view .layout .wrapper article .button-catalogue {
+    margin-bottom: 40px;
+  }
+  .first-view .layout .wrapper .image-holder {
+    position: relative;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 238px;
+    background-image: url("../images/image-360-main-page-hero.png");
+    background-size: contain;
+    background-position: 50% 50%;
+  }
+}
+.slider {
+  margin-bottom: 100px;
+}
+.slider .slide {
+  position: relative;
+  margin-bottom: 55px;
+}
+.slider .slide img.mobile {
+  display: none;
+}
+.slider .slide article {
+  position: absolute;
+  top: 7.4%;
+  right: 50%;
+  margin-right: 6.3%;
+}
+.slider .slide article h2 {
+  margin-bottom: 53px;
+  float: right;
+}
+.slider .slide article h4 {
+  width: 423px;
+  font-family: "Candara";
+  font-style: normal;
+  font-weight: 200;
+  font-size: 40px;
+  line-height: 49px;
+  float: right;
+}
+.slider .slide .slider-controls {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  bottom: 1.5%;
+  width: 100%;
+}
+.slider .slide .slider-controls .radio {
+  width: 20px;
+  height: 20px;
+  background: url(../images/icon-radio-unchecked.png);
+  cursor: pointer;
+}
+.slider .slide .slider-controls .radio.active {
+  background: url(../images/icon-radio-checked.png);
+}
+.slider .slide .slider-controls .radio:hover {
+  transform: translate(0, -2px);
+}
+.slider .button-catalogue {
+  display: flex;
+  justify-content: center;
+}
+
+@media (min-width: 320px) and (max-width: 374px) {
+  .slider {
+    margin-bottom: 0;
+  }
+  .slider .slide {
+    margin-bottom: 38px;
+  }
+  .slider .slide img.mobile {
+    display: block;
+    width: 360px;
+    margin: 0 auto;
+  }
+  .slider .slide img.desktop {
+    display: none;
+  }
+  .slider .slide article {
+    top: 6px;
+    right: 0;
+    margin-right: 0;
+    left: 16px;
+  }
+  .slider .slide article h2 {
+    margin-bottom: 33px;
+    font-family: "Candara";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 22px;
+    float: none;
+  }
+  .slider .slide article h4 {
+    max-width: 42.1%;
+    font-size: 14px;
+    line-height: 17px;
+    width: unset;
+    float: none;
+  }
+  .slider .slide .slider-controls {
+    gap: 15px;
+    bottom: 2.2%;
+  }
+  .slider .slide .slider-controls .radio,
+.slider .slide .slider-controls .radio.active {
+    width: 10px;
+    height: 10px;
+    background-size: cover;
+  }
+  .slider .button-catalogue {
+    display: none;
+  }
+}
+@media (min-width: 1280px) and (max-width: 1439px) {
+  .slider .slide article h2 {
+    font-size: 50px;
+  }
+  .slider .slide article h4 {
+    font-size: 38px;
+  }
+}
+.blog {
+  margin-bottom: 95px;
+}
+.blog article {
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
+  margin-bottom: 120px;
+}
+.blog article:nth-of-type(2n) {
+  flex-direction: row-reverse;
+  margin-bottom: 208px;
+}
+.blog article:last-of-type {
+  margin-bottom: 97px;
+}
+.blog article .image-holder {
+  width: calc((100% - 15px) / 2);
+}
+.blog article .text {
+  width: calc((100% - 15px) / 2);
+}
+.blog article .text h3 {
+  margin-bottom: 18px;
+  line-height: 1;
+  color: #000;
+}
+.blog article .text h4 {
+  margin-bottom: 15px;
+}
+.blog .button-show-more {
+  margin: 0 auto;
+  width: fit-content;
+}
+
+@media (min-width: 320px) and (max-width: 374px) {
+  .blog {
+    margin-bottom: 38px;
+  }
+  .blog .layout {
+    max-width: 328px;
+  }
+  .blog article {
+    position: relative;
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 11px;
+    margin-bottom: 87px;
+  }
+  .blog article:nth-of-type(2n) {
+    flex-direction: column-reverse;
+    margin-bottom: 87px;
+  }
+  .blog article:last-of-type {
+    margin-bottom: 88px;
+  }
+  .blog article .image-holder {
+    width: 100%;
+  }
+  .blog article .text {
+    width: 100%;
+  }
+  .blog article .text h3 {
+    margin-bottom: 11px;
+    font-size: 18px;
+    line-height: 22px;
+  }
+  .blog article .text h4 {
+    margin-bottom: 0;
+    font-size: 14px;
+    line-height: 17px;
+  }
+  .blog .button-show-details {
+    position: absolute;
+    bottom: -49px;
+  }
+  .blog .button-show-more {
+    margin: 0 auto;
+    width: fit-content;
+  }
+}
+.contacts {
+  margin-bottom: 8px;
+}
+.contacts ul {
+  float: right;
+  display: flex;
+  gap: 15px;
+  margin-right: 1px;
+}
+.contacts ul li {
+  display: block;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+}
+.contacts ul li:hover a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  background-size: cover;
+}
+.contacts ul li:hover a.instagram {
+  background-image: url("../images/icon-instagram-hover.png");
+}
+.contacts ul li:hover a.mail {
+  background-image: url("../images/icon-email-hover.png");
+}
+.contacts ul li:hover a.telephone {
+  background-image: url("../images/icon-phone-hover.png");
+}
+.contacts ul li:hover a.address {
+  background-image: url("../images/icon-address-hover.png");
+}
+.contacts ul li:hover a img {
+  display: none;
+  max-width: 100%;
+  max-height: 100%;
+}
+
+@media (min-width: 320px) and (max-width: 374px) {
+  .contacts {
+    margin-bottom: 3px;
+  }
+  .contacts .layout {
+    max-width: 328px;
+  }
+  .contacts .layout ul {
+    float: right;
+    gap: 20px;
+    margin-right: 0;
+  }
+  .contacts .layout ul li {
+    width: 30px;
+    height: 30px;
+  }
+}
+footer {
+  background: var(--accent);
+  padding-bottom: 11px;
+}
+footer .layout .wrapper {
+  display: grid;
+  grid-template-columns: 248px max-content max-content 1fr;
+}
+footer .layout .wrapper .logo-bottom {
+  margin-top: 29px;
+  margin-left: 15px;
+}
+footer .layout .wrapper p,
+footer .layout .wrapper a {
+  font-family: "Candara";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 24px;
+  color: var(--creamy);
+}
+footer .layout .wrapper .menu {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  margin-top: 38px;
+  margin-left: 87px;
+}
+footer .layout .wrapper .menu li a {
+  display: block;
+  transition: all 0.1s ease-in;
+}
+footer .layout .wrapper .menu li a:hover {
+  transform: translate(2px, -1px);
+}
+footer .layout .wrapper .confidential {
+  margin-top: 36px;
+  margin-bottom: 9px;
+}
+footer .layout .wrapper .confidential a {
+  display: block;
+  transition: all 0.1s ease-in;
+}
+footer .layout .wrapper .confidential a:hover {
+  transform: translate(2px, -1px);
+}
+footer .layout .wrapper .working-hours {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-top: 38px;
+  margin-left: 37px;
+}
+footer .layout .wrapper .column {
+  margin-left: 50px;
+}
+footer .layout .wrapper .phones {
+  margin-bottom: 24px;
+}
+footer .layout .wrapper .phones p {
+  margin-bottom: 6px;
+}
+footer .layout .wrapper .payment-methods ul {
+  display: flex;
+  gap: 25px;
+  justify-content: flex-end;
+  align-items: center;
+}
+footer .layout .wrapper .payment-methods ul li {
+  display: block;
+  cursor: pointer;
+}
+footer .layout .wrapper .payment-methods ul li.mastercard {
+  width: 52px;
+  height: 32px;
+}
+footer .layout .wrapper .payment-methods ul li.mastercard:hover a {
+  background: url(../images/icon-mastercard-hover.png);
+  background-size: cover;
+}
+footer .layout .wrapper .payment-methods ul li.visa {
+  width: 77px;
+  height: 26px;
+}
+footer .layout .wrapper .payment-methods ul li.visa:hover a {
+  background: url(../images/icon-visa-hover.png);
+  background-size: cover;
+}
+footer .layout .wrapper .payment-methods ul li.apple-pay {
+  width: 83px;
+  height: 34px;
+}
+footer .layout .wrapper .payment-methods ul li.apple-pay:hover a {
+  background: url(../images/icon-apay-hover.png);
+  background-size: cover;
+}
+footer .layout .wrapper .payment-methods ul li a {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+footer .layout .wrapper .payment-methods ul li a img {
+  width: 100%;
+  height: 100%;
+}
+footer .layout .wrapper .payment-methods ul li a img.mobile {
+  display: none;
+}
+footer .layout .wrapper .payment-methods ul li:hover a img {
+  display: none;
+}
+
+@media (min-width: 320px) and (max-width: 374px) {
+  footer .layout {
+    max-width: 328px;
+  }
+  footer .layout .wrapper {
+    grid-template-columns: 47.5% 1fr;
+    padding-bottom: 13px;
+    position: relative;
+  }
+  footer .layout .wrapper .logo-bottom {
+    margin: 19px 0 15px;
+    grid-column: 1/3;
+    width: 100px;
+  }
+  footer .layout .wrapper p,
+footer .layout .wrapper a {
+    font-size: 14px;
+    line-height: 17px;
+  }
+  footer .layout .wrapper .menu {
+    grid-column: 1;
+    grid-row: 3;
+    gap: 3px;
+    margin: 0;
+  }
+  footer .layout .wrapper .working-hours {
+    grid-column: 1;
+    grid-row: 2;
+    gap: 2px;
+    margin: 0 0 19px 0;
+  }
+  footer .layout .wrapper .column {
+    margin-left: 0;
+    grid-column: 2;
+    grid-row: 2/4;
+    display: flex;
+    flex-direction: column;
+  }
+  footer .layout .wrapper .confidential {
+    margin: 0;
+    order: 2;
+  }
+  footer .layout .wrapper .phones {
+    margin-bottom: 34px;
+    order: 1;
+  }
+  footer .layout .wrapper .phones p {
+    margin-bottom: 3px;
+  }
+  footer .layout .wrapper .payment-methods {
+    order: 3;
+    position: absolute;
+    bottom: 0;
+    left: 45.3%;
+  }
+  footer .layout .wrapper .payment-methods ul {
+    gap: 14px;
+  }
+  footer .layout .wrapper .payment-methods ul li.mastercard {
+    width: 37px;
+    height: 24px;
+    order: 1;
+  }
+  footer .layout .wrapper .payment-methods ul li.mastercard:hover a {
+    background: url(../images/icon-360-mastercard-hover.png) no-repeat;
+  }
+  footer .layout .wrapper .payment-methods ul li.visa {
+    width: 54px;
+    height: 18px;
+    order: 3;
+  }
+  footer .layout .wrapper .payment-methods ul li.apple-pay {
+    width: 59px;
+    height: 24px;
+    order: 2;
+  }
+  footer .layout .wrapper .payment-methods ul li a img.desktop {
+    display: none;
+  }
+  footer .layout .wrapper .payment-methods ul li a img.mobile {
+    display: block;
+  }
+  footer .layout .wrapper .payment-methods ul li:hover a img {
+    display: none;
+  }
 }
