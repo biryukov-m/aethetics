@@ -3,11 +3,300 @@ main,
 #content,
 #sidebar,
 aside,
-section{
-	@include box;
+header,
+main,
+footer,
+section {
+  @include box;
 }
 .layout {
-	@include box;
-	width:1170px;
-	margin:0 auto;
+  @include box;
+  width: 1074px;
+  margin: 0 auto;
+}
+#wrapper {
+  max-width: 1920px;
+  margin: 0 auto;
+  overflow: none;
+  height: 100%;
+}
+
+@media (min-width: 320px) and (max-width: 374px) {
+  #wrapper {
+    max-width: 100%;
+  }
+  .layout {
+    max-width: 324px;
+    margin: 0 auto 0 auto;
+  }
+}
+
+#content {
+  display: block;
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+}
+
+:root {
+  --creamy: #fffbf5;
+  --accent: #4b6049;
+  --text: #484847;
+}
+
+h2 {
+  font-family: "Poiret One";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 60px;
+  line-height: 70px;
+  color: var(--text);
+}
+
+h3 {
+  font-family: "Candara";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 40px;
+  line-height: 49px;
+  color: var(--text);
+}
+
+h4 {
+  font-family: "Candara";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 26px;
+  line-height: 32px;
+  color: var(--text);
+}
+
+p {
+  font-family: "Candara";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 24px;
+  color: var(--text);
+}
+
+.btn {
+  display: block;
+  width: 219px;
+  height: 59px;
+  background: var(--accent);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  position: relative;
+  transition: transform 0.2s ease-in;
+  font-family: "Candara";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 26px;
+  padding-bottom: 6px;
+  color: var(--creamy);
+  &::before {
+    content: "";
+    display: block;
+    position: absolute;
+    box-sizing: border-box;
+    transform: translate(8px, -8px);
+    border: 1px solid var(--accent);
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    transition: transform 0.2s ease-in;
+  }
+  &:hover {
+    transform: translate(8px, -8px);
+    &::before {
+      transform: none;
+    }
+  }
+}
+
+.btn-mini {
+  background: var(--accent);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  position: relative;
+  transition: transform 0.2s ease-in;
+  width: 97px;
+  height: 25px;
+  margin-right: 4px;
+  margin-top: 2px;
+  &::before {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 96px;
+    height: 25px;
+    border: 1px solid var(--accent);
+    transition: transform 0.2s ease-in;
+    transform: translate(4px, -4px);
+  }
+  &:hover {
+    transform: translate(4px, -4px);
+    &::before {
+      transform: none;
+    }
+  }
+  span {
+    font-family: "Candara";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 26px;
+    color: var(--creamy);
+    font-size: 14px;
+    line-height: 150%;
+    padding-bottom: 3px;
+  }
+}
+
+.btn-arrow-right {
+  width: 200px;
+  height: 50px;
+  border: 2px solid var(--accent);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  position: relative;
+  transition: transform 0.2s ease-in;
+  span {
+    font-family: "Candara";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    padding-bottom: 6px;
+    color: var(--accent);
+    position: relative;
+    left: -1px;
+  }
+  &::before {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 71px;
+    height: 12px;
+    background: url("../images/icon-button-arrow-right.png");
+    right: -38px;
+    transition: transform 0.2s ease-in;
+  }
+  &:hover::before {
+    transform: translate(4px, 0);
+  }
+}
+
+.btn-arrow-bottom {
+  width: 200px;
+  height: 50px;
+  border: 2px solid var(--accent);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  position: relative;
+  transition: transform 0.2s ease-in;
+  margin-bottom: 20px;
+  span {
+    font-family: "Candara";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    padding-bottom: 6px;
+    color: var(--accent);
+    position: relative;
+    left: -1px;
+  }
+  &::before {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 12px;
+    height: 31px;
+    background: url("../images/icon-button-arrow-bottom.png");
+    bottom: -18px;
+    transition: transform 0.2s ease-in;
+  }
+  &:hover::before {
+    transform: translate(0, 4px);
+  }
+}
+
+.btn-white {
+  width: 200px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Candara";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 24px;
+  color: var(--accent);
+  border: 1px solid var(--accent);
+  transition: all 150ms ease-in;
+  &:hover {
+    background-color: var(--creamy);
+  }
+}
+
+@media (min-width: 320px) and (max-width: 374px) {
+  .btn {
+    width: 132px;
+    height: 42px;
+    span {
+      font-size: 18px;
+      padding-bottom: 4px;
+    }
+    &::before {
+      transform: translate(4px, -4px);
+      width: 130px;
+      height: 40px;
+    }
+    &:hover {
+      transform: translate(4px, -4px);
+    }
+  }
+
+  .btn-arrow-right {
+    width: 132px;
+    height: 42px;
+    border: 1px solid var(--accent);
+    span {
+      font-size: 18px;
+      padding-bottom: 4px;
+      left: -1px;
+    }
+    &::before {
+      width: 30px;
+      height: 7px;
+      background-size: cover;
+      right: -16px;
+      background-position-x: -11px;
+    }
+  }
+
+  .btn-arrow-bottom {
+    width: 132px;
+    height: 42px;
+    border: 1px solid var(--accent);
+    margin-bottom: 0;
+    span {
+      font-size: 20px;
+      line-height: 24px;
+      padding-bottom: 6px;
+      left: -1px;
+    }
+    &::before {
+      display: none;
+    }
+  }
 }
