@@ -1,0 +1,13 @@
+#wrapper,
+main,
+#content,
+#sidebar,
+aside,
+section{
+	@include box;
+}
+.layout {
+	@include box;
+	width:1170px;
+	margin:0 auto;
+}
