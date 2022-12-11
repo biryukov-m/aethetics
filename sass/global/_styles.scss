@@ -304,3 +304,14 @@ p {
     }
   }
 }
+.go-back {
+  display: block;
+  width: 36px;
+  height: 36px;
+  margin-bottom: 14px;
+  background: url("../images/icon-product-card-back-arrow-left.png") no-repeat;
+  transition: transform 0.2s ease-in;
+  &:hover {
+    transform: translate(-2px, 0);
+  }
+}

@@ -3,20 +3,6 @@
   margin-top: -1px;
   .layout {
     overflow: visible;
-    .top-controls {
-      margin-bottom: 14px;
-      .go-back {
-        display: block;
-        width: 36px;
-        height: 36px;
-        background: url("../images/icon-product-card-back-arrow-left.png")
-          no-repeat;
-        transition: transform 0.2s ease-in;
-        &:hover {
-          transform: translate(-2px, 0);
-        }
-      }
-    }
     .flex {
       display: flex;
       gap: 3px;

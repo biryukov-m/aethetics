@@ -513,6 +513,18 @@ p {
   background-image: url("../images/icon-star-rating.png");
 }
 
+.go-back {
+  display: block;
+  width: 36px;
+  height: 36px;
+  margin-bottom: 14px;
+  background: url("../images/icon-product-card-back-arrow-left.png") no-repeat;
+  transition: transform 0.2s ease-in;
+}
+.go-back:hover {
+  transform: translate(-2px, 0);
+}
+
 header {
   display: block;
   position: relative;
@@ -1250,19 +1262,6 @@ header .interface ul li.basket a:hover {
 .product-card .layout {
   overflow: visible;
 }
-.product-card .layout .top-controls {
-  margin-bottom: 14px;
-}
-.product-card .layout .top-controls .go-back {
-  display: block;
-  width: 36px;
-  height: 36px;
-  background: url("../images/icon-product-card-back-arrow-left.png") no-repeat;
-  transition: transform 0.2s ease-in;
-}
-.product-card .layout .top-controls .go-back:hover {
-  transform: translate(-2px, 0);
-}
 .product-card .layout .flex {
   display: flex;
   gap: 3px;
@@ -1459,6 +1458,43 @@ header .interface ul li.basket a:hover {
 }
 .delivery-and-payment .layout .wrapper article .content p {
   margin-bottom: 24px;
+}
+
+.blog .layout {
+  max-width: 1074px;
+}
+.blog .layout .go-back {
+  margin: 18px 0 -9px;
+}
+.blog .layout h2 {
+  margin-left: 66px;
+  margin-bottom: 30px;
+  font-family: "Candara";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 40px;
+  line-height: 49px;
+}
+.blog .layout .text-with-image {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+.blog .layout .text-with-image.left {
+  flex-direction: row-reverse;
+}
+.blog .layout .text-with-image .text {
+  width: 49%;
+}
+.blog .layout .text-with-image .text p {
+  margin: 51px 0 0;
+}
+.blog .layout .text-with-image .image-holder {
+  width: 48%;
+}
+.blog .layout p {
+  line-height: 24px;
+  margin-bottom: 72px;
 }
 
 footer {
