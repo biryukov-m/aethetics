@@ -1,12 +1,14 @@
 .blog {
+  margin-bottom: -4px;
   .layout {
     max-width: 1074px;
+    width: auto;
     .go-back {
       margin: 18px 0 -9px;
     }
     h2 {
       margin-left: 66px;
-      margin-bottom: 30px;
+      margin-bottom: 35px;
       font-family: "Candara";
       font-style: normal;
       font-weight: 400;
@@ -16,26 +18,26 @@
     .text-with-image {
       display: flex;
       justify-content: space-between;
-      margin-bottom: 30px;
+      margin-bottom: 24px;
       &.left {
         flex-direction: row-reverse;
       }
       .text {
-        width: 49%;
-
+        width: 51.4%;
+        margin: 48px 0 0;
         p {
-          margin: 51px 0 0;
+          margin-bottom: 24px;
         }
       }
       .image-holder {
-        width: 48%;
+        width: 46.6%;
         img {
         }
       }
     }
     p {
       line-height: 24px;
-      margin-bottom: 72px;
+      margin-bottom: 75px;
     }
   }
 }

@@ -1460,15 +1460,19 @@ header .interface ul li.basket a:hover {
   margin-bottom: 24px;
 }
 
+.blog {
+  margin-bottom: -4px;
+}
 .blog .layout {
   max-width: 1074px;
+  width: auto;
 }
 .blog .layout .go-back {
   margin: 18px 0 -9px;
 }
 .blog .layout h2 {
   margin-left: 66px;
-  margin-bottom: 30px;
+  margin-bottom: 35px;
   font-family: "Candara";
   font-style: normal;
   font-weight: 400;
@@ -1478,23 +1482,24 @@ header .interface ul li.basket a:hover {
 .blog .layout .text-with-image {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 30px;
+  margin-bottom: 24px;
 }
 .blog .layout .text-with-image.left {
   flex-direction: row-reverse;
 }
 .blog .layout .text-with-image .text {
-  width: 49%;
+  width: 51.4%;
+  margin: 48px 0 0;
 }
 .blog .layout .text-with-image .text p {
-  margin: 51px 0 0;
+  margin-bottom: 24px;
 }
 .blog .layout .text-with-image .image-holder {
-  width: 48%;
+  width: 46.6%;
 }
 .blog .layout p {
   line-height: 24px;
-  margin-bottom: 72px;
+  margin-bottom: 75px;
 }
 
 footer {
