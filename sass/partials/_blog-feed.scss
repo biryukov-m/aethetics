@@ -1,4 +1,4 @@
-.blog {
+.blog-feed {
   margin-bottom: 95px;
   article {
     display: flex;
@@ -34,7 +34,7 @@
 }
 
 @media (min-width: 320px) and (max-width: 374px) {
-  .blog {
+  .blog-feed {
     margin-bottom: 38px;
     .layout {
       max-width: 328px;
