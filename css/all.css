@@ -1408,6 +1408,59 @@ header .interface ul li.basket a:hover {
   margin-bottom: 35px;
 }
 
+.delivery-and-payment {
+  margin: 70px 0;
+}
+.delivery-and-payment .layout {
+  width: auto;
+  max-width: 950px;
+}
+.delivery-and-payment .layout .wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 70px;
+}
+.delivery-and-payment .layout .wrapper article:nth-of-type(2n) .header {
+  float: none;
+}
+.delivery-and-payment .layout .wrapper article .header {
+  float: right;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  justify-content: center;
+  padding: 0 36px 0 48px;
+  width: 398px;
+  height: 120px;
+  background: #4b6049;
+}
+.delivery-and-payment .layout .wrapper article .header h3 {
+  font-family: "Candara";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 26px;
+  line-height: 32px;
+  color: #fffbf5;
+}
+.delivery-and-payment .layout .wrapper article .header p {
+  font-family: "Candara";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 150%;
+  color: #fffbf5;
+}
+.delivery-and-payment .layout .wrapper article .content {
+  padding: 25px 29px;
+  border: 1px solid #4b6049;
+  width: 100%;
+  height: 448px;
+  overflow-y: auto;
+}
+.delivery-and-payment .layout .wrapper article .content p {
+  margin-bottom: 24px;
+}
+
 footer {
   background: var(--accent);
   padding-bottom: 11px;
