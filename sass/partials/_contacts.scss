@@ -19,6 +19,37 @@
         padding: 17px 28px 20px 20px;
         background: rgba(75, 96, 73, 0.3);
         backdrop-filter: blur(7.5px);
+        .hide {
+          display: none;
+        }
+        .calling {
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          gap: 3px;
+          h2 {
+            font-family: "Poiret One";
+            font-style: normal;
+            font-weight: 400;
+            font-size: 60px;
+            line-height: 70px;
+            color: $creamy;
+          }
+          h3 {
+            font-family: "Poiret One";
+            font-style: normal;
+            font-weight: 400;
+            font-size: 40px;
+            line-height: 47px;
+            color: #ffffff;
+          }
+        }
         .working-info {
           position: relative;
           padding-bottom: 9px;
@@ -94,10 +125,6 @@
                 font-size: 20px;
                 line-height: 150%;
                 color: #b2b2b2;
-              }
-              &.text {
-              }
-              &.tel {
               }
             }
             button {
