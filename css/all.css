@@ -447,7 +447,7 @@ p {
   background-color: var(--creamy);
 }
 
-@media (min-width: 320px) and (max-width: 374px) {
+@media (max-width: 767px) {
   .btn {
     width: 132px;
     height: 42px;
@@ -537,11 +537,6 @@ header {
   height: auto;
   margin-top: 11px;
 }
-@media (max-width: 1000px) {
-  header {
-    margin-top: 5px;
-  }
-}
 @media (max-width: 767px) {
   header {
     margin-top: 0;
@@ -556,7 +551,12 @@ header .layout .wrapper .logo {
   width: 246px;
   max-height: 144px;
 }
-@media (max-width: 1000px) {
+@media (max-width: 1279px) {
+  header .layout .wrapper .logo {
+    width: 25%;
+  }
+}
+@media (max-width: 767px) {
   header .layout .wrapper .logo {
     width: 150px;
   }
@@ -570,10 +570,9 @@ header .layout .wrapper .logo h1 {
   display: none;
 }
 header .layout .wrapper nav {
+  padding: 1px 18px;
   border-bottom: solid 1px var(--accent);
-  padding: 0 18px;
   margin: 0 15px;
-  height: 32px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -581,10 +580,10 @@ header .layout .wrapper nav {
 }
 @media (max-width: 1279px) {
   header .layout .wrapper nav {
-    padding: 0 10px;
+    padding: 1px 10px;
   }
 }
-@media (max-width: 1000px) {
+@media (max-width: 767px) {
   header .layout .wrapper nav {
     display: none;
   }
@@ -592,27 +591,24 @@ header .layout .wrapper nav {
 header .layout .wrapper nav ul {
   display: flex;
   gap: 25px;
-  height: 32px;
 }
 @media (max-width: 1279px) {
   header .layout .wrapper nav ul {
-    gap: 15px;
+    gap: 10px;
   }
 }
 header .layout .wrapper nav ul li a {
-  color: var(--text);
-  font-family: "Candara";
-  font-weight: 200;
-  font-size: 26px;
-  color: var(--text);
-  cursor: pointer;
-  letter-spacing: -0.19px;
   display: block;
+  cursor: pointer;
+  font-family: "Candara";
+  font-size: 26px;
+  line-height: 110%;
+  font-weight: 200;
+  color: var(--text);
 }
-@media (max-width: 767px) {
+@media (max-width: 1279px) {
   header .layout .wrapper nav ul li a {
-    width: 24px;
-    height: 24px;
+    font-size: 2.38vw;
   }
 }
 header .layout .wrapper nav ul li a:hover {
@@ -646,10 +642,16 @@ header .layout .wrapper .interface ul li a {
   background-position: center;
   background-size: contain;
 }
+@media (max-width: 767px) {
+  header .layout .wrapper .interface ul li a {
+    width: 24px;
+    height: 24px;
+  }
+}
 header .layout .wrapper .interface ul li.burger {
   display: none;
 }
-@media (max-width: 1000px) {
+@media (max-width: 767px) {
   header .layout .wrapper .interface ul li.burger {
     display: block;
   }
@@ -663,7 +665,7 @@ header .layout .wrapper .interface ul li.to-cabinet a {
 header .layout .wrapper .interface ul li.to-cabinet a:hover {
   background-image: url(../images/icon-cabinet-hover.png);
 }
-@media (max-width: 1000px) {
+@media (max-width: 767px) {
   header .layout .wrapper .interface ul li.favourite {
     display: none;
   }
@@ -682,77 +684,103 @@ header .layout .wrapper .interface ul li.basket a:hover {
 }
 
 /* First view */
-.first-view .layout {
-  overflow: visible;
+.first-view {
+  padding-bottom: 75px;
 }
-.first-view .layout .wrapper {
-  display: flex;
+@media (max-width: 1279px) {
+  .first-view {
+    padding-bottom: 6vw;
+  }
 }
-.first-view .layout .wrapper article {
-  margin-top: 75px;
-  z-index: 2;
+@media (max-width: 767px) {
+  .first-view {
+    padding-bottom: 40px;
+  }
 }
-.first-view .layout .wrapper article h2 {
-  width: 570px;
-  margin-bottom: 89px;
-  letter-spacing: -0.9px;
+.first-view .image-holder {
+  position: absolute;
+  left: 52.2%;
+  top: 0;
+  bottom: 0;
 }
-.first-view .layout .wrapper article h4 {
-  width: 490px;
-  margin-bottom: 103px;
+@media (max-width: 1279px) {
+  .first-view .image-holder {
+    left: 46.2%;
+  }
 }
-.first-view .layout .wrapper article .button-catalogue {
-  margin-bottom: 75px;
+@media (max-width: 767px) {
+  .first-view .image-holder {
+    position: unset;
+  }
 }
-.first-view .layout .wrapper .image-holder {
-  background: url("../images/image-main-page-hero.png") no-repeat -162px;
+.first-view .image-holder img {
   height: 100%;
   width: 100%;
-  position: absolute;
-  left: 50%;
-  right: 0;
+  object-fit: cover;
+  object-position: -204px;
 }
-
-@media (min-width: 320px) and (max-width: 374px) {
-  .first-view .layout {
-    max-width: 100%;
+@media (max-width: 1279px) {
+  .first-view .image-holder img {
+    object-position: -10vw;
   }
-  .first-view .layout .wrapper {
-    flex-direction: column-reverse;
+}
+@media (max-width: 767px) {
+  .first-view .image-holder img {
+    object-position: 50%;
   }
-  .first-view .layout .wrapper article {
-    max-width: 328px;
+}
+.first-view .layout article {
+  margin-top: 75px;
+}
+@media (max-width: 767px) {
+  .first-view .layout article {
+    width: 100%;
     margin: 15px auto 0;
   }
-  .first-view .layout .wrapper article h2 {
+}
+.first-view .layout article h2 {
+  width: 570px;
+  margin-bottom: 89px;
+}
+@media (max-width: 1279px) {
+  .first-view .layout article h2 {
+    font-size: 4.8vw;
+    line-height: 100%;
+    width: 45vw;
+    margin-bottom: 7vw;
+  }
+}
+@media (max-width: 767px) {
+  .first-view .layout article h2 {
     width: 100%;
     margin-bottom: 13px;
     font-size: 32px;
     line-height: 37px;
     font-weight: 600;
-    letter-spacing: 0;
   }
-  .first-view .layout .wrapper article h4 {
+}
+.first-view .layout article h4 {
+  width: 490px;
+  margin-bottom: 103px;
+}
+@media (max-width: 1279px) {
+  .first-view .layout article h4 {
+    font-size: 2.1vw;
+    line-height: 150%;
+    width: 42vw;
+    margin-bottom: 11vw;
+  }
+}
+@media (max-width: 767px) {
+  .first-view .layout article h4 {
     width: 100%;
     margin-bottom: 21px;
     font-size: 18px;
     line-height: 22px;
     letter-spacing: 0.1px;
   }
-  .first-view .layout .wrapper article .button-catalogue {
-    margin-bottom: 40px;
-  }
-  .first-view .layout .wrapper .image-holder {
-    position: relative;
-    left: 0;
-    right: 0;
-    width: 100%;
-    height: 238px;
-    background-image: url("../images/image-360-main-page-hero.png");
-    background-size: contain;
-    background-position: 50% 50%;
-  }
 }
+
 .slider {
   margin-bottom: 100px;
 }

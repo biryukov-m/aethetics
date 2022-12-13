@@ -1,9 +1,7 @@
 header {
   @include box;
   margin-top: 11px;
-  @media (max-width: 1000px) {
-    margin-top: 5px;
-  }
+
   @media (max-width: 767px) {
     margin-top: 0;
   }
@@ -15,7 +13,10 @@ header {
       .logo {
         width: 246px;
         max-height: 144px;
-        @media (max-width: 1000px) {
+        @media (max-width: 1279px) {
+          width: 25%;
+        }
+        @media (max-width: 767px) {
           width: 150px;
         }
         a {
@@ -28,43 +29,41 @@ header {
         }
       }
       nav {
+        padding: 1px 18px;
         border-bottom: solid 1px var(--accent);
-        padding: 0 18px;
         margin: 0 15px;
-        height: 32px;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
         @media (max-width: 1279px) {
-          padding: 0 10px;
+          padding: 1px 10px;
         }
-        @media (max-width: 1000px) {
+        @media (max-width: 767px) {
           display: none;
         }
         ul {
           display: flex;
           gap: 25px;
-          height: 32px;
           @media (max-width: 1279px) {
-            gap: 15px;
+            gap: 10px;
           }
-          li a {
-            color: var(--text);
-            font-family: "Candara";
-            font-weight: 200;
-            font-size: 26px;
-            color: var(--text);
-            cursor: pointer;
-            letter-spacing: -0.19px;
-            display: block;
-            @media (max-width: 767px) {
-              width: 24px;
-              height: 24px;
-            }
-            &:hover {
-              color: var(--accent);
-              transform: translate(0, -2px);
+          li {
+            a {
+              display: block;
+              cursor: pointer;
+              font-family: "Candara";
+              font-size: 26px;
+              line-height: 110%;
+              font-weight: 200;
+              color: var(--text);
+              @media (max-width: 1279px) {
+                font-size: 2.38vw;
+              }
+              &:hover {
+                color: var(--accent);
+                transform: translate(0, -2px);
+              }
             }
           }
         }
@@ -90,11 +89,13 @@ header {
             background-position: center;
             background-size: contain;
             @media (max-width: 767px) {
+              width: 24px;
+              height: 24px;
             }
           }
           li.burger {
             display: none;
-            @media (max-width: 1000px) {
+            @media (max-width: 767px) {
               display: block;
             }
             a {
@@ -108,7 +109,7 @@ header {
             }
           }
           li.favourite {
-            @media (max-width: 1000px) {
+            @media (max-width: 767px) {
               display: none;
             }
             a {

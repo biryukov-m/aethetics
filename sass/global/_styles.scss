@@ -231,8 +231,7 @@ p {
     background-color: var(--creamy);
   }
 }
-
-@media (min-width: 320px) and (max-width: 374px) {
+@media (max-width: 767px) {
   .btn {
     width: 132px;
     height: 42px;
