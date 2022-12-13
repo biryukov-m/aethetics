@@ -1509,6 +1509,92 @@ header .interface ul li.basket a:hover {
   margin-bottom: 75px;
 }
 
+.cabinet {
+  margin-top: 56px 0 10px;
+}
+.cabinet .layout {
+  width: auto;
+  max-width: 928px;
+}
+.cabinet .layout h2 {
+  width: fit-content;
+  margin: 0 auto;
+  font-family: "Candara";
+  font-style: normal;
+  font-weight: 200;
+  font-size: 40px;
+  line-height: 49px;
+  margin-bottom: 22px;
+  color: #484847;
+}
+.cabinet .layout .tabs {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 28px;
+}
+.cabinet .layout .tabs li a {
+  display: block;
+  padding-bottom: 7px;
+  font-family: "Candara";
+  font-style: normal;
+  font-weight: 200;
+  font-size: 26px;
+  color: #484847;
+  cursor: pointer;
+  position: relative;
+}
+.cabinet .layout .tabs li a.active, .cabinet .layout .tabs li a:hover {
+  font-weight: 400;
+  letter-spacing: -0.25px;
+  margin: 0;
+}
+.cabinet .layout .tabs li a.active::before, .cabinet .layout .tabs li a:hover::before {
+  display: block;
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background-color: #484847;
+}
+.cabinet .layout .window form .flex {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 43px;
+}
+.cabinet .layout .window form .flex .column {
+  display: flex;
+  flex-direction: column;
+  width: 368px;
+}
+.cabinet .layout .window form .flex .column label,
+.cabinet .layout .window form .flex .column input,
+.cabinet .layout .window form .flex .column input::placeholder {
+  font-family: "Candara";
+  font-style: normal;
+  font-weight: 200;
+  font-size: 20px;
+  line-height: 150%;
+  color: #484847;
+}
+.cabinet .layout .window form .flex .column input {
+  padding: 10px;
+  color: #484847;
+  margin-bottom: 30px;
+}
+.cabinet .layout .window form .buttons {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+}
+.cabinet .layout .window form .buttons button.exit {
+  position: absolute;
+  right: 18%;
+  top: -130px;
+}
+
 .contacts {
   margin: 20px 0 17px;
 }

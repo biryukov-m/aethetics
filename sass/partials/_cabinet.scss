@@ -1,0 +1,98 @@
+.cabinet {
+  margin-top: 56px 0 10px;
+  .layout {
+    width: auto;
+    max-width: 928px;
+    h2 {
+      width: fit-content;
+      margin: 0 auto;
+      font-family: "Candara";
+      font-style: normal;
+      font-weight: 200;
+      font-size: 40px;
+      line-height: 49px;
+      margin-bottom: 22px;
+      color: $text;
+    }
+    .tabs {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 28px;
+      li {
+        a {
+          display: block;
+          padding-bottom: 7px;
+          font-family: "Candara";
+          font-style: normal;
+          font-weight: 200;
+          font-size: 26px;
+          color: $text;
+          cursor: pointer;
+          position: relative;
+          &.active,
+          &:hover {
+            font-weight: 400;
+            letter-spacing: -0.25px;
+            margin: 0;
+            &::before {
+              display: block;
+              content: "";
+              position: absolute;
+              bottom: 0;
+              left: 0;
+              right: 0;
+              height: 1px;
+              background-color: $text;
+            }
+          }
+        }
+      }
+    }
+    .window {
+      form {
+        .flex {
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+          margin-bottom: 43px;
+          .column {
+            display: flex;
+            flex-direction: column;
+            width: 368px;
+            label,
+            input,
+            input::placeholder {
+              font-family: "Candara";
+              font-style: normal;
+              font-weight: 200;
+              font-size: 20px;
+              line-height: 150%;
+              color: $text;
+            }
+            label {
+            }
+            input {
+              padding: 10px;
+              color: $text;
+              margin-bottom: 30px;
+            }
+          }
+        }
+        .buttons {
+          display: flex;
+          justify-content: space-between;
+          position: relative;
+          button {
+            &[type="submit"] {
+            }
+            &.exit {
+              position: absolute;
+              right: 18%;
+              top: -130px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
