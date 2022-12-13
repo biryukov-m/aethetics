@@ -1,123 +1,128 @@
 header {
   @include box;
-}
-header {
   margin-top: 11px;
-  .layout {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    .logo {
-      width: 246px;
-      max-height: 144px;
-      a {
-        display: block;
-      }
-    }
+  @media (max-width: 1000px) {
+    margin-top: 5px;
   }
-  h1 {
-    text-indent: -1111px;
-    position: absolute;
-    display: none;
-  }
-  nav {
-    border-bottom: solid 1px var(--accent);
-    width: 564px;
-    height: 32px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    ul {
-      display: flex;
-      gap: 25px;
-      height: 32px;
-      li a {
-        color: var(--text);
-        font-family: "Candara";
-        font-weight: 200;
-        font-size: 26px;
-        color: var(--text);
-        cursor: pointer;
-        letter-spacing: -0.19px;
-        display: block;
-        &:hover {
-          color: var(--accent);
-          transform: translate(0, -2px);
-        }
-      }
-    }
-  }
-  .interface {
-    width: 150px;
-    ul {
-      display: flex;
-      justify-content: space-between;
-      li a {
-        display: block;
-        width: 36px;
-        height: 36px;
-        cursor: pointer;
-        background-repeat: no-repeat;
-        background-position: center;
-        background-size: contain;
-      }
-      li.burger {
-        display: none;
-        a {
-          background-image: url(../images/icon-burger.png);
-        }
-      }
-      li.cabinet a {
-        background-image: url(../images/icon-cabinet-default.png);
-        &:hover {
-          background-image: url(../images/icon-cabinet-hover.png);
-        }
-      }
-      li.favourite a {
-        background-image: url(../images/icon-fav-default.png);
-        &:hover {
-          background-image: url(../images/icon-fav-hover.png);
-        }
-      }
-      li.basket a {
-        background-image: url(../images/icon-basket-default.png);
-        &:hover {
-          background-image: url(../images/icon-basket-hover.png);
-        }
-      }
-    }
-  }
-}
-
-@media (min-width: 320px) and (max-width: 374px) {
-  header {
+  @media (max-width: 767px) {
     margin-top: 0;
-    margin-bottom: -5px;
-    .layout {
+  }
+  .layout {
+    .wrapper {
       display: flex;
       justify-content: space-between;
-      align-items: flex-start;
+      align-items: center;
       .logo {
-        width: 150px;
+        width: 246px;
+        max-height: 144px;
+        @media (max-width: 1000px) {
+          width: 150px;
+        }
+        a {
+          display: block;
+        }
+        h1 {
+          text-indent: -1111px;
+          position: absolute;
+          display: none;
+        }
       }
       nav {
-        display: none;
-      }
-      .interface {
-        margin-top: 27px;
+        border-bottom: solid 1px var(--accent);
+        padding: 0 18px;
+        margin: 0 15px;
+        height: 32px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        @media (max-width: 1279px) {
+          padding: 0 10px;
+        }
+        @media (max-width: 1000px) {
+          display: none;
+        }
         ul {
-          gap: 21px;
-          justify-content: flex-end;
-          li.burger {
-            display: block;
-          }
-          li.favourite {
-            display: none;
+          display: flex;
+          gap: 25px;
+          height: 32px;
+          @media (max-width: 1279px) {
+            gap: 15px;
           }
           li a {
-            width: 24px;
-            height: 24px;
+            color: var(--text);
+            font-family: "Candara";
+            font-weight: 200;
+            font-size: 26px;
+            color: var(--text);
+            cursor: pointer;
+            letter-spacing: -0.19px;
+            display: block;
+            @media (max-width: 767px) {
+              width: 24px;
+              height: 24px;
+            }
+            &:hover {
+              color: var(--accent);
+              transform: translate(0, -2px);
+            }
+          }
+        }
+      }
+      .interface {
+        width: 150px;
+        @media (max-width: 767px) {
+          margin-top: 0;
+        }
+        ul {
+          display: flex;
+          justify-content: space-between;
+          @media (max-width: 767px) {
+            gap: 21px;
+            justify-content: flex-end;
+          }
+          li a {
+            display: block;
+            width: 36px;
+            height: 36px;
+            cursor: pointer;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: contain;
+            @media (max-width: 767px) {
+            }
+          }
+          li.burger {
+            display: none;
+            @media (max-width: 1000px) {
+              display: block;
+            }
+            a {
+              background-image: url(../images/icon-burger.png);
+            }
+          }
+          li.to-cabinet a {
+            background-image: url(../images/icon-cabinet-default.png);
+            &:hover {
+              background-image: url(../images/icon-cabinet-hover.png);
+            }
+          }
+          li.favourite {
+            @media (max-width: 1000px) {
+              display: none;
+            }
+            a {
+              background-image: url(../images/icon-fav-default.png);
+              &:hover {
+                background-image: url(../images/icon-fav-hover.png);
+              }
+            }
+          }
+          li.basket a {
+            background-image: url(../images/icon-basket-default.png);
+            &:hover {
+              background-image: url(../images/icon-basket-hover.png);
+            }
           }
         }
       }

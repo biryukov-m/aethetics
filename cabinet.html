@@ -14,44 +14,47 @@
 	<div id="wrapper">
 		<header>
 			<div class="layout">
-				<div class="logo">
-					<a href="./homepage.html">
-						<img src="./images/image-logo-green.png" alt="Aethetics logo">
-					</a>
-					<h1>AETHETICS</h1>
-				</div>
-				<nav>
-					<ul>
-						<li>
-							<a href="./catalog.html">Каталог</a>
-						</li>
-						<li>
-							<a href="/delivery_and_payment.html">Доставка та оплата</a>
-						</li>
-						<li>
-							<a href="./blog.html">Блог</a>
-						</li>
-						<li>
-							<a href="./contacts.html">Контакти</a>
-						</li>
-					</ul>
-				</nav>
-				<div class="interface">
-					<ul>
-						<li class="cabinet">
-							<a href="#">
-							</a>
-						</li>
-						<li class="favourite">
-							<a href="#"></a>
-						</li>
-						<li class="basket">
-							<a href="#"></a>
-						</li>
-						<li class="burger">
-							<a href="#"></a>
-						</li>
-					</ul>
+				<div class="wrapper">
+					<div class="logo">
+						<a href="./homepage.html">
+							<img src="./images/image-logo-green.png" alt="Aethetics logo">
+						</a>
+						<h1>AETHETICS</h1>
+					</div>
+					<nav>
+						<ul>
+							<li>
+								<a href="./catalog.html">Каталог</a>
+							</li>
+							<li>
+								<a href="/delivery_and_payment.html">Доставка та оплата</a>
+							</li>
+							<li>
+								<a href="./blog.html">Блог</a>
+							</li>
+							<li>
+								<a href="./contacts.html">Контакти</a>
+							</li>
+						</ul>
+					</nav>
+					<div class="interface">
+						<ul>
+							<li class="to-cabinet">
+								<a href="#">
+								</a>
+							</li>
+							<li class="favourite">
+								<a href="#"></a>
+							</li>
+
+							<li class="basket">
+								<a href="#"></a>
+							</li>
+							<li class="burger">
+								<a href="#"></a>
+							</li>
+						</ul>
+					</div>
 				</div>
 			</div>
 		</header>
@@ -84,17 +87,16 @@
 										<label for="date-of-birth">Дата народження</label>
 										<input type="text" class="date-of-birth" id="date-of-birth"
 											placeholder="8.10.1989">
+										<button class="btn-arrow-right exit"><span>Вийти</span></button>
 									</div>
 								</div>
-								<div class="buttons">
-									<button type="submit" class="btn">Зберегти</button>
-									<button class="btn-arrow-right exit"><span>Вийти</span></button>
-								</div>
+								<button type="submit" class="btn">Зберегти</button>
 							</form>
 							<form action="post" class="for-address">
 								<div class="flex">
 									<div class="column">
 										<div class="contact">
+											<div class="nth">1</div>
 											<p>Шевченко Світлана</p>
 											<p>Місто Київ</p>
 											<p>Градинська 11б, 85</p>
@@ -103,39 +105,43 @@
 												<a href="#">Редагувати</a>
 												<a href="#">Видалити</a>
 											</div>
-											<div class="contact">
-												<p>Шевченко Світлана</p>
-												<p>Місто Харків</p>
-												<p>Трінклера 18, 65</p>
-												<p>+38 068 564 77 99</p>
-												<div class="links">
-													<a href="#">Редагувати</a>
-													<a href="#">Видалити</a>
-												</div>
+										</div>
+										<div class="contact">
+											<div class="nth">2</div>
+											<p>Шевченко Світлана</p>
+											<p>Місто Харків</p>
+											<p>Трінклера 18, 65</p>
+											<p>+38 068 564 77 99</p>
+											<div class="links">
+												<a href="#">Редагувати</a>
+												<a href="#">Видалити</a>
 											</div>
 										</div>
-										<div class="column">
-											<p>Додати нову адресу:</p>
-											<input type="full-name" class="full-name" id="full-name" placeholder="ПІБ">
-											<input type="text" class="city" id="city" placeholder="Місто">
-											<div class="group">
-												<input type="text" class="street" id="street" placeholder="Вулиця">
-												<input type="text" class="house" id="house" placeholder="Корпус">
-												<input type="text" class="apartment" id="apartment"
-													placeholder="Квартира">
-											</div>
-											<input type="text" class="postal" id="postal"
-												placeholder="Поштове відділення">
-											<input type="tel" class="telephone" id="telephone"
-												placeholder="Номер телефону">
+									</div>
+									<div class="column">
+										<p>Додати нову адресу:</p>
+										<input type="full-name" class="full-name" id="full-name" placeholder="ПІБ">
+										<input type="text" class="city" id="city" placeholder="Місто">
+										<div class="group">
+											<input type="text" class="street" id="street" placeholder="Вулиця">
+											<input type="text" class="house" id="house" placeholder="Корпус">
+											<input type="text" class="apartment" id="apartment" placeholder="Квартира">
 										</div>
+										<input type="text" class="postal" id="postal" placeholder="Поштове відділення">
+										<input type="tel" class="telephone" id="telephone" placeholder="Номер телефону">
 									</div>
 								</div>
 								<button type="submit" class="btn">Зберегти</button>
 							</form>
-						</div>
-						</ul>
+							<ul class="favourites">
+								<li class="item">
+									<div class="image-holder">
+										<img src="" alt="">
+									</div>
+								</li>
 
+							</ul>
+						</div>
 					</div>
 				</section>
 				<section class="bottom-contacts">

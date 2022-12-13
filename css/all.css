@@ -216,23 +216,19 @@ section {
   width: 1074px;
   margin: 0 auto;
 }
+@media (max-width: 1279px) {
+  .layout {
+    width: 96%;
+  }
+}
 
 #wrapper {
-  max-width: 1920px;
+  width: 100%;
   margin: 0 auto;
   overflow: none;
   height: 100%;
 }
 
-@media (min-width: 320px) and (max-width: 374px) {
-  #wrapper {
-    max-width: 100%;
-  }
-  .layout {
-    max-width: 324px;
-    margin: 0 auto 0 auto;
-  }
-}
 #content {
   display: block;
   position: relative;
@@ -539,43 +535,71 @@ header {
   width: 100%;
   box-sizing: border-box;
   height: auto;
-}
-
-header {
   margin-top: 11px;
 }
-header .layout {
+@media (max-width: 1000px) {
+  header {
+    margin-top: 5px;
+  }
+}
+@media (max-width: 767px) {
+  header {
+    margin-top: 0;
+  }
+}
+header .layout .wrapper {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-header .layout .logo {
+header .layout .wrapper .logo {
   width: 246px;
   max-height: 144px;
 }
-header .layout .logo a {
+@media (max-width: 1000px) {
+  header .layout .wrapper .logo {
+    width: 150px;
+  }
+}
+header .layout .wrapper .logo a {
   display: block;
 }
-header h1 {
+header .layout .wrapper .logo h1 {
   text-indent: -1111px;
   position: absolute;
   display: none;
 }
-header nav {
+header .layout .wrapper nav {
   border-bottom: solid 1px var(--accent);
-  width: 564px;
+  padding: 0 18px;
+  margin: 0 15px;
   height: 32px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
-header nav ul {
+@media (max-width: 1279px) {
+  header .layout .wrapper nav {
+    padding: 0 10px;
+  }
+}
+@media (max-width: 1000px) {
+  header .layout .wrapper nav {
+    display: none;
+  }
+}
+header .layout .wrapper nav ul {
   display: flex;
   gap: 25px;
   height: 32px;
 }
-header nav ul li a {
+@media (max-width: 1279px) {
+  header .layout .wrapper nav ul {
+    gap: 15px;
+  }
+}
+header .layout .wrapper nav ul li a {
   color: var(--text);
   font-family: "Candara";
   font-weight: 200;
@@ -585,18 +609,35 @@ header nav ul li a {
   letter-spacing: -0.19px;
   display: block;
 }
-header nav ul li a:hover {
+@media (max-width: 767px) {
+  header .layout .wrapper nav ul li a {
+    width: 24px;
+    height: 24px;
+  }
+}
+header .layout .wrapper nav ul li a:hover {
   color: var(--accent);
   transform: translate(0, -2px);
 }
-header .interface {
+header .layout .wrapper .interface {
   width: 150px;
 }
-header .interface ul {
+@media (max-width: 767px) {
+  header .layout .wrapper .interface {
+    margin-top: 0;
+  }
+}
+header .layout .wrapper .interface ul {
   display: flex;
   justify-content: space-between;
 }
-header .interface ul li a {
+@media (max-width: 767px) {
+  header .layout .wrapper .interface ul {
+    gap: 21px;
+    justify-content: flex-end;
+  }
+}
+header .layout .wrapper .interface ul li a {
   display: block;
   width: 36px;
   height: 36px;
@@ -605,65 +646,41 @@ header .interface ul li a {
   background-position: center;
   background-size: contain;
 }
-header .interface ul li.burger {
+header .layout .wrapper .interface ul li.burger {
   display: none;
 }
-header .interface ul li.burger a {
+@media (max-width: 1000px) {
+  header .layout .wrapper .interface ul li.burger {
+    display: block;
+  }
+}
+header .layout .wrapper .interface ul li.burger a {
   background-image: url(../images/icon-burger.png);
 }
-header .interface ul li.cabinet a {
+header .layout .wrapper .interface ul li.to-cabinet a {
   background-image: url(../images/icon-cabinet-default.png);
 }
-header .interface ul li.cabinet a:hover {
+header .layout .wrapper .interface ul li.to-cabinet a:hover {
   background-image: url(../images/icon-cabinet-hover.png);
 }
-header .interface ul li.favourite a {
+@media (max-width: 1000px) {
+  header .layout .wrapper .interface ul li.favourite {
+    display: none;
+  }
+}
+header .layout .wrapper .interface ul li.favourite a {
   background-image: url(../images/icon-fav-default.png);
 }
-header .interface ul li.favourite a:hover {
+header .layout .wrapper .interface ul li.favourite a:hover {
   background-image: url(../images/icon-fav-hover.png);
 }
-header .interface ul li.basket a {
+header .layout .wrapper .interface ul li.basket a {
   background-image: url(../images/icon-basket-default.png);
 }
-header .interface ul li.basket a:hover {
+header .layout .wrapper .interface ul li.basket a:hover {
   background-image: url(../images/icon-basket-hover.png);
 }
 
-@media (min-width: 320px) and (max-width: 374px) {
-  header {
-    margin-top: 0;
-    margin-bottom: -5px;
-  }
-  header .layout {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-  }
-  header .layout .logo {
-    width: 150px;
-  }
-  header .layout nav {
-    display: none;
-  }
-  header .layout .interface {
-    margin-top: 27px;
-  }
-  header .layout .interface ul {
-    gap: 21px;
-    justify-content: flex-end;
-  }
-  header .layout .interface ul li.burger {
-    display: block;
-  }
-  header .layout .interface ul li.favourite {
-    display: none;
-  }
-  header .layout .interface ul li a {
-    width: 24px;
-    height: 24px;
-  }
-}
 /* First view */
 .first-view .layout {
   overflow: visible;
@@ -1510,7 +1527,7 @@ header .interface ul li.basket a:hover {
 }
 
 .cabinet {
-  margin-top: 56px 0 10px;
+  margin: 51px 0 10px;
 }
 .cabinet .layout {
   width: auto;
@@ -1518,19 +1535,18 @@ header .interface ul li.basket a:hover {
 }
 .cabinet .layout h2 {
   width: fit-content;
-  margin: 0 auto;
+  margin: 0 auto 27px;
   font-family: "Candara";
   font-style: normal;
   font-weight: 200;
   font-size: 40px;
   line-height: 49px;
-  margin-bottom: 22px;
   color: #484847;
 }
 .cabinet .layout .tabs {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 28px;
+  margin-bottom: 24px;
 }
 .cabinet .layout .tabs li a {
   display: block;
@@ -1558,11 +1574,15 @@ header .interface ul li.basket a:hover {
   height: 1px;
   background-color: #484847;
 }
+.cabinet .layout .window form.for-contacts {
+  display: none;
+}
 .cabinet .layout .window form .flex {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  margin-bottom: 43px;
+  gap: 15px;
+  margin-bottom: 24px;
 }
 .cabinet .layout .window form .flex .column {
   display: flex;
@@ -1579,20 +1599,86 @@ header .interface ul li.basket a:hover {
   line-height: 150%;
   color: #484847;
 }
+.cabinet .layout .window form .flex .column label {
+  margin-bottom: 3px;
+}
 .cabinet .layout .window form .flex .column input {
-  padding: 10px;
   color: #484847;
+  padding: 5px 8px 10px;
+  margin-bottom: 28px;
+}
+.cabinet .layout .window form .flex .column:last-of-type input:last-of-type {
+  margin-bottom: 61px;
+}
+.cabinet .layout .window form.for-address .flex {
   margin-bottom: 30px;
 }
-.cabinet .layout .window form .buttons {
+.cabinet .layout .window form.for-address .flex .column:first-of-type {
+  width: 228px;
+}
+.cabinet .layout .window form.for-address .flex .column:last-of-type {
+  margin-right: 7px;
+}
+.cabinet .layout .window form.for-address .flex .column:last-of-type > input:last-of-type {
+  margin-bottom: 0;
+}
+.cabinet .layout .window form.for-address .flex .column .contact {
+  position: relative;
+  padding-left: 60px;
+  margin-bottom: 20px;
+}
+.cabinet .layout .window form.for-address .flex .column .contact .nth {
+  position: absolute;
+  left: 0;
+  top: 3px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  font-family: "Candara";
+  font-weight: 200;
+  font-size: 40px;
+  text-align: center;
+  color: #fff;
+  background-color: #4b6049;
+}
+.cabinet .layout .window form.for-address .flex .column .contact p {
+  margin-bottom: 2px;
+}
+.cabinet .layout .window form.for-address .flex .column .contact p:last-of-type {
+  margin-bottom: 5px;
+}
+.cabinet .layout .window form.for-address .flex .column .contact .links {
   display: flex;
   justify-content: space-between;
-  position: relative;
 }
-.cabinet .layout .window form .buttons button.exit {
-  position: absolute;
-  right: 18%;
-  top: -130px;
+.cabinet .layout .window form.for-address .flex .column .contact .links a {
+  font-family: "Candara";
+  font-style: normal;
+  font-weight: 200;
+  font-size: 18px;
+  line-height: 150%;
+  text-decoration: underline;
+  color: #484847;
+}
+.cabinet .layout .window form.for-address .flex .column .contact .links a:hover {
+  transform: translate(0, -2px);
+  font-weight: 400;
+}
+.cabinet .layout .window form.for-address .flex .column p {
+  margin-bottom: 13px;
+}
+.cabinet .layout .window form.for-address .flex .column input {
+  margin-bottom: 10px;
+}
+.cabinet .layout .window form.for-address .flex .column .group {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+.cabinet .layout .window form.for-address .flex .column .group input {
+  margin: 0;
+  width: 100px;
+  height: 50px;
 }
 
 .contacts {

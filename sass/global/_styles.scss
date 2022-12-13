@@ -13,22 +13,17 @@ section {
   @include box;
   width: 1074px;
   margin: 0 auto;
+  @media (max-width: 1279px) {
+    width: 96%;
+  }
 }
 #wrapper {
-  max-width: 1920px;
+  width: 100%;
   margin: 0 auto;
   overflow: none;
   height: 100%;
 }
-@media (min-width: 320px) and (max-width: 374px) {
-  #wrapper {
-    max-width: 100%;
-  }
-  .layout {
-    max-width: 324px;
-    margin: 0 auto 0 auto;
-  }
-}
+
 #content {
   display: block;
   position: relative;

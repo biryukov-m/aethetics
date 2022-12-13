@@ -1,23 +1,22 @@
 .cabinet {
-  margin-top: 56px 0 10px;
+  margin: 51px 0 10px;
   .layout {
     width: auto;
     max-width: 928px;
     h2 {
       width: fit-content;
-      margin: 0 auto;
+      margin: 0 auto 27px;
       font-family: "Candara";
       font-style: normal;
       font-weight: 200;
       font-size: 40px;
       line-height: 49px;
-      margin-bottom: 22px;
       color: $text;
     }
     .tabs {
       display: flex;
       justify-content: space-between;
-      margin-bottom: 28px;
+      margin-bottom: 24px;
       li {
         a {
           display: block;
@@ -50,11 +49,15 @@
     }
     .window {
       form {
+        &.for-contacts {
+          display: none;
+        }
         .flex {
           display: flex;
           flex-direction: row;
           justify-content: space-between;
-          margin-bottom: 43px;
+          gap: 15px;
+          margin-bottom: 24px;
           .column {
             display: flex;
             flex-direction: column;
@@ -70,25 +73,91 @@
               color: $text;
             }
             label {
+              margin-bottom: 3px;
             }
             input {
-              padding: 10px;
               color: $text;
-              margin-bottom: 30px;
+              padding: 5px 8px 10px;
+              margin-bottom: 28px;
+            }
+            &:last-of-type {
+              input:last-of-type {
+                margin-bottom: 61px;
+              }
             }
           }
         }
-        .buttons {
-          display: flex;
-          justify-content: space-between;
-          position: relative;
-          button {
-            &[type="submit"] {
-            }
-            &.exit {
-              position: absolute;
-              right: 18%;
-              top: -130px;
+        &.for-address {
+          .flex {
+            margin-bottom: 30px;
+            .column {
+              &:first-of-type {
+                width: 228px;
+              }
+              &:last-of-type {
+                margin-right: 7px;
+                > input:last-of-type {
+                  margin-bottom: 0;
+                }
+              }
+              .contact {
+                position: relative;
+                padding-left: 60px;
+                margin-bottom: 20px;
+                .nth {
+                  position: absolute;
+                  left: 0;
+                  top: 3px;
+                  width: 50px;
+                  height: 50px;
+                  border-radius: 50%;
+                  font-family: "Candara";
+                  font-weight: 200;
+                  font-size: 40px;
+                  text-align: center;
+                  color: #fff;
+                  background-color: $accent;
+                }
+                p {
+                  margin-bottom: 2px;
+                  &:last-of-type {
+                    margin-bottom: 5px;
+                  }
+                }
+                .links {
+                  display: flex;
+                  justify-content: space-between;
+                  a {
+                    font-family: "Candara";
+                    font-style: normal;
+                    font-weight: 200;
+                    font-size: 18px;
+                    line-height: 150%;
+                    text-decoration: underline;
+                    color: $text;
+                    &:hover {
+                      transform: translate(0, -2px);
+                      font-weight: 400;
+                    }
+                  }
+                }
+              }
+              p {
+                margin-bottom: 13px;
+              }
+              input {
+                margin-bottom: 10px;
+              }
+              .group {
+                display: flex;
+                justify-content: space-between;
+                margin-bottom: 10px;
+                input {
+                  margin: 0;
+                  width: 100px;
+                  height: 50px;
+                }
+              }
             }
           }
         }
