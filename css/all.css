@@ -683,7 +683,6 @@ header .layout .wrapper .interface ul li.basket a:hover {
   background-image: url(../images/icon-basket-hover.png);
 }
 
-/* First view */
 .first-view {
   padding-bottom: 75px;
 }
@@ -705,7 +704,7 @@ header .layout .wrapper .interface ul li.basket a:hover {
 }
 @media (max-width: 1279px) {
   .first-view .image-holder {
-    left: 46.2%;
+    left: 37%;
   }
 }
 @media (max-width: 767px) {
@@ -784,12 +783,34 @@ header .layout .wrapper .interface ul li.basket a:hover {
 .slider {
   margin-bottom: 100px;
 }
+@media (max-width: 767px) {
+  .slider {
+    margin-bottom: 0;
+  }
+}
 .slider .slide {
   position: relative;
   margin-bottom: 55px;
 }
+@media (max-width: 767px) {
+  .slider .slide {
+    margin-bottom: 38px;
+  }
+}
 .slider .slide img.mobile {
   display: none;
+}
+@media (max-width: 360px) {
+  .slider .slide img.mobile {
+    display: block;
+    width: 360px;
+    margin: 0 auto;
+  }
+}
+@media (max-width: 360px) {
+  .slider .slide img.desktop {
+    display: none;
+  }
 }
 .slider .slide article {
   position: absolute;
@@ -797,18 +818,44 @@ header .layout .wrapper .interface ul li.basket a:hover {
   right: 50%;
   margin-right: 6.3%;
 }
+@media (max-width: 767px) {
+  .slider .slide article {
+    top: 6px;
+    right: 0;
+    margin-right: 0;
+    left: 16px;
+  }
+}
 .slider .slide article h2 {
-  margin-bottom: 53px;
+  margin-bottom: 2.8vw;
   float: right;
+  font-size: 3.2vw;
+  line-height: 110%;
+}
+@media (max-width: 767px) {
+  .slider .slide article h2 {
+    margin-bottom: 33px;
+    font-weight: 400;
+    font-size: 5vw;
+    line-height: 100%;
+    float: none;
+  }
 }
 .slider .slide article h4 {
-  width: 423px;
-  font-family: "Candara";
-  font-style: normal;
+  width: 22.5vw;
   font-weight: 200;
-  font-size: 40px;
-  line-height: 49px;
+  font-size: 2.1vw;
+  line-height: 100%;
   float: right;
+}
+@media (max-width: 767px) {
+  .slider .slide article h4 {
+    max-width: 42.1%;
+    font-size: 3.9vw;
+    line-height: 150%;
+    width: unset;
+    float: none;
+  }
 }
 .slider .slide .slider-controls {
   position: absolute;
@@ -819,14 +866,34 @@ header .layout .wrapper .interface ul li.basket a:hover {
   bottom: 1.5%;
   width: 100%;
 }
+@media (max-width: 767px) {
+  .slider .slide .slider-controls {
+    gap: 15px;
+    bottom: 2.2%;
+  }
+}
 .slider .slide .slider-controls .radio {
   width: 20px;
   height: 20px;
   background: url(../images/icon-radio-unchecked.png);
   cursor: pointer;
 }
+@media (max-width: 767px) {
+  .slider .slide .slider-controls .radio {
+    width: 10px;
+    height: 10px;
+    background-size: cover;
+  }
+}
 .slider .slide .slider-controls .radio.active {
   background: url(../images/icon-radio-checked.png);
+}
+@media (max-width: 767px) {
+  .slider .slide .slider-controls .radio.active {
+    width: 10px;
+    height: 10px;
+    background-size: cover;
+  }
 }
 .slider .slide .slider-controls .radio:hover {
   transform: translate(0, -2px);
@@ -835,66 +902,12 @@ header .layout .wrapper .interface ul li.basket a:hover {
   display: flex;
   justify-content: center;
 }
-
-@media (min-width: 320px) and (max-width: 374px) {
-  .slider {
-    margin-bottom: 0;
-  }
-  .slider .slide {
-    margin-bottom: 38px;
-  }
-  .slider .slide img.mobile {
-    display: block;
-    width: 360px;
-    margin: 0 auto;
-  }
-  .slider .slide img.desktop {
-    display: none;
-  }
-  .slider .slide article {
-    top: 6px;
-    right: 0;
-    margin-right: 0;
-    left: 16px;
-  }
-  .slider .slide article h2 {
-    margin-bottom: 33px;
-    font-family: "Candara";
-    font-style: normal;
-    font-weight: 400;
-    font-size: 18px;
-    line-height: 22px;
-    float: none;
-  }
-  .slider .slide article h4 {
-    max-width: 42.1%;
-    font-size: 14px;
-    line-height: 17px;
-    width: unset;
-    float: none;
-  }
-  .slider .slide .slider-controls {
-    gap: 15px;
-    bottom: 2.2%;
-  }
-  .slider .slide .slider-controls .radio,
-.slider .slide .slider-controls .radio.active {
-    width: 10px;
-    height: 10px;
-    background-size: cover;
-  }
+@media (max-width: 767px) {
   .slider .button-catalogue {
     display: none;
   }
 }
-@media (min-width: 1280px) and (max-width: 1439px) {
-  .slider .slide article h2 {
-    font-size: 50px;
-  }
-  .slider .slide article h4 {
-    font-size: 38px;
-  }
-}
+
 .blog-feed {
   margin-bottom: 95px;
 }
