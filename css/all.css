@@ -1217,6 +1217,7 @@ header .layout .wrapper .interface ul li.basket a:hover {
 .catalogue .items .item {
   width: 260px;
   padding: 13px 13px 8px;
+  border: 2px solid #fff;
 }
 .catalogue .items .item:hover {
   background-color: var(--creamy);
