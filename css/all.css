@@ -608,7 +608,7 @@ header .layout .wrapper nav ul li a {
 }
 @media (max-width: 1279px) {
   header .layout .wrapper nav ul li a {
-    font-size: 2.38vw;
+    font-size: 2.29vw;
   }
 }
 header .layout .wrapper nav ul li a:hover {
@@ -911,80 +911,79 @@ header .layout .wrapper .interface ul li.basket a:hover {
 .blog-feed {
   margin-bottom: 95px;
 }
-.blog-feed article {
+.blog-feed .layout article {
   display: flex;
   flex-direction: row;
   gap: 30px;
   margin-bottom: 120px;
 }
-.blog-feed article:nth-of-type(2n) {
+.blog-feed .layout article:nth-of-type(2n) {
   flex-direction: row-reverse;
   margin-bottom: 208px;
 }
-.blog-feed article:last-of-type {
+.blog-feed .layout article:last-of-type {
   margin-bottom: 97px;
 }
-.blog-feed article .image-holder {
+.blog-feed .layout article .image-holder {
   width: calc((100% - 15px) / 2);
 }
-.blog-feed article .text {
+.blog-feed .layout article .text {
   width: calc((100% - 15px) / 2);
 }
-.blog-feed article .text h3 {
+.blog-feed .layout article .text h3 {
   margin-bottom: 18px;
   line-height: 1;
   color: #000;
 }
-.blog-feed article .text h4 {
+.blog-feed .layout article .text h4 {
   margin-bottom: 15px;
 }
-.blog-feed .button-show-more {
+.blog-feed .layout .button-show-more {
   margin: 0 auto;
   width: fit-content;
 }
-
-@media (min-width: 320px) and (max-width: 374px) {
+@media (max-width: 767px) {
   .blog-feed {
     margin-bottom: 38px;
   }
   .blog-feed .layout {
     max-width: 328px;
   }
-  .blog-feed article {
+  .blog-feed .layout article {
     position: relative;
     display: flex;
     flex-direction: column-reverse;
     gap: 11px;
     margin-bottom: 87px;
   }
-  .blog-feed article:nth-of-type(2n) {
+  .blog-feed .layout article:nth-of-type(2n) {
     flex-direction: column-reverse;
     margin-bottom: 87px;
   }
-  .blog-feed article:last-of-type {
+  .blog-feed .layout article:last-of-type {
     margin-bottom: 88px;
   }
-  .blog-feed article .image-holder {
+  .blog-feed .layout article .image-holder {
     width: 100%;
   }
-  .blog-feed article .text {
+  .blog-feed .layout article .text {
     width: 100%;
   }
-  .blog-feed article .text h3 {
+  .blog-feed .layout article .text h3 {
     margin-bottom: 11px;
     font-size: 18px;
     line-height: 22px;
   }
-  .blog-feed article .text h4 {
+  .blog-feed .layout article .text h4 {
     margin-bottom: 0;
     font-size: 14px;
     line-height: 17px;
   }
-  .blog-feed .button-show-details {
+  .blog-feed .layout .button-show-details {
     position: absolute;
     bottom: -49px;
   }
-  .blog-feed .button-show-more {
+  .blog-feed .layout .button-show-more {
     margin: 0 auto;
     width: fit-content;
   }
@@ -1029,7 +1028,7 @@ header .layout .wrapper .interface ul li.basket a:hover {
   max-height: 100%;
 }
 
-@media (min-width: 320px) and (max-width: 374px) {
+@media (max-width: 767px) {
   .bottom-contacts {
     margin-bottom: 3px;
   }
@@ -1992,7 +1991,7 @@ footer .layout .wrapper .payment-methods ul li:hover a img {
   display: none;
 }
 
-@media (min-width: 320px) and (max-width: 374px) {
+@media (max-width: 767px) {
   footer .layout {
     max-width: 328px;
   }
