@@ -1957,13 +1957,31 @@ footer {
   background: var(--accent);
   padding-bottom: 11px;
 }
+@media (max-width: 767px) {
+  footer .layout {
+    width: 96%;
+  }
+}
 footer .layout .wrapper {
   display: grid;
   grid-template-columns: 248px max-content max-content 1fr;
 }
+@media (max-width: 767px) {
+  footer .layout .wrapper {
+    grid-template-columns: 47.5% 1fr;
+    padding-bottom: 13px;
+    position: relative;
+  }
+}
 footer .layout .wrapper .logo-bottom {
   margin-top: 29px;
   margin-left: 15px;
+}
+@media (max-width: 767px) {
+  footer .layout .wrapper .logo-bottom {
+    margin: 19px 0 15px;
+    grid-column: 1/3;
+  }
 }
 footer .layout .wrapper p,
 footer .layout .wrapper a {
@@ -1974,12 +1992,27 @@ footer .layout .wrapper a {
   line-height: 24px;
   color: var(--creamy);
 }
+@media (max-width: 767px) {
+  footer .layout .wrapper p,
+footer .layout .wrapper a {
+    font-size: 14px;
+    line-height: 17px;
+  }
+}
 footer .layout .wrapper .menu {
   display: flex;
   flex-direction: column;
   gap: 9px;
   margin-top: 38px;
   margin-left: 87px;
+}
+@media (max-width: 767px) {
+  footer .layout .wrapper .menu {
+    grid-column: 1;
+    grid-row: 3;
+    gap: 3px;
+    margin: 0;
+  }
 }
 footer .layout .wrapper .menu li a {
   display: block;
@@ -1991,6 +2024,12 @@ footer .layout .wrapper .menu li a:hover {
 footer .layout .wrapper .confidential {
   margin-top: 36px;
   margin-bottom: 9px;
+}
+@media (max-width: 767px) {
+  footer .layout .wrapper .confidential {
+    margin: 0;
+    order: 2;
+  }
 }
 footer .layout .wrapper .confidential a {
   display: block;
@@ -2006,20 +2045,61 @@ footer .layout .wrapper .working-hours {
   margin-top: 38px;
   margin-left: 37px;
 }
+@media (max-width: 767px) {
+  footer .layout .wrapper .working-hours {
+    grid-column: 1;
+    grid-row: 2;
+    gap: 2px;
+    margin: 0 0 19px 0;
+  }
+}
 footer .layout .wrapper .column {
   margin-left: 50px;
+}
+@media (max-width: 767px) {
+  footer .layout .wrapper .column {
+    margin-left: 0;
+    grid-column: 2;
+    grid-row: 2/4;
+    display: flex;
+    flex-direction: column;
+  }
 }
 footer .layout .wrapper .phones {
   margin-bottom: 24px;
 }
+@media (max-width: 767px) {
+  footer .layout .wrapper .phones {
+    margin-bottom: 34px;
+    order: 1;
+  }
+}
 footer .layout .wrapper .phones p {
   margin-bottom: 6px;
+}
+@media (max-width: 767px) {
+  footer .layout .wrapper .phones p {
+    margin-bottom: 3px;
+  }
+}
+@media (max-width: 767px) {
+  footer .layout .wrapper .payment-methods {
+    order: 3;
+    position: absolute;
+    bottom: 0;
+    left: 45.3%;
+  }
 }
 footer .layout .wrapper .payment-methods ul {
   display: flex;
   gap: 25px;
   justify-content: flex-end;
   align-items: center;
+}
+@media (max-width: 767px) {
+  footer .layout .wrapper .payment-methods ul {
+    gap: 14px;
+  }
 }
 footer .layout .wrapper .payment-methods ul li {
   display: block;
@@ -2029,13 +2109,32 @@ footer .layout .wrapper .payment-methods ul li.mastercard {
   width: 52px;
   height: 32px;
 }
+@media (max-width: 767px) {
+  footer .layout .wrapper .payment-methods ul li.mastercard {
+    width: 37px;
+    height: 24px;
+    order: 1;
+  }
+}
 footer .layout .wrapper .payment-methods ul li.mastercard:hover a {
   background: url(../images/icon-mastercard-hover.png);
   background-size: cover;
 }
+@media (max-width: 767px) {
+  footer .layout .wrapper .payment-methods ul li.mastercard:hover a {
+    background: url(../images/icon-360-mastercard-hover.png) no-repeat;
+  }
+}
 footer .layout .wrapper .payment-methods ul li.visa {
   width: 77px;
   height: 26px;
+}
+@media (max-width: 767px) {
+  footer .layout .wrapper .payment-methods ul li.visa {
+    width: 54px;
+    height: 18px;
+    order: 3;
+  }
 }
 footer .layout .wrapper .payment-methods ul li.visa:hover a {
   background: url(../images/icon-visa-hover.png);
@@ -2044,6 +2143,13 @@ footer .layout .wrapper .payment-methods ul li.visa:hover a {
 footer .layout .wrapper .payment-methods ul li.apple-pay {
   width: 83px;
   height: 34px;
+}
+@media (max-width: 767px) {
+  footer .layout .wrapper .payment-methods ul li.apple-pay {
+    width: 59px;
+    height: 24px;
+    order: 2;
+  }
 }
 footer .layout .wrapper .payment-methods ul li.apple-pay:hover a {
   background: url(../images/icon-apay-hover.png);
@@ -2061,93 +2167,16 @@ footer .layout .wrapper .payment-methods ul li a img {
 footer .layout .wrapper .payment-methods ul li a img.mobile {
   display: none;
 }
-footer .layout .wrapper .payment-methods ul li:hover a img {
-  display: none;
-}
-
 @media (max-width: 767px) {
-  footer .layout {
-    max-width: 328px;
-  }
-  footer .layout .wrapper {
-    grid-template-columns: 47.5% 1fr;
-    padding-bottom: 13px;
-    position: relative;
-  }
-  footer .layout .wrapper .logo-bottom {
-    margin: 19px 0 15px;
-    grid-column: 1/3;
-    width: 100px;
-  }
-  footer .layout .wrapper p,
-footer .layout .wrapper a {
-    font-size: 14px;
-    line-height: 17px;
-  }
-  footer .layout .wrapper .menu {
-    grid-column: 1;
-    grid-row: 3;
-    gap: 3px;
-    margin: 0;
-  }
-  footer .layout .wrapper .working-hours {
-    grid-column: 1;
-    grid-row: 2;
-    gap: 2px;
-    margin: 0 0 19px 0;
-  }
-  footer .layout .wrapper .column {
-    margin-left: 0;
-    grid-column: 2;
-    grid-row: 2/4;
-    display: flex;
-    flex-direction: column;
-  }
-  footer .layout .wrapper .confidential {
-    margin: 0;
-    order: 2;
-  }
-  footer .layout .wrapper .phones {
-    margin-bottom: 34px;
-    order: 1;
-  }
-  footer .layout .wrapper .phones p {
-    margin-bottom: 3px;
-  }
-  footer .layout .wrapper .payment-methods {
-    order: 3;
-    position: absolute;
-    bottom: 0;
-    left: 45.3%;
-  }
-  footer .layout .wrapper .payment-methods ul {
-    gap: 14px;
-  }
-  footer .layout .wrapper .payment-methods ul li.mastercard {
-    width: 37px;
-    height: 24px;
-    order: 1;
-  }
-  footer .layout .wrapper .payment-methods ul li.mastercard:hover a {
-    background: url(../images/icon-360-mastercard-hover.png) no-repeat;
-  }
-  footer .layout .wrapper .payment-methods ul li.visa {
-    width: 54px;
-    height: 18px;
-    order: 3;
-  }
-  footer .layout .wrapper .payment-methods ul li.apple-pay {
-    width: 59px;
-    height: 24px;
-    order: 2;
-  }
-  footer .layout .wrapper .payment-methods ul li a img.desktop {
-    display: none;
-  }
   footer .layout .wrapper .payment-methods ul li a img.mobile {
     display: block;
   }
-  footer .layout .wrapper .payment-methods ul li:hover a img {
+}
+@media (max-width: 767px) {
+  footer .layout .wrapper .payment-methods ul li a img.desktop {
     display: none;
   }
+}
+footer .layout .wrapper .payment-methods ul li:hover a img {
+  display: none;
 }
