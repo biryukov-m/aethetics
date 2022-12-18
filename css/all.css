@@ -1169,7 +1169,8 @@ header .layout .wrapper .interface ul li.basket a:hover {
   gap: 6px;
 }
 .catalogue .flex .filters {
-  min-width: 228px;
+  flex-basis: 228px;
+  flex-shrink: 0;
 }
 @media (max-width: 1056px) {
   .catalogue .flex .filters {
@@ -1283,8 +1284,9 @@ header .layout .wrapper .interface ul li.basket a:hover {
 .catalogue .flex .filters .group ul li.checked:before {
   background: url(../images/icon-checkbox-alt-checked.png);
 }
-.catalogue .items {
+.catalogue .flex .column .items {
   display: flex;
+  width: 100%;
   flex-direction: row;
   margin-bottom: 44px;
   margin-top: 2px;
@@ -1292,64 +1294,76 @@ header .layout .wrapper .interface ul li.basket a:hover {
   row-gap: 30px;
   justify-content: space-between;
 }
-@media (max-width: 1279px) {
-  .catalogue .items {
+@media (max-width: 1056px) {
+  .catalogue .flex .column .items {
+    row-gap: 15px;
     justify-content: space-evenly;
   }
 }
-.catalogue .items .item {
+.catalogue .flex .column .items .item {
   width: 260px;
   padding: 13px 13px 8px;
   border: 2px solid #fff;
 }
 @media (max-width: 1056px) {
-  .catalogue .items .item {
-    width: 24vw;
+  .catalogue .flex .column .items .item {
+    width: clamp(156px, 24vw, 260px);
+    padding: 5px 5px 10px;
+    border: 1px solid #fff;
   }
 }
-.catalogue .items .item:hover {
+.catalogue .flex .column .items .item:hover {
   border: 1px solid var(--accent);
 }
-.catalogue .items .item .image-holder {
+.catalogue .flex .column .items .item .image-holder {
   width: 100%;
   position: relative;
   margin-bottom: 8px;
 }
-.catalogue .items .item .image-holder img {
+.catalogue .flex .column .items .item .image-holder img {
   background-size: cover;
 }
-.catalogue .items .item .heart {
+.catalogue .flex .column .items .item .heart {
   display: block;
   position: absolute;
   right: 0;
-  top: 1px;
+  top: 0;
   width: 36px;
   height: 36px;
   background: url("../images/icon-fav-default.png") no-repeat;
   background-position: center;
   cursor: pointer;
 }
-.catalogue .items .item .heart:hover {
+@media (max-width: 1056px) {
+  .catalogue .flex .column .items .item .heart {
+    right: 5.3%;
+    width: 24px;
+    height: 24px;
+    background-size: cover;
+  }
+}
+.catalogue .flex .column .items .item .heart:hover {
   background-image: url("../images/icon-fav-alt-hover.png");
-  top: 3px;
 }
-.catalogue .items .item .name {
+.catalogue .flex .column .items .item .name {
   margin-bottom: 3px;
-  height: 60px;
+  height: clamp(48px, 5.7vw, 60px);
 }
-.catalogue .items .item .name p {
-  line-height: 150%;
-}
-.catalogue .items .item .price {
+.catalogue .flex .column .items .item .price {
   text-align: end;
   margin-bottom: 21px;
 }
-.catalogue .items .item .controls {
+.catalogue .flex .column .items .item .name p,
+.catalogue .flex .column .items .item .price p {
+  font-size: clamp(14px, 1.9vw, 20px);
+  line-height: clamp(120%, 2vw, 150%);
+}
+.catalogue .flex .column .items .item .controls {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-.catalogue .items .item .controls a {
+.catalogue .flex .column .items .item .controls a {
   font-family: "Candara";
   font-style: normal;
   font-weight: 400;
@@ -1358,7 +1372,7 @@ header .layout .wrapper .interface ul li.basket a:hover {
   cursor: pointer;
   color: var(--text);
 }
-.catalogue .items .item .controls a:hover {
+.catalogue .flex .column .items .item .controls a:hover {
   font-weight: 600;
 }
 .catalogue .button-show-more {

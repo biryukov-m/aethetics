@@ -47,12 +47,11 @@
     display: flex;
     gap: 6px;
     .filters {
-      min-width: 228px;
+      flex-basis: 228px;
+      flex-shrink: 0;
       @media (max-width: 1056px) {
         display: none;
       }
-
-      // display: none;
       .group {
         margin-bottom: 8px;
         &.inactive {
@@ -167,76 +166,89 @@
         }
       }
     }
-  }
-  .items {
-    display: flex;
-    flex-direction: row;
-    margin-bottom: 44px;
-    margin-top: 2px;
-    flex-wrap: wrap;
-    row-gap: 30px;
-    justify-content: space-between;
-    @media (max-width: 1279px) {
-      justify-content: space-evenly;
-    }
-    .item {
-      width: 260px;
-      padding: 13px 13px 8px;
-      border: 2px solid #fff;
-      @media (max-width: 1056px) {
-        width: 24vw;
-      }
-      &:hover {
-        border: 1px solid var(--accent);
-      }
-      .image-holder {
-        width: 100%;
-        position: relative;
-        margin-bottom: 8px;
-        img {
-          background-size: cover;
-        }
-      }
-      .heart {
-        display: block;
-        position: absolute;
-        right: 0;
-        top: 1px;
-        width: 36px;
-        height: 36px;
-        background: url("../images/icon-fav-default.png") no-repeat;
-        background-position: center;
-        cursor: pointer;
-        &:hover {
-          background-image: url("../images/icon-fav-alt-hover.png");
-          top: 3px;
-        }
-      }
-      .name {
-        margin-bottom: 3px;
-        height: 60px;
-        p {
-          line-height: 150%;
-        }
-      }
-      .price {
-        text-align: end;
-        margin-bottom: 21px;
-      }
-      .controls {
+    .column {
+      .items {
         display: flex;
+        width: 100%;
+        flex-direction: row;
+        margin-bottom: 44px;
+        margin-top: 2px;
+        flex-wrap: wrap;
+        row-gap: 30px;
         justify-content: space-between;
-        align-items: center;
-        a {
-          font-family: "Candara";
-          font-style: normal;
-          font-weight: 400;
-          font-size: 16px;
-          line-height: 20px;
-          cursor: pointer;
-          color: var(--text);
+        @media (max-width: 1056px) {
+          row-gap: 15px;
+          justify-content: space-evenly;
+        }
+        .item {
+          width: 260px;
+          padding: 13px 13px 8px;
+          border: 2px solid #fff;
+          @media (max-width: 1056px) {
+            width: clamp(156px, 24vw, 260px);
+            padding: 5px 5px 10px;
+            border: 1px solid #fff;
+          }
           &:hover {
-            font-weight: 600;
+            border: 1px solid var(--accent);
+          }
+          .image-holder {
+            width: 100%;
+            position: relative;
+            margin-bottom: 8px;
+            img {
+              background-size: cover;
+            }
+          }
+          .heart {
+            display: block;
+            position: absolute;
+            right: 0;
+            top: 0;
+            width: 36px;
+            height: 36px;
+            background: url("../images/icon-fav-default.png") no-repeat;
+            background-position: center;
+            cursor: pointer;
+            @media (max-width: 1056px) {
+              right: 5.3%;
+              width: 24px;
+              height: 24px;
+              background-size: cover;
+            }
+            &:hover {
+              background-image: url("../images/icon-fav-alt-hover.png");
+            }
+          }
+          .name {
+            margin-bottom: 3px;
+            height: clamp(48px, 5.7vw, 60px);
+          }
+          .price {
+            text-align: end;
+            margin-bottom: 21px;
+          }
+          .name p,
+          .price p {
+            font-size: clamp(14px, 1.9vw, 20px);
+            line-height: clamp(120%, 2vw, 150%);
+          }
+          .controls {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            a {
+              font-family: "Candara";
+              font-style: normal;
+              font-weight: 400;
+              font-size: 16px;
+              line-height: 20px;
+              cursor: pointer;
+              color: var(--text);
+              &:hover {
+                font-weight: 600;
+              }
+            }
           }
         }
       }
