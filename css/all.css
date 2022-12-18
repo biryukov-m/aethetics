@@ -592,9 +592,9 @@ header .layout .wrapper nav ul {
   display: flex;
   gap: 25px;
 }
-@media (max-width: 1279px) {
+@media (max-width: 1074px) {
   header .layout .wrapper nav ul {
-    gap: 10px;
+    gap: 14px;
   }
 }
 header .layout .wrapper nav ul li a {

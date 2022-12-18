@@ -1,7 +1,6 @@
 header {
   @include box;
   margin-top: 11px;
-
   @media (max-width: 767px) {
     margin-top: 0;
   }
@@ -45,8 +44,8 @@ header {
         ul {
           display: flex;
           gap: 25px;
-          @media (max-width: 1279px) {
-            gap: 10px;
+          @media (max-width: 1074px) {
+            gap: 14px;
           }
           li {
             a {
