@@ -553,7 +553,7 @@ header .layout .wrapper .logo {
 }
 @media (max-width: 1279px) {
   header .layout .wrapper .logo {
-    width: 25%;
+    width: 19%;
   }
 }
 @media (max-width: 767px) {
@@ -608,7 +608,7 @@ header .layout .wrapper nav ul li a {
 }
 @media (max-width: 1279px) {
   header .layout .wrapper nav ul li a {
-    font-size: 2.29vw;
+    font-size: max(20px, 2.29vw);
   }
 }
 header .layout .wrapper nav ul li a:hover {

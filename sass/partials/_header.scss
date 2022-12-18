@@ -13,7 +13,7 @@ header {
         width: 246px;
         max-height: 144px;
         @media (max-width: 1279px) {
-          width: 25%;
+          width: 19%;
         }
         @media (max-width: 767px) {
           width: 150px;
@@ -57,7 +57,7 @@ header {
               font-weight: 200;
               color: var(--text);
               @media (max-width: 1279px) {
-                font-size: 2.29vw;
+                font-size: max(20px, 2.29vw);
               }
               &:hover {
                 color: var(--accent);
