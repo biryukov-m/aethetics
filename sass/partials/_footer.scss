@@ -42,10 +42,6 @@ footer {
           font-size: 18px;
           font-weight: 200;
         }
-        @media (max-width: 767px) {
-          // font-size: 20px;
-        }
-
         @media (max-width: 450px) {
           font-size: 3.9vw;
         }
@@ -84,7 +80,6 @@ footer {
           order: 0;
         }
         @media (max-width: 767px) {
-          margin: 0;
           order: 2;
         }
         a {
@@ -109,9 +104,6 @@ footer {
         }
         @media (max-width: 767px) {
           grid-column: 1;
-          grid-row: 2;
-          gap: 2px;
-          margin: 0 0 19px 0;
         }
       }
       .column {

@@ -2058,7 +2058,6 @@ footer .layout .wrapper .confidential {
 }
 @media (max-width: 767px) {
   footer .layout .wrapper .confidential {
-    margin: 0;
     order: 2;
   }
 }
@@ -2087,9 +2086,6 @@ footer .layout .wrapper .working-hours {
 @media (max-width: 767px) {
   footer .layout .wrapper .working-hours {
     grid-column: 1;
-    grid-row: 2;
-    gap: 2px;
-    margin: 0 0 19px 0;
   }
 }
 footer .layout .wrapper .column {
