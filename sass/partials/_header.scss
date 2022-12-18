@@ -44,8 +44,8 @@ header {
         ul {
           display: flex;
           gap: 25px;
-          @media (max-width: 1074px) {
-            gap: 14px;
+          @media (max-width: 1279px) {
+            gap: max(14px, 1.9vw);
           }
           li {
             a {
@@ -57,7 +57,7 @@ header {
               font-weight: 200;
               color: var(--text);
               @media (max-width: 1279px) {
-                font-size: max(20px, 2.29vw);
+                font-size: max(20px, 2.05vw);
               }
               &:hover {
                 color: var(--accent);

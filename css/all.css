@@ -592,9 +592,9 @@ header .layout .wrapper nav ul {
   display: flex;
   gap: 25px;
 }
-@media (max-width: 1074px) {
+@media (max-width: 1279px) {
   header .layout .wrapper nav ul {
-    gap: 14px;
+    gap: max(14px, 1.9vw);
   }
 }
 header .layout .wrapper nav ul li a {
@@ -608,7 +608,7 @@ header .layout .wrapper nav ul li a {
 }
 @media (max-width: 1279px) {
   header .layout .wrapper nav ul li a {
-    font-size: max(20px, 2.29vw);
+    font-size: max(20px, 2.05vw);
   }
 }
 header .layout .wrapper nav ul li a:hover {
