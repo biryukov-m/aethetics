@@ -48,6 +48,11 @@
     gap: 6px;
     .filters {
       min-width: 228px;
+      @media (max-width: 1056px) {
+        display: none;
+      }
+
+      // display: none;
       .group {
         margin-bottom: 8px;
         &.inactive {
@@ -171,14 +176,18 @@
     flex-wrap: wrap;
     row-gap: 30px;
     justify-content: space-between;
+    @media (max-width: 1279px) {
+      justify-content: space-evenly;
+    }
     .item {
       width: 260px;
       padding: 13px 13px 8px;
       border: 2px solid #fff;
-
+      @media (max-width: 1056px) {
+        width: 24vw;
+      }
       &:hover {
-        background-color: var(--creamy);
-        border: 2px solid var(--accent);
+        border: 1px solid var(--accent);
       }
       .image-holder {
         width: 100%;
