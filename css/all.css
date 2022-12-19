@@ -608,7 +608,7 @@ header .layout .wrapper nav ul li a {
 }
 @media (max-width: 1279px) {
   header .layout .wrapper nav ul li a {
-    font-size: max(20px, 2.05vw);
+    font-size: max(19px, 2.05vw);
   }
 }
 header .layout .wrapper nav ul li a:hover {
@@ -1133,6 +1133,11 @@ header .layout .wrapper .interface ul li.basket a:hover {
 .catalogue .sorting .wrapper {
   margin-left: 234px;
 }
+@media (max-width: 1279px) {
+  .catalogue .sorting .wrapper {
+    margin: 0;
+  }
+}
 .catalogue .sorting .wrapper p {
   display: inline-block;
   cursor: pointer;
@@ -1166,8 +1171,14 @@ header .layout .wrapper .interface ul li.basket a:hover {
 .catalogue .sorting .wrapper p:hover:before {
   transform: translate(0, 3px);
 }
-.catalogue .sorting .wrapper .inactive {
+.catalogue .sorting .wrapper p:first-of-type {
   display: none;
+}
+@media (max-width: 1279px) {
+  .catalogue .sorting .wrapper p:first-of-type {
+    display: inline-block;
+    margin-right: 39px;
+  }
 }
 .catalogue .flex {
   display: flex;
@@ -1469,10 +1480,11 @@ header .layout .wrapper .interface ul li.basket a:hover {
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
-  padding-top: 40px;
+  padding-top: 57px;
 }
 @media (max-width: 950px) {
   .more-products .items {
+    padding-top: 5.6vw;
     gap: 5px 16px;
   }
 }
@@ -1481,6 +1493,7 @@ header .layout .wrapper .interface ul li.basket a:hover {
   width: 260px;
   width: clamp(156px, 23vw, 260px);
   border: solid 1px #fff;
+  transition: all 150ms ease-in;
 }
 @media (max-width: 950px) {
   .more-products .item {

@@ -8,6 +8,9 @@
     margin: 64px 0 23px;
     .wrapper {
       margin-left: 234px;
+      @media (max-width: 1279px) {
+        margin: 0;
+      }
       p {
         display: inline-block;
         cursor: pointer;
@@ -40,9 +43,13 @@
         &:hover:before {
           transform: translate(0, 3px);
         }
-      }
-      .inactive {
-        display: none;
+        &:first-of-type {
+          display: none;
+          @media (max-width: 1279px) {
+            display: inline-block;
+            margin-right: 39px;
+          }
+        }
       }
     }
   }

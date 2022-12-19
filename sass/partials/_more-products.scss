@@ -8,8 +8,9 @@
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
-    padding-top: 40px;
+    padding-top: 57px;
     @media (max-width: 950px) {
+      padding-top: 5.6vw;
       gap: 5px 16px;
     }
   }
@@ -18,7 +19,7 @@
     width: 260px;
     width: clamp(156px, 23vw, 260px);
     border: solid 1px #fff;
-    // transition: all 150ms ease-in;
+    transition: all 150ms ease-in;
     @media (max-width: 950px) {
       width: clamp(168px, 21vw, 218px);
       padding: 5px 5px 10px;
