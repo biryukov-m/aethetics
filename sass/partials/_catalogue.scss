@@ -6,6 +6,9 @@
   }
   .sorting {
     margin: 64px 0 23px;
+    @media (max-width: 1279px) {
+      margin: 12px 0;
+    }
     .wrapper {
       margin-left: 234px;
       @media (max-width: 1279px) {
@@ -16,6 +19,11 @@
         cursor: pointer;
         position: relative;
         padding-right: 14px;
+        font-size: clamp(17px, 1.9vw, 20px);
+        line-height: 120%;
+        @media (max-width: 767px) {
+          font-size: clamp(14px, 3.4vw, 17px);
+        }
         &:hover {
           color: var(--accent);
         }
@@ -33,12 +41,15 @@
           display: block;
           content: "";
           position: absolute;
+          right: 0;
+          top: 25%;
+          bottom: 0;
           width: 13px;
-          height: 6px;
-          background: url("../images/icon-expand-more.png");
-          right: 0px;
-          top: 12px;
-          transition: all 0.2s ease-in;
+          background: url("../images/icon-expand-more.png") no-repeat center;
+          background-size: contain;
+          @media (max-width: 767px) {
+            top: 20%;
+          }
         }
         &:hover:before {
           transform: translate(0, 3px);

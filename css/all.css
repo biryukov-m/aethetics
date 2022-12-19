@@ -1130,6 +1130,11 @@ header .layout .wrapper .interface ul li.basket a:hover {
 .catalogue .sorting {
   margin: 64px 0 23px;
 }
+@media (max-width: 1279px) {
+  .catalogue .sorting {
+    margin: 12px 0;
+  }
+}
 .catalogue .sorting .wrapper {
   margin-left: 234px;
 }
@@ -1143,6 +1148,13 @@ header .layout .wrapper .interface ul li.basket a:hover {
   cursor: pointer;
   position: relative;
   padding-right: 14px;
+  font-size: clamp(17px, 1.9vw, 20px);
+  line-height: 120%;
+}
+@media (max-width: 767px) {
+  .catalogue .sorting .wrapper p {
+    font-size: clamp(14px, 3.4vw, 17px);
+  }
 }
 .catalogue .sorting .wrapper p:hover {
   color: var(--accent);
@@ -1161,12 +1173,17 @@ header .layout .wrapper .interface ul li.basket a:hover {
   display: block;
   content: "";
   position: absolute;
+  right: 0;
+  top: 25%;
+  bottom: 0;
   width: 13px;
-  height: 6px;
-  background: url("../images/icon-expand-more.png");
-  right: 0px;
-  top: 12px;
-  transition: all 0.2s ease-in;
+  background: url("../images/icon-expand-more.png") no-repeat center;
+  background-size: contain;
+}
+@media (max-width: 767px) {
+  .catalogue .sorting .wrapper p::before {
+    top: 20%;
+  }
 }
 .catalogue .sorting .wrapper p:hover:before {
   transform: translate(0, 3px);
@@ -1493,7 +1510,6 @@ header .layout .wrapper .interface ul li.basket a:hover {
   width: 260px;
   width: clamp(156px, 23vw, 260px);
   border: solid 1px #fff;
-  transition: all 150ms ease-in;
 }
 @media (max-width: 950px) {
   .more-products .item {
@@ -1508,7 +1524,6 @@ header .layout .wrapper .interface ul li.basket a:hover {
   }
 }
 .more-products .item:hover {
-  background: var(--creamy);
   border-color: var(--accent);
   cursor: pointer;
 }
@@ -1544,8 +1559,51 @@ header .layout .wrapper .interface ul li.basket a:hover {
     margin: 0;
   }
 }
-.more-products .item p.price {
-  text-align: right;
+.more-products .item .row {
+  display: flex;
+  justify-content: space-between;
+}
+.more-products .item .row .price {
+  order: 2;
+}
+.more-products .item .row .btn-mini {
+  visibility: hidden;
+  order: 1;
+}
+@media (max-width: 950px) {
+  .more-products .item .row .btn-mini {
+    visibility: visible;
+    order: 3;
+    width: clamp(24px, 1.2vw, 30px);
+    height: clamp(24px, 1.2vw, 30px);
+    border: none;
+    padding: 0;
+    margin: 0;
+    transition: none;
+    transform: none;
+    background: url("../images/icon-basket-default.png") no-repeat;
+    background-size: cover;
+  }
+}
+@media (max-width: 950px) {
+  .more-products .item .row .btn-mini span {
+    display: none;
+  }
+}
+.more-products .item .row .btn-mini::before {
+  display: none;
+  transition: none;
+}
+.more-products .item .row .btn-mini:hover {
+  cursor: pointer;
+}
+@media (max-width: 950px) {
+  .more-products .item .row .btn-mini:hover {
+    background: url("../images/icon-basket-hover.png") no-repeat;
+    background-size: cover;
+    transition: none;
+    transform: none;
+  }
 }
 .more-products .item h3 {
   display: block;
