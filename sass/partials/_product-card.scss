@@ -7,59 +7,88 @@
       display: flex;
       gap: 3px;
       justify-content: space-between;
+      @media (max-width: 1279px) {
+        gap: 40px;
+        justify-content: center;
+      }
       .image-column {
         width: 42.84%;
+        @media (max-width: 1279px) {
+          flex-basis: 460px;
+          flex-shrink: 1;
+        }
         .image-holder {
           width: 100%;
           overflow: hidden;
           img {
             background-size: cover;
+            width: 100%;
+            max-width: 460px;
           }
         }
       }
       .product-column {
         display: flex;
         flex-direction: column;
-        flex-wrap: nowrap;
-        width: 51.4%;
+        width: 48%;
+        max-width: 515px;
+        @media (max-width: 1279px) {
+          width: auto;
+        }
         .name {
           display: block;
           margin-bottom: 16px;
           line-height: 1;
+          @media (max-width: 1024px) {
+            font-size: 22px;
+            margin-bottom: 8px;
+          }
         }
         .rating {
           margin-bottom: 6px;
+          @media (max-width: 1024px) {
+            margin-bottom: 3px;
+          }
         }
         .description {
           margin-bottom: 44px;
           padding-right: 16px;
+          @media (max-width: 1024px) {
+            margin-bottom: 15px;
+            padding-right: 8px;
+          }
           p {
             line-height: 24.4px;
+            @media (max-width: 1024px) {
+              font-size: 19px;
+              line-height: 1;
+            }
           }
         }
         .controls {
           display: flex;
           flex-direction: column;
           padding-right: 8px;
+          row-gap: 37px;
+          @media (max-width: 1024px) {
+            row-gap: 15px;
+          }
           .row {
             display: flex;
             justify-content: space-between;
-            &:nth-of-type(1) {
-              margin-bottom: 37px;
-            }
-            &:nth-of-type(2) {
-              align-items: center;
+            .price {
+              @media (max-width: 1024px) {
+                font-size: 22px;
+              }
             }
             .favourite {
+              align-items: center;
               width: 36px;
               height: 36px;
               background: url("../images/icon-fav-default.png");
               cursor: pointer;
               &:hover {
                 background: url("../images/icon-fav-alt-hover.png") no-repeat;
-                position: relative;
-                top: 5px;
-                left: 1px;
               }
             }
             .quantity {
@@ -69,9 +98,6 @@
               font-family: "Candara";
               font-weight: 400;
               font-size: 26px;
-            }
-            .btn {
-              top: -5px;
             }
           }
         }

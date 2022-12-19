@@ -516,16 +516,43 @@ p {
   background-image: url("../images/icon-star-rating.png");
 }
 
-.go-back {
+.top-controls {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 14px;
+}
+.top-controls .go-back {
   display: block;
   width: 36px;
   height: 36px;
-  margin-bottom: 14px;
   background: url("../images/icon-product-card-back-arrow-left.png") no-repeat;
   transition: transform 0.2s ease-in;
 }
-.go-back:hover {
+.top-controls .go-back:hover {
   transform: translate(-2px, 0);
+}
+@media (max-width: 767px) {
+  .top-controls .go-back {
+    width: 24px;
+    height: 24px;
+  }
+}
+.top-controls .favourite {
+  visibility: hidden;
+  width: 24px;
+  height: 24px;
+  background: url("../images/icon-fav-default.png") no-repeat center;
+  background-size: contain;
+  cursor: pointer;
+}
+.top-controls .favourite:hover {
+  background: url("../images/icon-fav-alt-hover.png") no-repeat center;
+  background-size: contain;
+}
+@media (max-width: 767px) {
+  .top-controls .favourite {
+    visibility: visible;
+  }
 }
 
 header {
@@ -1635,8 +1662,20 @@ header .layout .wrapper .interface ul li.basket a:hover {
   gap: 3px;
   justify-content: space-between;
 }
+@media (max-width: 1279px) {
+  .product-card .layout .flex {
+    gap: 40px;
+    justify-content: center;
+  }
+}
 .product-card .layout .flex .image-column {
   width: 42.84%;
+}
+@media (max-width: 1279px) {
+  .product-card .layout .flex .image-column {
+    flex-basis: 460px;
+    flex-shrink: 1;
+  }
 }
 .product-card .layout .flex .image-column .image-holder {
   width: 100%;
@@ -1644,44 +1683,80 @@ header .layout .wrapper .interface ul li.basket a:hover {
 }
 .product-card .layout .flex .image-column .image-holder img {
   background-size: cover;
+  width: 100%;
+  max-width: 460px;
 }
 .product-card .layout .flex .product-column {
   display: flex;
   flex-direction: column;
-  flex-wrap: nowrap;
-  width: 51.4%;
+  width: 48%;
+  max-width: 515px;
+}
+@media (max-width: 1279px) {
+  .product-card .layout .flex .product-column {
+    width: auto;
+  }
 }
 .product-card .layout .flex .product-column .name {
   display: block;
   margin-bottom: 16px;
   line-height: 1;
 }
+@media (max-width: 1024px) {
+  .product-card .layout .flex .product-column .name {
+    font-size: 22px;
+    margin-bottom: 8px;
+  }
+}
 .product-card .layout .flex .product-column .rating {
   margin-bottom: 6px;
+}
+@media (max-width: 1024px) {
+  .product-card .layout .flex .product-column .rating {
+    margin-bottom: 3px;
+  }
 }
 .product-card .layout .flex .product-column .description {
   margin-bottom: 44px;
   padding-right: 16px;
 }
+@media (max-width: 1024px) {
+  .product-card .layout .flex .product-column .description {
+    margin-bottom: 15px;
+    padding-right: 8px;
+  }
+}
 .product-card .layout .flex .product-column .description p {
   line-height: 24.4px;
+}
+@media (max-width: 1024px) {
+  .product-card .layout .flex .product-column .description p {
+    font-size: 19px;
+    line-height: 1;
+  }
 }
 .product-card .layout .flex .product-column .controls {
   display: flex;
   flex-direction: column;
   padding-right: 8px;
+  row-gap: 37px;
+}
+@media (max-width: 1024px) {
+  .product-card .layout .flex .product-column .controls {
+    row-gap: 15px;
+  }
 }
 .product-card .layout .flex .product-column .controls .row {
   display: flex;
   justify-content: space-between;
 }
-.product-card .layout .flex .product-column .controls .row:nth-of-type(1) {
-  margin-bottom: 37px;
-}
-.product-card .layout .flex .product-column .controls .row:nth-of-type(2) {
-  align-items: center;
+@media (max-width: 1024px) {
+  .product-card .layout .flex .product-column .controls .row .price {
+    font-size: 22px;
+  }
 }
 .product-card .layout .flex .product-column .controls .row .favourite {
+  align-items: center;
   width: 36px;
   height: 36px;
   background: url("../images/icon-fav-default.png");
@@ -1689,9 +1764,6 @@ header .layout .wrapper .interface ul li.basket a:hover {
 }
 .product-card .layout .flex .product-column .controls .row .favourite:hover {
   background: url("../images/icon-fav-alt-hover.png") no-repeat;
-  position: relative;
-  top: 5px;
-  left: 1px;
 }
 .product-card .layout .flex .product-column .controls .row .quantity {
   width: 86px;
@@ -1700,9 +1772,6 @@ header .layout .wrapper .interface ul li.basket a:hover {
   font-family: "Candara";
   font-weight: 400;
   font-size: 26px;
-}
-.product-card .layout .flex .product-column .controls .row .btn {
-  top: -5px;
 }
 
 .full-info {
