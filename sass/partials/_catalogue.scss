@@ -1,17 +1,17 @@
 /* catalogue component */
 .catalogue {
   margin-bottom: 85px;
-  @media (max-width: 1279px) {
+  @media (max-width: 1140px) {
     margin-bottom: 55px;
   }
   .sorting {
     margin: 64px 0 23px;
-    @media (max-width: 1279px) {
+    @media (max-width: 1140px) {
       margin: 12px 0;
     }
     .wrapper {
       margin-left: 234px;
-      @media (max-width: 1279px) {
+      @media (max-width: 1140px) {
         margin: 0;
       }
       p {
@@ -56,7 +56,7 @@
         }
         &:first-of-type {
           display: none;
-          @media (max-width: 1279px) {
+          @media (max-width: 1140px) {
             display: inline-block;
             margin-right: 39px;
           }
@@ -70,7 +70,7 @@
     .filters {
       flex-basis: 228px;
       flex-shrink: 0;
-      @media (max-width: 1279px) {
+      @media (max-width: 1140px) {
         display: none;
       }
       .group {
@@ -197,12 +197,12 @@
         flex-wrap: wrap;
         row-gap: 30px;
         justify-content: space-between;
-        @media (max-width: 1279px) {
+        @media (max-width: 1140px) {
           gap: 16px;
           justify-content: center;
         }
         &:after {
-          @media (max-width: 1279px) {
+          @media (max-width: 1140px) {
             display: block;
             content: "";
             width: 260px;

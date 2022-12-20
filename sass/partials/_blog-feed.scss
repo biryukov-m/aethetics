@@ -2,12 +2,12 @@
 }
 .blog-feed {
   margin-bottom: 95px;
-  @media (max-width: 1279px) {
+  @media (max-width: 1140px) {
     margin-bottom: 38px;
   }
   .layout {
-    @media (max-width: 1279px) {
-      width: 85%;
+    @media (max-width: 1140px) {
+      width: 90%;
     }
     @media (max-width: 767px) {
       max-width: 522px;
@@ -17,7 +17,7 @@
       flex-direction: row;
       gap: 30px;
       margin-bottom: 120px;
-      @media (max-width: 1279px) {
+      @media (max-width: 1140px) {
         justify-content: space-around;
         margin-bottom: 6.25vw;
       }
@@ -30,7 +30,7 @@
       &:nth-of-type(2n) {
         flex-direction: row-reverse;
         margin-bottom: 208px;
-        @media (max-width: 1279px) {
+        @media (max-width: 1140px) {
           margin-bottom: 6.25vw;
         }
         @media (max-width: 767px) {
@@ -40,7 +40,7 @@
       }
       &:last-of-type {
         margin-bottom: 97px;
-        @media (max-width: 1279px) {
+        @media (max-width: 1140px) {
           margin-bottom: 6.25vw;
         }
         @media (max-width: 767px) {
@@ -49,16 +49,14 @@
       }
       .image-holder {
         width: calc((100% - 15px) / 2);
-        @media (max-width: 1279px) {
-          width: auto;
-        }
+
         @media (max-width: 767px) {
           width: 100%;
         }
       }
       .text {
         width: calc((100% - 15px) / 2);
-        @media (max-width: 1279px) {
+        @media (max-width: 1140px) {
           width: 50%;
           display: flex;
           flex-direction: column;
@@ -71,10 +69,9 @@
           margin-bottom: 18px;
           line-height: 1;
           color: #000;
-          @media (max-width: 1279px) {
-            margin-bottom: 0.85vw;
-            font-size: 2.6vw;
-            margin-bottom: 1vw;
+          @media (max-width: 1140px) {
+            font-size: clamp(18px, 3.1vw, 36px);
+            margin-bottom: 0;
           }
           @media (max-width: 767px) {
             margin-bottom: 11px;
@@ -84,13 +81,12 @@
         }
         h4 {
           margin-bottom: 15px;
-          @media (max-width: 1279px) {
-            margin-bottom: 0.8vw;
-            font-size: 1.86vw;
+          @media (max-width: 1140px) {
+            margin-bottom: 0;
+            font-size: clamp(16px, 2.06vw, 26px);
             line-height: 120%;
           }
           @media (max-width: 767px) {
-            margin-bottom: 0;
             font-size: 14px;
             line-height: 17px;
           }
@@ -100,16 +96,12 @@
     .button-show-more {
       margin: 0 auto;
       width: fit-content;
-      @media (max-width: 1279px) {
-      }
       @media (max-width: 767px) {
         margin: 0 auto;
         width: fit-content;
       }
     }
     .button-show-details {
-      @media (max-width: 1279px) {
-      }
       @media (max-width: 767px) {
         position: absolute;
         bottom: -49px;

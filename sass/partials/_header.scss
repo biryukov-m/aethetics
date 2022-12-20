@@ -12,7 +12,7 @@ header {
       .logo {
         width: 246px;
         max-height: 144px;
-        @media (max-width: 1279px) {
+        @media (max-width: 1074px) {
           width: 19%;
         }
         @media (max-width: 767px) {
@@ -35,7 +35,7 @@ header {
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        @media (max-width: 1279px) {
+        @media (max-width: 1140px) {
           padding: 1px 10px;
         }
         @media (max-width: 767px) {
@@ -44,7 +44,7 @@ header {
         ul {
           display: flex;
           gap: 25px;
-          @media (max-width: 1279px) {
+          @media (max-width: 1140px) {
             gap: max(14px, 1.9vw);
           }
           li {
@@ -56,8 +56,8 @@ header {
               line-height: 110%;
               font-weight: 200;
               color: var(--text);
-              @media (max-width: 1279px) {
-                font-size: max(19px, 2.05vw);
+              @media (max-width: 1140px) {
+                font-size: clamp(19px, 2.05vw, 26px);
               }
               &:hover {
                 color: var(--accent);

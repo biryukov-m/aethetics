@@ -7,13 +7,13 @@
       display: flex;
       gap: 3px;
       justify-content: space-between;
-      @media (max-width: 1279px) {
+      @media (max-width: 1140px) {
         gap: 40px;
         justify-content: center;
       }
       .image-column {
         width: 42.84%;
-        @media (max-width: 1279px) {
+        @media (max-width: 1140px) {
           flex-basis: 460px;
           flex-shrink: 1;
         }
@@ -32,7 +32,7 @@
         flex-direction: column;
         width: 48%;
         max-width: 515px;
-        @media (max-width: 1279px) {
+        @media (max-width: 1140px) {
           width: auto;
         }
         .name {

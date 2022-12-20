@@ -1,6 +1,6 @@
 .more-products {
   margin-bottom: 141px;
-  @media (max-width: 1279px) {
+  @media (max-width: 1140px) {
     margin-bottom: 55px;
   }
   .items {
@@ -105,7 +105,7 @@
       top: -20%;
       left: 0;
       right: -800px;
-      @media (max-width: 1279px) {
+      @media (max-width: 1140px) {
         font-size: clamp(18px, 3.4vw, 40px);
       }
       @media (max-width: 767px) {

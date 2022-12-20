@@ -13,7 +13,7 @@ section {
   @include box;
   width: 1074px;
   margin: 0 auto;
-  @media (max-width: 1279px) {
+  @media (max-width: 1140px) {
     width: 96%;
   }
 }
@@ -231,7 +231,7 @@ p {
     background-color: var(--creamy);
   }
 }
-@media (max-width: 1279px) {
+@media (max-width: 1140px) {
   .btn {
     width: 132px;
     height: 42px;

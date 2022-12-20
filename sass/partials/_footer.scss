@@ -2,14 +2,14 @@ footer {
   background: var(--accent);
   padding-bottom: 11px;
   .layout {
-    @media (max-width: 1279px) {
+    @media (max-width: 1140px) {
       width: 96%;
     }
     .wrapper {
       display: grid;
       grid-template-columns: 248px max-content max-content 1fr;
       margin-top: 29px;
-      @media (max-width: 1279px) {
+      @media (max-width: 1140px) {
         grid-template-columns: 5% 1fr 1fr 1fr 5%;
         margin-top: 10px;
       }
@@ -20,7 +20,7 @@ footer {
       }
       .logo-bottom {
         margin-left: 15px;
-        @media (max-width: 1279px) {
+        @media (max-width: 1140px) {
           margin: 0;
           grid-column: 2;
           width: 80%;
@@ -52,7 +52,7 @@ footer {
         gap: 9px;
         margin-top: 38px;
         margin-left: 87px;
-        @media (max-width: 1279px) {
+        @media (max-width: 1140px) {
           grid-column: 2;
           grid-row: 2;
           gap: 3px;
@@ -75,7 +75,7 @@ footer {
       .confidential {
         margin-top: 36px;
         margin-bottom: 9px;
-        @media (max-width: 1279px) {
+        @media (max-width: 1140px) {
           margin: 0;
           order: 0;
         }
@@ -96,7 +96,7 @@ footer {
         gap: 6px;
         margin-top: 38px;
         margin-left: 37px;
-        @media (max-width: 1279px) {
+        @media (max-width: 1140px) {
           grid-column: 3;
           grid-row: 2;
           gap: 2px;
@@ -108,7 +108,7 @@ footer {
       }
       .column {
         margin-left: 50px;
-        @media (max-width: 1279px) {
+        @media (max-width: 1140px) {
           margin-left: 0;
           grid-column: 4;
           grid-row: 2/4;
