@@ -15,7 +15,7 @@
         width: 42.84%;
         @media (max-width: 1140px) {
           flex-basis: 460px;
-          flex-shrink: 1;
+          flex-shrink: 2;
         }
         .image-holder {
           width: 100%;
@@ -23,7 +23,6 @@
           img {
             background-size: cover;
             width: 100%;
-            max-width: 460px;
           }
         }
       }
@@ -33,7 +32,7 @@
         width: 48%;
         max-width: 515px;
         @media (max-width: 1140px) {
-          width: auto;
+          // width: auto;
         }
         .name {
           display: block;
@@ -65,40 +64,37 @@
             }
           }
         }
+        .price-and-fav {
+          display: flex;
+          justify-content: space-between;
+          padding-right: 8px;
+          margin-bottom: 37px;
+          .price {
+            @media (max-width: 1024px) {
+              font-size: 22px;
+            }
+          }
+        }
         .controls {
           display: flex;
-          flex-direction: column;
-          padding-right: 8px;
-          row-gap: 37px;
-          @media (max-width: 1024px) {
-            row-gap: 15px;
+          justify-content: space-between;
+          .favourite {
+            align-items: center;
+            width: 36px;
+            height: 36px;
+            background: url("../images/icon-fav-default.png");
+            cursor: pointer;
+            &:hover {
+              background: url("../images/icon-fav-alt-hover.png") no-repeat;
+            }
           }
-          .row {
-            display: flex;
-            justify-content: space-between;
-            .price {
-              @media (max-width: 1024px) {
-                font-size: 22px;
-              }
-            }
-            .favourite {
-              align-items: center;
-              width: 36px;
-              height: 36px;
-              background: url("../images/icon-fav-default.png");
-              cursor: pointer;
-              &:hover {
-                background: url("../images/icon-fav-alt-hover.png") no-repeat;
-              }
-            }
-            .quantity {
-              width: 86px;
-              height: 49px;
-              padding: 0 15px;
-              font-family: "Candara";
-              font-weight: 400;
-              font-size: 26px;
-            }
+          .quantity {
+            width: 86px;
+            height: 49px;
+            padding: 0 15px;
+            font-family: "Candara";
+            font-weight: 400;
+            font-size: 26px;
           }
         }
       }

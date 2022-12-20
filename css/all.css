@@ -1667,7 +1667,7 @@ header .layout .wrapper .interface ul li.basket a:hover {
 @media (max-width: 1140px) {
   .product-card .layout .flex .image-column {
     flex-basis: 460px;
-    flex-shrink: 1;
+    flex-shrink: 2;
   }
 }
 .product-card .layout .flex .image-column .image-holder {
@@ -1677,18 +1677,12 @@ header .layout .wrapper .interface ul li.basket a:hover {
 .product-card .layout .flex .image-column .image-holder img {
   background-size: cover;
   width: 100%;
-  max-width: 460px;
 }
 .product-card .layout .flex .product-column {
   display: flex;
   flex-direction: column;
   width: 48%;
   max-width: 515px;
-}
-@media (max-width: 1140px) {
-  .product-card .layout .flex .product-column {
-    width: auto;
-  }
 }
 .product-card .layout .flex .product-column .name {
   display: block;
@@ -1728,37 +1722,32 @@ header .layout .wrapper .interface ul li.basket a:hover {
     line-height: 1;
   }
 }
-.product-card .layout .flex .product-column .controls {
-  display: flex;
-  flex-direction: column;
-  padding-right: 8px;
-  row-gap: 37px;
-}
-@media (max-width: 1024px) {
-  .product-card .layout .flex .product-column .controls {
-    row-gap: 15px;
-  }
-}
-.product-card .layout .flex .product-column .controls .row {
+.product-card .layout .flex .product-column .price-and-fav {
   display: flex;
   justify-content: space-between;
+  padding-right: 8px;
+  margin-bottom: 37px;
 }
 @media (max-width: 1024px) {
-  .product-card .layout .flex .product-column .controls .row .price {
+  .product-card .layout .flex .product-column .price-and-fav .price {
     font-size: 22px;
   }
 }
-.product-card .layout .flex .product-column .controls .row .favourite {
+.product-card .layout .flex .product-column .controls {
+  display: flex;
+  justify-content: space-between;
+}
+.product-card .layout .flex .product-column .controls .favourite {
   align-items: center;
   width: 36px;
   height: 36px;
   background: url("../images/icon-fav-default.png");
   cursor: pointer;
 }
-.product-card .layout .flex .product-column .controls .row .favourite:hover {
+.product-card .layout .flex .product-column .controls .favourite:hover {
   background: url("../images/icon-fav-alt-hover.png") no-repeat;
 }
-.product-card .layout .flex .product-column .controls .row .quantity {
+.product-card .layout .flex .product-column .controls .quantity {
   width: 86px;
   height: 49px;
   padding: 0 15px;
