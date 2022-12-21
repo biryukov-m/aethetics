@@ -78,12 +78,23 @@ p {
   cursor: pointer;
   position: relative;
   transition: all 0.2s ease-in;
-  font-family: "Candara";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 26px;
-  padding-bottom: 6px;
-  color: $creamy;
+  span {
+    font-family: "Candara";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 26px;
+    padding-bottom: 6px;
+    color: $creamy;
+    @media (max-width: 1140px) {
+      font-size: 18px;
+      padding-bottom: 4px;
+    }
+  }
+
+  @media (max-width: 1140px) {
+    width: 132px;
+    height: 42px;
+  }
   &::before {
     content: "";
     display: block;
@@ -97,9 +108,17 @@ p {
     top: 0;
     bottom: 0;
     transition: transform 0.2s ease-in;
+    @media (max-width: 1140px) {
+      transform: translate(4px, -4px);
+      width: 130px;
+      height: 40px;
+    }
   }
   &:hover {
     transform: translate(8px, -8px);
+    @media (max-width: 1140px) {
+      transform: translate(4px, -4px);
+    }
     &::before {
       transform: none;
     }
@@ -232,22 +251,6 @@ p {
   }
 }
 @media (max-width: 1140px) {
-  .btn {
-    width: 132px;
-    height: 42px;
-    span {
-      font-size: 18px;
-      padding-bottom: 4px;
-    }
-    &::before {
-      transform: translate(4px, -4px);
-      width: 130px;
-      height: 40px;
-    }
-    &:hover {
-      transform: translate(4px, -4px);
-    }
-  }
   .btn-arrow-right {
     width: 132px;
     height: 42px;

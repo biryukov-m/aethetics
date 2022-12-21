@@ -289,12 +289,26 @@ p {
   cursor: pointer;
   position: relative;
   transition: all 0.2s ease-in;
+}
+.btn span {
   font-family: "Candara";
   font-style: normal;
   font-weight: 400;
   font-size: 26px;
   padding-bottom: 6px;
   color: #fffbf5;
+}
+@media (max-width: 1140px) {
+  .btn span {
+    font-size: 18px;
+    padding-bottom: 4px;
+  }
+}
+@media (max-width: 1140px) {
+  .btn {
+    width: 132px;
+    height: 42px;
+  }
 }
 .btn::before {
   content: "";
@@ -310,8 +324,20 @@ p {
   bottom: 0;
   transition: transform 0.2s ease-in;
 }
+@media (max-width: 1140px) {
+  .btn::before {
+    transform: translate(4px, -4px);
+    width: 130px;
+    height: 40px;
+  }
+}
 .btn:hover {
   transform: translate(8px, -8px);
+}
+@media (max-width: 1140px) {
+  .btn:hover {
+    transform: translate(4px, -4px);
+  }
 }
 .btn:hover::before {
   transform: none;
@@ -448,22 +474,6 @@ p {
 }
 
 @media (max-width: 1140px) {
-  .btn {
-    width: 132px;
-    height: 42px;
-  }
-  .btn span {
-    font-size: 18px;
-    padding-bottom: 4px;
-  }
-  .btn::before {
-    transform: translate(4px, -4px);
-    width: 130px;
-    height: 40px;
-  }
-  .btn:hover {
-    transform: translate(4px, -4px);
-  }
   .btn-arrow-right {
     width: 132px;
     height: 42px;
@@ -1657,8 +1667,13 @@ header .layout .wrapper .interface ul li.basket a:hover {
 }
 @media (max-width: 1140px) {
   .product-card .layout .flex {
-    gap: 40px;
-    justify-content: center;
+    gap: 20px;
+  }
+}
+@media (max-width: 767px) {
+  .product-card .layout .flex {
+    flex-direction: column;
+    gap: 30px;
   }
 }
 .product-card .layout .flex .image-column {
@@ -1668,6 +1683,15 @@ header .layout .wrapper .interface ul li.basket a:hover {
   .product-card .layout .flex .image-column {
     flex-basis: 460px;
     flex-shrink: 2;
+  }
+}
+@media (max-width: 767px) {
+  .product-card .layout .flex .image-column {
+    flex-basis: unset;
+    flex-shrink: 0;
+    max-width: 460px;
+    width: clamp(250px, 69vw, 460px);
+    align-self: center;
   }
 }
 .product-card .layout .flex .image-column .image-holder {
@@ -1681,24 +1705,40 @@ header .layout .wrapper .interface ul li.basket a:hover {
 .product-card .layout .flex .product-column {
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   width: 48%;
   max-width: 515px;
+}
+@media (max-width: 767px) {
+  .product-card .layout .flex .product-column {
+    width: 100%;
+    max-width: unset;
+    gap: 5px;
+  }
 }
 .product-card .layout .flex .product-column .name {
   display: block;
   margin-bottom: 16px;
   line-height: 1;
+  order: 0;
 }
-@media (max-width: 1024px) {
+@media (max-width: 1140px) {
   .product-card .layout .flex .product-column .name {
-    font-size: 22px;
+    font-size: clamp(20px, 2.3vw, 26px);
     margin-bottom: 8px;
+  }
+}
+@media (max-width: 767px) {
+  .product-card .layout .flex .product-column .name {
+    font-size: clamp(18px, 3.3vw, 22px);
+    margin: 0;
   }
 }
 .product-card .layout .flex .product-column .rating {
   margin-bottom: 6px;
+  order: 1;
 }
-@media (max-width: 1024px) {
+@media (max-width: 1140px) {
   .product-card .layout .flex .product-column .rating {
     margin-bottom: 3px;
   }
@@ -1706,46 +1746,73 @@ header .layout .wrapper .interface ul li.basket a:hover {
 .product-card .layout .flex .product-column .description {
   margin-bottom: 44px;
   padding-right: 16px;
+  order: 2;
 }
-@media (max-width: 1024px) {
+@media (max-width: 1140px) {
   .product-card .layout .flex .product-column .description {
-    margin-bottom: 15px;
+    margin-bottom: 8px;
     padding-right: 8px;
   }
 }
 .product-card .layout .flex .product-column .description p {
-  line-height: 24.4px;
+  line-height: 120%;
 }
-@media (max-width: 1024px) {
+@media (max-width: 1140px) {
   .product-card .layout .flex .product-column .description p {
-    font-size: 19px;
-    line-height: 1;
+    font-size: clamp(15px, 2vw, 20px);
+  }
+}
+@media (max-width: 767px) {
+  .product-card .layout .flex .product-column .description p {
+    font-size: clamp(14px, 2.9vw, 18px);
   }
 }
 .product-card .layout .flex .product-column .price-and-fav {
+  order: 3;
   display: flex;
   justify-content: space-between;
   padding-right: 8px;
   margin-bottom: 37px;
 }
-@media (max-width: 1024px) {
-  .product-card .layout .flex .product-column .price-and-fav .price {
-    font-size: 22px;
+@media (max-width: 1140px) {
+  .product-card .layout .flex .product-column .price-and-fav {
+    margin-bottom: 0;
   }
 }
-.product-card .layout .flex .product-column .controls {
-  display: flex;
-  justify-content: space-between;
+@media (max-width: 767px) {
+  .product-card .layout .flex .product-column .price-and-fav {
+    order: 0;
+  }
 }
-.product-card .layout .flex .product-column .controls .favourite {
+@media (max-width: 1140px) {
+  .product-card .layout .flex .product-column .price-and-fav .price {
+    font-size: clamp(20px, 2.3vw, 26px);
+  }
+}
+@media (max-width: 767px) {
+  .product-card .layout .flex .product-column .price-and-fav .price {
+    font-size: clamp(18px, 3.3vw, 22px);
+  }
+}
+.product-card .layout .flex .product-column .price-and-fav .favourite {
   align-items: center;
   width: 36px;
   height: 36px;
   background: url("../images/icon-fav-default.png");
   cursor: pointer;
 }
-.product-card .layout .flex .product-column .controls .favourite:hover {
+.product-card .layout .flex .product-column .price-and-fav .favourite:hover {
   background: url("../images/icon-fav-alt-hover.png") no-repeat;
+}
+@media (max-width: 767px) {
+  .product-card .layout .flex .product-column .price-and-fav .favourite {
+    display: none;
+  }
+}
+.product-card .layout .flex .product-column .controls {
+  order: 4;
+  display: flex;
+  justify-content: space-between;
 }
 .product-card .layout .flex .product-column .controls .quantity {
   width: 86px;
@@ -1754,6 +1821,14 @@ header .layout .wrapper .interface ul li.basket a:hover {
   font-family: "Candara";
   font-weight: 400;
   font-size: 26px;
+}
+@media (max-width: 1140px) {
+  .product-card .layout .flex .product-column .controls .quantity {
+    width: 54px;
+    height: 32px;
+    padding: 0 8px;
+    font-size: 18px;
+  }
 }
 
 .full-info {
