@@ -289,8 +289,20 @@ p {
   cursor: pointer;
   position: relative;
   transition: all 0.2s ease-in;
+  font-family: "Candara";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 26px;
+  color: #fffbf5;
 }
-.btn span {
+@media (max-width: 1140px) {
+  .btn {
+    width: 132px;
+    height: 42px;
+  }
+}
+.btn span,
+.btn a {
   font-family: "Candara";
   font-style: normal;
   font-weight: 400;
@@ -299,15 +311,10 @@ p {
   color: #fffbf5;
 }
 @media (max-width: 1140px) {
-  .btn span {
+  .btn span,
+.btn a {
     font-size: 18px;
     padding-bottom: 4px;
-  }
-}
-@media (max-width: 1140px) {
-  .btn {
-    width: 132px;
-    height: 42px;
   }
 }
 .btn::before {
@@ -430,6 +437,14 @@ p {
   transition: transform 0.2s ease-in;
   margin-bottom: 20px;
 }
+@media (max-width: 1140px) {
+  .btn-arrow-bottom {
+    width: 132px;
+    height: 42px;
+    border: 1px solid var(--accent);
+    margin-bottom: 0;
+  }
+}
 .btn-arrow-bottom span {
   font-family: "Candara";
   font-style: normal;
@@ -449,6 +464,11 @@ p {
   background: url("../images/icon-button-arrow-bottom.png");
   bottom: -18px;
   transition: transform 0.2s ease-in;
+}
+@media (max-width: 1140px) {
+  .btn-arrow-bottom::before {
+    display: none;
+  }
 }
 .btn-arrow-bottom:hover::before {
   transform: translate(0, 4px);
@@ -490,21 +510,6 @@ p {
     background-size: cover;
     right: -16px;
     background-position-x: -11px;
-  }
-  .btn-arrow-bottom {
-    width: 132px;
-    height: 42px;
-    border: 1px solid var(--accent);
-    margin-bottom: 0;
-  }
-  .btn-arrow-bottom span {
-    font-size: 20px;
-    line-height: 24px;
-    padding-bottom: 6px;
-    left: -1px;
-  }
-  .btn-arrow-bottom::before {
-    display: none;
   }
 }
 .rating {
@@ -1448,7 +1453,7 @@ header .layout .wrapper .interface ul li.basket a:hover {
 }
 @media (max-width: 767px) {
   .catalogue .flex .column .items .item .name p,
-  .catalogue .flex .column .items .item .price p {
+.catalogue .flex .column .items .item .price p {
     font-size: clamp(14px, 3.4vw, 17px);
     line-height: clamp(120%, 3.6vw, 150%);
   }
@@ -1839,6 +1844,18 @@ header .layout .wrapper .interface ul li.basket a:hover {
   gap: 85px;
   margin: 0 1px;
 }
+@media (max-width: 1140px) {
+  .full-info .header h4 {
+    font-size: clamp(20px, 2.3vw, 26px);
+    margin-bottom: 8px;
+  }
+}
+@media (max-width: 767px) {
+  .full-info .header h4 {
+    font-size: clamp(18px, 3.3vw, 22px);
+    margin: 0;
+  }
+}
 .full-info .header h4:hover {
   border-bottom: 1px solid var(--text);
 }
@@ -1857,11 +1874,41 @@ header .layout .wrapper .interface ul li.basket a:hover {
 .full-info .inactive {
   display: none;
 }
+@media (max-width: 767px) {
+  .full-info .inactive {
+    display: block;
+  }
+}
+@media (max-width: 767px) {
+  .full-info article {
+    margin-bottom: 50px;
+  }
+}
+@media (max-width: 1140px) {
+  .full-info article p {
+    font-size: clamp(15px, 2vw, 20px);
+  }
+}
+@media (max-width: 767px) {
+  .full-info article p {
+    font-size: clamp(14px, 2.9vw, 18px);
+  }
+}
 .full-info .reviews {
   margin: 47px 1px 0;
 }
+@media (max-width: 767px) {
+  .full-info .reviews {
+    margin: 0;
+  }
+}
 .full-info .reviews .button-write-review {
   margin-bottom: 44px;
+}
+@media (max-width: 767px) {
+  .full-info .reviews .button-write-review {
+    display: none;
+  }
 }
 .full-info .reviews .content {
   margin-bottom: 41px;
@@ -1871,28 +1918,101 @@ header .layout .wrapper .interface ul li.basket a:hover {
   min-height: 73px;
   border-bottom: 1px solid var(--text);
   margin-bottom: 8px;
+  position: relative;
+}
+@media (max-width: 767px) {
+  .full-info .reviews .content .review {
+    flex-direction: column;
+    padding-bottom: 14px;
+    margin: 0;
+  }
 }
 .full-info .reviews .content .review .author {
   width: 145px;
   min-width: 145px;
 }
+@media (max-width: 1140px) {
+  .full-info .reviews .content .review .author h4 {
+    font-size: clamp(20px, 2.3vw, 26px);
+    margin-bottom: 3px;
+  }
+}
+@media (max-width: 767px) {
+  .full-info .reviews .content .review .author h4 {
+    font-size: clamp(18px, 3.3vw, 22px);
+    margin: 0;
+  }
+}
+@media (max-width: 1140px) {
+  .full-info .reviews .content .review .author p {
+    font-size: clamp(20px, 2.3vw, 26px);
+    margin-bottom: 3px;
+  }
+}
+@media (max-width: 767px) {
+  .full-info .reviews .content .review .author p {
+    font-size: clamp(18px, 3.3vw, 22px);
+    margin: 0;
+  }
+}
 .full-info .reviews .content .review .rating {
   align-self: center;
   margin-right: 26px;
 }
-.full-info .reviews .content .review .rating .star:hover {
-  cursor: unset;
+@media (max-width: 767px) {
+  .full-info .reviews .content .review .rating {
+    position: absolute;
+    left: 150px;
+    top: 8px;
+  }
 }
-.full-info .reviews .content .review .rating .star.inactive:hover {
+.full-info .reviews .content .review .rating .star {
+  cursor: auto;
+}
+.full-info .reviews .content .review .rating .star.unrated:hover {
   background-image: url("../images/icon-star-no-rating.png");
 }
 .full-info .reviews .content .review .text {
   min-width: 450px;
   width: 450px;
 }
+@media (max-width: 1140px) {
+  .full-info .reviews .content .review .text p {
+    font-size: clamp(15px, 2vw, 20px);
+  }
+}
+@media (max-width: 767px) {
+  .full-info .reviews .content .review .text p {
+    font-size: clamp(14px, 2.9vw, 18px);
+  }
+}
 .full-info .reviews .button-show-more {
   width: fit-content;
   margin: 0 auto;
+}
+@media (max-width: 1140px) {
+  .full-info .reviews .button-show-more .btn-arrow-bottom {
+    margin-bottom: 21px;
+  }
+}
+@media (max-width: 1140px) {
+  .full-info .reviews .button-show-more .btn-arrow-bottom::before {
+    display: block;
+  }
+}
+.full-info article h4.mobile,
+.full-info .reviews h4.mobile {
+  display: none;
+}
+@media (max-width: 767px) {
+  .full-info article h4.mobile,
+.full-info .reviews h4.mobile {
+    display: inline-block;
+    padding: 0 2px;
+    font-size: clamp(18px, 3.3vw, 22px);
+    margin: 0 0 30px 0;
+    border-bottom: 1px solid var(--text);
+  }
 }
 
 .related-products {
@@ -2184,7 +2304,8 @@ header .layout .wrapper .interface ul li.basket a:hover {
   margin: 109px 0 0 20px;
   padding: 17px 28px 20px 20px;
   background: rgba(75, 96, 73, 0.3);
-  backdrop-filter: blur(7.5px);
+  -webkit-backdrop-filter: blur(7.5px);
+          backdrop-filter: blur(7.5px);
 }
 .contacts .layout .wrapper form .hide {
   display: none;
@@ -2367,14 +2488,14 @@ footer .layout .wrapper a {
 }
 @media (max-width: 1074px) {
   footer .layout .wrapper p,
-  footer .layout .wrapper a {
+footer .layout .wrapper a {
     font-size: 18px;
     font-weight: 200;
   }
 }
 @media (max-width: 450px) {
   footer .layout .wrapper p,
-  footer .layout .wrapper a {
+footer .layout .wrapper a {
     font-size: 3.9vw;
   }
 }

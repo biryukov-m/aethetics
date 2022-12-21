@@ -78,7 +78,18 @@ p {
   cursor: pointer;
   position: relative;
   transition: all 0.2s ease-in;
-  span {
+  font-family: "Candara";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 26px;
+
+  color: $creamy;
+  @media (max-width: 1140px) {
+    width: 132px;
+    height: 42px;
+  }
+  span,
+  a {
     font-family: "Candara";
     font-style: normal;
     font-weight: 400;
@@ -91,10 +102,6 @@ p {
     }
   }
 
-  @media (max-width: 1140px) {
-    width: 132px;
-    height: 42px;
-  }
   &::before {
     content: "";
     display: block;
@@ -208,6 +215,12 @@ p {
   position: relative;
   transition: transform 0.2s ease-in;
   margin-bottom: 20px;
+  @media (max-width: 1140px) {
+    width: 132px;
+    height: 42px;
+    border: 1px solid var(--accent);
+    margin-bottom: 0;
+  }
   span {
     font-family: "Candara";
     font-style: normal;
@@ -227,6 +240,9 @@ p {
     background: url("../images/icon-button-arrow-bottom.png");
     bottom: -18px;
     transition: transform 0.2s ease-in;
+    @media (max-width: 1140px) {
+      display: none;
+    }
   }
   &:hover::before {
     transform: translate(0, 4px);
@@ -266,21 +282,6 @@ p {
       background-size: cover;
       right: -16px;
       background-position-x: -11px;
-    }
-  }
-  .btn-arrow-bottom {
-    width: 132px;
-    height: 42px;
-    border: 1px solid var(--accent);
-    margin-bottom: 0;
-    span {
-      font-size: 20px;
-      line-height: 24px;
-      padding-bottom: 6px;
-      left: -1px;
-    }
-    &::before {
-      display: none;
     }
   }
 }
