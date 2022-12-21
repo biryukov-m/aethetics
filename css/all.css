@@ -1849,6 +1849,11 @@ header .layout .wrapper .interface ul li.basket a:hover {
 .full-info .header .off {
   cursor: pointer;
 }
+@media (max-width: 767px) {
+  .full-info .header {
+    display: none;
+  }
+}
 .full-info .inactive {
   display: none;
 }

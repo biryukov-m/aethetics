@@ -16,6 +16,9 @@
     .off {
       cursor: pointer;
     }
+    @media (max-width: 767px) {
+      display: none;
+    }
   }
   .inactive {
     display: none;
