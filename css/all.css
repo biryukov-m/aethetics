@@ -2316,6 +2316,10 @@ header .layout .wrapper .interface ul li.basket a:hover {
   line-height: 150%;
   color: #484847;
 }
+.cabinet .layout .window form .flex .column input {
+  border-radius: 0;
+  border: 1px solid #000;
+}
 .cabinet .layout .window form .flex .column label {
   margin-bottom: 3px;
 }
@@ -2326,6 +2330,9 @@ header .layout .wrapper .interface ul li.basket a:hover {
 }
 .cabinet .layout .window form .flex .column:last-of-type input:last-of-type {
   margin-bottom: 61px;
+}
+.cabinet .layout .window form.for-address {
+  display: none;
 }
 .cabinet .layout .window form.for-address .flex {
   margin-bottom: 30px;
@@ -2396,6 +2403,19 @@ header .layout .wrapper .interface ul li.basket a:hover {
   margin: 0;
   width: 100px;
   height: 50px;
+}
+.cabinet .layout .window ul.favourites {
+  max-height: 300px;
+  overflow-y: scroll;
+}
+.cabinet .layout .window ul.favourites li {
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+  margin-bottom: 24px;
+}
+.cabinet .layout .window ul.favourites li .column.for-interface {
+  display: flex;
 }
 
 .contacts {

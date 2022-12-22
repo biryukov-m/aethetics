@@ -72,6 +72,10 @@
               line-height: 150%;
               color: $text;
             }
+            input {
+              border-radius: 0;
+              border: 1px solid #000;
+            }
             label {
               margin-bottom: 3px;
             }
@@ -88,6 +92,7 @@
           }
         }
         &.for-address {
+          display: none;
           .flex {
             margin-bottom: 30px;
             .column {
@@ -158,6 +163,21 @@
                   height: 50px;
                 }
               }
+            }
+          }
+        }
+      }
+      ul.favourites {
+        max-height: 300px;
+        overflow-y: scroll;
+        li {
+          display: flex;
+          flex-direction: row;
+          gap: 15px;
+          margin-bottom: 24px;
+          .column {
+            &.for-interface {
+              display: flex;
             }
           }
         }
