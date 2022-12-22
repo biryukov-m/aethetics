@@ -312,7 +312,7 @@ p {
 }
 @media (max-width: 1140px) {
   .btn span,
-  .btn a {
+.btn a {
     font-size: 18px;
     padding-bottom: 4px;
   }
@@ -1453,7 +1453,7 @@ header .layout .wrapper .interface ul li.basket a:hover {
 }
 @media (max-width: 767px) {
   .catalogue .flex .column .items .item .name p,
-  .catalogue .flex .column .items .item .price p {
+.catalogue .flex .column .items .item .price p {
     font-size: clamp(14px, 3.4vw, 17px);
     line-height: clamp(120%, 3.6vw, 150%);
   }
@@ -2017,7 +2017,7 @@ header .layout .wrapper .interface ul li.basket a:hover {
 }
 @media (max-width: 767px) {
   .full-info article h4.mobile,
-  .full-info .reviews h4.mobile {
+.full-info .reviews h4.mobile {
     display: inline-block;
     padding: 0 2px;
     font-size: clamp(18px, 3.3vw, 22px);
@@ -2202,45 +2202,114 @@ header .layout .wrapper .interface ul li.basket a:hover {
 }
 
 .blog {
-  margin-bottom: -4px;
+  margin-bottom: 68px;
 }
-.blog .layout {
-  max-width: 1074px;
-  width: auto;
+@media (max-width: 1140px) {
+  .blog {
+    margin-bottom: 20px;
+  }
 }
-.blog .layout .go-back {
+.blog .layout .top-controls .go-back {
   margin: 18px 0 -9px;
 }
-.blog .layout h2 {
+.blog .layout article {
+  max-width: 1074px;
+}
+.blog .layout article h2 {
   margin-left: 66px;
   margin-bottom: 35px;
   font-family: "Candara";
   font-style: normal;
   font-weight: 400;
   font-size: 40px;
-  line-height: 49px;
+  line-height: 120%;
 }
-.blog .layout .text-with-image {
+@media (max-width: 1140px) {
+  .blog .layout article h2 {
+    font-size: clamp(24px, 3.5vw, 38px);
+    margin-bottom: 20px;
+    margin-left: 33px;
+  }
+}
+@media (max-width: 767px) {
+  .blog .layout article h2 {
+    font-size: clamp(18px, 3.3vw, 24px);
+    margin-bottom: 10px;
+    margin-left: 0;
+    font-weight: 400;
+  }
+}
+.blog .layout article p {
+  line-height: 120%;
+  margin-bottom: 75px;
+}
+@media (max-width: 1140px) {
+  .blog .layout article p {
+    font-size: clamp(15px, 2vw, 20px);
+    margin-bottom: clamp(15px, 2vw, 20px);
+  }
+}
+@media (max-width: 767px) {
+  .blog .layout article p {
+    font-size: clamp(14px, 2.9vw, 18px);
+    margin-bottom: clamp(15px, 2vw, 20px);
+  }
+}
+.blog .layout article .text-with-image {
   display: flex;
   justify-content: space-between;
   margin-bottom: 24px;
 }
-.blog .layout .text-with-image.left {
+@media (max-width: 767px) {
+  .blog .layout article .text-with-image {
+    flex-direction: column-reverse;
+    gap: 10px;
+  }
+}
+.blog .layout article .text-with-image.left {
   flex-direction: row-reverse;
 }
-.blog .layout .text-with-image .text {
+@media (max-width: 767px) {
+  .blog .layout article .text-with-image.left {
+    flex-direction: column;
+  }
+}
+.blog .layout article .text-with-image .text {
   width: 51.4%;
   margin: 48px 0 0;
 }
-.blog .layout .text-with-image .text p {
+@media (max-width: 1140px) {
+  .blog .layout article .text-with-image .text {
+    margin: 24px 0 0;
+  }
+}
+@media (max-width: 767px) {
+  .blog .layout article .text-with-image .text {
+    width: 100%;
+    margin: 0;
+  }
+}
+.blog .layout article .text-with-image .text p {
   margin-bottom: 24px;
 }
-.blog .layout .text-with-image .image-holder {
+@media (max-width: 1140px) {
+  .blog .layout article .text-with-image .text p {
+    margin-bottom: clamp(15px, 2vw, 20px);
+  }
+}
+@media (max-width: 767px) {
+  .blog .layout article .text-with-image .text p {
+    margin-bottom: clamp(15px, 2vw, 20px);
+  }
+}
+.blog .layout article .text-with-image .image-holder {
   width: 46.6%;
 }
-.blog .layout p {
-  line-height: 24px;
-  margin-bottom: 75px;
+@media (max-width: 767px) {
+  .blog .layout article .text-with-image .image-holder {
+    width: auto;
+    margin: 0 auto;
+  }
 }
 
 .cabinet {
@@ -2426,7 +2495,8 @@ header .layout .wrapper .interface ul li.basket a:hover {
   margin: 109px 0 0 20px;
   padding: 17px 28px 20px 20px;
   background: rgba(75, 96, 73, 0.3);
-  backdrop-filter: blur(7.5px);
+  -webkit-backdrop-filter: blur(7.5px);
+          backdrop-filter: blur(7.5px);
 }
 .contacts .layout .wrapper form .hide {
   display: none;
@@ -2609,14 +2679,14 @@ footer .layout .wrapper a {
 }
 @media (max-width: 1074px) {
   footer .layout .wrapper p,
-  footer .layout .wrapper a {
+footer .layout .wrapper a {
     font-size: 18px;
     font-weight: 200;
   }
 }
 @media (max-width: 450px) {
   footer .layout .wrapper p,
-  footer .layout .wrapper a {
+footer .layout .wrapper a {
     font-size: 3.9vw;
   }
 }
