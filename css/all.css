@@ -2206,7 +2206,7 @@ header .layout .wrapper .interface ul li.basket a:hover {
 }
 @media (max-width: 1140px) {
   .blog {
-    margin-bottom: 20px;
+    margin-bottom: 5px;
   }
 }
 .blog .layout .top-controls .go-back {
@@ -2470,48 +2470,84 @@ header .layout .wrapper .interface ul li.basket a:hover {
 .contacts {
   margin: 20px 0 17px;
 }
-.contacts .layout {
-  width: auto;
-  max-width: 1074px;
+@media (max-width: 767px) {
+  .contacts {
+    margin: 30px 0;
+  }
+}
+.contacts .layout .image-holder {
+  width: 100%;
+}
+@media (max-width: 767px) {
+  .contacts .layout .image-holder {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+  }
+}
+@media (max-width: 767px) {
+  .contacts .layout .image-holder img {
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+  }
 }
 .contacts .layout .wrapper {
-  display: block;
-  position: relative;
-  overflow: hidden;
-  width: 100%;
-  box-sizing: border-box;
-  height: auto;
-}
-.contacts .layout .wrapper .image-holder {
-  width: 100%;
-}
-.contacts .layout .wrapper .image-holder img {
-  background-size: cover;
-}
-.contacts .layout .wrapper form {
   position: absolute;
   top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
   z-index: 2;
+}
+@media (max-width: 1140px) {
+  .contacts .layout .wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+@media (max-width: 767px) {
+  .contacts .layout .wrapper {
+    position: relative;
+  }
+}
+.contacts .layout .wrapper form {
   margin: 109px 0 0 20px;
   padding: 17px 28px 20px 20px;
   background: rgba(75, 96, 73, 0.3);
   -webkit-backdrop-filter: blur(7.5px);
           backdrop-filter: blur(7.5px);
+  width: fit-content;
 }
-.contacts .layout .wrapper form .hide {
-  display: none;
+@media (max-width: 1140px) {
+  .contacts .layout .wrapper form {
+    margin: 0 0 0 20px;
+  }
+}
+@media (max-width: 767px) {
+  .contacts .layout .wrapper form {
+    padding: 15px 55px 15px 15px;
+    margin: 15px;
+  }
 }
 .contacts .layout .wrapper form .calling {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 3px;
+  padding: 131px 66px;
+}
+@media (max-width: 1140px) {
+  .contacts .layout .wrapper form .calling {
+    padding: 65px 33px;
+  }
+}
+@media (max-width: 1140px) {
+  .contacts .layout .wrapper form .calling {
+    height: 300px;
+  }
 }
 .contacts .layout .wrapper form .calling h2 {
   font-family: "Poiret One";
@@ -2521,6 +2557,11 @@ header .layout .wrapper .interface ul li.basket a:hover {
   line-height: 70px;
   color: #fffbf5;
 }
+@media (max-width: 1140px) {
+  .contacts .layout .wrapper form .calling h2 {
+    font-size: clamp(30px, 5.5vw, 60px);
+  }
+}
 .contacts .layout .wrapper form .calling h3 {
   font-family: "Poiret One";
   font-style: normal;
@@ -2529,10 +2570,23 @@ header .layout .wrapper .interface ul li.basket a:hover {
   line-height: 47px;
   color: #ffffff;
 }
+@media (max-width: 1140px) {
+  .contacts .layout .wrapper form .calling h3 {
+    font-size: clamp(20px, 3.7vw, 40px);
+  }
+}
+.contacts .layout .wrapper form .calling.hide {
+  display: none;
+}
 .contacts .layout .wrapper form .working-info {
   position: relative;
   padding-bottom: 9px;
   margin-bottom: 30px;
+}
+@media (max-width: 767px) {
+  .contacts .layout .wrapper form .working-info {
+    margin-bottom: 15px;
+  }
 }
 .contacts .layout .wrapper form .working-info::before {
   position: absolute;
@@ -2544,31 +2598,66 @@ header .layout .wrapper .interface ul li.basket a:hover {
   right: 44px;
   background: #fffbf5;
 }
+@media (max-width: 767px) {
+  .contacts .layout .wrapper form .working-info::before {
+    right: 0;
+  }
+}
+.contacts .layout .wrapper form .working-info p {
+  font-size: 20px;
+  line-height: 120%;
+  color: #fffbf5;
+}
+@media (max-width: 1140px) {
+  .contacts .layout .wrapper form .working-info p {
+    font-size: clamp(15px, 2vw, 20px);
+  }
+}
+@media (max-width: 767px) {
+  .contacts .layout .wrapper form .working-info p {
+    font-size: clamp(14px, 2.9vw, 16px);
+  }
+}
 .contacts .layout .wrapper form .working-info .hours {
   margin-bottom: 30px;
+}
+@media (max-width: 767px) {
+  .contacts .layout .wrapper form .working-info .hours {
+    margin-bottom: 10px;
+  }
 }
 .contacts .layout .wrapper form .working-info .hours h2 {
   font-family: "Candara";
   font-style: normal;
   font-weight: 400;
-  font-size: 26px;
-  line-height: 32px;
   color: #fffbf5;
+  font-size: 26px;
+  line-height: 120%;
   margin-bottom: 5px;
+  color: #fffbf5;
+}
+@media (max-width: 1140px) {
+  .contacts .layout .wrapper form .working-info .hours h2 {
+    font-size: clamp(20px, 2.3vw, 26px);
+  }
+}
+@media (max-width: 767px) {
+  .contacts .layout .wrapper form .working-info .hours h2 {
+    font-size: clamp(18px, 3.3vw, 20px);
+  }
 }
 .contacts .layout .wrapper form .working-info .hours p {
-  font-size: 20px;
-  line-height: 24px;
-  color: #fffbf5;
   margin-bottom: 5px;
 }
 .contacts .layout .wrapper form .working-info .phones {
   margin-bottom: 30px;
 }
+@media (max-width: 767px) {
+  .contacts .layout .wrapper form .working-info .phones {
+    margin-bottom: 15px;
+  }
+}
 .contacts .layout .wrapper form .working-info .phones p {
-  font-size: 20px;
-  line-height: 24px;
-  color: #fffbf5;
   margin-bottom: 11px;
 }
 .contacts .layout .wrapper form .working-info .phones p:nth-last-of-type() {
@@ -2580,6 +2669,12 @@ header .layout .wrapper .interface ul li.basket a:hover {
   flex-wrap: nowrap;
   justify-content: space-between;
   gap: 39px;
+}
+@media (max-width: 767px) {
+  .contacts .layout .wrapper form .bottom-group {
+    flex-direction: column;
+    gap: 15px;
+  }
 }
 .contacts .layout .wrapper form .bottom-group .column {
   display: flex;
@@ -2600,6 +2695,13 @@ header .layout .wrapper .interface ul li.basket a:hover {
   width: 276px;
   border: 1px solid #fffbf5;
 }
+@media (max-width: 1140px) {
+  .contacts .layout .wrapper form .bottom-group .column input {
+    padding: 5px;
+    width: 214px;
+    font-size: clamp(15px, 2vw, 20px);
+  }
+}
 .contacts .layout .wrapper form .bottom-group .column input::placeholder {
   font-family: "Candara";
   font-style: normal;
@@ -2607,6 +2709,11 @@ header .layout .wrapper .interface ul li.basket a:hover {
   font-size: 20px;
   line-height: 150%;
   color: #b2b2b2;
+}
+@media (max-width: 1140px) {
+  .contacts .layout .wrapper form .bottom-group .column input::placeholder {
+    font-size: clamp(15px, 2vw, 20px);
+  }
 }
 .contacts .layout .wrapper form .bottom-group .column button {
   transition-property: all;
