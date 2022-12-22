@@ -1,183 +1,286 @@
 .cabinet {
   margin: 51px 0 10px;
+  @media (max-width: 1140px) {
+    margin: 30px 0 10px;
+  }
+
   .layout {
-    width: auto;
-    max-width: 928px;
-    h2 {
-      width: fit-content;
-      margin: 0 auto 27px;
-      font-family: "Candara";
-      font-style: normal;
-      font-weight: 200;
-      font-size: 40px;
-      line-height: 49px;
-      color: $text;
-    }
-    .tabs {
-      display: flex;
-      justify-content: space-between;
-      margin-bottom: 24px;
-      li {
-        a {
-          display: block;
-          padding-bottom: 7px;
-          font-family: "Candara";
-          font-style: normal;
-          font-weight: 200;
-          font-size: 26px;
-          color: $text;
-          cursor: pointer;
-          position: relative;
-          &.active,
-          &:hover {
-            font-weight: 400;
-            letter-spacing: -0.25px;
-            margin: 0;
-            &::before {
-              display: block;
-              content: "";
-              position: absolute;
-              bottom: 0;
-              left: 0;
-              right: 0;
-              height: 1px;
-              background-color: $text;
+    .wrapper {
+      width: 100%;
+      max-width: 928px;
+      h2 {
+        width: fit-content;
+        margin: 0 auto 27px;
+        font-family: "Candara";
+        font-style: normal;
+        font-weight: 200;
+        font-size: 40px;
+        line-height: 120%;
+        color: $text;
+        @media (max-width: 1140px) {
+          font-size: clamp(20px, 3.7vw, 40px);
+        }
+      }
+      .tabs {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 24px;
+        li {
+          a {
+            display: block;
+            padding-bottom: 7px;
+            font-family: "Candara";
+            font-style: normal;
+            font-weight: 200;
+            font-size: 26px;
+            color: $text;
+            cursor: pointer;
+            position: relative;
+            @media (max-width: 1140px) {
+              font-size: clamp(20px, 2.3vw, 26px);
+            }
+            &.active,
+            &:hover {
+              font-weight: 400;
+              letter-spacing: -0.25px;
+              margin: 0;
+              &::before {
+                display: block;
+                content: "";
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                height: 1px;
+                background-color: $text;
+              }
             }
           }
         }
       }
-    }
-    .window {
-      form {
-        &.for-contacts {
-          display: none;
-        }
-        .flex {
-          display: flex;
-          flex-direction: row;
-          justify-content: space-between;
-          gap: 15px;
-          margin-bottom: 24px;
-          .column {
+      .window {
+        form {
+          &.for-contacts {
+            display: none;
+          }
+          .flex {
             display: flex;
-            flex-direction: column;
-            width: 368px;
-            label,
-            input,
-            input::placeholder {
-              font-family: "Candara";
-              font-style: normal;
-              font-weight: 200;
-              font-size: 20px;
-              line-height: 150%;
-              color: $text;
+            flex-direction: row;
+            justify-content: space-between;
+            gap: 15px;
+            margin-bottom: 24px;
+            .column {
+              display: flex;
+              flex-direction: column;
+              width: 368px;
+              label,
+              input,
+              input::placeholder {
+                font-family: "Candara";
+                font-style: normal;
+                font-weight: 200;
+                font-size: 20px;
+                line-height: 150%;
+                color: $text;
+              }
+              input {
+                border-radius: 0;
+                border: 1px solid #000;
+              }
+              label {
+                margin-bottom: 3px;
+              }
+              input {
+                color: $text;
+                padding: 5px 8px 10px;
+                margin-bottom: 28px;
+              }
+              &:last-of-type {
+                input:last-of-type {
+                  margin-bottom: 61px;
+                }
+              }
             }
-            input {
-              border-radius: 0;
-              border: 1px solid #000;
-            }
-            label {
-              margin-bottom: 3px;
-            }
-            input {
-              color: $text;
-              padding: 5px 8px 10px;
-              margin-bottom: 28px;
-            }
-            &:last-of-type {
-              input:last-of-type {
-                margin-bottom: 61px;
+          }
+          &.for-address {
+            display: none;
+            .flex {
+              margin-bottom: 30px;
+              .column {
+                &:first-of-type {
+                  width: 228px;
+                }
+                &:last-of-type {
+                  margin-right: 7px;
+                  > input:last-of-type {
+                    margin-bottom: 0;
+                  }
+                }
+                .contact {
+                  position: relative;
+                  padding-left: 60px;
+                  margin-bottom: 20px;
+                  .nth {
+                    position: absolute;
+                    left: 0;
+                    top: 3px;
+                    width: 50px;
+                    height: 50px;
+                    border-radius: 50%;
+                    font-family: "Candara";
+                    font-weight: 200;
+                    font-size: 40px;
+                    text-align: center;
+                    color: #fff;
+                    background-color: $accent;
+                  }
+                  p {
+                    margin-bottom: 2px;
+                    &:last-of-type {
+                      margin-bottom: 5px;
+                    }
+                  }
+                  .links {
+                    display: flex;
+                    justify-content: space-between;
+                    a {
+                      font-family: "Candara";
+                      font-style: normal;
+                      font-weight: 200;
+                      font-size: 18px;
+                      line-height: 150%;
+                      text-decoration: underline;
+                      color: $text;
+                      &:hover {
+                        transform: translate(0, -2px);
+                        font-weight: 400;
+                      }
+                    }
+                  }
+                }
+                p {
+                  margin-bottom: 13px;
+                }
+                input {
+                  margin-bottom: 10px;
+                }
+                .group {
+                  display: flex;
+                  justify-content: space-between;
+                  margin-bottom: 10px;
+                  input {
+                    margin: 0;
+                    width: 100px;
+                    height: 50px;
+                  }
+                }
               }
             }
           }
         }
-        &.for-address {
-          display: none;
-          .flex {
-            margin-bottom: 30px;
+        ul.favourites {
+          max-height: 296px;
+          overflow-y: scroll;
+          padding-right: 48px;
+          margin: 77px 0 73px;
+          @media (max-width: 1140px) {
+            padding-right: 24px;
+            margin: 38px 0 37px;
+          }
+          li {
+            display: flex;
+            flex-direction: row;
+            margin-bottom: 9px;
+            border-bottom: 1px solid $accent;
+            padding-bottom: 9px;
+
             .column {
-              &:first-of-type {
-                width: 228px;
-              }
-              &:last-of-type {
-                margin-right: 7px;
-                > input:last-of-type {
-                  margin-bottom: 0;
+              &.for-image {
+                margin-right: 18px;
+                .image-holder {
+                  width: 80px;
+                  height: 80px;
                 }
               }
-              .contact {
-                position: relative;
-                padding-left: 60px;
-                margin-bottom: 20px;
-                .nth {
-                  position: absolute;
-                  left: 0;
-                  top: 3px;
-                  width: 50px;
-                  height: 50px;
-                  border-radius: 50%;
-                  font-family: "Candara";
-                  font-weight: 200;
-                  font-size: 40px;
-                  text-align: center;
-                  color: #fff;
-                  background-color: $accent;
+              &.for-interface {
+                display: flex;
+                @media (max-width: 1140px) {
+                  width: 100%;
+                  justify-content: space-between;
                 }
-                p {
-                  margin-bottom: 2px;
-                  &:last-of-type {
-                    margin-bottom: 5px;
+                .rating-and-availability {
+                  display: flex;
+                  flex-direction: column;
+                  justify-content: space-between;
+                  margin-right: 81px;
+                  @media (max-width: 1140px) {
+                    margin-right: 20px;
+                  }
+                  .rating {
+                    .star {
+                      cursor: default;
+                    }
+                  }
+                  .availability {
+                    font-family: "Candara";
+                    font-style: normal;
+                    font-weight: 200;
+                    font-size: 18px;
+                    line-height: 150%;
+                    color: $text;
+                    @media (max-width: 1140px) {
+                      font-size: clamp(16px, 1.6vw, 18px);
+                    }
                   }
                 }
-                .links {
+                p {
+                  font-family: "Candara";
+                  font-style: normal;
+                  font-weight: 400;
+                  font-size: 20px;
+                  line-height: 24px;
+                  @media (max-width: 1140px) {
+                    font-size: clamp(17px, 1.8vw, 20px);
+                  }
+                }
+                .name {
+                  width: 210px;
+                  margin-right: 70px;
+                  @media (max-width: 1140px) {
+                    margin-right: 20px;
+                  }
+                }
+                .price {
+                  margin-right: 82px;
+                  @media (max-width: 1140px) {
+                    margin-right: 20px;
+                  }
+                }
+                .buttons {
                   display: flex;
+                  flex-direction: column;
                   justify-content: space-between;
+                  .btn-mini {
+                    position: relative;
+                    top: 6px;
+                  }
                   a {
                     font-family: "Candara";
                     font-style: normal;
                     font-weight: 200;
                     font-size: 18px;
                     line-height: 150%;
-                    text-decoration: underline;
                     color: $text;
+                    text-decoration: underline;
+                    @media (max-width: 1140px) {
+                      font-size: clamp(16px, 1.6vw, 18px);
+                    }
                     &:hover {
-                      transform: translate(0, -2px);
                       font-weight: 400;
                     }
                   }
                 }
               }
-              p {
-                margin-bottom: 13px;
-              }
-              input {
-                margin-bottom: 10px;
-              }
-              .group {
-                display: flex;
-                justify-content: space-between;
-                margin-bottom: 10px;
-                input {
-                  margin: 0;
-                  width: 100px;
-                  height: 50px;
-                }
-              }
-            }
-          }
-        }
-      }
-      ul.favourites {
-        max-height: 300px;
-        overflow-y: scroll;
-        li {
-          display: flex;
-          flex-direction: row;
-          gap: 15px;
-          margin-bottom: 24px;
-          .column {
-            &.for-interface {
-              display: flex;
             }
           }
         }

@@ -2315,26 +2315,36 @@ header .layout .wrapper .interface ul li.basket a:hover {
 .cabinet {
   margin: 51px 0 10px;
 }
-.cabinet .layout {
-  width: auto;
+@media (max-width: 1140px) {
+  .cabinet {
+    margin: 30px 0 10px;
+  }
+}
+.cabinet .layout .wrapper {
+  width: 100%;
   max-width: 928px;
 }
-.cabinet .layout h2 {
+.cabinet .layout .wrapper h2 {
   width: fit-content;
   margin: 0 auto 27px;
   font-family: "Candara";
   font-style: normal;
   font-weight: 200;
   font-size: 40px;
-  line-height: 49px;
+  line-height: 120%;
   color: #484847;
 }
-.cabinet .layout .tabs {
+@media (max-width: 1140px) {
+  .cabinet .layout .wrapper h2 {
+    font-size: clamp(20px, 3.7vw, 40px);
+  }
+}
+.cabinet .layout .wrapper .tabs {
   display: flex;
   justify-content: space-between;
   margin-bottom: 24px;
 }
-.cabinet .layout .tabs li a {
+.cabinet .layout .wrapper .tabs li a {
   display: block;
   padding-bottom: 7px;
   font-family: "Candara";
@@ -2345,12 +2355,17 @@ header .layout .wrapper .interface ul li.basket a:hover {
   cursor: pointer;
   position: relative;
 }
-.cabinet .layout .tabs li a.active, .cabinet .layout .tabs li a:hover {
+@media (max-width: 1140px) {
+  .cabinet .layout .wrapper .tabs li a {
+    font-size: clamp(20px, 2.3vw, 26px);
+  }
+}
+.cabinet .layout .wrapper .tabs li a.active, .cabinet .layout .wrapper .tabs li a:hover {
   font-weight: 400;
   letter-spacing: -0.25px;
   margin: 0;
 }
-.cabinet .layout .tabs li a.active::before, .cabinet .layout .tabs li a:hover::before {
+.cabinet .layout .wrapper .tabs li a.active::before, .cabinet .layout .wrapper .tabs li a:hover::before {
   display: block;
   content: "";
   position: absolute;
@@ -2360,24 +2375,24 @@ header .layout .wrapper .interface ul li.basket a:hover {
   height: 1px;
   background-color: #484847;
 }
-.cabinet .layout .window form.for-contacts {
+.cabinet .layout .wrapper .window form.for-contacts {
   display: none;
 }
-.cabinet .layout .window form .flex {
+.cabinet .layout .wrapper .window form .flex {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   gap: 15px;
   margin-bottom: 24px;
 }
-.cabinet .layout .window form .flex .column {
+.cabinet .layout .wrapper .window form .flex .column {
   display: flex;
   flex-direction: column;
   width: 368px;
 }
-.cabinet .layout .window form .flex .column label,
-.cabinet .layout .window form .flex .column input,
-.cabinet .layout .window form .flex .column input::placeholder {
+.cabinet .layout .wrapper .window form .flex .column label,
+.cabinet .layout .wrapper .window form .flex .column input,
+.cabinet .layout .wrapper .window form .flex .column input::placeholder {
   font-family: "Candara";
   font-style: normal;
   font-weight: 200;
@@ -2385,42 +2400,42 @@ header .layout .wrapper .interface ul li.basket a:hover {
   line-height: 150%;
   color: #484847;
 }
-.cabinet .layout .window form .flex .column input {
+.cabinet .layout .wrapper .window form .flex .column input {
   border-radius: 0;
   border: 1px solid #000;
 }
-.cabinet .layout .window form .flex .column label {
+.cabinet .layout .wrapper .window form .flex .column label {
   margin-bottom: 3px;
 }
-.cabinet .layout .window form .flex .column input {
+.cabinet .layout .wrapper .window form .flex .column input {
   color: #484847;
   padding: 5px 8px 10px;
   margin-bottom: 28px;
 }
-.cabinet .layout .window form .flex .column:last-of-type input:last-of-type {
+.cabinet .layout .wrapper .window form .flex .column:last-of-type input:last-of-type {
   margin-bottom: 61px;
 }
-.cabinet .layout .window form.for-address {
+.cabinet .layout .wrapper .window form.for-address {
   display: none;
 }
-.cabinet .layout .window form.for-address .flex {
+.cabinet .layout .wrapper .window form.for-address .flex {
   margin-bottom: 30px;
 }
-.cabinet .layout .window form.for-address .flex .column:first-of-type {
+.cabinet .layout .wrapper .window form.for-address .flex .column:first-of-type {
   width: 228px;
 }
-.cabinet .layout .window form.for-address .flex .column:last-of-type {
+.cabinet .layout .wrapper .window form.for-address .flex .column:last-of-type {
   margin-right: 7px;
 }
-.cabinet .layout .window form.for-address .flex .column:last-of-type > input:last-of-type {
+.cabinet .layout .wrapper .window form.for-address .flex .column:last-of-type > input:last-of-type {
   margin-bottom: 0;
 }
-.cabinet .layout .window form.for-address .flex .column .contact {
+.cabinet .layout .wrapper .window form.for-address .flex .column .contact {
   position: relative;
   padding-left: 60px;
   margin-bottom: 20px;
 }
-.cabinet .layout .window form.for-address .flex .column .contact .nth {
+.cabinet .layout .wrapper .window form.for-address .flex .column .contact .nth {
   position: absolute;
   left: 0;
   top: 3px;
@@ -2434,17 +2449,17 @@ header .layout .wrapper .interface ul li.basket a:hover {
   color: #fff;
   background-color: #4b6049;
 }
-.cabinet .layout .window form.for-address .flex .column .contact p {
+.cabinet .layout .wrapper .window form.for-address .flex .column .contact p {
   margin-bottom: 2px;
 }
-.cabinet .layout .window form.for-address .flex .column .contact p:last-of-type {
+.cabinet .layout .wrapper .window form.for-address .flex .column .contact p:last-of-type {
   margin-bottom: 5px;
 }
-.cabinet .layout .window form.for-address .flex .column .contact .links {
+.cabinet .layout .wrapper .window form.for-address .flex .column .contact .links {
   display: flex;
   justify-content: space-between;
 }
-.cabinet .layout .window form.for-address .flex .column .contact .links a {
+.cabinet .layout .wrapper .window form.for-address .flex .column .contact .links a {
   font-family: "Candara";
   font-style: normal;
   font-weight: 200;
@@ -2453,38 +2468,142 @@ header .layout .wrapper .interface ul li.basket a:hover {
   text-decoration: underline;
   color: #484847;
 }
-.cabinet .layout .window form.for-address .flex .column .contact .links a:hover {
+.cabinet .layout .wrapper .window form.for-address .flex .column .contact .links a:hover {
   transform: translate(0, -2px);
   font-weight: 400;
 }
-.cabinet .layout .window form.for-address .flex .column p {
+.cabinet .layout .wrapper .window form.for-address .flex .column p {
   margin-bottom: 13px;
 }
-.cabinet .layout .window form.for-address .flex .column input {
+.cabinet .layout .wrapper .window form.for-address .flex .column input {
   margin-bottom: 10px;
 }
-.cabinet .layout .window form.for-address .flex .column .group {
+.cabinet .layout .wrapper .window form.for-address .flex .column .group {
   display: flex;
   justify-content: space-between;
   margin-bottom: 10px;
 }
-.cabinet .layout .window form.for-address .flex .column .group input {
+.cabinet .layout .wrapper .window form.for-address .flex .column .group input {
   margin: 0;
   width: 100px;
   height: 50px;
 }
-.cabinet .layout .window ul.favourites {
-  max-height: 300px;
+.cabinet .layout .wrapper .window ul.favourites {
+  max-height: 296px;
   overflow-y: scroll;
+  padding-right: 48px;
+  margin: 77px 0 73px;
 }
-.cabinet .layout .window ul.favourites li {
+@media (max-width: 1140px) {
+  .cabinet .layout .wrapper .window ul.favourites {
+    padding-right: 24px;
+    margin: 38px 0 37px;
+  }
+}
+.cabinet .layout .wrapper .window ul.favourites li {
   display: flex;
   flex-direction: row;
-  gap: 15px;
-  margin-bottom: 24px;
+  margin-bottom: 9px;
+  border-bottom: 1px solid #4b6049;
+  padding-bottom: 9px;
 }
-.cabinet .layout .window ul.favourites li .column.for-interface {
+.cabinet .layout .wrapper .window ul.favourites li .column.for-image {
+  margin-right: 18px;
+}
+.cabinet .layout .wrapper .window ul.favourites li .column.for-image .image-holder {
+  width: 80px;
+  height: 80px;
+}
+.cabinet .layout .wrapper .window ul.favourites li .column.for-interface {
   display: flex;
+}
+@media (max-width: 1140px) {
+  .cabinet .layout .wrapper .window ul.favourites li .column.for-interface {
+    width: 100%;
+    justify-content: space-between;
+  }
+}
+.cabinet .layout .wrapper .window ul.favourites li .column.for-interface .rating-and-availability {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-right: 81px;
+}
+@media (max-width: 1140px) {
+  .cabinet .layout .wrapper .window ul.favourites li .column.for-interface .rating-and-availability {
+    margin-right: 20px;
+  }
+}
+.cabinet .layout .wrapper .window ul.favourites li .column.for-interface .rating-and-availability .rating .star {
+  cursor: default;
+}
+.cabinet .layout .wrapper .window ul.favourites li .column.for-interface .rating-and-availability .availability {
+  font-family: "Candara";
+  font-style: normal;
+  font-weight: 200;
+  font-size: 18px;
+  line-height: 150%;
+  color: #484847;
+}
+@media (max-width: 1140px) {
+  .cabinet .layout .wrapper .window ul.favourites li .column.for-interface .rating-and-availability .availability {
+    font-size: clamp(16px, 1.6vw, 18px);
+  }
+}
+.cabinet .layout .wrapper .window ul.favourites li .column.for-interface p {
+  font-family: "Candara";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 24px;
+}
+@media (max-width: 1140px) {
+  .cabinet .layout .wrapper .window ul.favourites li .column.for-interface p {
+    font-size: clamp(17px, 1.8vw, 20px);
+  }
+}
+.cabinet .layout .wrapper .window ul.favourites li .column.for-interface .name {
+  width: 210px;
+  margin-right: 70px;
+}
+@media (max-width: 1140px) {
+  .cabinet .layout .wrapper .window ul.favourites li .column.for-interface .name {
+    margin-right: 20px;
+  }
+}
+.cabinet .layout .wrapper .window ul.favourites li .column.for-interface .price {
+  margin-right: 82px;
+}
+@media (max-width: 1140px) {
+  .cabinet .layout .wrapper .window ul.favourites li .column.for-interface .price {
+    margin-right: 20px;
+  }
+}
+.cabinet .layout .wrapper .window ul.favourites li .column.for-interface .buttons {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.cabinet .layout .wrapper .window ul.favourites li .column.for-interface .buttons .btn-mini {
+  position: relative;
+  top: 6px;
+}
+.cabinet .layout .wrapper .window ul.favourites li .column.for-interface .buttons a {
+  font-family: "Candara";
+  font-style: normal;
+  font-weight: 200;
+  font-size: 18px;
+  line-height: 150%;
+  color: #484847;
+  text-decoration: underline;
+}
+@media (max-width: 1140px) {
+  .cabinet .layout .wrapper .window ul.favourites li .column.for-interface .buttons a {
+    font-size: clamp(16px, 1.6vw, 18px);
+  }
+}
+.cabinet .layout .wrapper .window ul.favourites li .column.for-interface .buttons a:hover {
+  font-weight: 400;
 }
 
 .contacts {
