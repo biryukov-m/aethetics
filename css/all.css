@@ -2527,11 +2527,13 @@ header .layout .wrapper .interface ul li.basket a:hover {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  margin-right: 81px;
+  width: 160px;
+  margin-right: 20px;
 }
 @media (max-width: 1140px) {
   .cabinet .layout .wrapper .window ul.favourites li .column.for-interface .rating-and-availability {
-    margin-right: 20px;
+    width: 140px;
+    margin-right: 0;
   }
 }
 .cabinet .layout .wrapper .window ul.favourites li .column.for-interface .rating-and-availability .rating .star {

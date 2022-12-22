@@ -193,7 +193,6 @@
             margin-bottom: 9px;
             border-bottom: 1px solid $accent;
             padding-bottom: 9px;
-
             .column {
               &.for-image {
                 margin-right: 18px;
@@ -212,9 +211,11 @@
                   display: flex;
                   flex-direction: column;
                   justify-content: space-between;
-                  margin-right: 81px;
+                  width: 160px;
+                  margin-right: 20px;
                   @media (max-width: 1140px) {
-                    margin-right: 20px;
+                    width: 140px;
+                    margin-right: 0;
                   }
                   .rating {
                     .star {
