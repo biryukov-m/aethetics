@@ -684,8 +684,11 @@ header .layout .wrapper .interface ul li a {
   height: 36px;
   cursor: pointer;
   background-repeat: no-repeat;
-  background-position: center;
+  background-position-x: center, 1111px;
   background-size: contain;
+}
+header .layout .wrapper .interface ul li a:hover {
+  background-position-x: 1111px, center;
 }
 @media (max-width: 767px) {
   header .layout .wrapper .interface ul li a {
@@ -705,10 +708,7 @@ header .layout .wrapper .interface ul li.burger a {
   background-image: url(../images/icon-burger.png);
 }
 header .layout .wrapper .interface ul li.to-cabinet a {
-  background-image: url(../images/icon-cabinet-default.png);
-}
-header .layout .wrapper .interface ul li.to-cabinet a:hover {
-  background-image: url(../images/icon-cabinet-hover.png);
+  background-image: url(../images/icon-cabinet-default.png), url(../images/icon-cabinet-hover.png);
 }
 @media (max-width: 767px) {
   header .layout .wrapper .interface ul li.favourite {
@@ -716,16 +716,10 @@ header .layout .wrapper .interface ul li.to-cabinet a:hover {
   }
 }
 header .layout .wrapper .interface ul li.favourite a {
-  background-image: url(../images/icon-fav-default.png);
-}
-header .layout .wrapper .interface ul li.favourite a:hover {
-  background-image: url(../images/icon-fav-hover.png);
+  background-image: url(../images/icon-fav-default.png), url(../images/icon-fav-hover.png);
 }
 header .layout .wrapper .interface ul li.basket a {
-  background-image: url(../images/icon-basket-default.png);
-}
-header .layout .wrapper .interface ul li.basket a:hover {
-  background-image: url(../images/icon-basket-hover.png);
+  background-image: url(../images/icon-basket-default.png), url(../images/icon-basket-hover.png);
 }
 
 .first-view {
