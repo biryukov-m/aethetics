@@ -219,7 +219,6 @@ p {
     width: 132px;
     height: 42px;
     border: 1px solid var(--accent);
-    margin-bottom: 0;
   }
   span {
     font-family: "Candara";
@@ -241,7 +240,11 @@ p {
     bottom: -18px;
     transition: transform 0.2s ease-in;
     @media (max-width: 1140px) {
-      display: none;
+      height: 26px;
+      bottom: -14px;
+      background-size: cover;
+      width: 10px;
+      background-repeat: no-repeat;
     }
   }
   &:hover::before {

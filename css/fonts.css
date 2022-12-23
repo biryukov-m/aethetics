@@ -1,22 +1,27 @@
-/* Example */
-/* @font-face {
-    font-family: 'Corbel';
-    src: url('../fonts/Corbel.eot');
-    src: url('../fonts/Corbel.eot?#iefix') format('embedded-opentype'),
-         url('../fonts/Corbel.woff') format('woff'),
-         url('../fonts/Corbel.ttf') format('truetype'),
-         url('../fonts/Corbel.svg#Corbel') format('svg');
-    font-weight: normal;
-    font-style: normal;
-}
-*/
-/* Example */
+ @font-face {
+     font-family: 'Poiret One';
+     src: url('../fonts/PoiretOne-Regular.woff2') format('woff2'),
+         url('../fonts/PoiretOne-Regular.woff') format('woff');
+     font-weight: normal;
+     font-style: normal;
+     font-display: swap;
+ }
 
-@font-face {
-    font-family: 'Poiret One';
-    src: url('../fonts/PoiretOne-Regular.woff2') format('woff2'),
-        url('../fonts/PoiretOne-Regular.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-    font-display: swap;
-}
+ @font-face {
+     font-family: 'Candara';
+     src: url('../fonts/Candara.woff2') format('woff2'),
+         url('../fonts/Candara.woff') format('woff');
+     font-weight: normal;
+     font-style: normal;
+     font-display: swap;
+ }
+
+ @font-face {
+     font-family: 'Candara';
+     src:
+         url('../fonts/Candara-Light.woff2') format('woff2'),
+         url('../fonts/Candara-Light.woff') format('woff');
+     font-weight: 200;
+     font-style: normal;
+     font-display: swap;
+ }
