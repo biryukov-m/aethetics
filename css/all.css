@@ -2448,6 +2448,7 @@ header .layout .wrapper .interface ul li.basket a:hover {
   margin-bottom: 30px;
 }
 .cabinet .layout .wrapper .window #tab-contacts form.for-contacts {
+  display: none;
   max-width: 928px;
   margin: 0 auto;
 }
@@ -2460,6 +2461,7 @@ header .layout .wrapper .interface ul li.basket a:hover {
   margin-bottom: 30px;
 }
 .cabinet .layout .wrapper .window #tab-address form.for-address {
+  display: none;
   max-width: 928px;
   margin: 0 auto;
 }
@@ -2542,6 +2544,7 @@ header .layout .wrapper .interface ul li.basket a:hover {
   margin-bottom: 30px;
 }
 .cabinet .layout .wrapper .window #tab-favourites ul {
+  display: none;
   max-height: 296px;
   overflow-y: scroll;
   padding-right: 48px;

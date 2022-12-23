@@ -128,7 +128,7 @@
         #tab-contacts {
           margin-bottom: 30px;
           form.for-contacts {
-            // display: none;
+            display: none;
             max-width: 928px;
             margin: 0 auto;
             @media (max-width: 767px) {
@@ -140,7 +140,7 @@
           margin-bottom: 30px;
 
           form.for-address {
-            // display: none;
+            display: none;
             max-width: 928px;
             margin: 0 auto;
             @media (max-width: 767px) {
@@ -224,7 +224,7 @@
           margin-bottom: 30px;
 
           ul {
-            // display: none;
+            display: none;
             max-height: 296px;
             overflow-y: scroll;
             padding-right: 48px;
