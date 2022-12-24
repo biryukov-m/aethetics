@@ -3,7 +3,6 @@
   @media (max-width: 1140px) {
     margin: 30px 0 10px;
   }
-
   .layout {
     .wrapper {
       width: 100%;
@@ -127,18 +126,88 @@
         }
         #tab-contacts {
           margin-bottom: 30px;
+          @media (max-width: 767px) {
+            margin-right: 20px;
+          }
           form.for-contacts {
-            display: none;
-            max-width: 928px;
+            // display: none;
+            max-width: 1016px;
             margin: 0 auto;
+            position: relative;
             @media (max-width: 767px) {
               display: block;
+            }
+            .flex {
+              display: flex;
+              flex-direction: row;
+              justify-content: space-between;
+              gap: 15px;
+              margin-bottom: 24px;
+              @media (max-width: 767px) {
+                flex-direction: column;
+              }
+              .column {
+                display: flex;
+                flex-direction: column;
+                width: 368px;
+                @media (max-width: 767px) {
+                  width: 100%;
+                  justify-content: space-between;
+                }
+                label,
+                input,
+                input::placeholder {
+                  font-family: "Candara";
+                  font-style: normal;
+                  font-size: 20px;
+                  line-height: 150%;
+                  font-weight: 400;
+                  color: $text;
+                  @media (max-width: 767px) {
+                    font-size: clamp(14px, 3.3vw, 19px);
+                  }
+                }
+                label {
+                  margin-bottom: 3px;
+                  @media (max-width: 767px) {
+                    margin-bottom: 0;
+                  }
+                }
+                input {
+                  border-radius: 0;
+                  border: 1px solid #000;
+                  color: $text;
+                  padding: 5px 8px 10px;
+                  margin-bottom: 28px;
+                  @media (max-width: 767px) {
+                    margin-bottom: 15px;
+                  }
+                  &::placeholder {
+                    color: #b3b3b2;
+                  }
+                }
+                &:last-of-type {
+                  margin-bottom: 61px;
+                  @media (max-width: 767px) {
+                    margin: 0;
+                  }
+                }
+                .exit {
+                  margin-top: 5px;
+                  align-self: flex-end;
+                  margin-right: 12px;
+                }
+              }
+            }
+            .btn {
+              position: absolute;
+              left: 3px;
+              bottom: 0;
             }
           }
         }
         #tab-address {
           margin-bottom: 30px;
-
           form.for-address {
             display: none;
             max-width: 928px;
@@ -222,7 +291,6 @@
         }
         #tab-favourites {
           margin-bottom: 30px;
-
           ul {
             display: none;
             max-height: 296px;
@@ -339,7 +407,7 @@
         }
         #tab-history {
           margin-bottom: 30px;
-
+          display: none;
           ul {
             .flex {
               display: flex;
