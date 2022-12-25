@@ -2443,7 +2443,7 @@ header .layout .wrapper .interface ul li.basket a {
 }
 @media (max-width: 767px) {
   .cabinet .layout .wrapper .window #tab-contacts {
-    margin-right: 20px;
+    margin-bottom: 20px;
   }
 }
 .cabinet .layout .wrapper .window #tab-contacts form.for-contacts {
@@ -2519,23 +2519,29 @@ header .layout .wrapper .interface ul li.basket a {
 .cabinet .layout .wrapper .window #tab-contacts form.for-contacts .flex .column input::placeholder {
   color: #b3b3b2;
 }
-.cabinet .layout .wrapper .window #tab-contacts form.for-contacts .flex .column:last-of-type {
+.cabinet .layout .wrapper .window #tab-contacts form.for-contacts .flex .column:last-of-type input:last-of-type {
   margin-bottom: 61px;
 }
 @media (max-width: 767px) {
-  .cabinet .layout .wrapper .window #tab-contacts form.for-contacts .flex .column:last-of-type {
-    margin: 0;
+  .cabinet .layout .wrapper .window #tab-contacts form.for-contacts .flex .column:last-of-type input:last-of-type {
+    margin-bottom: 20px;
   }
 }
 .cabinet .layout .wrapper .window #tab-contacts form.for-contacts .flex .column .exit {
   margin-top: 5px;
-  align-self: flex-end;
   margin-right: 12px;
 }
-.cabinet .layout .wrapper .window #tab-contacts form.for-contacts .btn {
-  position: absolute;
-  left: 3px;
-  bottom: 0;
+@media (max-width: 767px) {
+  .cabinet .layout .wrapper .window #tab-contacts form.for-contacts .flex .column .exit {
+    align-self: flex-end;
+  }
+}
+@media (max-width: 767px) {
+  .cabinet .layout .wrapper .window #tab-contacts form.for-contacts .btn {
+    position: absolute;
+    left: 3px;
+    bottom: 0;
+  }
 }
 .cabinet .layout .wrapper .window #tab-address {
   margin-bottom: 30px;
