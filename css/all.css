@@ -2447,6 +2447,7 @@ header .layout .wrapper .interface ul li.basket a {
   }
 }
 .cabinet .layout .wrapper .window #tab-contacts form.for-contacts {
+  display: none;
   max-width: 1016px;
   margin: 0 auto;
   position: relative;
@@ -2547,20 +2548,26 @@ header .layout .wrapper .interface ul li.basket a {
   margin-bottom: 30px;
 }
 .cabinet .layout .wrapper .window #tab-address form.for-address {
-  display: none;
   max-width: 928px;
   margin: 0 auto;
-}
-@media (max-width: 767px) {
-  .cabinet .layout .wrapper .window #tab-address form.for-address {
-    display: block;
-  }
 }
 .cabinet .layout .wrapper .window #tab-address form.for-address .flex {
   margin-bottom: 30px;
 }
-.cabinet .layout .wrapper .window #tab-address form.for-address .flex .column:first-of-type {
+@media (max-width: 767px) {
+  .cabinet .layout .wrapper .window #tab-address form.for-address .flex {
+    flex-direction: column;
+  }
+}
+.cabinet .layout .wrapper .window #tab-address form.for-address .flex .column.addresses {
   width: 228px;
+  flex-direction: row;
+}
+@media (max-width: 767px) {
+  .cabinet .layout .wrapper .window #tab-address form.for-address .flex .column.addresses {
+    width: unset;
+    justify-content: space-evenly;
+  }
 }
 .cabinet .layout .wrapper .window #tab-address form.for-address .flex .column:last-of-type {
   margin-right: 7px;
