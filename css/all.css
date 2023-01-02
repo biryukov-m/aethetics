@@ -2469,7 +2469,7 @@ header .layout .wrapper .interface ul li.basket a {
   .cabinet .layout .wrapper .window #tab-contacts form.for-contacts .flex {
     flex-direction: column;
     gap: 0;
-    margin-bottom: 0;
+    margin: 0;
   }
 }
 .cabinet .layout .wrapper .window #tab-contacts form.for-contacts .flex .column {
