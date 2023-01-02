@@ -706,6 +706,7 @@ header .layout .wrapper .interface ul li.burger {
 }
 header .layout .wrapper .interface ul li.burger a {
   background-image: url(../images/icon-burger.png);
+  background-position-y: 50%;
 }
 header .layout .wrapper .interface ul li.to-cabinet a {
   background-image: url(../images/icon-cabinet-default.png), url(../images/icon-cabinet-hover.png);
@@ -2467,6 +2468,8 @@ header .layout .wrapper .interface ul li.basket a {
 @media (max-width: 767px) {
   .cabinet .layout .wrapper .window #tab-contacts form.for-contacts .flex {
     flex-direction: column;
+    gap: 0;
+    margin-bottom: 0;
   }
 }
 .cabinet .layout .wrapper .window #tab-contacts form.for-contacts .flex .column {
@@ -2559,14 +2562,20 @@ header .layout .wrapper .interface ul li.basket a {
     flex-direction: column;
   }
 }
+@media (max-width: 767px) {
+  .cabinet .layout .wrapper .window #tab-address form.for-address .flex .column {
+    width: unset;
+  }
+}
 .cabinet .layout .wrapper .window #tab-address form.for-address .flex .column.addresses {
   width: 228px;
-  flex-direction: row;
+  flex-direction: column;
 }
 @media (max-width: 767px) {
   .cabinet .layout .wrapper .window #tab-address form.for-address .flex .column.addresses {
+    flex-direction: row;
     width: unset;
-    justify-content: space-evenly;
+    gap: 20px;
   }
 }
 .cabinet .layout .wrapper .window #tab-address form.for-address .flex .column:last-of-type {
@@ -2579,6 +2588,12 @@ header .layout .wrapper .interface ul li.basket a {
   position: relative;
   padding-left: 60px;
   margin-bottom: 20px;
+}
+@media (max-width: 767px) {
+  .cabinet .layout .wrapper .window #tab-address form.for-address .flex .column .contact {
+    padding-left: 35px;
+    margin-bottom: 0;
+  }
 }
 .cabinet .layout .wrapper .window #tab-address form.for-address .flex .column .contact .nth {
   position: absolute;
@@ -2593,6 +2608,15 @@ header .layout .wrapper .interface ul li.basket a {
   text-align: center;
   color: #fff;
   background-color: #4b6049;
+}
+@media (max-width: 767px) {
+  .cabinet .layout .wrapper .window #tab-address form.for-address .flex .column .contact .nth {
+    width: 30px;
+    height: 30px;
+    font-size: 18px;
+    top: 3px;
+    line-height: 27px;
+  }
 }
 .cabinet .layout .wrapper .window #tab-address form.for-address .flex .column .contact p {
   margin-bottom: 2px;
@@ -2613,6 +2637,12 @@ header .layout .wrapper .interface ul li.basket a {
   text-decoration: underline;
   color: #484847;
 }
+@media (max-width: 767px) {
+  .cabinet .layout .wrapper .window #tab-address form.for-address .flex .column .contact .links a {
+    font-size: clamp(12.5px, 2.3vw, 16px);
+    line-height: 120%;
+  }
+}
 .cabinet .layout .wrapper .window #tab-address form.for-address .flex .column .contact .links a:hover {
   transform: translate(0, -2px);
   font-weight: 400;
@@ -2620,8 +2650,28 @@ header .layout .wrapper .interface ul li.basket a {
 .cabinet .layout .wrapper .window #tab-address form.for-address .flex .column p {
   margin-bottom: 13px;
 }
+@media (max-width: 767px) {
+  .cabinet .layout .wrapper .window #tab-address form.for-address .flex .column p {
+    font-size: clamp(14px, 2.5vw, 18px);
+    line-height: 120%;
+    margin-bottom: 8px;
+  }
+}
 .cabinet .layout .wrapper .window #tab-address form.for-address .flex .column input {
   margin-bottom: 10px;
+}
+@media (max-width: 767px) {
+  .cabinet .layout .wrapper .window #tab-address form.for-address .flex .column input {
+    font-size: clamp(14px, 2.5vw, 18px);
+    line-height: 120%;
+    padding: 10px 5px;
+  }
+}
+@media (max-width: 767px) {
+  .cabinet .layout .wrapper .window #tab-address form.for-address .flex .column input::placeholder {
+    font-size: clamp(14px, 2.5vw, 18px);
+    line-height: 120%;
+  }
 }
 .cabinet .layout .wrapper .window #tab-address form.for-address .flex .column .group {
   display: flex;
@@ -2632,6 +2682,14 @@ header .layout .wrapper .interface ul li.basket a {
   margin: 0;
   width: 100px;
   height: 50px;
+}
+@media (max-width: 767px) {
+  .cabinet .layout .wrapper .window #tab-address form.for-address .flex .column .group input {
+    padding: 10px 5px;
+    margin: 0;
+    width: 25%;
+    height: 39px;
+  }
 }
 .cabinet .layout .wrapper .window #tab-favourites {
   margin-bottom: 30px;
