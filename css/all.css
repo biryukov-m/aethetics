@@ -2998,7 +2998,8 @@ header .layout .wrapper .interface ul li.basket a {
 }
 @media (max-width: 950px) {
   .cabinet .layout .wrapper .window #tab-history ul .flex li.order .description .column.number-date p.number {
-    font-size: 18px;
+    font-size: clamp(18px, 3.4vw, 20px);
+    line-height: 120%;
   }
 }
 .cabinet .layout .wrapper .window #tab-history ul .flex li.order .description .column.status p {
@@ -3094,6 +3095,13 @@ header .layout .wrapper .interface ul li.basket a {
 .cabinet .layout .wrapper .window #tab-history ul .flex li.order .summary {
   text-align: right;
   margin-right: 35px;
+}
+@media (max-width: 950px) {
+  .cabinet .layout .wrapper .window #tab-history ul .flex li.order .summary {
+    font-size: clamp(18px, 3.4vw, 20px);
+    line-height: 120%;
+    text-align: left;
+  }
 }
 @media (max-width: 950px) {
   .cabinet .layout .wrapper .window #tab-history ul .flex li.order:last-of-type {
