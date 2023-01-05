@@ -215,7 +215,7 @@
         #tab-address {
           margin-bottom: 30px;
           form.for-address {
-            // display: none;
+            display: none;
             max-width: 928px;
             margin: 0 auto;
             @media (max-width: 767px) {
@@ -346,6 +346,7 @@
         }
         #tab-favourites {
           margin-bottom: 30px;
+          display: none;
           ul {
             display: none;
             max-height: 296px;
@@ -527,14 +528,15 @@
           }
         }
         #tab-history {
-          margin-bottom: 30px;
-          display: none;
+          margin-bottom: 54px;
+          display: block;
           ul {
             .flex {
               display: flex;
               width: 100%;
               justify-content: space-between;
-              margin-bottom: 59px;
+              margin-bottom: 46px;
+              gap: 87px;
               @media (max-width: 950px) {
                 flex-direction: column;
                 margin-bottom: 20px;
@@ -565,7 +567,7 @@
                   display: flex;
                   justify-content: space-between;
                   margin-bottom: 10px;
-                  padding-right: 20px;
+                  padding-right: 37px;
                   @media (max-width: 950px) {
                     flex-direction: column;
                     margin-bottom: 5px;
@@ -581,9 +583,9 @@
                     }
                     &.number-date {
                       p {
-                        margin-bottom: 10px;
+                        margin-bottom: 5px;
                         &:nth-of-type(2) {
-                          margin-bottom: 3px;
+                          margin-bottom: 0;
                         }
                         &:nth-of-type(3) {
                           margin-bottom: 0;
@@ -600,19 +602,16 @@
                     }
                     &.status {
                       p {
-                        margin-bottom: 3px;
-                        &:nth-of-type(2) {
-                          margin-bottom: 0;
-                        }
+                        margin-bottom: 0;
                       }
                     }
                   }
                 }
                 .items {
                   overflow-y: auto;
-                  height: 310px;
+                  height: 305px;
                   padding-right: 20px;
-                  margin-bottom: 14px;
+                  margin-bottom: 9px;
                   @media (max-width: 950px) {
                     margin-bottom: 10px;
                     overflow: visible;
@@ -620,8 +619,8 @@
                   }
                   .item {
                     display: flex;
-                    padding: 9px 0;
-                    margin-bottom: 5px;
+                    padding: 9px 0 8px;
+                    margin-bottom: 4px;
                     border-top: 1px solid $accent;
                     border-bottom: 1px solid $accent;
                     gap: 9px;
@@ -664,21 +663,35 @@
                           flex-direction: column;
                           gap: 5px;
                         }
-                      }
-                      .name {
-                        width: 220px;
-                      }
-                      .rating {
-                        .star {
-                          @media (max-width: 560px) {
-                            height: 13px;
-                            width: 13px;
-                            background-size: contain;
+                        &.name-rating {
+                          margin-bottom: 10px;
+                          .name {
+                            width: 220px;
+                            margin-top: -3px;
+                            line-height: 100%;
+                          }
+                          .rating {
+                            .star {
+                              @media (max-width: 560px) {
+                                height: 13px;
+                                width: 13px;
+                                background-size: contain;
+                              }
+                            }
+                          }
+                        }
+                        &.quantity-price {
+                          .price {
+                            margin-right: 53px;
                           }
                         }
                       }
                     }
                   }
+                }
+                .summary {
+                  text-align: right;
+                  margin-right: 35px;
                 }
                 &:last-of-type {
                   @media (max-width: 950px) {
