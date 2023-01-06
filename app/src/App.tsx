@@ -1,6 +1,7 @@
 import React from "react";
 import Header from "./layout/header/Header";
 import Footer from "./layout/footer/Footer";
+import FirstView from "./pages/first-view/FirstView";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 const App: React.FC = () => (
@@ -9,7 +10,7 @@ const App: React.FC = () => (
     <Router>
       <div id="content">
         <Routes>
-          <Route path="/" element={<Header />}></Route>
+          <Route path="/" element={<FirstView />}></Route>
         </Routes>
       </div>
     </Router>

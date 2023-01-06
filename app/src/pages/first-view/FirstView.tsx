@@ -1,5 +1,6 @@
 import React from "react";
 import MainPageHero from "../../images/image-main-page-hero.png";
+import { ButtonGreen } from "../../components/ButtonGreen/ButtonGreen";
 
 const FirstView: React.FC = () => (
   <section className="first-view">
@@ -16,9 +17,7 @@ const FirstView: React.FC = () => (
           салонний догляд.
         </h4>
         <div className="button-catalogue">
-          <a className="btn" href="./catalog.html">
-            Каталог
-          </a>
+          <ButtonGreen text="Каталог" path="/"></ButtonGreen>
         </div>
       </article>
     </div>
