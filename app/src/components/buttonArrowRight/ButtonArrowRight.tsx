@@ -6,8 +6,8 @@ type Props = {
   text: string;
 };
 
-export const ButtonGreen: React.FC<Props> = ({ path, text }) => (
-  <button className="btn">
+export const ButtonArrowRight: React.FC<Props> = ({ path, text }) => (
+  <button className="btn-arrow-right">
     {path ? (
       <Link to={path}>
         <span>{text}</span>
@@ -18,4 +18,4 @@ export const ButtonGreen: React.FC<Props> = ({ path, text }) => (
   </button>
 );
 
-export default ButtonGreen;
+export default ButtonArrowRight;

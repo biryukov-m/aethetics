@@ -79,8 +79,14 @@
             line-height: 22px;
           }
         }
-        h4 {
-          margin-bottom: 15px;
+        p {
+          margin-bottom: 5px;
+          font-family: "Candara";
+          font-style: normal;
+          font-weight: 400;
+          font-size: 26px;
+          line-height: 120%;
+          color: $text;
           @media (max-width: 1140px) {
             margin-bottom: 0;
             font-size: clamp(16px, 2.06vw, 26px);
