@@ -1,5 +1,7 @@
 import React from "react";
 import BlogFeedArticle from "./BlogFeedArticle";
+import ButtonArrowBottom from "../../components/buttonArrowBottom/ButtonArrowBottom";
+
 import ArticleOneImage from "../../images/image-main-page-article-preview-1.png";
 import ArticleTwoImage from "../../images/image-main-page-article-preview-2.png";
 import ArticleThreeImage from "../../images/image-main-page-article-preview-3.png";
@@ -52,9 +54,7 @@ const BlogFeed: React.FC = () => (
         }
       ></BlogFeedArticle>
       <div className="button-show-more">
-        <div className="btn-arrow-bottom">
-          <span>Показати ще</span>
-        </div>
+        <ButtonArrowBottom text="Показати ще"></ButtonArrowBottom>
       </div>
     </div>
   </section>

@@ -17,7 +17,7 @@ const FirstView: React.FC = () => (
           салонний догляд.
         </h4>
         <div className="button-catalogue">
-          <ButtonGreen text="Каталог" path="/"></ButtonGreen>
+          <ButtonGreen text="Каталог" path="catalogue"></ButtonGreen>
         </div>
       </article>
     </div>

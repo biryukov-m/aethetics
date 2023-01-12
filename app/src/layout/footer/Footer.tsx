@@ -1,4 +1,6 @@
 import React from "react";
+import { Link } from "react-router-dom";
+
 import LogoWhite from "../../images/image-logo-white.png";
 import MasterCardDefault from "../../images/icon-mastercard-default.png";
 import MasterCard360Default from "../../images/icon-360-mastercard-default.png";
@@ -12,13 +14,13 @@ const Footer: React.FC = () => (
     <div className="layout">
       <div className="wrapper">
         <div className="logo-bottom">
-          <a href="#">
+          <Link to="/">
             <img src={LogoWhite} alt="Aethetics logo" />
-          </a>
+          </Link>
         </div>
         <ul className="menu">
           <li>
-            <a href="./catalog.html">Каталог</a>
+            <Link to={"catalogue"}>Каталог</Link>
           </li>
           <li>
             <a href="./delivery_and_payment.html">Доставка та оплата</a>
@@ -37,7 +39,9 @@ const Footer: React.FC = () => (
         </div>
         <div className="column">
           <div className="confidential">
-            <a href="#">Політика конфіденційності</a>
+            <a href="#" target="_blank" rel="noreferrer">
+              Політика конфіденційності
+            </a>
           </div>
           <div className="phones">
             <p>+38 (063) 554 22 21</p>

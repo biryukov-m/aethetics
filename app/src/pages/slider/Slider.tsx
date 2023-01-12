@@ -19,7 +19,7 @@ const Slider: React.FC = () => (
       </div>
     </div>
     <div className="button-catalogue">
-      <ButtonGreen path="/" text="Каталог" />
+      <ButtonGreen path="catalogue" text="Каталог" />
     </div>
   </section>
 );

@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import LogoGreen from "../../images/image-logo-green.png";
 
 const Header: React.FC = () => (
@@ -6,15 +7,15 @@ const Header: React.FC = () => (
     <div className="layout">
       <div className="wrapper">
         <div className="logo">
-          <a href="./index.html">
+          <Link to="/">
             <img src={LogoGreen} alt="Aethetics logo" />
-          </a>
+          </Link>
           <h1>AETHETICS</h1>
         </div>
         <nav>
           <ul>
             <li>
-              <a href="./catalog.html">Каталог</a>
+              <Link to="catalogue">Каталог</Link>
             </li>
             <li>
               <a href="./delivery_and_payment.html">Доставка та оплата</a>

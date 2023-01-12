@@ -3,20 +3,19 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Header from "./layout/header/Header";
 import Footer from "./layout/footer/Footer";
 import Main from "./pages/main/Main";
+import Catalogue from "./pages/catalogue/Catalogue";
 
 const App: React.FC = () => (
-  <>
+  <Router>
     <Header />
-    <Router>
-      <div id="content">
-        <Routes>
-          <Route path="/" element={<Main />}></Route>
-        </Routes>
-      </div>
-    </Router>
-
+    <div id="content">
+      <Routes>
+        <Route path="/" element={<Main />}></Route>
+        <Route path="catalogue" element={<Catalogue />}></Route>
+      </Routes>
+    </div>
     <Footer />
-  </>
+  </Router>
 );
 
 export default App;
