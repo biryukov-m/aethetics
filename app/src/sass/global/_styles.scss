@@ -313,6 +313,7 @@ p {
     background: url("../../images/icon-product-card-back-arrow-left.png")
       no-repeat;
     transition: transform 0.2s ease-in;
+    cursor: pointer;
     &:hover {
       transform: translate(-2px, 0);
     }

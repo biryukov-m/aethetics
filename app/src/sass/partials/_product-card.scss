@@ -110,10 +110,18 @@
             align-items: center;
             width: 36px;
             height: 36px;
-            background: url("../../images/icon-fav-default.png");
             cursor: pointer;
-            &:hover {
-              background: url("../../images/icon-fav-alt-hover.png") no-repeat;
+            &.yes {
+              background: url("../../images/icon-fav-alt-hover.png");
+              &:hover {
+                background: url("../../images/icon-fav-default.png");
+              }
+            }
+            &.no {
+              background: url("../../images/icon-fav-default.png");
+              &:hover {
+                background: url("../../images/icon-fav-alt-hover.png") no-repeat;
+              }
             }
             @media (max-width: 767px) {
               display: none;
