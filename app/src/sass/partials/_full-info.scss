@@ -3,8 +3,12 @@
   .header {
     display: flex;
     gap: 85px;
-    margin: 0 1px;
+    margin: 0 0 48px;
+    @media (max-width: 767px) {
+      display: none;
+    }
     h4 {
+      cursor: pointer;
       @media (max-width: 1140px) {
         font-size: clamp(20px, 2.3vw, 26px);
         margin-bottom: 8px;
@@ -16,138 +20,22 @@
       &:hover {
         border-bottom: 1px solid $text;
       }
-    }
-    .on {
-      border-bottom: 1px solid $text;
-      cursor: not-allowed;
-    }
-    .off {
-      cursor: pointer;
-    }
-    @media (max-width: 767px) {
-      display: none;
-    }
-  }
-  .inactive {
-    display: none;
-    @media (max-width: 767px) {
-      display: block;
-    }
-  }
-  article {
-    @media (max-width: 767px) {
-      margin-bottom: 50px;
-    }
-    p {
-      @media (max-width: 1140px) {
-        font-size: clamp(15px, 2vw, 20px);
-      }
-      @media (max-width: 767px) {
-        font-size: clamp(14px, 2.9vw, 18px);
-      }
-    }
-  }
-  .reviews {
-    margin: 47px 1px 0;
-    @media (max-width: 767px) {
-      margin: 0;
-    }
-    .button-write-review {
-      margin-bottom: 44px;
-      @media (max-width: 767px) {
-        display: none;
-      }
-    }
-    .content {
-      margin-bottom: 41px;
-      .review {
-        display: flex;
-        min-height: 73px;
+      &.on {
         border-bottom: 1px solid $text;
-        margin-bottom: 8px;
-        position: relative;
-        @media (max-width: 767px) {
-          flex-direction: column;
-          padding-bottom: 14px;
-          margin: 0;
-        }
-        .author {
-          width: 145px;
-          min-width: 145px;
-          @media (max-width: 767px) {
-            margin-bottom: 5px;
-          }
-          h4 {
-            @media (max-width: 1140px) {
-              font-size: clamp(20px, 2.3vw, 26px);
-              margin-bottom: 3px;
-            }
-            @media (max-width: 767px) {
-              font-size: clamp(18px, 3.3vw, 22px);
-              margin: 0;
-            }
-          }
-          p {
-            @media (max-width: 1140px) {
-              font-size: clamp(20px, 2.3vw, 26px);
-              margin-bottom: 3px;
-            }
-            @media (max-width: 767px) {
-              font-size: clamp(18px, 3.3vw, 22px);
-              margin: 0;
-            }
-          }
-        }
-        .rating {
-          align-self: center;
-          margin-right: 26px;
-          @media (max-width: 767px) {
-            position: absolute;
-            left: 150px;
-            top: 8px;
-          }
-          .star {
-            cursor: auto;
-            &.unrated:hover {
-              background-image: url("../../images/icon-star-no-rating.png");
-            }
-          }
-        }
-        .text {
-          min-width: 450px;
-          width: 450px;
-          @media (max-width: 767px) {
-            width: 100%;
-            min-width: unset;
-          }
-          p {
-            @media (max-width: 1140px) {
-              font-size: clamp(15px, 2vw, 20px);
-            }
-            @media (max-width: 767px) {
-              font-size: clamp(14px, 2.9vw, 18px);
-            }
-          }
-        }
-      }
-    }
-    .button-show-more {
-      width: fit-content;
-      margin: 0 auto;
-      .btn-arrow-bottom {
-        @media (max-width: 1140px) {
-          margin-bottom: 21px;
-        }
-        &::before {
-          @media (max-width: 1140px) {
-            display: block;
-          }
-        }
+        cursor: not-allowed;
       }
     }
   }
-  article,
-  .reviews {
+  .tabcontent {
+    animation: fade 0.6s;
+    @keyframes fade {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
     h4.mobile {
       display: none;
       @media (max-width: 767px) {
@@ -156,6 +44,124 @@
         font-size: clamp(18px, 3.3vw, 22px);
         margin: 0 0 30px 0;
         border-bottom: 1px solid $text;
+      }
+    }
+    &article {
+      @media (max-width: 767px) {
+        margin-bottom: 50px;
+      }
+      p {
+        @media (max-width: 1140px) {
+          font-size: clamp(15px, 2vw, 20px);
+        }
+        @media (max-width: 767px) {
+          font-size: clamp(14px, 2.9vw, 18px);
+        }
+      }
+    }
+    &.reviews {
+      margin: 0;
+      @media (max-width: 767px) {
+        margin: 0;
+      }
+      .button-write-review {
+        margin-bottom: 44px;
+        @media (max-width: 767px) {
+          display: none;
+        }
+      }
+      .content {
+        margin-bottom: 41px;
+        .review {
+          display: flex;
+          min-height: 73px;
+          border-bottom: 1px solid $text;
+          margin-bottom: 8px;
+          position: relative;
+          @media (max-width: 767px) {
+            flex-direction: column;
+            padding-bottom: 14px;
+            margin: 0;
+          }
+          .author {
+            width: 145px;
+            min-width: 145px;
+            @media (max-width: 767px) {
+              margin-bottom: 5px;
+            }
+            h4 {
+              @media (max-width: 1140px) {
+                font-size: clamp(20px, 2.3vw, 26px);
+                margin-bottom: 3px;
+              }
+              @media (max-width: 767px) {
+                font-size: clamp(18px, 3.3vw, 22px);
+                margin: 0;
+              }
+            }
+            p {
+              @media (max-width: 1140px) {
+                font-size: clamp(20px, 2.3vw, 26px);
+                margin-bottom: 3px;
+              }
+              @media (max-width: 767px) {
+                font-size: clamp(18px, 3.3vw, 22px);
+                margin: 0;
+              }
+            }
+          }
+          .rating {
+            align-self: center;
+            margin-right: 26px;
+            @media (max-width: 767px) {
+              position: absolute;
+              left: 150px;
+              top: 8px;
+            }
+            .star {
+              cursor: auto;
+              &.unrated:hover {
+                background-image: url("../../images/icon-star-no-rating.png");
+              }
+            }
+          }
+          .text {
+            min-width: 450px;
+            width: 450px;
+            @media (max-width: 767px) {
+              width: 100%;
+              min-width: unset;
+            }
+            p {
+              @media (max-width: 1140px) {
+                font-size: clamp(15px, 2vw, 20px);
+              }
+              @media (max-width: 767px) {
+                font-size: clamp(14px, 2.9vw, 18px);
+              }
+            }
+          }
+        }
+      }
+      .button-show-more {
+        width: fit-content;
+        margin: 0 auto;
+        .btn-arrow-bottom {
+          @media (max-width: 1140px) {
+            margin-bottom: 21px;
+          }
+          &::before {
+            @media (max-width: 1140px) {
+              display: block;
+            }
+          }
+        }
+      }
+    }
+    &.inactive {
+      display: none;
+      @media (max-width: 767px) {
+        display: block;
       }
     }
   }
