@@ -1,4 +1,3 @@
-import { render } from "@testing-library/react";
 import React from "react";
 import RatingBar from "../../components/ratingBar/RatingBar";
 import ButtonGreen from "../../components/ButtonGreen/ButtonGreen";
