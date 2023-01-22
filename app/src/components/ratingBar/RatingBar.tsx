@@ -3,39 +3,25 @@ import { useState } from "react";
 
 export type Props = {
   rating: number;
+  rateable?: boolean;
 };
-const RatingBar: React.FC<Props> = ({ rating }) => {
+const RatingBar: React.FC<Props> = ({ rating, rateable }) => {
   const [frontRating, setRating] = useState(rating);
 
-  return (
-    <div className="rating">
-      <span
-        className={frontRating > 0 ? "star rated" : "star unrated"}
-        onMouseOver={(e) => setRating(1)}
-        onMouseLeave={(e) => setRating(rating)}
-      />
-      <span
-        className={frontRating > 1 ? "star rated" : "star unrated"}
-        onMouseOver={(e) => setRating(2)}
-        onMouseLeave={(e) => setRating(rating)}
-      />
-      <span
-        className={frontRating > 2 ? "star rated" : "star unrated"}
-        onMouseOver={(e) => setRating(3)}
-        onMouseLeave={(e) => setRating(rating)}
-      />
-      <span
-        className={frontRating > 3 ? "star rated" : "star unrated"}
-        onMouseOver={(e) => setRating(4)}
-        onMouseLeave={(e) => setRating(rating)}
-      />
-      <span
-        className={frontRating > 4 ? "star rated" : "star unrated"}
-        onMouseOver={(e) => setRating(5)}
-        onMouseLeave={(e) => setRating(rating)}
-      />
-    </div>
-  );
+  if (rateable === undefined) {
+    rateable = true;
+  }
+
+  const generatedRates = [1, 2, 3, 4, 5].map((i) => (
+    <span
+      key={i}
+      className={frontRating >= i ? "star rated" : "star unrated"}
+      onMouseOver={rateable ? (e) => setRating(i) : undefined}
+      onMouseLeave={rateable ? (e) => setRating(rating) : undefined}
+    />
+  ));
+
+  return <div className="rating">{generatedRates}</div>;
 };
 
 export default RatingBar;
