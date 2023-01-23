@@ -1,7 +1,8 @@
 import React from "react";
 import ProductCardMain from "./ProductCardMain";
 import ProductCardFullInfo from "./ProductCardFullInfo";
-
+import ProductCardRelatedProducts from "./ProductCardRelatedProducts";
+import BottomContacts from "../bottom-contacts/BottomContacts";
 import Image1 from "../../images/image-product-card-hero-antiox-cream.png";
 
 export type Props = {
@@ -85,6 +86,8 @@ const ProductCard: React.FC = () => (
       composition={item.composition}
       reviews={item.reviews}
     />
+    <ProductCardRelatedProducts />
+    <BottomContacts />
   </>
 );
 
