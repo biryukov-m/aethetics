@@ -5,6 +5,7 @@ import Footer from "./layout/footer/Footer";
 import Main from "./pages/main/Main";
 import Catalogue from "./pages/catalogue/Catalogue";
 import ProductCard from "./pages/product-card/ProductCard";
+import DeliveryPayment from "./pages/delivery-payment/DeliveryPayment";
 
 const App: React.FC = () => (
   <Router>
@@ -14,6 +15,10 @@ const App: React.FC = () => (
         <Route path="/" element={<Main />}></Route>
         <Route path="catalogue" element={<Catalogue />}></Route>
         <Route path="product/1" element={<ProductCard />}></Route>
+        <Route
+          path="delivery-and-payment"
+          element={<DeliveryPayment />}
+        ></Route>
       </Routes>
     </div>
     <Footer />

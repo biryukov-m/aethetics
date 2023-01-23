@@ -23,7 +23,7 @@ const Footer: React.FC = () => (
             <Link to={"catalogue"}>Каталог</Link>
           </li>
           <li>
-            <a href="./delivery_and_payment.html">Доставка та оплата</a>
+            <Link to="delivery-and-payment">Доставка та оплата</Link>
           </li>
           <li>
             <a href="./blog.html">Блог</a>
