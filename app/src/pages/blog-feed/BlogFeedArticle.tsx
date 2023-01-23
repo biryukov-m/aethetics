@@ -16,7 +16,7 @@ const BlogFeedArticle: React.FC<Props> = ({ id, imageUrl, header, text }) => (
       <h3>{header}</h3>
       {text}
       <div className="button-show-details">
-        <ButtonArrowRight text="Детальніше"></ButtonArrowRight>
+        <ButtonArrowRight text="Детальніше" path="blog"></ButtonArrowRight>
       </div>
     </div>
   </article>
