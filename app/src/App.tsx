@@ -6,6 +6,7 @@ import Main from "./pages/main/Main";
 import Catalogue from "./pages/catalogue/Catalogue";
 import ProductCard from "./pages/product-card/ProductCard";
 import DeliveryPayment from "./pages/delivery-payment/DeliveryPayment";
+import Blog from "./pages/blog/Blog";
 
 const App: React.FC = () => (
   <Router>
@@ -19,6 +20,7 @@ const App: React.FC = () => (
           path="delivery-and-payment"
           element={<DeliveryPayment />}
         ></Route>
+        <Route path="blog" element={<Blog />}></Route>
       </Routes>
     </div>
     <Footer />
