@@ -3,7 +3,7 @@ import React from "react";
 export type Props = {
   header: string;
   subheader?: string;
-  content: string;
+  content: JSX.Element;
 };
 
 const DeliveryPaymentArticle: React.FC<Props> = ({

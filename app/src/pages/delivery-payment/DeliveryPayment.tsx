@@ -1,7 +1,15 @@
 import React from "react";
+import HTMLReactParser from "html-react-parser";
 import DeliveryPaymentArticle from "./DeliveryPaymentArticle";
+import BottomContacts from "../bottom-contacts/BottomContacts";
 
-const articles = [
+export type Article = {
+  header: string;
+  subheader?: string;
+  content: string;
+};
+
+const articles: Article[] = [
   {
     header: "Оплата",
     content: `<p>Банківською карткою</p>
@@ -88,20 +96,24 @@ const articles = [
   },
 ];
 
-const generatedArticles = articles.map((article) => (
-  <DeliveryPaymentArticle
-    header={article.header}
-    subheader={article.subheader}
-    content={article.content}
-  />
-));
-
-const DeliveryPayment: React.FC = () => (
-  <section className="delivery-and-payment">
-    <div className="layout">
-      <div className="wrapper">{generatedArticles}</div>
-    </div>
-  </section>
-);
+const DeliveryPayment: React.FC = () => {
+  const generatedArticles = articles.map((article) => (
+    <DeliveryPaymentArticle
+      header={article.header}
+      subheader={article.subheader}
+      content={HTMLReactParser(article.content) as JSX.Element}
+    />
+  ));
+  return (
+    <>
+      <section className="delivery-and-payment">
+        <div className="layout">
+          <div className="wrapper">{generatedArticles}</div>
+        </div>
+      </section>
+      <BottomContacts />
+    </>
+  );
+};
 
 export default DeliveryPayment;
