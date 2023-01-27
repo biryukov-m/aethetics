@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 export type Props = {
   imageUrl: any;
@@ -27,7 +28,7 @@ export const CatalogueContentItem: React.FC<Props> = ({
       <p>{price} грн</p>
     </div>
     <div className="controls">
-      <a href={`${id}`}>Детальніше</a>
+      <Link to={`/product/${id}`}>Детальніше</Link>
       <div className="btn-mini">
         <span>В кошик</span>
       </div>

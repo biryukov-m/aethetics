@@ -13,13 +13,14 @@ const App: React.FC = () => (
     <Header />
     <div id="content">
       <Routes>
-        <Route path="/" element={<Main />}></Route>
+        <Route index element={<Main />}></Route>
         <Route path="catalogue" element={<Catalogue />}></Route>
-        <Route path="product/1" element={<ProductCard />}></Route>
+        <Route path="product/:id" element={<ProductCard />}></Route>
         <Route
           path="delivery-and-payment"
           element={<DeliveryPayment />}
         ></Route>
+        <Route path="blog/:id" element={<Blog />}></Route>
         <Route path="blog" element={<Blog />}></Route>
       </Routes>
     </div>

@@ -1,4 +1,5 @@
 import React from "react";
+import { useParams } from "react-router-dom";
 import ProductCardMain from "./ProductCardMain";
 import ProductCardFullInfo from "./ProductCardFullInfo";
 import ProductCardRelatedProducts from "./ProductCardRelatedProducts";
@@ -71,24 +72,27 @@ const item = {
   ],
 };
 
-const ProductCard: React.FC = () => (
-  <>
-    <ProductCardMain
-      name={item.name}
-      imageUrl={item.imageUrl}
-      imageAlt={item.imageAlt}
-      rating={item.rating}
-      price={item.price}
-      favourite={item.favourite}
-      description={item.description}
-    />
-    <ProductCardFullInfo
-      composition={item.composition}
-      reviews={item.reviews}
-    />
-    <ProductCardRelatedProducts />
-    <BottomContacts />
-  </>
-);
+const ProductCard: React.FC = () => {
+  const { itemId } = useParams();
+  return (
+    <>
+      <ProductCardMain
+        name={item.name}
+        imageUrl={item.imageUrl}
+        imageAlt={item.imageAlt}
+        rating={item.rating}
+        price={item.price}
+        favourite={item.favourite}
+        description={item.description}
+      />
+      <ProductCardFullInfo
+        composition={item.composition}
+        reviews={item.reviews}
+      />
+      <ProductCardRelatedProducts />
+      <BottomContacts />
+    </>
+  );
+};
 
 export default ProductCard;
