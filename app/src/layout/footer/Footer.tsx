@@ -20,16 +20,16 @@ const Footer: React.FC = () => (
         </div>
         <ul className="menu">
           <li>
-            <Link to={"catalogue"}>Каталог</Link>
+            <Link to="/catalogue">Каталог</Link>
           </li>
           <li>
-            <Link to="delivery-and-payment">Доставка та оплата</Link>
+            <Link to="/delivery-and-payment">Доставка та оплата</Link>
           </li>
           <li>
-            <a href="./blog.html">Блог</a>
+            <Link to="/blog">Блог</Link>
           </li>
           <li>
-            <a href="./contacts.html">Контакти</a>
+            <Link to="/contacts">Контакти</Link>
           </li>
         </ul>
         <div className="working-hours">
