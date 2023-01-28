@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import Header from "./layout/header/Header";
-import Footer from "./layout/footer/Footer";
+
+import Layout from "./layout/Layout";
 import Main from "./pages/main/Main";
 import Catalogue from "./pages/catalogue/Catalogue";
 import ProductCard from "./pages/product-card/ProductCard";
@@ -10,21 +10,16 @@ import Blog from "./pages/blog/Blog";
 
 const App: React.FC = () => (
   <Router>
-    <Header />
-    <div id="content">
-      <Routes>
-        <Route index element={<Main />}></Route>
-        <Route path="catalogue" element={<Catalogue />}></Route>
-        <Route path="product/:id" element={<ProductCard />}></Route>
-        <Route
-          path="delivery-and-payment"
-          element={<DeliveryPayment />}
-        ></Route>
-        <Route path="blog/:id" element={<Blog />}></Route>
-        <Route path="blog" element={<Blog />}></Route>
-      </Routes>
-    </div>
-    <Footer />
+    <Routes>
+      <Route path="/" element={<Layout />}>
+        <Route path="/" element={<Main />} />
+        <Route path="catalogue" element={<Catalogue />} />
+        <Route path="product/:id" element={<ProductCard />} />
+        <Route path="delivery-and-payment" element={<DeliveryPayment />} />
+        <Route path="blog/:id" element={<Blog />} />
+        <Route path="blog" element={<Blog />} />
+      </Route>
+    </Routes>
   </Router>
 );
 
