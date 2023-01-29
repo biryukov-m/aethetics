@@ -8,6 +8,7 @@ import ProductCard from "./pages/product-card/ProductCard";
 import DeliveryPayment from "./pages/delivery-payment/DeliveryPayment";
 import Blog from "./pages/blog/Blog";
 import Contacts from "./pages/contacts/Contacts";
+import Cabinet from "./pages/cabinet/Cabinet";
 
 const App: React.FC = () => (
   <Router>
@@ -20,6 +21,7 @@ const App: React.FC = () => (
         <Route path="blog/:id" element={<Blog />} />
         <Route path="blog" element={<Blog />} />
         <Route path="contacts" element={<Contacts />} />
+        <Route path="cabinet" element={<Cabinet />} />
       </Route>
     </Routes>
   </Router>

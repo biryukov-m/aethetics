@@ -31,7 +31,7 @@ const Header: React.FC = () => (
         <div className="interface">
           <ul>
             <li className="to-cabinet">
-              <a href="./cabinet.html"></a>
+              <Link to="cabinet"></Link>
             </li>
             <li className="favourite">
               <a href="#"></a>
