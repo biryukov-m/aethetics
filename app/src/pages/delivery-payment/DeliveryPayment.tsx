@@ -1,7 +1,6 @@
 import React from "react";
 import HTMLReactParser from "html-react-parser";
 import DeliveryPaymentArticle from "./DeliveryPaymentArticle";
-import BottomContacts from "../bottom-contacts/BottomContacts";
 
 export type Article = {
   header: string;
@@ -105,14 +104,11 @@ const DeliveryPayment: React.FC = () => {
     />
   ));
   return (
-    <>
-      <section className="delivery-and-payment">
-        <div className="layout">
-          <div className="wrapper">{generatedArticles}</div>
-        </div>
-      </section>
-      <BottomContacts />
-    </>
+    <section className="delivery-and-payment">
+      <div className="layout">
+        <div className="wrapper">{generatedArticles}</div>
+      </div>
+    </section>
   );
 };
 

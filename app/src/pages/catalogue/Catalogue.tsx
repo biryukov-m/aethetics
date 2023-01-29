@@ -2,7 +2,6 @@ import React from "react";
 import CatalogueFilter from "./CatalogueFilter";
 import CatalogueContent from "./CatalogueContent";
 import CatalogueRecentlyViewed from "./CatalogueRecentlyViewed";
-import BottomContacts from "../bottom-contacts/BottomContacts";
 
 export const Catalogue: React.FC = () => (
   <>
@@ -21,7 +20,6 @@ export const Catalogue: React.FC = () => (
       </div>
     </section>
     <CatalogueRecentlyViewed />
-    <BottomContacts />
   </>
 );
 
