@@ -1,7 +1,7 @@
 import React from "react";
 
 const CabinetHistory: React.FC = () => (
-  <div id="tab-history">
+  <div className="tab history" id="tab-history">
     <h3 className="tab history mobile">Історія замовлень</h3>
     <ul>
       <div className="flex">

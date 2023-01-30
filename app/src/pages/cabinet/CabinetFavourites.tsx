@@ -1,7 +1,7 @@
 import React from "react";
 
 const CabinetFavourites: React.FC = () => (
-  <div id="tab-favourites">
+  <div className="tab favourites" id="tab-favourites">
     <h3 className="tab favourites mobile">Список бажань</h3>
     <ul>
       <li className="item">

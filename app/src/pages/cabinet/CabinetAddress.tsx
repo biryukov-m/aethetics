@@ -1,7 +1,7 @@
 import React from "react";
 
 const CabinetAddress: React.FC = () => (
-  <div id="tab-address">
+  <div className="tab address" id="tab-address">
     <h3 className="tab adress-book mobile">Адресна книга</h3>
     <form action="post" className="for-address">
       <div className="flex">

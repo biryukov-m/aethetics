@@ -1,7 +1,7 @@
 import React from "react";
 
 const CabinetContacts: React.FC = () => (
-  <div id="tab-contacts">
+  <div className="tab contacts active" id="tab-contacts">
     <h3 className="tab contacts-info mobile">Контактна інформація</h3>
     <form action="post" className="for-contacts">
       <div className="flex">
