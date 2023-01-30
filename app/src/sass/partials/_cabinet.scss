@@ -58,31 +58,64 @@
           }
         }
       }
-      h3.tab.mobile {
-        display: none;
-        @media (max-width: 767px) {
-          display: block;
-          font-size: clamp(18px, 3.3vw, 22px);
-          line-height: 100%;
-          padding: 10px;
-          border: 1px solid #000;
-          margin-bottom: 20px;
-          position: relative;
-          &::after {
-            position: absolute;
+      .window {
+        overflow: hidden;
+        .tab-link.mobile {
+          display: none;
+          @media (max-width: 767px) {
             display: block;
-            content: "";
-            top: 18px;
-            right: 3%;
-            width: 11px;
-            height: 6px;
-            background: url(../../images/icon-expand-more.png) no-repeat center;
+            font-size: clamp(18px, 3.3vw, 22px);
+            line-height: 100%;
+            padding: 10px;
+            border: 1px solid #000;
+            margin-bottom: 20px;
+            position: relative;
+            &::after {
+              position: absolute;
+              display: block;
+              content: "";
+              top: 18px;
+              right: 3%;
+              width: 11px;
+              height: 6px;
+              background: url(../../images/icon-expand-more.png) no-repeat
+                center;
+            }
+            &:hover,
+            &.active {
+              cursor: pointer;
+              font-weight: 600;
+            }
+            &.active {
+              @media (max-width: 767px) {
+                &::after {
+                  transform: rotate(180deg);
+                }
+                &:hover {
+                  cursor: default;
+                }
+              }
+            }
           }
         }
-      }
-      .window {
         .tab {
+          overflow: hidden;
           display: none;
+          @media (max-width: 767px) {
+            animation: scroll 0.3s ease-in;
+            position: relative;
+            transition: all 2.3s linear;
+            @keyframes scroll {
+              from {
+                top: -500px;
+                opacity: 0;
+              }
+              to {
+                top: 0;
+                opacity: 1;
+              }
+            }
+          }
           &.active {
             display: block;
           }
