@@ -2,18 +2,19 @@ import React from "react";
 import RatingBar from "../../components/ratingBar/RatingBar";
 import ButtonGreen from "../../components/ButtonGreen/ButtonGreen";
 import GoBack from "../../components/goBack/GoBack";
+import { Product } from "../../types/types";
 
 export type Props = {
-  name: string;
-  imageUrl: string;
-  imageAlt: string;
-  rating: number;
-  price: number;
-  favourite: boolean;
-  description: string;
+  name: Product["name"];
+  imageUrl: Product["imageUrl"];
+  imageAlt: Product["imageAlt"];
+  rating: Product["rating"];
+  price: Product["price"];
+  favourite: Product["favourite"];
+  description: Product["description"];
 };
 
-const ProductCardMain: React.FC<Props> = ({
+const ProductCardMainInfo: React.FC<Props> = ({
   name,
   imageUrl,
   imageAlt,
@@ -43,7 +44,7 @@ const ProductCardMain: React.FC<Props> = ({
             </div>
             <div className="price-and-fav">
               <h4 className="price">{price} грн</h4>
-              <span className="favourite no"></span>
+              <span className={favourite ? "favourite no" : "favourite"}></span>
             </div>
             <div className="controls">
               <input
@@ -62,4 +63,4 @@ const ProductCardMain: React.FC<Props> = ({
   );
 };
 
-export default ProductCardMain;
+export default ProductCardMainInfo;
