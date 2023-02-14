@@ -262,9 +262,8 @@
                   @media (max-width: 767px) {
                     width: unset;
                   }
-
                   &.addresses {
-                    width: 228px;
+                    width: 235px;
                     flex-direction: column;
                     @media (max-width: 767px) {
                       flex-direction: row;
@@ -313,10 +312,11 @@
                         margin-bottom: 5px;
                       }
                     }
-                    .links {
+                    .buttons {
                       display: flex;
                       justify-content: space-between;
-                      a {
+                      span {
+                        display: inline-block;
                         font-family: "Candara";
                         font-style: normal;
                         font-weight: 200;
@@ -324,6 +324,7 @@
                         line-height: 150%;
                         text-decoration: underline;
                         color: $text;
+                        cursor: pointer;
                         @media (max-width: 767px) {
                           font-size: clamp(12.5px, 2.3vw, 16px);
                           line-height: 120%;
