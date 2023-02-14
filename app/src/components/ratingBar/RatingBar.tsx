@@ -1,23 +1,19 @@
 import React from "react";
 import { useState } from "react";
 
-export type Props = {
+interface Rating {
   rating: number;
   rateable?: boolean;
-};
-const RatingBar: React.FC<Props> = ({ rating, rateable }) => {
+}
+
+const RatingBar: React.FC<Rating> = ({ rating, rateable = true }) => {
   const [frontRating, setRating] = useState(rating);
-
-  if (rateable === undefined) {
-    rateable = true;
-  }
-
   const generatedRates = [1, 2, 3, 4, 5].map((i) => (
     <span
       key={i}
       className={frontRating >= i ? "star rated" : "star unrated"}
-      onMouseOver={rateable ? (e) => setRating(i) : undefined}
-      onMouseLeave={rateable ? (e) => setRating(rating) : undefined}
+      onMouseOver={rateable ? () => setRating(i) : undefined}
+      onMouseLeave={rateable ? () => setRating(rating) : undefined}
     />
   ));
 
