@@ -1,4 +1,32 @@
 import React from "react";
+import CabinetAddressBlock from "./CabinetAddressBlock";
+
+const addresses = [
+  {
+    id: 1,
+    name: "Шевченко Світлана",
+    city: "Місто Київ",
+    street: "Градинська 11б, 85",
+    telephone: "+38 068 564 77 99",
+  },
+  {
+    id: 2,
+    name: "Шевченко Світлана",
+    city: "Місто Харків",
+    street: "Трінклера 18, 65",
+    telephone: "+38 068 564 77 99",
+  },
+];
+
+const generatedAddressBlocks = addresses.map((address) => (
+  <CabinetAddressBlock
+    id={address.id}
+    name={address.name}
+    city={address.city}
+    street={address.street}
+    telephone={address.telephone}
+  />
+));
 
 const CabinetAddress: React.FC = () => (
   <>
@@ -8,30 +36,7 @@ const CabinetAddress: React.FC = () => (
     <div className="tab address" id="tab-address">
       <form action="post" className="for-address">
         <div className="flex">
-          <div className="column addresses">
-            <div className="contact">
-              <div className="nth">1</div>
-              <p>Шевченко Світлана</p>
-              <p>Місто Київ</p>
-              <p>Градинська 11б, 85</p>
-              <p>+38 068 564 77 99</p>
-              <div className="links">
-                <a href="#">Редагувати</a>
-                <a href="#">Видалити</a>
-              </div>
-            </div>
-            <div className="contact">
-              <div className="nth">2</div>
-              <p>Шевченко Світлана</p>
-              <p>Місто Харків</p>
-              <p>Трінклера 18, 65</p>
-              <p>+38 068 564 77 99</p>
-              <div className="links">
-                <a href="#">Редагувати</a>
-                <a href="#">Видалити</a>
-              </div>
-            </div>
-          </div>
+          <div className="column addresses">{generatedAddressBlocks}</div>
           <div className="column">
             <p>Додати нову адресу:</p>
             <input
