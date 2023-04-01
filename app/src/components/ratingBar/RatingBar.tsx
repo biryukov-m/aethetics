@@ -1,5 +1,4 @@
-import React from "react";
-import { useState } from "react";
+import React, { useState } from 'react';
 
 interface Rating {
   rating: number;
@@ -11,8 +10,9 @@ const RatingBar: React.FC<Rating> = ({ rating, rateable = true }) => {
   const generatedRates = [1, 2, 3, 4, 5].map((i) => (
     <span
       key={i}
-      className={frontRating >= i ? "star rated" : "star unrated"}
+      className={frontRating >= i ? 'star rated' : 'star unrated'}
       onMouseOver={rateable ? () => setRating(i) : undefined}
+      onFocus={rateable ? () => setRating(i) : undefined}
       onMouseLeave={rateable ? () => setRating(rating) : undefined}
     />
   ));
