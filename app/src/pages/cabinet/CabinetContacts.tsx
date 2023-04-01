@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 
 const CabinetContacts: React.FC = () => (
   <>
@@ -10,26 +10,11 @@ const CabinetContacts: React.FC = () => (
         <div className="flex">
           <div className="column">
             <label htmlFor="name">Ваше ім’я</label>
-            <input
-              type="text"
-              className="name"
-              id="name"
-              placeholder="Світлана"
-            />
+            <input type="text" className="name" id="name" placeholder="Світлана" />
             <label htmlFor="surname">Ваше прізвище</label>
-            <input
-              type="text"
-              className="surname"
-              id="surname"
-              placeholder="Світлана"
-            />
+            <input type="text" className="surname" id="surname" placeholder="Світлана" />
             <label htmlFor="email">E-mail</label>
-            <input
-              type="email"
-              className="email"
-              id="email"
-              placeholder="shevSv002@gmail.com"
-            />
+            <input type="email" className="email" id="email" placeholder="shevSv002@gmail.com" />
           </div>
           <div className="column">
             <label htmlFor="telephone">Номер телефону</label>
@@ -46,7 +31,7 @@ const CabinetContacts: React.FC = () => (
               id="date-of-birth"
               placeholder="8.10.1989"
             />
-            <button className="btn-arrow-right exit">
+            <button type="button" className="btn-arrow-right exit">
               <span>Вийти</span>
             </button>
           </div>

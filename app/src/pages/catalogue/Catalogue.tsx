@@ -1,9 +1,9 @@
-import React from "react";
-import CatalogueFilter from "./CatalogueFilter";
-import CatalogueContent from "./CatalogueContent";
-import CatalogueRecentlyViewed from "./CatalogueRecentlyViewed";
+import React from 'react';
+import CatalogueFilter from './CatalogueFilter';
+import CatalogueContent from './CatalogueContent';
+import CatalogueRecentlyViewed from './CatalogueRecentlyViewed';
 
-export const Catalogue: React.FC = () => (
+const Catalogue: React.FC = () => (
   <>
     <section className="catalogue">
       <div className="layout">

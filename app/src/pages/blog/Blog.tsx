@@ -1,19 +1,15 @@
-import React from "react";
-import { useParams } from "react-router-dom";
-import BlogArticle from "./BlogArticle";
-import GoBack from "../../components/goBack/GoBack";
+import React from 'react';
+import BlogArticle from './BlogArticle';
+import GoBack from '../../components/goBack/GoBack';
 
-const Blog: React.FC = () => {
-  const { id } = useParams();
-  return (
-    <section className="blog">
-      <div className="layout">
-        <div className="top-controls">
-          <GoBack />
-        </div>
-        <BlogArticle />
+const Blog: React.FC = () => (
+  <section className="blog">
+    <div className="layout">
+      <div className="top-controls">
+        <GoBack />
       </div>
-    </section>
-  );
-};
+      <BlogArticle />
+    </div>
+  </section>
+);
 export default Blog;

@@ -6,7 +6,7 @@ type Props = {
   text: string;
 };
 
-export const ButtonArrowRight: React.FC<Props> = ({ path, text }) => (
+const ButtonArrowRight: React.FC<Props> = ({ path, text }) => (
   <button type="button" className="btn-arrow-right">
     {path ? (
       <Link to={path}>

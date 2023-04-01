@@ -1,17 +1,15 @@
-import React from "react";
-import { useParams } from "react-router-dom";
-import ProductCardMainInfo from "./ProductCardMainInfo";
-import ProductCardFullInfo from "./ProductCardFullInfo";
-import ProductCardRelatedProducts from "./ProductCardRelatedProducts";
-import Image1 from "../../images/image-product-card-hero-antiox-cream.png";
-import { Product } from "../../types/types";
+import React from 'react';
+import ProductCardMainInfo from './ProductCardMainInfo';
+import ProductCardFullInfo from './ProductCardFullInfo';
+import ProductCardRelatedProducts from './ProductCardRelatedProducts';
+import Image1 from '../../images/image-product-card-hero-antiox-cream.png';
+import { Product } from '../../types/types';
 
 const ProductCard: React.FC = () => {
-  const { itemId } = useParams();
   const product: Product = {
-    name: "Антиоксидантний крем для обличчя",
+    name: 'Антиоксидантний крем для обличчя',
     imageUrl: Image1,
-    imageAlt: "antiox cream",
+    imageAlt: 'antiox cream',
     rating: 4,
     price: 630,
     favourite: false,
@@ -41,28 +39,28 @@ const ProductCard: React.FC = () => {
     reviews: [
       {
         id: 1,
-        author: "Катерина",
-        date: "5.08.2022",
+        author: 'Катерина',
+        date: '5.08.2022',
         rating: 5,
-        text: `Цей крем замовляю вдруге, дуже задоволена. Дякую за швидку доставку!`,
+        text: 'Цей крем замовляю вдруге, дуже задоволена. Дякую за швидку доставку!'
       },
       {
         id: 2,
-        author: "Поліна",
-        date: "3.08.2022",
+        author: 'Поліна',
+        date: '3.08.2022',
         rating: 4,
-        text: `Товар дуже якісний, крем не залишає липку плівку. Дякую!`,
+        text: 'Товар дуже якісний, крем не залишає липку плівку. Дякую!'
       },
       {
         id: 3,
-        author: "Олена",
-        date: "28.07.2022",
+        author: 'Олена',
+        date: '28.07.2022',
         rating: 5,
         text: `Почитала відгуки і вирішила спробувати цей засіб. Я дуже вдячна
-              магазину за такий якісний продукт!`,
-      },
+              магазину за такий якісний продукт!`
+      }
     ],
-    availability: true,
+    availability: true
   };
   return (
     <>
@@ -75,10 +73,7 @@ const ProductCard: React.FC = () => {
         favourite={product.favourite}
         description={product.description}
       />
-      <ProductCardFullInfo
-        composition={product.composition}
-        reviews={product.reviews}
-      />
+      <ProductCardFullInfo composition={product.composition} reviews={product.reviews} />
       <ProductCardRelatedProducts />
     </>
   );

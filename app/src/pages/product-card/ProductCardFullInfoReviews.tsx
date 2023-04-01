@@ -1,7 +1,7 @@
-import React from "react";
-import ButtonWhite from "../../components/ButtonWhite/ButtonWhite";
-import ButtonArrowBottom from "../../components/buttonArrowBottom/ButtonArrowBottom";
-import RatingBar from "../../components/ratingBar/RatingBar";
+import React from 'react';
+import ButtonWhite from '../../components/ButtonWhite/ButtonWhite';
+import ButtonArrowBottom from '../../components/buttonArrowBottom/ButtonArrowBottom';
+import RatingBar from '../../components/ratingBar/RatingBar';
 
 export type Props = {
   reviews: {

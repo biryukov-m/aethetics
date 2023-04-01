@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 
 const CabinetHistory: React.FC = () => (
   <>
@@ -32,15 +32,13 @@ const CabinetHistory: React.FC = () => (
                 </div>
                 <div className="column properties">
                   <div className="row name-rating">
-                    <p className="name">
-                      Нічний антивіковій крем для сухої шкіри
-                    </p>
+                    <p className="name">Нічний антивіковій крем для сухої шкіри</p>
                     <div className="rating">
-                      <span className="star rated"> </span>
-                      <span className="star rated"> </span>
-                      <span className="star rated"> </span>
-                      <span className="star rated"> </span>
-                      <span className="star rated"></span>
+                      <span className="star rated" />
+                      <span className="star rated" />
+                      <span className="star rated" />
+                      <span className="star rated" />
+                      <span className="star rated" />
                     </div>
                   </div>
                   <div className="row quantity-price">
@@ -60,15 +58,13 @@ const CabinetHistory: React.FC = () => (
                 </div>
                 <div className="column properties">
                   <div className="row name-rating">
-                    <p className="name">
-                      Нічний антивіковій крем для сухої шкіри
-                    </p>
+                    <p className="name">Нічний антивіковій крем для сухої шкіри</p>
                     <div className="rating">
-                      <span className="star rated"> </span>
-                      <span className="star rated"> </span>
-                      <span className="star rated"> </span>
-                      <span className="star rated"> </span>
-                      <span className="star rated"></span>
+                      <span className="star rated" />
+                      <span className="star rated" />
+                      <span className="star rated" />
+                      <span className="star rated" />
+                      <span className="star rated" />
                     </div>
                   </div>
                   <div className="row quantity-price">
@@ -88,15 +84,13 @@ const CabinetHistory: React.FC = () => (
                 </div>
                 <div className="column properties">
                   <div className="row name-rating">
-                    <p className="name">
-                      Нічний антивіковій крем для сухої шкіри
-                    </p>
+                    <p className="name">Нічний антивіковій крем для сухої шкіри</p>
                     <div className="rating">
-                      <span className="star rated"> </span>
-                      <span className="star rated"> </span>
-                      <span className="star rated"> </span>
-                      <span className="star rated"> </span>
-                      <span className="star rated"></span>
+                      <span className="star rated" />
+                      <span className="star rated" />
+                      <span className="star rated" />
+                      <span className="star rated" />
+                      <span className="star rated" />
                     </div>
                   </div>
                   <div className="row quantity-price">
@@ -116,15 +110,13 @@ const CabinetHistory: React.FC = () => (
                 </div>
                 <div className="column properties">
                   <div className="row name-rating">
-                    <p className="name">
-                      Нічний антивіковій крем для сухої шкіри
-                    </p>
+                    <p className="name">Нічний антивіковій крем для сухої шкіри</p>
                     <div className="rating">
-                      <span className="star rated"> </span>
-                      <span className="star rated"> </span>
-                      <span className="star rated"> </span>
-                      <span className="star rated"> </span>
-                      <span className="star rated"></span>
+                      <span className="star rated" />
+                      <span className="star rated" />
+                      <span className="star rated" />
+                      <span className="star rated" />
+                      <span className="star rated" />
                     </div>
                   </div>
                   <div className="row quantity-price">
@@ -160,15 +152,13 @@ const CabinetHistory: React.FC = () => (
                 </div>
                 <div className="column properties">
                   <div className="row name-rating">
-                    <p className="name">
-                      Нічний антивіковій крем для сухої шкіри
-                    </p>
+                    <p className="name">Нічний антивіковій крем для сухої шкіри</p>
                     <div className="rating">
-                      <span className="star rated"> </span>
-                      <span className="star rated"> </span>
-                      <span className="star rated"> </span>
-                      <span className="star rated"> </span>
-                      <span className="star rated"></span>
+                      <span className="star rated" />
+                      <span className="star rated" />
+                      <span className="star rated" />
+                      <span className="star rated" />
+                      <span className="star rated" />
                     </div>
                   </div>
                   <div className="row quantity-price">
@@ -188,15 +178,13 @@ const CabinetHistory: React.FC = () => (
                 </div>
                 <div className="column properties">
                   <div className="row name-rating">
-                    <p className="name">
-                      Нічний антивіковій крем для сухої шкіри
-                    </p>
+                    <p className="name">Нічний антивіковій крем для сухої шкіри</p>
                     <div className="rating">
-                      <span className="star rated"> </span>
-                      <span className="star rated"> </span>
-                      <span className="star rated"> </span>
-                      <span className="star rated"> </span>
-                      <span className="star rated"></span>
+                      <span className="star rated" />
+                      <span className="star rated" />
+                      <span className="star rated" />
+                      <span className="star rated" />
+                      <span className="star rated" />
                     </div>
                   </div>
                   <div className="row quantity-price">
@@ -216,15 +204,13 @@ const CabinetHistory: React.FC = () => (
                 </div>
                 <div className="column properties">
                   <div className="row name-rating">
-                    <p className="name">
-                      Нічний антивіковій крем для сухої шкіри
-                    </p>
+                    <p className="name">Нічний антивіковій крем для сухої шкіри</p>
                     <div className="rating">
-                      <span className="star rated"> </span>
-                      <span className="star rated"> </span>
-                      <span className="star rated"> </span>
-                      <span className="star rated"> </span>
-                      <span className="star rated"></span>
+                      <span className="star rated" />
+                      <span className="star rated" />
+                      <span className="star rated" />
+                      <span className="star rated" />
+                      <span className="star rated" />
                     </div>
                   </div>
                   <div className="row quantity-price">
@@ -244,15 +230,13 @@ const CabinetHistory: React.FC = () => (
                 </div>
                 <div className="column properties">
                   <div className="row name-rating">
-                    <p className="name">
-                      Нічний антивіковій крем для сухої шкіри
-                    </p>
+                    <p className="name">Нічний антивіковій крем для сухої шкіри</p>
                     <div className="rating">
-                      <span className="star rated"> </span>
-                      <span className="star rated"> </span>
-                      <span className="star rated"> </span>
-                      <span className="star rated"> </span>
-                      <span className="star rated"></span>
+                      <span className="star rated" />
+                      <span className="star rated" />
+                      <span className="star rated" />
+                      <span className="star rated" />
+                      <span className="star rated" />
                     </div>
                   </div>
                   <div className="row quantity-price">

@@ -1,20 +1,18 @@
-import React from "react";
-import ButtonGreenMini from "../../components/buttonGreenMini/ButtonGreenMini";
+import React from 'react';
+import ButtonGreenMini from '../../components/buttonGreenMini/ButtonGreenMini';
 
 export type Props = {
   imageUrl: any;
   imageAlt: string;
   name: string;
   price: number;
-  id: number;
 };
 
 export const CatalogueRecentlyViewedItem: React.FC<Props> = ({
   imageUrl,
   imageAlt,
   name,
-  price,
-  id,
+  price
 }) => (
   <div className="item">
     <div className="image-holder">

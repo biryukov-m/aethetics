@@ -6,7 +6,7 @@ type Props = {
   text: string;
 };
 
-export const ButtonGreenMini: React.FC<Props> = ({ path, text }) => (
+const ButtonGreenMini: React.FC<Props> = ({ path, text }) => (
   <button type="button" className="btn-mini">
     {path ? (
       <Link to={path}>

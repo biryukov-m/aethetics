@@ -1,11 +1,11 @@
-import React from "react";
+import React from 'react';
 
-export const CatalogueFilter: React.FC = () => (
+const CatalogueFilter: React.FC = () => (
   <aside className="filters">
     <div className="group active">
       <div className="header">
         <h4>Група товару</h4>
-        <span></span>
+        <span />
       </div>
       <ul>
         <li className="checked">Гель для вмивання</li>
@@ -19,7 +19,7 @@ export const CatalogueFilter: React.FC = () => (
     <div className="group inactive">
       <div className="header">
         <h4>Вік</h4>
-        <span></span>
+        <span />
       </div>
       <ul>
         <li>20</li>
@@ -30,7 +30,7 @@ export const CatalogueFilter: React.FC = () => (
     <div className="group inactive">
       <div className="header">
         <h4>Призначення</h4>
-        <span></span>
+        <span />
       </div>
       <ul>
         <li>Для цього</li>
@@ -41,7 +41,7 @@ export const CatalogueFilter: React.FC = () => (
     <div className="group inactive">
       <div className="header">
         <h4>Час застосування</h4>
-        <span></span>
+        <span />
       </div>
       <ul>
         <li>Ранкові</li>
@@ -52,7 +52,7 @@ export const CatalogueFilter: React.FC = () => (
     <div className="group inactive">
       <div className="header">
         <h4>Ступінь захисту</h4>
-        <span></span>
+        <span />
       </div>
       <ul>
         <li>Початковий захист</li>
@@ -63,7 +63,7 @@ export const CatalogueFilter: React.FC = () => (
     <div className="group inactive">
       <div className="header">
         <h4>Тип шкіри</h4>
-        <span></span>
+        <span />
       </div>
       <ul>
         <li>Бліда</li>
@@ -77,7 +77,7 @@ export const CatalogueFilter: React.FC = () => (
       </div>
       <div className="flex">
         <input className="minimal" type="number" placeholder="від" />
-        <span></span>
+        <span />
         <input className="maximal" type="number" placeholder="до" />
       </div>
     </div>

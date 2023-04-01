@@ -1,7 +1,7 @@
-import React from "react";
-import MainSlideOne360 from "../../images/image-360-main-slide-1.png";
-import MainSlideOne from "../../images/image-main-slide-1.png";
-import { ButtonGreen } from "../../components/ButtonGreen/ButtonGreen";
+import React from 'react';
+import MainSlideOne360 from '../../images/image-360-main-slide-1.png';
+import MainSlideOne from '../../images/image-main-slide-1.png';
+import ButtonGreen from '../../components/ButtonGreen/ButtonGreen';
 
 const Slider: React.FC = () => (
   <section className="slider">
@@ -13,9 +13,9 @@ const Slider: React.FC = () => (
         <h4>Зволожуюча сиворотка для обличчя</h4>
       </article>
       <div className="slider-controls">
-        <div className="radio active"></div>
-        <div className="radio"></div>
-        <div className="radio"></div>
+        <div className="radio active" />
+        <div className="radio" />
+        <div className="radio" />
       </div>
     </div>
     <div className="button-catalogue">

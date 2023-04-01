@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 
 export type Props = {
   header: string;
@@ -6,11 +6,7 @@ export type Props = {
   content: JSX.Element;
 };
 
-const DeliveryPaymentArticle: React.FC<Props> = ({
-  header,
-  subheader,
-  content,
-}) => (
+const DeliveryPaymentArticle: React.FC<Props> = ({ header, subheader, content }) => (
   <article>
     <div className="header">
       <h3>{header}</h3>

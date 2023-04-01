@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 
 const CabinetFavourites: React.FC = () => (
   <>
@@ -10,20 +10,17 @@ const CabinetFavourites: React.FC = () => (
         <li className="item">
           <div className="column for-image">
             <div className="image-holder">
-              <img
-                src="./images/image-catalogue-page-1-fluid.png"
-                alt="fluid"
-              />
+              <img src="./images/image-catalogue-page-1-fluid.png" alt="fluid" />
             </div>
           </div>
           <div className="column for-interface">
             <div className="rating-and-availability">
               <div className="rating">
-                <span className="star rated"> </span>
-                <span className="star rated"> </span>
-                <span className="star rated"> </span>
-                <span className="star rated"> </span>
-                <span className="star rated"></span>
+                <span className="star rated" />
+                <span className="star rated" />
+                <span className="star rated" />
+                <span className="star rated" />
+                <span className="star rated" />
               </div>
               <p className="availability">В наявності</p>
             </div>
@@ -42,20 +39,17 @@ const CabinetFavourites: React.FC = () => (
         <li className="item">
           <div className="column for-image">
             <div className="image-holder">
-              <img
-                src="./images/image-catalogue-page-9-mattifying-cream.png"
-                alt="cream"
-              />
+              <img src="./images/image-catalogue-page-9-mattifying-cream.png" alt="cream" />
             </div>
           </div>
           <div className="column for-interface">
             <div className="rating-and-availability">
               <div className="rating">
-                <span className="star rated"> </span>
-                <span className="star rated"> </span>
-                <span className="star rated"> </span>
-                <span className="star rated"> </span>
-                <span className="star rated"></span>
+                <span className="star rated" />
+                <span className="star rated" />
+                <span className="star rated" />
+                <span className="star rated" />
+                <span className="star rated" />
               </div>
               <p className="availability">Залишилось 3 шт</p>
             </div>
@@ -74,20 +68,17 @@ const CabinetFavourites: React.FC = () => (
         <li className="item">
           <div className="column for-image">
             <div className="image-holder">
-              <img
-                src="./images/image-catalogue-page-4-moisturizing serum.png"
-                alt="fluid"
-              />
+              <img src="./images/image-catalogue-page-4-moisturizing serum.png" alt="fluid" />
             </div>
           </div>
           <div className="column for-interface">
             <div className="rating-and-availability">
               <div className="rating">
-                <span className="star rated"> </span>
-                <span className="star rated"> </span>
-                <span className="star rated"> </span>
-                <span className="star rated"> </span>
-                <span className="star unrated"></span>
+                <span className="star rated" />
+                <span className="star rated" />
+                <span className="star rated" />
+                <span className="star rated" />
+                <span className="star rated" />
               </div>
               <p className="availability">В наявності</p>
             </div>
@@ -106,20 +97,17 @@ const CabinetFavourites: React.FC = () => (
         <li className="item">
           <div className="column for-image">
             <div className="image-holder">
-              <img
-                src="./images/image-catalogue-page-1-fluid.png"
-                alt="fluid"
-              />
+              <img src="./images/image-catalogue-page-1-fluid.png" alt="fluid" />
             </div>
           </div>
           <div className="column for-interface">
             <div className="rating-and-availability">
               <div className="rating">
-                <span className="star rated"> </span>
-                <span className="star rated"> </span>
-                <span className="star rated"> </span>
-                <span className="star rated"> </span>
-                <span className="star rated"></span>
+                <span className="star rated" />
+                <span className="star rated" />
+                <span className="star rated" />
+                <span className="star rated" />
+                <span className="star rated" />
               </div>
               <p className="availability">В наявності</p>
             </div>
@@ -138,20 +126,17 @@ const CabinetFavourites: React.FC = () => (
         <li className="item">
           <div className="column for-image">
             <div className="image-holder">
-              <img
-                src="./images/image-catalogue-page-1-fluid.png"
-                alt="fluid"
-              />
+              <img src="./images/image-catalogue-page-1-fluid.png" alt="fluid" />
             </div>
           </div>
           <div className="column for-interface">
             <div className="rating-and-availability">
               <div className="rating">
-                <span className="star rated"> </span>
-                <span className="star rated"> </span>
-                <span className="star rated"> </span>
-                <span className="star rated"> </span>
-                <span className="star rated"></span>
+                <span className="star rated" />
+                <span className="star rated" />
+                <span className="star rated" />
+                <span className="star rated" />
+                <span className="star rated" />
               </div>
               <p className="availability">В наявності</p>
             </div>
@@ -170,20 +155,17 @@ const CabinetFavourites: React.FC = () => (
         <li className="item">
           <div className="column for-image">
             <div className="image-holder">
-              <img
-                src="./images/image-catalogue-page-1-fluid.png"
-                alt="fluid"
-              />
+              <img src="./images/image-catalogue-page-1-fluid.png" alt="fluid" />
             </div>
           </div>
           <div className="column for-interface">
             <div className="rating-and-availability">
               <div className="rating">
-                <span className="star rated"> </span>
-                <span className="star rated"> </span>
-                <span className="star rated"> </span>
-                <span className="star rated"> </span>
-                <span className="star rated"></span>
+                <span className="star rated" />
+                <span className="star rated" />
+                <span className="star rated" />
+                <span className="star rated" />
+                <span className="star rated" />
               </div>
               <p className="availability">В наявності</p>
             </div>
@@ -202,20 +184,17 @@ const CabinetFavourites: React.FC = () => (
         <li className="item">
           <div className="column for-image">
             <div className="image-holder">
-              <img
-                src="./images/image-catalogue-page-1-fluid.png"
-                alt="fluid"
-              />
+              <img src="./images/image-catalogue-page-1-fluid.png" alt="fluid" />
             </div>
           </div>
           <div className="column for-interface">
             <div className="rating-and-availability">
               <div className="rating">
-                <span className="star rated"> </span>
-                <span className="star rated"> </span>
-                <span className="star rated"> </span>
-                <span className="star rated"> </span>
-                <span className="star rated"></span>
+                <span className="star rated" />
+                <span className="star rated" />
+                <span className="star rated" />
+                <span className="star rated" />
+                <span className="star rated" />
               </div>
               <p className="availability">В наявності</p>
             </div>

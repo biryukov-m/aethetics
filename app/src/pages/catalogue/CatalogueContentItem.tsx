@@ -1,7 +1,7 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React from 'react';
+import { Link } from 'react-router-dom';
 
-export type Props = {
+type Props = {
   imageUrl: any;
   imageAlt: string;
   name: string;
@@ -9,17 +9,11 @@ export type Props = {
   id: number;
 };
 
-export const CatalogueContentItem: React.FC<Props> = ({
-  imageUrl,
-  imageAlt,
-  name,
-  price,
-  id,
-}) => (
+const CatalogueContentItem: React.FC<Props> = ({ imageUrl, imageAlt, name, price, id }) => (
   <div className="item">
     <div className="image-holder">
       <img src={imageUrl} alt={imageAlt} />
-      <span className="heart"></span>
+      <span className="heart" />
     </div>
     <div className="name">
       <p>{name}</p>

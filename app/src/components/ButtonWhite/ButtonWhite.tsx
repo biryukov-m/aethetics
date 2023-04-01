@@ -6,7 +6,7 @@ type Props = {
   text: string;
 };
 
-export const ButtonWhite: React.FC<Props> = ({ path, text }) => (
+const ButtonWhite: React.FC<Props> = ({ path, text }) => (
   <button type="button" className="btn-white">
     {path ? (
       <Link to={path}>

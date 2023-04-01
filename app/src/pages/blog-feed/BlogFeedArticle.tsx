@@ -1,5 +1,5 @@
-import React from "react";
-import ButtonArrowRight from "../../components/buttonArrowRight/ButtonArrowRight";
+import React from 'react';
+import ButtonArrowRight from '../../components/buttonArrowRight/ButtonArrowRight';
 
 type Props = {
   id: string;
@@ -16,10 +16,7 @@ const BlogFeedArticle: React.FC<Props> = ({ id, imageUrl, header, text }) => (
       <h3>{header}</h3>
       {text}
       <div className="button-show-details">
-        <ButtonArrowRight
-          text="Детальніше"
-          path={`/blog/${id}`}
-        ></ButtonArrowRight>
+        <ButtonArrowRight text="Детальніше" path={`/blog/${id}`} />
       </div>
     </div>
   </article>

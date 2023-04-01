@@ -1,20 +1,13 @@
-import React from "react";
+import React from 'react';
 
 type Props = {
-  id: number;
   name: string;
   city: string;
   street: string;
   telephone: string;
 };
 
-const CabinetAddressBlock: React.FC<Props> = ({
-  id,
-  name,
-  city,
-  street,
-  telephone,
-}) => (
+const CabinetAddressBlock: React.FC<Props> = ({ name, city, street, telephone }) => (
   <div className="contact">
     <div className="nth">1</div>
     <p>{name}</p>

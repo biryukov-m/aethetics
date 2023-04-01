@@ -1,7 +1,7 @@
-import React from "react";
-import RatingBar from "../../components/ratingBar/RatingBar";
-import ButtonGreenMini from "../../components/buttonGreenMini/ButtonGreenMini";
-import { Product } from "../../types/types";
+import React from 'react';
+import RatingBar from '../../components/ratingBar/RatingBar';
+import ButtonGreenMini from '../../components/buttonGreenMini/ButtonGreenMini';
+import { Product } from '../../types/types';
 
 const CabinetFavouritesItem: React.FC<Product> = ({
   imageUrl,
@@ -9,7 +9,7 @@ const CabinetFavouritesItem: React.FC<Product> = ({
   rating,
   availability,
   name,
-  price,
+  price
 }) => (
   <li className="item">
     <div className="column for-image">
@@ -20,14 +20,12 @@ const CabinetFavouritesItem: React.FC<Product> = ({
     <div className="column for-interface">
       <div className="rating-and-availability">
         <RatingBar rating={rating} rateable={false} />
-        <p className="availability">
-          {availability ? "В наявності" : "Немає в наявності"}
-        </p>
+        <p className="availability">{availability ? 'В наявності' : 'Немає в наявності'}</p>
       </div>
       <p className="name">{name}</p>
       <p className="price">{price} грн</p>
       <div className="buttons">
-        <ButtonGreenMini text={"В кошик"}></ButtonGreenMini>
+        <ButtonGreenMini text="В кошик" />
         <a href="#" className="delete">
           Видалити
         </a>

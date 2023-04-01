@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import HeroImg from "../../images/image-contacts-hero.png";
+import React, { useState } from 'react';
+import HeroImg from '../../images/image-contacts-hero.png';
 
 const Contacts: React.FC = () => {
   const [submitted, setSubmitted] = useState(false);
@@ -31,12 +31,7 @@ const Contacts: React.FC = () => {
                 </div>
                 <div className="bottom-group">
                   <div className="column">
-                    <input
-                      type="text"
-                      name="name"
-                      id="name"
-                      placeholder="Ваше ім’я"
-                    />
+                    <input type="text" name="name" id="name" placeholder="Ваше ім’я" />
                     <input
                       type="tel"
                       name="telephone"
@@ -45,7 +40,7 @@ const Contacts: React.FC = () => {
                     />
                   </div>
                   <div className="column button-wrapper">
-                    <button className="btn" onClick={() => setSubmitted(true)}>
+                    <button type="button" className="btn" onClick={() => setSubmitted(true)}>
                       <span>Передзвоніть</span>
                     </button>
                   </div>

@@ -1,40 +1,40 @@
-import React from "react";
-import { CatalogueRecentlyViewedItem } from "./CatalogueRecentlyViewedItem";
+import React from 'react';
+import { CatalogueRecentlyViewedItem } from './CatalogueRecentlyViewedItem';
 
-import ImageCataloguePage11 from "../../images/image-catalogue-page-11-make-up-remover-gel.png";
-import ImageCataloguePage12 from "../../images/image-catalogue-page-12-anti-aging-serum.png";
-import ImageCataloguePage14 from "../../images/image-catalogue-page-14-scrub-sensitive.png";
-import ImageCataloguePage15 from "../../images/image-catalogue-page-15-gel-deep-cleaning.png";
+import ImageCataloguePage11 from '../../images/image-catalogue-page-11-make-up-remover-gel.png';
+import ImageCataloguePage12 from '../../images/image-catalogue-page-12-anti-aging-serum.png';
+import ImageCataloguePage14 from '../../images/image-catalogue-page-14-scrub-sensitive.png';
+import ImageCataloguePage15 from '../../images/image-catalogue-page-15-gel-deep-cleaning.png';
 
 const items = [
   {
     id: 11,
     imageUrl: ImageCataloguePage11,
-    imageAlt: "make-up-remover-gel",
-    name: "Гель для зняття макіяжу",
-    price: 730,
+    imageAlt: 'make-up-remover-gel',
+    name: 'Гель для зняття макіяжу',
+    price: 730
   },
   {
     id: 12,
     imageUrl: ImageCataloguePage12,
-    imageAlt: "anti-aging-serum",
-    name: "Антивікова сироватка для зони навколо очей",
-    price: 900,
+    imageAlt: 'anti-aging-serum',
+    name: 'Антивікова сироватка для зони навколо очей',
+    price: 900
   },
   {
     id: 14,
     imageUrl: ImageCataloguePage14,
-    imageAlt: "scrub-sensitive",
-    name: "Скраб для чутливої шкіри",
-    price: 890,
+    imageAlt: 'scrub-sensitive',
+    name: 'Скраб для чутливої шкіри',
+    price: 890
   },
   {
     id: 15,
     imageUrl: ImageCataloguePage15,
-    imageAlt: "gel-deep-cleaning",
-    name: "Гель для глубокого очищення шкіри обличчя",
-    price: 890,
-  },
+    imageAlt: 'gel-deep-cleaning',
+    name: 'Гель для глубокого очищення шкіри обличчя',
+    price: 890
+  }
 ];
 
 export type Props = {
@@ -51,7 +51,7 @@ const itemsComponents = items.map((item) => (
   />
 ));
 
-export const CatalogueRecentlyViewed: React.FC<Props> = ({ items }) => (
+const CatalogueRecentlyViewed: React.FC<Props> = () => (
   <section className="more-products recently-viewed">
     <div className="layout">
       <div className="wrapper">

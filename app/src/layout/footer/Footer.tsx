@@ -1,13 +1,13 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React from 'react';
+import { Link } from 'react-router-dom';
 
-import LogoWhite from "../../images/image-logo-white.png";
-import MasterCardDefault from "../../images/icon-mastercard-default.png";
-import MasterCard360Default from "../../images/icon-360-mastercard-default.png";
-import VisaDefault from "../../images/icon-visa-default.png";
-import Visa360Default from "../../images/icon-360-visa-default.png";
-import ApayDefault from "../../images/icon-apay-default.png";
-import Apay360Default from "../../images/icon-360-apay-default.png";
+import LogoWhite from '../../images/image-logo-white.png';
+import MasterCardDefault from '../../images/icon-mastercard-default.png';
+import MasterCard360Default from '../../images/icon-360-mastercard-default.png';
+import VisaDefault from '../../images/icon-visa-default.png';
+import Visa360Default from '../../images/icon-360-visa-default.png';
+import ApayDefault from '../../images/icon-apay-default.png';
+import Apay360Default from '../../images/icon-360-apay-default.png';
 
 const Footer: React.FC = () => (
   <footer>
@@ -51,16 +51,8 @@ const Footer: React.FC = () => (
             <ul>
               <li className="mastercard">
                 <a href="#">
-                  <img
-                    className="desktop"
-                    src={MasterCardDefault}
-                    alt="mastercard"
-                  />
-                  <img
-                    className="mobile"
-                    src={MasterCard360Default}
-                    alt="mastercard"
-                  />
+                  <img className="desktop" src={MasterCardDefault} alt="mastercard" />
+                  <img className="mobile" src={MasterCard360Default} alt="mastercard" />
                 </a>
               </li>
               <li className="visa">
@@ -72,11 +64,7 @@ const Footer: React.FC = () => (
               <li className="apple-pay">
                 <a href="#">
                   <img className="desktop" src={ApayDefault} alt="apple pay" />
-                  <img
-                    className="mobile"
-                    src={Apay360Default}
-                    alt="apple pay"
-                  />
+                  <img className="mobile" src={Apay360Default} alt="apple pay" />
                 </a>
               </li>
             </ul>

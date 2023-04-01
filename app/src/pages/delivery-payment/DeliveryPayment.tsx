@@ -1,6 +1,6 @@
-import React from "react";
-import HTMLReactParser from "html-react-parser";
-import DeliveryPaymentArticle from "./DeliveryPaymentArticle";
+import React from 'react';
+import HTMLReactParser from 'html-react-parser';
+import DeliveryPaymentArticle from './DeliveryPaymentArticle';
 
 export type Article = {
   header: string;
@@ -10,7 +10,7 @@ export type Article = {
 
 const articles: Article[] = [
   {
-    header: "Оплата",
+    header: 'Оплата',
     content: `<p>Банківською карткою</p>
             <p>
               До оплати приймаються картки Visa та Mastercard.
@@ -28,11 +28,11 @@ const articles: Article[] = [
             <p>
               Такий спосіб оплати можливий при отриманні товару у відділеннях
               "Нова Пошта" або при кур'єрській доставці.
-            </p>`,
+            </p>`
   },
   {
-    header: "Нова пошта",
-    subheader: "Безкоштовна доставка від 1500 грн",
+    header: 'Нова пошта',
+    subheader: 'Безкоштовна доставка від 1500 грн',
     content: `<p>
               При сумі замовлення до 1500 грн доставка коштує всього 39 грн, при
               сумі замовлення понад 1500 грн - доставка безкоштовна! Мінімальна
@@ -55,11 +55,11 @@ const articles: Article[] = [
               "Нова пошта". Жодних прихованих платежів, оплати послуг
               транспортних компаній, плати за переказ коштів, комісій та іншого!
               Ви оплачуєте тільки суму вашого замовлення.
-            </p>`,
+            </p>`
   },
   {
-    header: "Доставка кур’єром",
-    subheader: "Безкоштовна доставка від 2000 грн",
+    header: 'Доставка кур’єром',
+    subheader: 'Безкоштовна доставка від 2000 грн',
     content: `<p>
               Наша кур'єрська служба доставляє замовлення у межах м.Київ
               безкоштовно. Мінімальна сума замовлення – від 2000 грн.
@@ -91,8 +91,8 @@ const articles: Article[] = [
               його оформленні. У цьому випадку наш кур'єр передасть вам посилку
               безконтактно, не наражаючись на небезпеку і піклуючись про ваш
               комфорт. AESTHETICS бажає вам міцного здоров'я!
-            </p>`,
-  },
+            </p>`
+  }
 ];
 
 const DeliveryPayment: React.FC = () => {
