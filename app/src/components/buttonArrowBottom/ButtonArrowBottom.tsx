@@ -1,5 +1,5 @@
-import React from "react";
-import { To, Link } from "react-router-dom";
+import React from 'react';
+import { To, Link } from 'react-router-dom';
 
 type Props = {
   path?: To;
@@ -7,7 +7,7 @@ type Props = {
 };
 
 export const ButtonArrowBottom: React.FC<Props> = ({ path, text }) => (
-  <button className="btn-arrow-bottom">
+  <button type="button" className="btn-arrow-bottom">
     {path ? (
       <Link to={path}>
         <span>{text}</span>
