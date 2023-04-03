@@ -3,7 +3,7 @@ import ProductCardMainInfo from './ProductCardMainInfo';
 import ProductCardFullInfo from './ProductCardFullInfo';
 import ProductCardRelatedProducts from './ProductCardRelatedProducts';
 import Image1 from '../../images/image-product-card-hero-antiox-cream.png';
-import { Product } from '../../types/types';
+import { Product } from '../../../../types/types';
 
 const ProductCard: React.FC = () => {
   const product: Product = {
