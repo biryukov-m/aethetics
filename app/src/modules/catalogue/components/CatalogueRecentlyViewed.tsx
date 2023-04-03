@@ -1,10 +1,10 @@
 import React from 'react';
 import { CatalogueRecentlyViewedItem } from './CatalogueRecentlyViewedItem';
 
-import ImageCataloguePage11 from '../../../../assets/images/image-catalogue-page-11-make-up-remover-gel.png';
-import ImageCataloguePage12 from '../../../../assets/images/image-catalogue-page-12-anti-aging-serum.png';
-import ImageCataloguePage14 from '../../../../assets/images/image-catalogue-page-14-scrub-sensitive.png';
-import ImageCataloguePage15 from '../../../../assets/images/image-catalogue-page-15-gel-deep-cleaning.png';
+import ImageCataloguePage11 from '../../../assets/images/image-catalogue-page-11-make-up-remover-gel.png';
+import ImageCataloguePage12 from '../../../assets/images/image-catalogue-page-12-anti-aging-serum.png';
+import ImageCataloguePage14 from '../../../assets/images/image-catalogue-page-14-scrub-sensitive.png';
+import ImageCataloguePage15 from '../../../assets/images/image-catalogue-page-15-gel-deep-cleaning.png';
 
 const items = [
   {

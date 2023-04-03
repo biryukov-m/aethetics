@@ -1,15 +1,22 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import {
+  IProductAlt,
+  IProductId,
+  IProductImageUrl,
+  IProductName,
+  IProductPrice
+} from '../../../types/products';
 
-type Props = {
-  imageUrl: any;
-  imageAlt: string;
-  name: string;
-  price: number;
-  id: number;
+type IProps = {
+  id: IProductId;
+  name: IProductName;
+  imageUrl: IProductImageUrl;
+  imageAlt: IProductAlt;
+  price: IProductPrice;
 };
 
-const CatalogueContentItem: React.FC<Props> = ({ imageUrl, imageAlt, name, price, id }) => (
+const CatalogueContentItem: React.FC<IProps> = ({ id, name, imageUrl, imageAlt, price }) => (
   <div className="item">
     <div className="image-holder">
       <img src={imageUrl} alt={imageAlt} />

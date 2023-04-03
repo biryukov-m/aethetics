@@ -1,7 +1,7 @@
 import React from 'react';
-import CatalogueFilter from './CatalogueFilter';
-import CatalogueContent from './CatalogueContent';
-import CatalogueRecentlyViewed from './CatalogueRecentlyViewed';
+import CatalogueFilter from '../../components/CatalogueFilter';
+import CatalogueContent from '../../components/CatalogueContent';
+import CatalogueRecentlyViewed from '../../components/CatalogueRecentlyViewed';
 
 const Catalogue: React.FC = () => (
   <>
