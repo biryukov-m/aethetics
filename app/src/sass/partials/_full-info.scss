@@ -121,7 +121,7 @@
             .star {
               cursor: auto;
               &.unrated:hover {
-                background-image: url("../../images/icon-star-no-rating.png");
+                background-image: url('../../assets/images/icon-star-no-rating.png');
               }
             }
           }

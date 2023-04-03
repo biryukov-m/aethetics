@@ -1,21 +1,21 @@
 import React from 'react';
 import CatalogueContentItem from './CatalogueContentItem';
 
-import ImageCataloguePage1 from '../../images/image-catalogue-page-1-fluid.png';
-import ImageCataloguePage2 from '../../images/image-catalogue-page-2-antiox-cream.png';
-import ImageCataloguePage3 from '../../images/image-catalogue-page-3-shower-gel.png';
-import ImageCataloguePage4 from '../../images/image-catalogue-page-4-moisturizing serum.png';
-import ImageCataloguePage5 from '../../images/image-catalogue-page-5-moisturizing-cream.png';
-import ImageCataloguePage6 from '../../images/image-catalogue-page-6-face-tonic.png';
-import ImageCataloguePage7 from '../../images/image-catalogue-page-7-cleaning-foam.png';
-import ImageCataloguePage8 from '../../images/image-catalogue-page-8-day-night-cream.png';
-import ImageCataloguePage9 from '../../images/image-catalogue-page-9-mattifying-cream.png';
-import ImageCataloguePage10 from '../../images/image-catalogue-page-10-night-anti-aging-cream.png';
-import ImageCataloguePage11 from '../../images/image-catalogue-page-11-make-up-remover-gel.png';
-import ImageCataloguePage12 from '../../images/image-catalogue-page-12-anti-aging-serum.png';
-import ImageCataloguePage13 from '../../images/image-catalogue-page-13-lotion-skin.png';
-import ImageCataloguePage14 from '../../images/image-catalogue-page-14-scrub-sensitive.png';
-import ImageCataloguePage15 from '../../images/image-catalogue-page-15-gel-deep-cleaning.png';
+import ImageCataloguePage1 from '../../../../assets/images/image-catalogue-page-1-fluid.png';
+import ImageCataloguePage2 from '../../../../assets/images/image-catalogue-page-2-antiox-cream.png';
+import ImageCataloguePage3 from '../../../../assets/images/image-catalogue-page-3-shower-gel.png';
+import ImageCataloguePage4 from '../../../../assets/images/image-catalogue-page-4-moisturizing serum.png';
+import ImageCataloguePage5 from '../../../../assets/images/image-catalogue-page-5-moisturizing-cream.png';
+import ImageCataloguePage6 from '../../../../assets/images/image-catalogue-page-6-face-tonic.png';
+import ImageCataloguePage7 from '../../../../assets/images/image-catalogue-page-7-cleaning-foam.png';
+import ImageCataloguePage8 from '../../../../assets/images/image-catalogue-page-8-day-night-cream.png';
+import ImageCataloguePage9 from '../../../../assets/images/image-catalogue-page-9-mattifying-cream.png';
+import ImageCataloguePage10 from '../../../../assets/images/image-catalogue-page-10-night-anti-aging-cream.png';
+import ImageCataloguePage11 from '../../../../assets/images/image-catalogue-page-11-make-up-remover-gel.png';
+import ImageCataloguePage12 from '../../../../assets/images/image-catalogue-page-12-anti-aging-serum.png';
+import ImageCataloguePage13 from '../../../../assets/images/image-catalogue-page-13-lotion-skin.png';
+import ImageCataloguePage14 from '../../../../assets/images/image-catalogue-page-14-scrub-sensitive.png';
+import ImageCataloguePage15 from '../../../../assets/images/image-catalogue-page-15-gel-deep-cleaning.png';
 
 const items = [
   {

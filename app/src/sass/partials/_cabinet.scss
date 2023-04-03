@@ -10,7 +10,7 @@
       h2 {
         width: fit-content;
         margin: 0 auto 27px;
-        font-family: "Candara";
+        font-family: 'Candara';
         font-style: normal;
         font-weight: 200;
         font-size: 40px;
@@ -30,7 +30,7 @@
         li {
           display: block;
           padding-bottom: 7px;
-          font-family: "Candara";
+          font-family: 'Candara';
           font-style: normal;
           font-weight: 200;
           font-size: 26px;
@@ -47,7 +47,7 @@
             margin: 0;
             &::before {
               display: block;
-              content: "";
+              content: '';
               position: absolute;
               bottom: 0;
               left: 0;
@@ -73,13 +73,12 @@
             &::after {
               position: absolute;
               display: block;
-              content: "";
+              content: '';
               top: 18px;
               right: 3%;
               width: 11px;
               height: 6px;
-              background: url(../../images/icon-expand-more.png) no-repeat
-                center;
+              background: url(../../assets/images/icon-expand-more.png) no-repeat center;
             }
             &:hover,
             &.active {
@@ -132,7 +131,7 @@
                 label,
                 input,
                 input::placeholder {
-                  font-family: "Candara";
+                  font-family: 'Candara';
                   font-style: normal;
                   font-weight: 200;
                   font-size: 20px;
@@ -193,7 +192,7 @@
                   label,
                   input,
                   input::placeholder {
-                    font-family: "Candara";
+                    font-family: 'Candara';
                     font-style: normal;
                     font-size: 20px;
                     line-height: 150%;
@@ -292,7 +291,7 @@
                       width: 50px;
                       height: 50px;
                       border-radius: 50%;
-                      font-family: "Candara";
+                      font-family: 'Candara';
                       font-weight: 200;
                       font-size: 40px;
                       text-align: center;
@@ -317,7 +316,7 @@
                       justify-content: space-between;
                       span {
                         display: inline-block;
-                        font-family: "Candara";
+                        font-family: 'Candara';
                         font-style: normal;
                         font-weight: 200;
                         font-size: 18px;
@@ -465,7 +464,7 @@
                         }
                       }
                       .availability {
-                        font-family: "Candara";
+                        font-family: 'Candara';
                         font-style: normal;
                         font-weight: 200;
                         font-size: 18px;
@@ -481,7 +480,7 @@
                       }
                     }
                     p {
-                      font-family: "Candara";
+                      font-family: 'Candara';
                       font-style: normal;
                       font-weight: 400;
                       font-size: 20px;
@@ -535,7 +534,7 @@
                         }
                       }
                       a {
-                        font-family: "Candara";
+                        font-family: 'Candara';
                         font-style: normal;
                         font-weight: 200;
                         font-size: 18px;
@@ -573,7 +572,7 @@
                   margin-bottom: 20px;
                 }
                 p {
-                  font-family: "Candara";
+                  font-family: 'Candara';
                   font-style: normal;
                   font-weight: 400;
                   font-size: 20px;

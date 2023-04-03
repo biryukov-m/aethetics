@@ -1,8 +1,8 @@
 import React from 'react';
 import ProductCardRelatedProductsItem from './ProductCardRelatedProductsItem';
-import ImageCataloguePage5 from '../../images/image-catalogue-page-5-moisturizing-cream.png';
-import ImageCataloguePage9 from '../../images/image-catalogue-page-9-mattifying-cream.png';
-import ImageCataloguePage10 from '../../images/image-catalogue-page-10-night-anti-aging-cream.png';
+import ImageCataloguePage5 from '../../../../assets/images/image-catalogue-page-5-moisturizing-cream.png';
+import ImageCataloguePage9 from '../../../../assets/images/image-catalogue-page-9-mattifying-cream.png';
+import ImageCataloguePage10 from '../../../../assets/images/image-catalogue-page-10-night-anti-aging-cream.png';
 
 const items = [
   {

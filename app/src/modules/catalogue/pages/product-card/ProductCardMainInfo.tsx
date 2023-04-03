@@ -1,8 +1,8 @@
 import React from 'react';
-import RatingBar from '../../components/ratingBar/RatingBar';
-import ButtonGreen from '../../components/ButtonGreen/ButtonGreen';
-import GoBack from '../../components/goBack/GoBack';
-import { Product } from '../../../../../types/types';
+import RatingBar from '../../../common/ratingBar/RatingBar';
+import ButtonGreen from '../../../common/ButtonGreen/ButtonGreen';
+import GoBack from '../../../common/goBack/GoBack';
+import { Product } from '../../../../types/types';
 
 type Props = {
   name: Product['name'];

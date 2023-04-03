@@ -1,10 +1,9 @@
 import React from 'react';
 import BlogFeedArticle from './BlogFeedArticle';
-import ButtonArrowBottom from '../../components/buttonArrowBottom/ButtonArrowBottom';
-
-import ArticleOneImage from '../../images/image-main-page-article-preview-1.png';
-import ArticleTwoImage from '../../images/image-main-page-article-preview-2.png';
-import ArticleThreeImage from '../../images/image-main-page-article-preview-3.png';
+import ButtonArrowBottom from '../../../common/buttonArrowBottom/ButtonArrowBottom';
+import ArticleOneImage from '../../../../assets/images/image-main-page-article-preview-1.png';
+import ArticleTwoImage from '../../../../assets/images/image-main-page-article-preview-2.png';
+import ArticleThreeImage from '../../../../assets/images/image-main-page-article-preview-3.png';
 
 const BlogFeed: React.FC = () => (
   <section className="blog-feed">

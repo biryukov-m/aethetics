@@ -1,7 +1,7 @@
 import React from 'react';
-import MainSlideOne360 from '../../images/image-360-main-slide-1.png';
-import MainSlideOne from '../../images/image-main-slide-1.png';
-import ButtonGreen from '../../components/ButtonGreen/ButtonGreen';
+import MainSlideOne360 from '../../../assets/images/image-360-main-slide-1.png';
+import MainSlideOne from '../../../assets/images/image-main-slide-1.png';
+import ButtonGreen from '../ButtonGreen/ButtonGreen';
 
 const Slider: React.FC = () => (
   <section className="slider">

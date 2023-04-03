@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import HeroImg from '../../images/image-contacts-hero.png';
+import HeroImg from '../../../assets/images/image-contacts-hero.png';
 
 const Contacts: React.FC = () => {
   const [submitted, setSubmitted] = useState(false);

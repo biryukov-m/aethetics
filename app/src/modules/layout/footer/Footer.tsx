@@ -1,13 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import LogoWhite from '../../images/image-logo-white.png';
-import MasterCardDefault from '../../images/icon-mastercard-default.png';
-import MasterCard360Default from '../../images/icon-360-mastercard-default.png';
-import VisaDefault from '../../images/icon-visa-default.png';
-import Visa360Default from '../../images/icon-360-visa-default.png';
-import ApayDefault from '../../images/icon-apay-default.png';
-import Apay360Default from '../../images/icon-360-apay-default.png';
+import LogoWhite from '../../../assets/images/image-logo-white.png';
+import MasterCardDefault from '../../../assets/images/icon-mastercard-default.png';
+import MasterCard360Default from '../../../assets/images/icon-360-mastercard-default.png';
+import VisaDefault from '../../../assets/images/icon-visa-default.png';
+import Visa360Default from '../../../assets/images/icon-360-visa-default.png';
+import ApayDefault from '../../../assets/images/icon-apay-default.png';
+import Apay360Default from '../../../assets/images/icon-360-apay-default.png';
 
 const Footer: React.FC = () => (
   <footer>

@@ -1,5 +1,5 @@
 import React from 'react';
-import ButtonArrowRight from '../../components/buttonArrowRight/ButtonArrowRight';
+import ButtonArrowRight from '../../../common/buttonArrowRight/ButtonArrowRight';
 
 type Props = {
   id: string;

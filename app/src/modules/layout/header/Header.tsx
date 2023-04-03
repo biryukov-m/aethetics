@@ -1,6 +1,6 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import LogoGreen from "../../images/image-logo-green.png";
+import React from 'react';
+import { Link } from 'react-router-dom';
+import LogoGreen from '../../../assets/images/image-logo-green.png';
 
 const Header: React.FC = () => (
   <header>
@@ -31,16 +31,16 @@ const Header: React.FC = () => (
         <div className="interface">
           <ul>
             <li className="to-cabinet">
-              <Link to="cabinet"></Link>
+              <Link to="cabinet" />
             </li>
             <li className="favourite">
-              <a href="#"></a>
+              <Link to="cabinet" />
             </li>
             <li className="basket">
-              <a href="#"></a>
+              <Link to="cabinet" />
             </li>
             <li className="burger">
-              <a href="#"></a>
+              <Link to="cabinet" />
             </li>
           </ul>
         </div>

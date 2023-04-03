@@ -88,7 +88,7 @@
             margin: 0;
             transition: none;
             transform: none;
-            background: url("../../images/icon-basket-default.png") no-repeat;
+            background: url('../../assets/images/icon-basket-default.png') no-repeat;
             background-size: cover;
           }
           span {
@@ -103,7 +103,7 @@
           &:hover {
             cursor: pointer;
             @media (max-width: 950px) {
-              background: url("../../images/icon-basket-hover.png") no-repeat;
+              background: url('../../assets/images/icon-basket-hover.png') no-repeat;
               background-size: cover;
               transition: none;
               transform: none;

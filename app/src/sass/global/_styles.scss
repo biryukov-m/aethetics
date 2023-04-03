@@ -32,7 +32,7 @@ section {
 // }
 
 h2 {
-  font-family: "Poiret One";
+  font-family: 'Poiret One';
   font-style: normal;
   font-weight: 400;
   font-size: 60px;
@@ -40,7 +40,7 @@ h2 {
   color: $text;
 }
 h3 {
-  font-family: "Candara";
+  font-family: 'Candara';
   font-style: normal;
   font-weight: 400;
   font-size: 40px;
@@ -48,7 +48,7 @@ h3 {
   color: $text;
 }
 h4 {
-  font-family: "Candara";
+  font-family: 'Candara';
   font-style: normal;
   font-weight: 400;
   font-size: 26px;
@@ -56,7 +56,7 @@ h4 {
   color: $text;
 }
 p {
-  font-family: "Candara";
+  font-family: 'Candara';
   font-style: normal;
   font-weight: 400;
   font-size: 20px;
@@ -74,7 +74,7 @@ p {
   cursor: pointer;
   position: relative;
   transition: all 0.2s ease-in;
-  font-family: "Candara";
+  font-family: 'Candara';
   font-style: normal;
   font-weight: 400;
   font-size: 26px;
@@ -86,7 +86,7 @@ p {
   }
   span,
   a {
-    font-family: "Candara";
+    font-family: 'Candara';
     font-style: normal;
     font-weight: 400;
     font-size: 26px;
@@ -99,7 +99,7 @@ p {
   }
 
   &::before {
-    content: "";
+    content: '';
     display: block;
     position: absolute;
     z-index: -1;
@@ -140,7 +140,7 @@ p {
   margin-right: 4px;
   margin-top: 2px;
   &::before {
-    content: "";
+    content: '';
     display: block;
     position: absolute;
     width: 96px;
@@ -156,7 +156,7 @@ p {
     }
   }
   span {
-    font-family: "Candara";
+    font-family: 'Candara';
     font-style: normal;
     font-weight: 400;
     font-size: 26px;
@@ -177,7 +177,7 @@ p {
   position: relative;
   transition: transform 0.2s ease-in;
   span {
-    font-family: "Candara";
+    font-family: 'Candara';
     font-style: normal;
     font-weight: 400;
     font-size: 20px;
@@ -187,12 +187,12 @@ p {
     left: -1px;
   }
   &::before {
-    content: "";
+    content: '';
     display: block;
     position: absolute;
     width: 71px;
     height: 12px;
-    background: url("../../images/icon-button-arrow-right.png");
+    background: url('../../assets/images/icon-button-arrow-right.png');
     right: -38px;
     transition: transform 0.2s ease-in;
   }
@@ -217,7 +217,7 @@ p {
     border: 1px solid $accent;
   }
   span {
-    font-family: "Candara";
+    font-family: 'Candara';
     font-style: normal;
     font-weight: 400;
     font-size: 20px;
@@ -227,12 +227,12 @@ p {
     left: -1px;
   }
   &::before {
-    content: "";
+    content: '';
     display: block;
     position: absolute;
     width: 12px;
     height: 31px;
-    background: url("../../images/icon-button-arrow-bottom.png");
+    background: url('../../assets/images/icon-button-arrow-bottom.png');
     bottom: -18px;
     transition: transform 0.2s ease-in;
     @media (max-width: 1140px) {
@@ -253,7 +253,7 @@ p {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-family: "Candara";
+  font-family: 'Candara';
   font-style: normal;
   font-weight: 400;
   font-size: 20px;
@@ -292,12 +292,12 @@ p {
     height: 20px;
     cursor: pointer;
     &.rated {
-      background-image: url("../../images/icon-star-rating.png");
+      background-image: url('../../assets/images/icon-star-rating.png');
     }
     &.unrated {
-      background-image: url("../../images/icon-star-no-rating.png");
+      background-image: url('../../assets/images/icon-star-no-rating.png');
       &:hover {
-        background-image: url("../../images/icon-star-rating.png");
+        background-image: url('../../assets/images/icon-star-rating.png');
       }
     }
   }
@@ -310,8 +310,7 @@ p {
     display: block;
     width: 36px;
     height: 36px;
-    background: url("../../images/icon-product-card-back-arrow-left.png")
-      no-repeat;
+    background: url('../../assets/images/icon-product-card-back-arrow-left.png') no-repeat;
     transition: transform 0.2s ease-in;
     cursor: pointer;
     &:hover {
@@ -326,11 +325,11 @@ p {
     visibility: hidden;
     width: 24px;
     height: 24px;
-    background: url("../../images/icon-fav-default.png") no-repeat center;
+    background: url('../../assets/images/icon-fav-default.png') no-repeat center;
     background-size: contain;
     cursor: pointer;
     &:hover {
-      background: url("../../images/icon-fav-alt-hover.png") no-repeat center;
+      background: url('../../assets/images/icon-fav-alt-hover.png') no-repeat center;
       background-size: contain;
     }
     @media (max-width: 767px) {

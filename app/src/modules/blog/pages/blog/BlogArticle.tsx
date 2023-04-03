@@ -1,6 +1,6 @@
 import React from 'react';
-import Image1 from '../../images/image-blog-article-1-akne-1.png';
-import Image2 from '../../images/image-blog-article-1-akne-2.png';
+import Image1 from '../../../../assets/images/image-blog-article-1-akne-1.png';
+import Image2 from '../../../../assets/images/image-blog-article-1-akne-2.png';
 
 const BlogArticle: React.FC = () => (
   <article>

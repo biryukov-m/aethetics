@@ -1,5 +1,5 @@
 import React from 'react';
-import MainPageHero from '../../images/image-main-page-hero.png';
+import MainPageHero from '../../../../assets/images/image-main-page-hero.png';
 import ButtonGreen from '../../../common/ButtonGreen/ButtonGreen';
 
 const FirstView: React.FC = () => (

@@ -76,7 +76,7 @@
       .radio {
         width: 20px;
         height: 20px;
-        background: url(../../images/icon-radio-unchecked.png);
+        background: url(../../assets/images/icon-radio-unchecked.png);
         cursor: pointer;
         @media (max-width: 767px) {
           width: 10px;
@@ -84,7 +84,7 @@
           background-size: cover;
         }
         &.active {
-          background: url(../../images/icon-radio-checked.png);
+          background: url(../../assets/images/icon-radio-checked.png);
           @media (max-width: 767px) {
             width: 10px;
             height: 10px;

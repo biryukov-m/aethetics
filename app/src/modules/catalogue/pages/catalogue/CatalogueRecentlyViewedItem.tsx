@@ -1,5 +1,5 @@
 import React from 'react';
-import ButtonGreenMini from '../../components/buttonGreenMini/ButtonGreenMini';
+import ButtonGreenMini from '../../../common/buttonGreenMini/ButtonGreenMini';
 
 export type Props = {
   imageUrl: any;

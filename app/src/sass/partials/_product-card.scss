@@ -112,15 +112,15 @@
             height: 36px;
             cursor: pointer;
             &.yes {
-              background: url("../../images/icon-fav-alt-hover.png");
+              background: url('../../assets/images/icon-fav-alt-hover.png');
               &:hover {
-                background: url("../../images/icon-fav-default.png");
+                background: url('../../assets/images/icon-fav-default.png');
               }
             }
             &.no {
-              background: url("../../images/icon-fav-default.png");
+              background: url('../../assets/images/icon-fav-default.png');
               &:hover {
-                background: url("../../images/icon-fav-alt-hover.png") no-repeat;
+                background: url('../../assets/images/icon-fav-alt-hover.png') no-repeat;
               }
             }
             @media (max-width: 767px) {
@@ -136,7 +136,7 @@
             width: 86px;
             height: 49px;
             padding: 0 15px;
-            font-family: "Candara";
+            font-family: 'Candara';
             font-weight: 400;
             font-size: 26px;
             @media (max-width: 1140px) {

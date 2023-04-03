@@ -32,16 +32,16 @@
           cursor: pointer;
           background-size: cover;
           &.instagram {
-            background-image: url("../../images/icon-instagram-hover.png");
+            background-image: url('../../assets/images/icon-instagram-hover.png');
           }
           &.mail {
-            background-image: url("../../images/icon-email-hover.png");
+            background-image: url('../../assets/images/icon-email-hover.png');
           }
           &.telephone {
-            background-image: url("../../images/icon-phone-hover.png");
+            background-image: url('../../assets/images/icon-phone-hover.png');
           }
           &.address {
-            background-image: url("../../images/icon-address-hover.png");
+            background-image: url('../../assets/images/icon-address-hover.png');
           }
           img {
             display: none;

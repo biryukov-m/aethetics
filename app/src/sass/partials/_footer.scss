@@ -32,7 +32,7 @@ footer {
       }
       p,
       a {
-        font-family: "Candara";
+        font-family: 'Candara';
         font-style: normal;
         font-weight: 400;
         font-size: 20px;
@@ -159,11 +159,10 @@ footer {
                 order: 1;
               }
               &:hover a {
-                background: url(../../images/icon-mastercard-hover.png);
+                background: url(../../assets/images/icon-mastercard-hover.png);
                 background-size: cover;
                 @media (max-width: 767px) {
-                  background: url(../../images/icon-360-mastercard-hover.png)
-                    no-repeat;
+                  background: url(../../assets/images/icon-360-mastercard-hover.png) no-repeat;
                 }
               }
             }
@@ -176,7 +175,7 @@ footer {
                 order: 3;
               }
               &:hover a {
-                background: url(../../images/icon-visa-hover.png);
+                background: url(../../assets/images/icon-visa-hover.png);
                 background-size: cover;
               }
             }
@@ -189,7 +188,7 @@ footer {
                 order: 2;
               }
               &:hover a {
-                background: url(../../images/icon-apay-hover.png);
+                background: url(../../assets/images/icon-apay-hover.png);
                 background-size: cover;
               }
             }

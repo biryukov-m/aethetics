@@ -51,7 +51,7 @@ header {
             a {
               display: block;
               cursor: pointer;
-              font-family: "Candara";
+              font-family: 'Candara';
               font-size: 26px;
               line-height: 110%;
               font-weight: 200;
@@ -101,7 +101,7 @@ header {
               display: block;
             }
             a {
-              background-image: url(../../images/icon-burger.png);
+              background-image: url(../../assets/images/icon-burger.png);
               background-position-y: 50%;
               &:hover {
                 background-position-x: center;
@@ -109,21 +109,21 @@ header {
             }
           }
           li.to-cabinet a {
-            background-image: url(../../images/icon-cabinet-default.png),
-              url(../../images/icon-cabinet-hover.png);
+            background-image: url(../../assets/images/icon-cabinet-default.png),
+              url(../../assets/images/icon-cabinet-hover.png);
           }
           li.favourite {
             @media (max-width: 767px) {
               display: none;
             }
             a {
-              background-image: url(../../images/icon-fav-default.png),
-                url(../../images/icon-fav-hover.png);
+              background-image: url(../../assets/images/icon-fav-default.png),
+                url(../../assets/images/icon-fav-hover.png);
             }
           }
           li.basket a {
-            background-image: url(../../images/icon-basket-default.png),
-              url(../../images/icon-basket-hover.png);
+            background-image: url(../../assets/images/icon-basket-default.png),
+              url(../../assets/images/icon-basket-hover.png);
           }
         }
       }
