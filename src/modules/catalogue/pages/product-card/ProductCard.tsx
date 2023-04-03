@@ -40,7 +40,7 @@ const ProductCard: React.FC = () => {
     return (
       <>
         <ProductCardMainInfo {...product} favourite={isFavourite} />
-        <ProductCardFullInfo composition={product.composition} reviews={reviews} />
+        <ProductCardFullInfo {...product} {...{ reviews }} />
         <ProductCardRelatedProducts />
       </>
     );

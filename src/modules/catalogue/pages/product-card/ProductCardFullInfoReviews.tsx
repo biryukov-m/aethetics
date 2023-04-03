@@ -3,7 +3,7 @@ import ButtonWhite from '../../../common/ButtonWhite/ButtonWhite';
 import ButtonArrowBottom from '../../../common/buttonArrowBottom/ButtonArrowBottom';
 import RatingBar from '../../../common/ratingBar/RatingBar';
 
-export type Props = {
+export type IProps = {
   reviews: {
     id: number;
     author: string;
@@ -13,7 +13,7 @@ export type Props = {
   }[];
 };
 
-const ProductCardFullInfoReviews: React.FC<Props> = ({ reviews }) => {
+const ProductCardFullInfoReviews: React.FC<IProps> = ({ reviews }) => {
   const generatedReviews = reviews.map((review) => (
     <div className="review">
       <div className="author">

@@ -1,9 +1,10 @@
 import React from 'react';
 import ProductCardFullInfoComposition from './ProductCardFullInfoComposition';
 import ProductCardFullInfoReviews from './ProductCardFullInfoReviews';
+import { IProductComposition } from '../../../../types/products';
 
 export type Props = {
-  composition: string;
+  composition: IProductComposition;
   reviews: {
     id: number;
     author: string;
@@ -42,8 +43,8 @@ const ProductCardFullInfo: React.FC<Props> = ({ composition, reviews }) => {
             Відгуки
           </h4>
         </div>
-        <ProductCardFullInfoComposition composition={composition} />
-        <ProductCardFullInfoReviews reviews={reviews} />
+        <ProductCardFullInfoComposition {...{ composition }} />
+        <ProductCardFullInfoReviews {...{ reviews }} />
       </div>
     </section>
   );

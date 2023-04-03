@@ -2,26 +2,33 @@ import React from 'react';
 import RatingBar from '../../../common/ratingBar/RatingBar';
 import ButtonGreen from '../../../common/ButtonGreen/ButtonGreen';
 import GoBack from '../../../common/goBack/GoBack';
-import { Product } from '../../../../types/types';
+import {
+  IProductAlt,
+  IProductDescription,
+  IProductImageUrl,
+  IProductName,
+  IProductPrice,
+  IProductRating
+} from '../../../../types/products';
 
-type Props = {
-  name: Product['name'];
-  imageUrl: Product['imageUrl'];
-  imageAlt: Product['imageAlt'];
-  rating: Product['rating'];
-  price: Product['price'];
-  favourite: Product['favourite'];
-  description: Product['description'];
-};
+interface IProps {
+  name: IProductName;
+  imageUrl: IProductImageUrl;
+  imageAlt: IProductAlt;
+  rating: IProductRating;
+  price: IProductPrice;
+  description: IProductDescription;
+  favourite: boolean;
+}
 
-const ProductCardMainInfo: React.FC<Props> = ({
+const ProductCardMainInfo: React.FC<IProps> = ({
   name,
   imageUrl,
   imageAlt,
   rating,
   price,
-  favourite,
-  description
+  description,
+  favourite
 }) => (
   <section className="product-card">
     <div className="layout">
@@ -37,13 +44,13 @@ const ProductCardMainInfo: React.FC<Props> = ({
         </div>
         <div className="product-column">
           <h4 className="name">{name}</h4>
-          <RatingBar rating={rating} />
+          <RatingBar {...{ rating }} />
           <div className="description">
             <p>{description}</p>
           </div>
           <div className="price-and-fav">
             <h4 className="price">{price} грн</h4>
-            <span className={favourite ? 'favourite no' : 'favourite'} />
+            <span className={favourite ? 'favourite yes' : 'favourite no'} />
           </div>
           <div className="controls">
             <input className="quantity" type="number" min="1" max="100" defaultValue="1" />
