@@ -1,10 +1,12 @@
-import React from 'react';
+import React, { ChangeEventHandler, useState } from 'react';
 import RatingBar from '../../../common/ratingBar/RatingBar';
-import ButtonGreen from '../../../common/ButtonGreen/ButtonGreen';
 import GoBack from '../../../common/goBack/GoBack';
+import * as Styled from '../../../common/button/button.styled';
+import basketService, { IBasketItem } from '../../../../services/basket.service';
 import {
   IProductAlt,
   IProductDescription,
+  IProductId,
   IProductImageUrl,
   IProductName,
   IProductPrice,
@@ -12,6 +14,7 @@ import {
 } from '../../../../types/products';
 
 interface IProps {
+  id: IProductId;
   name: IProductName;
   imageUrl: IProductImageUrl;
   imageAlt: IProductAlt;
@@ -22,6 +25,7 @@ interface IProps {
 }
 
 const ProductCardMainInfo: React.FC<IProps> = ({
+  id,
   name,
   imageUrl,
   imageAlt,
@@ -29,37 +33,61 @@ const ProductCardMainInfo: React.FC<IProps> = ({
   price,
   description,
   favourite
-}) => (
-  <section className="product-card">
-    <div className="layout">
-      <div className="top-controls">
-        <GoBack />
-        <span className="favourite" />
-      </div>
-      <div className="flex">
-        <div className="image-column">
-          <div className="image-holder">
-            <img src={imageUrl} alt={imageAlt} />
+}) => {
+  const [quantity, setQuantity] = useState<number>(1);
+
+  const addToBasketHandler = (item: IBasketItem) => {
+    basketService.add(item);
+  };
+
+  const setQuantityHandler: ChangeEventHandler<HTMLInputElement> = (e) => {
+    setQuantity(() => {
+      const value = Number(e.target.value);
+      return value > 0 ? (value <= 10 ? value : 10) : 1;
+    });
+  };
+
+  return (
+    <section className="product-card">
+      <div className="layout">
+        <div className="top-controls">
+          <GoBack />
+          <span className="favourite" />
+        </div>
+        <div className="flex">
+          <div className="image-column">
+            <div className="image-holder">
+              <img src={imageUrl} alt={imageAlt} />
+            </div>
+          </div>
+          <div className="product-column">
+            <h4 className="name">{name}</h4>
+            <RatingBar {...{ rating }} />
+            <div className="description">
+              <p>{description}</p>
+            </div>
+            <div className="price-and-fav">
+              <h4 className="price">{price} грн</h4>
+              <span className={favourite ? 'favourite yes' : 'favourite no'} />
+            </div>
+            <div className="controls">
+              <input
+                onChange={setQuantityHandler}
+                className="quantity"
+                type="number"
+                min="1"
+                max="10"
+                value={quantity}
+              />
+              <Styled.Button onClick={() => addToBasketHandler({ id, quantity })} type="button">
+                В кошик
+              </Styled.Button>
+            </div>
           </div>
         </div>
-        <div className="product-column">
-          <h4 className="name">{name}</h4>
-          <RatingBar {...{ rating }} />
-          <div className="description">
-            <p>{description}</p>
-          </div>
-          <div className="price-and-fav">
-            <h4 className="price">{price} грн</h4>
-            <span className={favourite ? 'favourite yes' : 'favourite no'} />
-          </div>
-          <div className="controls">
-            <input className="quantity" type="number" min="1" max="100" defaultValue="1" />
-            <ButtonGreen text="В кошик" />
-          </div>
-        </div>
       </div>
-    </div>
-  </section>
-);
+    </section>
+  );
+};
 
 export default ProductCardMainInfo;
