@@ -13,7 +13,7 @@ export type IProps = {
   }[];
 };
 
-const ProductCardFullInfoReviews: React.FC<IProps> = ({ reviews }) => {
+const ProductCardTabReviews: React.FC<IProps> = ({ reviews }) => {
   const generatedReviews = reviews.map((review) => (
     <div className="review">
       <div className="author">
@@ -40,4 +40,4 @@ const ProductCardFullInfoReviews: React.FC<IProps> = ({ reviews }) => {
   );
 };
 
-export default ProductCardFullInfoReviews;
+export default ProductCardTabReviews;

@@ -1,7 +1,7 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
 import ProductCardMainInfo from './ProductCardMainInfo';
-import ProductCardFullInfo from './ProductCardFullInfo';
+import ProductCardTabs from './ProductCardTabs';
 import ProductCardRelatedProducts from './ProductCardRelatedProducts';
 import productService from '../../../../services/products.service';
 
@@ -40,7 +40,7 @@ const ProductCard: React.FC = () => {
     return (
       <>
         <ProductCardMainInfo {...product} favourite={isFavourite} />
-        <ProductCardFullInfo {...product} {...{ reviews }} />
+        <ProductCardTabs {...product} {...{ reviews }} />
         <ProductCardRelatedProducts />
       </>
     );

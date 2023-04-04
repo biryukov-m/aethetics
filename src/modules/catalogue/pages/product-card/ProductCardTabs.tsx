@@ -1,9 +1,9 @@
 import React from 'react';
-import ProductCardFullInfoComposition from './ProductCardFullInfoComposition';
-import ProductCardFullInfoReviews from './ProductCardFullInfoReviews';
 import { IProductComposition } from '../../../../types/products';
+import ProductCardTabComposition from './ProductCardTabComposition';
+import ProductCardTabReviews from './ProductCardTabReviews';
 
-export type Props = {
+type IProps = {
   composition: IProductComposition;
   reviews: {
     id: number;
@@ -14,7 +14,7 @@ export type Props = {
   }[];
 };
 
-const ProductCardFullInfo: React.FC<Props> = ({ composition, reviews }) => {
+const ProductCardTabs: React.FC<IProps> = ({ composition, reviews }) => {
   const handleTabsClick = (e: React.MouseEvent) => {
     const element = e.target as Element;
     if (element.classList.contains('tab')) {
@@ -43,11 +43,11 @@ const ProductCardFullInfo: React.FC<Props> = ({ composition, reviews }) => {
             Відгуки
           </h4>
         </div>
-        <ProductCardFullInfoComposition {...{ composition }} />
-        <ProductCardFullInfoReviews {...{ reviews }} />
+        <ProductCardTabComposition {...{ composition }} />
+        <ProductCardTabReviews {...{ reviews }} />
       </div>
     </section>
   );
 };
 
-export default ProductCardFullInfo;
+export default ProductCardTabs;
