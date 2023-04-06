@@ -79,7 +79,11 @@ header {
             gap: 21px;
             justify-content: flex-end;
           }
-          li a {
+          li {
+            position: relative;
+          }
+          li a,
+          li button {
             display: block;
             width: 36px;
             height: 36px;
@@ -121,7 +125,7 @@ header {
                 url(../../assets/images/icon-fav-hover.png);
             }
           }
-          li.basket a {
+          li.basket button {
             background-image: url(../../assets/images/icon-basket-default.png),
               url(../../assets/images/icon-basket-hover.png);
           }

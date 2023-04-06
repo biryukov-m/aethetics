@@ -1,7 +1,8 @@
 export const SIZES = {
-  l: '1.5rem',
-  m: '1rem',
-  s: '0.85rem'
+  xl: '2.5rem', // 40px
+  l: '1.625rem', // 26px
+  m: '1.25rem', // 20px
+  s: '1rem' // 16px
 };
 
 export const FAMILIES = {
