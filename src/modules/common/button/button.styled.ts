@@ -1,7 +1,12 @@
 import styled from 'styled-components';
 import { COLORS, FONTS } from '../../theme';
 
-export const Button = styled.button`
+// TODO: add props for different types of button
+export interface IButton {
+  large?: boolean;
+}
+
+export const Button = styled.button<IButton>`
   display: flex;
   position: relative;
   width: 219px;
