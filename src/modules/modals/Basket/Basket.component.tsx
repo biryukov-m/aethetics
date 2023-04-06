@@ -2,6 +2,7 @@ import React from 'react';
 import * as Styled from './Basket.styled';
 import { IBasketItem } from '../../../services/basket.service';
 import { Button as StyledButton } from '../../common/button/button.styled';
+import { CloseButton } from '../../common/CloseButton/CloseButton.component';
 
 interface IProps {
   basket: IBasketItem[];
@@ -16,13 +17,14 @@ const Basket: React.FC<IProps> = ({ basket, closeHandler }) => {
     <Styled.Wrapper>
       <Styled.HeaderContainer>
         <Styled.Header>Ваше замовлення</Styled.Header>
-        <span>X</span>
+        <CloseButton onClick={closeHandler} />
       </Styled.HeaderContainer>
       <Styled.SubHeader>В кошику {basket.length} товарів</Styled.SubHeader>
       <Styled.ItemsWrapper>
         <Styled.ItemsContainer>{basket.map((item) => item.id)}</Styled.ItemsContainer>
+        <Styled.TotalPrice>Загальна сума: TOTAL PR грн</Styled.TotalPrice>
       </Styled.ItemsWrapper>
-      <Styled.TotalPrice>Загальна сума: TOTAL PR грн</Styled.TotalPrice>
+
       <Styled.ContinueShopping>Продовжити покупки</Styled.ContinueShopping>
       <Styled.ButtonContainer>
         <StyledButton onClick={closeHandler}>Купити</StyledButton>
