@@ -18,13 +18,13 @@ class BasketService {
     sessionStorage.setItem('basket', basketStr);
   }
 
-  add(item: IBasketItem) {
+  add(id: IBasketItemId, quantity: IBasketItemQuantity) {
     const { basket } = this;
-    const isExist = this.findByProductId(item.id);
-    if (isExist) {
-      this.updateQuantity(item.id, item.quantity);
+    const foundItem = this.findByProductId(id);
+    if (foundItem) {
+      this.updateQuantity(id, quantity);
     } else {
-      basket.push(item);
+      basket.push({ id, quantity });
       this.basket = basket;
     }
   }
