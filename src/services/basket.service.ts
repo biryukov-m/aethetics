@@ -30,6 +30,14 @@ class BasketService {
     }
   }
 
+  remove(id: IBasketItemId) {
+    const { basket } = this;
+    const foundItem = this.findByProductId(id);
+    if (foundItem) {
+      this.basket = basket.filter((item) => item.id !== id);
+    }
+  }
+
   findByProductId(id: IBasketItemId) {
     const { basket } = this;
     return basket.find((item) => item.id === id);
