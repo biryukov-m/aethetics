@@ -43,6 +43,7 @@ export type Props = {
 
 const itemsComponents = items.map((item) => (
   <CatalogueRecentlyViewedItem
+    key={item.id}
     imageUrl={item.imageUrl}
     imageAlt={item.imageAlt}
     name={item.name}

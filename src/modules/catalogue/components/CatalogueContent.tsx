@@ -9,7 +9,7 @@ const CatalogueContent: React.FC = () => {
     <div className="column">
       <div className="items">
         {products.map((product) => (
-          <CatalogueContentItem {...product} />
+          <CatalogueContentItem key={product.id} {...product} />
         ))}
       </div>
       <div className="button-show-more">
