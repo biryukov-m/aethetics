@@ -7,7 +7,7 @@ import productService from '../../../../services/products.service';
 
 const ProductCard: React.FC = () => {
   const { id } = useParams();
-  const product = productService.getById(id!);
+  const product = productService.getById(Number(id));
   // TODO: implement favourite
   const isFavourite = false;
   // TODO: implement get review functionality

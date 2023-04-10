@@ -12,9 +12,9 @@ class ProductService {
     return this.products;
   }
 
-  getById(id: string) {
+  getById(id: number) {
     const products = this.getAll();
-    const foundProduct = products.find((product) => product.id === Number(id));
+    const foundProduct = products.find((product) => product.id === id);
     return foundProduct;
   }
 }
