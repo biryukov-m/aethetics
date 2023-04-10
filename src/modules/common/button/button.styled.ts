@@ -3,7 +3,7 @@ import { COLORS, FONTS } from '../../theme';
 
 // TODO: add props for different types of button
 export interface IButton {
-  large?: boolean;
+  large?: boolean; // example
 }
 
 export const Button = styled.button<IButton>`
@@ -18,7 +18,7 @@ export const Button = styled.button<IButton>`
   font-family: ${FONTS.FAMILIES.normal};
   font-style: normal;
   font-weight: 400;
-  font-size: 26px;
+  font-size: ${FONTS.SIZES.l};
   color: ${COLORS.creamy};
   transition: all 0.2s ease-in;
 
@@ -56,5 +56,32 @@ export const Button = styled.button<IButton>`
     &::before {
       transform: none;
     }
+  }
+`;
+
+export const MiniButton = styled(Button)`
+  width: 97px;
+  height: 25px;
+  font-size: ${FONTS.SIZES.xs};
+  @media (max-width: 1140px) {
+    width: 97px;
+    height: 25px;
+    font-size: ${FONTS.SIZES.xs};
+  }
+
+  &::before {
+    width: 96px;
+    height: 25px;
+    transform: translate(4px, -4px);
+    font-size: 14px;
+    line-height: 150%;
+    @media (max-width: 1140px) {
+      width: 96px;
+      height: 25px;
+    }
+  }
+
+  &:hover {
+    transform: translate(4px, -4px);
   }
 `;
