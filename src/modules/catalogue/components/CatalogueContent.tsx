@@ -1,5 +1,5 @@
 import React from 'react';
-import CatalogueContentItem from './CatalogueContentItem';
+import CatalogueContentItem from './CatalogueContentItem/CatalogueContentItem.component';
 import productService from '../../../services/products.service';
 
 const CatalogueContent: React.FC = () => {

@@ -6,7 +6,10 @@ import {
   IProductImageUrl,
   IProductName,
   IProductPrice
-} from '../../../types/products';
+} from '../../../../types/products';
+import * as Styled from './CatalogueContentItem.styled';
+import BasketIconDefault from '../../../../assets/images/icon-basket-default.png';
+import BasketIconHover from '../../../../assets/images/icon-basket-hover.png';
 
 type IProps = {
   id: IProductId;
@@ -30,9 +33,11 @@ const CatalogueContentItem: React.FC<IProps> = ({ id, name, imageUrl, imageAlt, 
     </div>
     <div className="controls">
       <Link to={`/product/${id}`}>Детальніше</Link>
-      <div className="btn-mini">
-        <span>В кошик</span>
-      </div>
+      <Styled.Button>
+        В кошик
+        <img className="default" src={BasketIconDefault} alt="Basket icon" />
+        <img className="hover" src={BasketIconHover} alt="Basket icon" />
+      </Styled.Button>
     </div>
   </div>
 );
