@@ -1,4 +1,5 @@
 import { IProductId } from '../types/products';
+import productService from './products.service';
 
 export type IBasketItemId = IProductId;
 export type IBasketItemQuantity = number;
@@ -42,6 +43,25 @@ class BasketService {
       this.basket = basket.map((item) => (item.id === id ? foundProduct : item));
     }
   }
+
+  getProductSummaryCost(id: IBasketItemId) {
+    const product = productService.getById(id);
+    const record = this.findByProductId(id);
+    if (product && record) {
+      const { price } = product;
+      const { quantity } = record;
+      return price * quantity;
+    }
+  }
+
+  // getTotalCost() {
+  //   const { basket } = this;
+  //   const totalPrice = basket.reduce((total, itemInBasket) => {
+  //     const itemInCatalogue = productService.getById(itemInBasket.id);
+  //     const itemSummaryCost = itemInCatalogue!.price * itemInBasket.quantity;
+  //     return total + itemSummaryCost;
+  //   });
+  // }
 }
 
 const basketService = new BasketService();
