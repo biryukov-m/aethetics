@@ -2,7 +2,7 @@ import React, { ChangeEventHandler, useState } from 'react';
 import RatingBar from '../../../common/ratingBar/RatingBar';
 import GoBack from '../../../common/goBack/GoBack';
 import * as Styled from '../../../common/button/button.styled';
-import basketService, { IBasketItem } from '../../../../services/basket.service';
+import basketService, { IBasketItemQuantity } from '../../../../services/basket.service';
 import {
   IProductAlt,
   IProductDescription,
@@ -34,10 +34,10 @@ const ProductCardMainInfo: React.FC<IProps> = ({
   description,
   favourite
 }) => {
-  const [quantity, setQuantity] = useState<number>(1);
+  const [quantity, setQuantity] = useState<IBasketItemQuantity>(1);
 
-  const addToBasketHandler = (item: IBasketItem) => {
-    basketService.add(item);
+  const addToBasketHandler = () => {
+    basketService.add(id, quantity);
   };
 
   const setQuantityHandler: ChangeEventHandler<HTMLInputElement> = (e) => {
@@ -79,7 +79,7 @@ const ProductCardMainInfo: React.FC<IProps> = ({
                 max="10"
                 value={quantity}
               />
-              <Styled.Button onClick={() => addToBasketHandler({ id, quantity })} type="button">
+              <Styled.Button onClick={addToBasketHandler} type="button">
                 В кошик
               </Styled.Button>
             </div>
