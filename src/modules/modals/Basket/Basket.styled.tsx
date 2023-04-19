@@ -1,6 +1,14 @@
 import styled from 'styled-components';
 import { COLORS, FONTS } from '../../theme';
 
+export const Overlay = styled.div`
+  position: absolute;
+  z-index: 100;
+  height: 5000vh;
+  left: 0;
+  right: 0;
+`;
+
 export const Wrapper = styled.div`
   position: absolute;
   right: 0;
