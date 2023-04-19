@@ -3,11 +3,9 @@ import { Link } from 'react-router-dom';
 import { createPortal } from 'react-dom';
 import LogoGreen from '../../../assets/images/image-logo-green.png';
 import Basket from '../../modals/Basket/Basket.component';
-import basketService from '../../../services/basket.service';
 
 const Header: React.FC = () => {
   const [modal, setModal] = useState<boolean>(false);
-  const { basket } = basketService;
   const modalHolderElement = document.getElementById('modal');
 
   return (
@@ -48,10 +46,7 @@ const Header: React.FC = () => {
                 <button aria-label="open basket" type="button" onClick={() => setModal(true)} />
                 {modal &&
                   modalHolderElement &&
-                  createPortal(
-                    <Basket basket={basket} closeHandler={() => setModal(false)} />,
-                    modalHolderElement
-                  )}
+                  createPortal(<Basket closeHandler={() => setModal(false)} />, modalHolderElement)}
               </li>
               <li className="burger">
                 <Link to="cabinet" />
