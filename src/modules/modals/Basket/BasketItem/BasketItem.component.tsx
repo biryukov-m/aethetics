@@ -3,6 +3,7 @@ import * as Styled from './BasketItem.styled';
 import basketService, { IBasketItem } from '../../../../services/basket.service';
 import productService from '../../../../services/products.service';
 import CloseIcon from '../../../../assets/images/icon-delete-default-no-borders.png';
+import { QuantityInput } from '../../../common/QuantityInput/QuantityInput.component';
 
 interface IProps {
   item: IBasketItem;
@@ -24,7 +25,9 @@ export const BasketItem: React.FC<IProps> = ({ item, updateBasket }) => {
         </Styled.ImageCol>
         <Styled.NameAndQuantityCol>
           <Styled.Name>{product.name}</Styled.Name>
-          <Styled.QuantityInput type="number" value={item.quantity} />
+          <Styled.QuantityInputWrapper>
+            <QuantityInput value={item.quantity} onIncrease={() => {}} onDecrease={() => {}} />
+          </Styled.QuantityInputWrapper>
         </Styled.NameAndQuantityCol>
         <Styled.RemoveAndPriceCol>
           <Styled.RemoveBtn onClick={removeFromBasketHandler}>

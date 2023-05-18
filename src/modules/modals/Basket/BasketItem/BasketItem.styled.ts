@@ -24,14 +24,9 @@ export const Name = styled.p`
   font-weight: ${FONTS.WEIGHTS.light};
   color: ${COLORS.black};
 `;
-export const QuantityInput = styled.input`
+export const QuantityInputWrapper = styled.div`
   width: 86px;
   height: 45px;
-  padding: 0 15px;
-  font-family: ${FONTS.FAMILIES.normal};
-  font-size: ${FONTS.SIZES.l};
-  font-weight: ${FONTS.WEIGHTS.light};
-  color: ${COLORS.text};
 `;
 export const RemoveAndPriceCol = styled.div`
   display: flex;
