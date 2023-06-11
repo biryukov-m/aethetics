@@ -19,6 +19,7 @@ const Basket: React.FC<IProps> = ({ closeHandler }) => {
   const handleBasketClick = (e: React.MouseEvent) => e.stopPropagation();
 
   if (basket && basket.length > 0) {
+    const totalCost = basketService.getTotalCost();
     return (
       <Styled.Overlay onClick={closeHandler}>
         <Styled.Wrapper onClick={(e) => handleBasketClick(e)}>
@@ -33,7 +34,7 @@ const Basket: React.FC<IProps> = ({ closeHandler }) => {
                 <BasketItem key={item.id} {...{ item }} {...{ updateBasket }} />
               ))}
             </Styled.ItemsContainer>
-            <Styled.TotalPrice>Загальна сума: TOTAL PR грн</Styled.TotalPrice>
+            <Styled.TotalPrice>Загальна сума: {totalCost} грн</Styled.TotalPrice>
           </Styled.ItemsWrapper>
 
           <Styled.ContinueShopping onClick={closeHandler}>
