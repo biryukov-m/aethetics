@@ -62,14 +62,20 @@ class BasketService {
     }
   }
 
-  // getTotalCost() {
-  //   const { basket } = this;
-  //   const totalPrice = basket.reduce((total, itemInBasket) => {
-  //     const itemInCatalogue = productService.getById(itemInBasket.id);
-  //     const itemSummaryCost = itemInCatalogue!.price * itemInBasket.quantity;
-  //     return total + itemSummaryCost;
-  //   });
-  // }
+  getTotalCost() {
+    const { basket } = this;
+
+    const totalPrice = basket.reduce((total, itemInBasket) => {
+      const itemInCatalogue = productService.getById(itemInBasket.id);
+      if (itemInCatalogue) {
+        const itemSummaryCost = itemInCatalogue.price * itemInBasket.quantity;
+        return total + itemSummaryCost;
+      }
+      return total;
+    }, 0);
+
+    return totalPrice;
+  }
 }
 
 const basketService = new BasketService();
