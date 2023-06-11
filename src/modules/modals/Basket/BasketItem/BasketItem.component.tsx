@@ -17,6 +17,16 @@ export const BasketItem: React.FC<IProps> = ({ item, updateBasket }) => {
     basketService.remove(item.id);
     updateBasket();
   };
+  const increaseQuantityHandler = () => {
+    basketService.updateQuantity(item.id, 1);
+    updateBasket();
+  };
+
+  const decreaseQuantityHandler = () => {
+    basketService.updateQuantity(item.id, -1);
+    updateBasket();
+  };
+
   if (product) {
     return (
       <Styled.Flex>
@@ -26,7 +36,11 @@ export const BasketItem: React.FC<IProps> = ({ item, updateBasket }) => {
         <Styled.NameAndQuantityCol>
           <Styled.Name>{product.name}</Styled.Name>
           <Styled.QuantityInputWrapper>
-            <QuantityInput value={item.quantity} onIncrease={() => {}} onDecrease={() => {}} />
+            <QuantityInput
+              value={item.quantity}
+              onIncrease={increaseQuantityHandler}
+              onDecrease={decreaseQuantityHandler}
+            />
           </Styled.QuantityInputWrapper>
         </Styled.NameAndQuantityCol>
         <Styled.RemoveAndPriceCol>

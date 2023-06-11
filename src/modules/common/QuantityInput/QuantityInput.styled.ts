@@ -15,6 +15,7 @@ export const Input = styled.input`
   font-size: ${FONTS.SIZES.l};
   font-weight: ${FONTS.WEIGHTS.light};
   color: ${COLORS.text};
+  cursor: default;
   /* Hide the default number input arrows */
   -moz-appearance: textfield;
   appearance: textfield;

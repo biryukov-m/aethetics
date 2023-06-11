@@ -10,7 +10,7 @@ interface IProps {
 
 export const QuantityInput: React.FC<IProps> = ({ value, onIncrease, onDecrease }) => (
   <Styled.Container>
-    <Styled.Input type="number" {...{ value }} />
+    <Styled.Input type="number" readOnly {...{ value }} />
     <Styled.ButtonsWrapper>
       <ArrowButton direction="up" onClick={onIncrease} />
       <ArrowButton direction="down" onClick={onDecrease} />
