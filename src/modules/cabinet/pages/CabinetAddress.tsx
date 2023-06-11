@@ -18,12 +18,13 @@ const addresses = [
   }
 ];
 
-const generatedAddressBlocks = addresses.map((address) => (
+const generatedAddressBlocks = addresses.map((address, idx) => (
   <CabinetAddressBlock
     name={address.name}
     city={address.city}
     street={address.street}
     telephone={address.telephone}
+    key={idx}
   />
 ));
 
