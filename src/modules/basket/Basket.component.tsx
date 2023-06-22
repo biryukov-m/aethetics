@@ -1,20 +1,17 @@
-import React, { useState } from 'react';
+import React, { useContext } from 'react';
 import * as Styled from './Basket.styled';
-import basketService, { IBasketItem } from '../../../services/basket.service';
-import { Button as StyledButton } from '../../common/button/button.styled';
-import { CloseButton } from '../../common/CloseButton/CloseButton.component';
+import basketService from '../../services/basket.service';
+import { Button as StyledButton } from '../common/button/button.styled';
+import { CloseButton } from '../common/CloseButton/CloseButton.component';
 import { BasketItem } from './BasketItem/BasketItem.component';
+import { BasketContext } from './Basket.provider';
 
 interface IProps {
   closeHandler(): void;
 }
 
 const Basket: React.FC<IProps> = ({ closeHandler }) => {
-  const [basket, setBasket] = useState<IBasketItem[]>([...basketService.basket]);
-
-  const updateBasket = () => {
-    setBasket([...basketService.basket]);
-  };
+  const { basket } = useContext(BasketContext);
 
   const handleBasketClick = (e: React.MouseEvent) => e.stopPropagation();
 
@@ -31,7 +28,7 @@ const Basket: React.FC<IProps> = ({ closeHandler }) => {
           <Styled.ItemsWrapper>
             <Styled.ItemsContainer>
               {basket.map((item) => (
-                <BasketItem key={item.id} {...{ item }} {...{ updateBasket }} />
+                <BasketItem key={item.id} {...{ item }} />
               ))}
             </Styled.ItemsContainer>
             <Styled.TotalPrice>Загальна сума: {totalCost} грн</Styled.TotalPrice>
