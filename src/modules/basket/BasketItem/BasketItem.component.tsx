@@ -1,30 +1,28 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import * as Styled from './BasketItem.styled';
-import basketService, { IBasketItem } from '../../../../services/basket.service';
-import productService from '../../../../services/products.service';
-import CloseIcon from '../../../../assets/images/icon-delete-default-no-borders.png';
-import { QuantityInput } from '../../../common/QuantityInput/QuantityInput.component';
+import basketService, { IBasketItem } from '../../../services/basket.service';
+import productService from '../../../services/products.service';
+import CloseIcon from '../../../assets/images/icon-delete-default-no-borders.png';
+import { QuantityInput } from '../../common/QuantityInput/QuantityInput.component';
+import { BasketContext } from '../Basket.provider';
 
 interface IProps {
   item: IBasketItem;
-  updateBasket: () => void;
 }
 
-export const BasketItem: React.FC<IProps> = ({ item, updateBasket }) => {
+export const BasketItem: React.FC<IProps> = ({ item }) => {
   const product = productService.getById(item.id);
   const productSummaryCost = basketService.getProductSummaryCost(item.id);
+  const { remove, updateQuantity } = useContext(BasketContext);
+
   const removeFromBasketHandler = () => {
-    basketService.remove(item.id);
-    updateBasket();
+    remove(item.id);
   };
   const increaseQuantityHandler = () => {
-    basketService.updateQuantity(item.id, 1);
-    updateBasket();
+    updateQuantity(item.id, 1);
   };
-
   const decreaseQuantityHandler = () => {
-    basketService.updateQuantity(item.id, -1);
-    updateBasket();
+    updateQuantity(item.id, -1);
   };
 
   if (product) {
@@ -52,5 +50,5 @@ export const BasketItem: React.FC<IProps> = ({ item, updateBasket }) => {
       </Styled.Flex>
     );
   }
-  return <>Product not found</>;
+  return <>Product with id {item.id} not found </>;
 };

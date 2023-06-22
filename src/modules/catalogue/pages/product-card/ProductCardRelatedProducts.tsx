@@ -29,12 +29,13 @@ const items = [
 ];
 
 const ProductCardRelatedProducts: React.FC = () => {
-  const itemsComponents = items.map((item) => (
+  const itemsComponents = items.map((item, idx) => (
     <ProductCardRelatedProductsItem
       imageUrl={item.imageUrl}
       imageAlt={item.imageAlt}
       name={item.name}
       price={item.price}
+      key={idx}
     />
   ));
   return (

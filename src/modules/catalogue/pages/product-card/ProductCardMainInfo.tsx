@@ -1,8 +1,8 @@
-import React, { ChangeEventHandler, useState } from 'react';
+import React, { ChangeEventHandler, useContext, useState } from 'react';
 import RatingBar from '../../../common/ratingBar/RatingBar';
 import GoBack from '../../../common/goBack/GoBack';
 import * as Styled from '../../../common/button/button.styled';
-import basketService, { IBasketItemQuantity } from '../../../../services/basket.service';
+import { IBasketItemQuantity } from '../../../../services/basket.service';
 import {
   IProductAlt,
   IProductDescription,
@@ -12,6 +12,7 @@ import {
   IProductPrice,
   IProductRating
 } from '../../../../types/products';
+import { BasketContext } from '../../../basket/Basket.provider';
 
 interface IProps {
   id: IProductId;
@@ -35,9 +36,9 @@ const ProductCardMainInfo: React.FC<IProps> = ({
   favourite
 }) => {
   const [quantity, setQuantity] = useState<IBasketItemQuantity>(1);
-
+  const { add } = useContext(BasketContext);
   const addToBasketHandler = () => {
-    basketService.add(id, quantity);
+    add(id, quantity);
   };
 
   const setQuantityHandler: ChangeEventHandler<HTMLInputElement> = (e) => {

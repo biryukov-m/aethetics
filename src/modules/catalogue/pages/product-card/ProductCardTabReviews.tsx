@@ -14,8 +14,8 @@ export type IProps = {
 };
 
 const ProductCardTabReviews: React.FC<IProps> = ({ reviews }) => {
-  const generatedReviews = reviews.map((review) => (
-    <div className="review">
+  const generatedReviews = reviews.map((review, idx) => (
+    <div className="review" key={idx}>
       <div className="author">
         <h4>{review.author}</h4>
         <p>{review.date}</p>

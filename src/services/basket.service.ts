@@ -76,6 +76,12 @@ class BasketService {
 
     return totalPrice;
   }
+
+  getTotalItemsQuantity() {
+    const { basket } = this;
+    const totalItemsQuantity = basket.reduce((total, item) => total + item.quantity, 0);
+    return totalItemsQuantity;
+  }
 }
 
 const basketService = new BasketService();
