@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import {
   IProductAlt,
@@ -10,7 +10,7 @@ import {
 import * as Styled from './CatalogueContentItem.styled';
 import BasketIconDefault from '../../../../assets/images/icon-basket-default.png';
 import BasketIconHover from '../../../../assets/images/icon-basket-hover.png';
-import basketService from '../../../../services/basket.service';
+import { BasketContext } from '../../../basket/Basket.provider';
 
 type IProps = {
   id: IProductId;
@@ -21,7 +21,9 @@ type IProps = {
 };
 
 const CatalogueContentItem: React.FC<IProps> = ({ id, name, imageUrl, imageAlt, price }) => {
-  const handleAddToBasketClick = () => basketService.add(id, 1);
+  const { add } = useContext(BasketContext);
+  const handleAddToBasketClick = () => add(id, 1);
+
   return (
     <div className="item">
       <div className="image-holder">
