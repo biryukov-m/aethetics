@@ -1,12 +1,19 @@
-import React, { useState } from 'react';
+/* eslint-disable react/destructuring-assignment */
+import React, { useContext, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { createPortal } from 'react-dom';
 import LogoGreen from '../../../assets/images/image-logo-green.png';
-import Basket from '../../modals/Basket/Basket.component';
+import Basket from '../../basket/Basket.component';
+import { BasketContext } from '../../basket/Basket.provider';
+import basketService from '../../../services/basket.service';
 
 const Header: React.FC = () => {
   const [modal, setModal] = useState<boolean>(false);
+  const [totalItemsQuantity, setTotalItemsQuantity] = useState<number>(0);
   const modalHolderElement = document.getElementById('modal');
+  const { basket } = useContext(BasketContext);
+
+  useEffect(() => setTotalItemsQuantity(basketService.getTotalItemsQuantity()), [basket]);
 
   return (
     <header>
@@ -44,6 +51,7 @@ const Header: React.FC = () => {
               </li>
               <li className="basket">
                 <button aria-label="open basket" type="button" onClick={() => setModal(true)} />
+                {totalItemsQuantity > 0 && totalItemsQuantity}
                 {modal &&
                   modalHolderElement &&
                   createPortal(<Basket closeHandler={() => setModal(false)} />, modalHolderElement)}
