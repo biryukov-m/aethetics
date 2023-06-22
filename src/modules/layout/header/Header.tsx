@@ -50,7 +50,7 @@ const Header: React.FC = () => {
               </li>
               <li className="basket">
                 <button aria-label="open basket" type="button" onClick={() => setModal(true)} />
-                {totalItemsQuantity > 0 && totalItemsQuantity}
+                {totalItemsQuantity > 0 && <span className="counter">{totalItemsQuantity}</span>}
                 {modal &&
                   modalHolderElement &&
                   createPortal(<Basket closeHandler={() => setModal(false)} />, modalHolderElement)}

@@ -129,6 +129,32 @@ header {
             background-image: url(../../assets/images/icon-basket-default.png),
               url(../../assets/images/icon-basket-hover.png);
           }
+          li.basket .counter {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 24px;
+            height: 24px;
+            position: absolute;
+            left: 5px;
+            top: 9px;
+            border-radius: 50%;
+            color: $accent;
+            font-family: 'Candara';
+            font-size: 17px;
+            line-height: 150%;
+            cursor: pointer;
+            @media (max-width: 767px) {
+              width: 13px;
+              height: 13px;
+              left: 5px;
+              top: 8px;
+              font-size: 13px;
+            }
+          }
+          li.basket:hover .counter {
+            display: none;
+          }
         }
       }
     }
