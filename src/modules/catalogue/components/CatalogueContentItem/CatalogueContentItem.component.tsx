@@ -10,7 +10,7 @@ import {
 import * as Styled from './CatalogueContentItem.styled';
 import BasketIconDefault from '../../../../assets/images/icon-basket-default.png';
 import BasketIconHover from '../../../../assets/images/icon-basket-hover.png';
-import { BasketContext } from '../../../basket/Basket.provider';
+import { BasketContext } from '../../../basket-modal/Basket.provider';
 
 type IProps = {
   id: IProductId;

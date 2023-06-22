@@ -2,8 +2,8 @@ import React, { useContext, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { createPortal } from 'react-dom';
 import LogoGreen from '../../../assets/images/image-logo-green.png';
-import Basket from '../../basket/Basket.component';
-import { BasketContext } from '../../basket/Basket.provider';
+import Basket from '../../basket-modal/BasketModal.component';
+import { BasketContext } from '../../basket-modal/Basket.provider';
 import basketService from '../../../services/basket.service';
 
 const Header: React.FC = () => {
