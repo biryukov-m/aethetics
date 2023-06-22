@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import * as Styled from './Basket.styled';
+import * as Styled from './BasketModal.styled';
 import basketService from '../../services/basket.service';
 import { Button as StyledButton } from '../common/button/button.styled';
 import { CloseButton } from '../common/CloseButton/CloseButton.component';
@@ -10,7 +10,7 @@ interface IProps {
   closeHandler(): void;
 }
 
-const Basket: React.FC<IProps> = ({ closeHandler }) => {
+const BasketModal: React.FC<IProps> = ({ closeHandler }) => {
   const { basket } = useContext(BasketContext);
 
   const handleBasketClick = (e: React.MouseEvent) => e.stopPropagation();
@@ -25,21 +25,16 @@ const Basket: React.FC<IProps> = ({ closeHandler }) => {
             <CloseButton onClick={closeHandler} />
           </Styled.HeaderContainer>
           <Styled.SubHeader>В кошику {basket.length} товарів</Styled.SubHeader>
-          <Styled.ItemsWrapper>
-            <Styled.ItemsContainer>
-              {basket.map((item) => (
-                <BasketItem key={item.id} {...{ item }} />
-              ))}
-            </Styled.ItemsContainer>
-            <Styled.TotalPrice>Загальна сума: {totalCost} грн</Styled.TotalPrice>
-          </Styled.ItemsWrapper>
-
+          <>
+            {basket.map((item) => (
+              <BasketItem key={item.id} {...{ item }} />
+            ))}
+          </>
+          <Styled.TotalPrice>Загальна сума: {totalCost} грн</Styled.TotalPrice>
           <Styled.ContinueShopping onClick={closeHandler}>
             Продовжити покупки
           </Styled.ContinueShopping>
-          <Styled.ButtonContainer>
-            <StyledButton onClick={closeHandler}>Купити</StyledButton>
-          </Styled.ButtonContainer>
+          <StyledButton onClick={closeHandler}>Купити</StyledButton>
         </Styled.Wrapper>
       </Styled.Overlay>
     );
@@ -56,4 +51,4 @@ const Basket: React.FC<IProps> = ({ closeHandler }) => {
   );
 };
 
-export default Basket;
+export default BasketModal;

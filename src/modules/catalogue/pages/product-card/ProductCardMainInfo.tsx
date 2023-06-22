@@ -12,7 +12,7 @@ import {
   IProductPrice,
   IProductRating
 } from '../../../../types/products';
-import { BasketContext } from '../../../basket/Basket.provider';
+import { BasketContext } from '../../../basket-modal/Basket.provider';
 
 interface IProps {
   id: IProductId;

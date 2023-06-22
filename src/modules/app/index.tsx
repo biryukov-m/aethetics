@@ -1,7 +1,7 @@
 import React from 'react';
 import { MainRouter } from '../navigation';
 import '../../sass/all.scss';
-import { BasketProvider } from '../basket/Basket.provider';
+import { BasketProvider } from '../basket-modal/Basket.provider';
 
 const AppContainer: React.FC = () => (
   <BasketProvider>

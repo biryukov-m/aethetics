@@ -8,12 +8,11 @@ export const Overlay = styled.div`
   left: 0;
   right: 0;
 `;
-
 export const Wrapper = styled.div`
   position: absolute;
   right: 0;
   z-index: 1;
-  max-width: 550px;
+  width: 515px;
   background: ${COLORS.white};
   padding: 26px;
 `;
@@ -29,8 +28,6 @@ export const SubHeader = styled.h4`
   font-weight: ${FONTS.WEIGHTS.light};
   margin-bottom: 15px;
 `;
-export const ItemsWrapper = styled.div``;
-export const ItemsContainer = styled.div``;
 export const TotalPrice = styled.p`
   font-family: ${FONTS.FAMILIES.normal};
   font-weight: ${FONTS.WEIGHTS.light};
@@ -47,4 +44,3 @@ export const ContinueShopping = styled.a`
   text-decoration: underline;
   margin-bottom: 30px;
 `;
-export const ButtonContainer = styled.div``;

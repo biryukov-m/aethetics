@@ -6,6 +6,7 @@ export const Flex = styled.div`
   gap: 10px;
   padding: 20px 0;
   border-bottom: 1px ${COLORS.accent} solid;
+  justify-content: space-between;
 `;
 export const ImageCol = styled.div`
   width: 100px;
