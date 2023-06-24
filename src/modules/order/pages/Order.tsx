@@ -1,16 +1,21 @@
 import React from 'react';
-// import * as Styled from './Order.styled';
+import * as Styled from './Order.styled';
+import { OrderBasket } from '../components/OrderBasket/OrderBasket';
 
-export const Order: React.FC = () => {
+const Order: React.FC = () => {
   // eslint-disable-next-line no-console
   console.log();
 
   return (
-    <div>
-      <h3>Оформлення замовлення</h3>
-      <OrderPersonalData />
-      <OrderPaymentAndDelivery />
-      <OrderBasket />
-    </div>
+    <section className="order">
+      <div className="layout">
+        <Styled.Header>Оформлення замовлення</Styled.Header>
+        {/* <OrderPersonalData /> */}
+        {/* <OrderPaymentAndDelivery /> */}
+        <OrderBasket />
+      </div>
+    </section>
   );
 };
+
+export default Order;
