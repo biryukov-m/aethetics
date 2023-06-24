@@ -8,6 +8,7 @@ import Blog from '../blog/pages/blog/Blog';
 import Cabinet from '../cabinet/pages/Cabinet';
 import Contacts from '../contacts/pages/Contacts';
 import DeliveryPayment from '../delivery-payment/pages/DeliveryPayment';
+import Order from '../order/pages/Order';
 
 export const MainRouter = () => (
   <Router>
@@ -21,6 +22,7 @@ export const MainRouter = () => (
         <Route path="blog" element={<Blog />} />
         <Route path="contacts" element={<Contacts />} />
         <Route path="cabinet" element={<Cabinet />} />
+        <Route path="order" element={<Order />} />
       </Route>
     </Routes>
   </Router>
