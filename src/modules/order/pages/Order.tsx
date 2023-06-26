@@ -1,6 +1,7 @@
 import React from 'react';
 import * as Styled from './Order.styled';
 import { OrderBasket } from '../components/OrderBasket/OrderBasket';
+import { OrderPersonalData } from '../components/OrderPersonalData/OrderPersonalData';
 
 const Order: React.FC = () => {
   // eslint-disable-next-line no-console
@@ -10,7 +11,7 @@ const Order: React.FC = () => {
     <section className="order">
       <div className="layout">
         <Styled.Header>Оформлення замовлення</Styled.Header>
-        {/* <OrderPersonalData /> */}
+        <OrderPersonalData />
         {/* <OrderPaymentAndDelivery /> */}
         <OrderBasket />
       </div>
