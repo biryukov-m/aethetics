@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import * as Styled from './Order.styled';
 import { OrderBasket } from '../components/OrderBasket/OrderBasket';
 import { OrderPersonalData } from '../components/OrderPersonalData/OrderPersonalData';
+import { OrderPaymentAndDelivery } from '../components/OrderPaymentAndDelivery/OrderPaymentAndDelivery';
 
 type TabName = 'PERSONAL_DATA' | 'PAYMENT_AND_DELIVERY';
 
@@ -30,8 +31,7 @@ const Order: React.FC = () => {
           </Styled.Tab>
         </Styled.Tabs>
         {activeTab === 'PERSONAL_DATA' && <OrderPersonalData />}
-        {/* {activeTab === 'PAYMENY_AND_DELIVERY' && <OrderPaymentAndDelivery />} */}
-        {activeTab === 'PAYMENT_AND_DELIVERY' && '<OrderPaymentAndDelivery />'}
+        {activeTab === 'PAYMENT_AND_DELIVERY' && <OrderPaymentAndDelivery />}
         <OrderBasket />
       </div>
     </section>
