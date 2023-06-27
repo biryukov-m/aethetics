@@ -6,6 +6,10 @@ export const Wrapper = styled.div`
   form {
     display: flex;
     justify-content: space-between;
+    @media screen and (max-width: ${MEDIA.tablet}px) {
+      flex-direction: column;
+      gap: 20px;
+    }
     input {
       font-family: ${FONTS.FAMILIES.normal};
       font-size: ${FONTS.SIZES.m};
@@ -42,14 +46,15 @@ export const Wrapper = styled.div`
     }
   }
 `;
-
 export const Column = styled.div`
   display: flex;
   flex-direction: column;
   width: 370px;
+  @media screen and (max-width: ${MEDIA.tablet}px) {
+    width: 100%;
+  }
 `;
-
 export const BtnColumn = styled(Column)`
-  align-items: center;
+  align-items: flex-start;
   justify-content: flex-end;
 `;

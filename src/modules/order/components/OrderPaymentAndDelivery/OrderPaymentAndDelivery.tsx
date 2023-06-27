@@ -21,7 +21,7 @@ export const OrderPaymentAndDelivery: React.FC = () => {
           <Form>
             <Styled.Flex>
               <Styled.Column>
-                <p>Додати нову адресу:</p>
+                <Styled.Legend>Додати нову адресу</Styled.Legend>
                 <Field type="text" className="city" id="city" name="city" placeholder="Місто" />
                 <Styled.Group className="group">
                   <Field
