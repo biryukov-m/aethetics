@@ -8,11 +8,11 @@ export const Header = styled.h3`
   color: ${COLORS.text};
   margin: 54px auto 20px;
   @media screen and (max-width: ${MEDIA.tablet}px) {
-    font-size: 24px;
+    font-size: ${FONTS.SIZES.l};
     margin: 40px auto 35px;
   }
   @media screen and (max-width: ${MEDIA.mobile}px) {
-    font-size: 18px;
+    font-size: ${FONTS.SIZES.s};
     margin: 30px auto 45px;
   }
 `;
@@ -33,6 +33,12 @@ export const Tab = styled.div`
     color: ${COLORS.black};
     font-size: ${FONTS.SIZES.l};
     font-family: ${FONTS.FAMILIES.normal};
+    @media screen and (max-width: ${MEDIA.tablet}px) {
+      font-size: ${FONTS.SIZES.m};
+    }
+    @media screen and (max-width: ${MEDIA.mobile}px) {
+      font-size: ${FONTS.SIZES.s};
+    }
   }
 `;
 export const Counter = styled.div`
@@ -47,6 +53,16 @@ export const Counter = styled.div`
   border: 1px solid ${COLORS.accent};
   text-align: center;
   vertical-align: middle;
+  @media screen and (max-width: ${MEDIA.tablet}px) {
+    font-size: ${FONTS.SIZES.l};
+    width: 35px;
+    height: 35px;
+  }
+  @media screen and (max-width: ${MEDIA.mobile}px) {
+    font-size: ${FONTS.SIZES.s};
+    width: 20px;
+    height: 20px;
+  }
   &.active {
     background-color: ${COLORS.accent};
     color: ${COLORS.creamy};
