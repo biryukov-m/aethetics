@@ -56,8 +56,15 @@ export const Column = styled.div`
     margin-bottom: 0;
   }
 `;
+export const Legend = styled.legend`
+  margin: 0 auto 10px;
+  font-family: ${FONTS.FAMILIES.normal};
+  font-size: ${FONTS.SIZES.m};
+  line-height: 150%;
+  color: ${COLORS.text};
+`;
 export const BtnColumn = styled(Column)`
-  align-items: center;
+  align-items: flex-start;
   justify-content: flex-end;
 `;
 export const Group = styled.div`
