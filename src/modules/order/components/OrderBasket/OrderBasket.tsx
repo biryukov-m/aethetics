@@ -1,7 +1,7 @@
 import React, { useContext, useMemo } from 'react';
 import * as Styled from './OrderBasket.styled';
 import { BasketContext } from '../../../basket-modal/Basket.provider';
-import OrderBasketItem from '../OrderBasketItem/OrderBasketItem';
+import OrderBasketItem from './OrderBasketItem';
 import basketService from '../../../../services/basket.service';
 
 export const OrderBasket: React.FC = () => {
