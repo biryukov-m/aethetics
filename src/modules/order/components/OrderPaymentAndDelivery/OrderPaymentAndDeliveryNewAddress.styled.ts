@@ -13,6 +13,7 @@ export const Wrapper = styled.div`
       border: 1px solid #000;
       padding: 5px 8px 10px;
       margin-bottom: 28px;
+      position: relative;
       @media (max-width: ${MEDIA.tablet}px) {
         margin-bottom: 15px;
         font-size: clamp(${FONTS.SIZES.xs}, 3.3vw, ${FONTS.SIZES.s});
@@ -79,4 +80,13 @@ export const Group = styled.div`
       width: 25%;
     }
   }
+`;
+export const Error = styled.p`
+  position: absolute;
+  height: 10px;
+  color: ${COLORS.accent};
+  font-family: ${FONTS.FAMILIES.normal};
+  font-size: ${FONTS.SIZES.s};
+  line-height: 150%;
+  color: ${COLORS.text};
 `;
