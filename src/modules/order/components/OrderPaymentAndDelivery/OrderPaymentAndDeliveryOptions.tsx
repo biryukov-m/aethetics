@@ -3,6 +3,7 @@ import { Formik, Form } from 'formik';
 import * as Styled from './OrderPaymentAndDeliveryOptions.styled';
 import { FormikStyledRadioFieldset } from '../../../common/FormikStyledRadio/FormikStyledRadioFieldset/FormikStyledRadioFieldset';
 import { FormikStyledRadioField } from '../../../common/FormikStyledRadio/FormikStyledRadioField/FormikStyledRadioField';
+import addressService from '../../../../services/address.service';
 
 export const OrderPaymentAndDeliveryOptions: React.FC = () => {
   type DeliveryType = 'by_courier' | 'new_post';
@@ -17,8 +18,10 @@ export const OrderPaymentAndDeliveryOptions: React.FC = () => {
   const initialValues: IInitialValues = {
     delivery_method: 'new_post',
     payment_method: 'on_delivery',
-    address_id: '1'
+    address_id: '0'
   };
+
+  const { addresses } = addressService;
 
   return (
     <Formik {...{ initialValues }} onSubmit={(values) => console.log(values)}>
@@ -47,18 +50,18 @@ export const OrderPaymentAndDeliveryOptions: React.FC = () => {
 
             <Styled.Column>
               <FormikStyledRadioFieldset legend="Оберіть адресу доставки:">
-                <FormikStyledRadioField name="address_id" value="1">
-                  <Styled.Text>Шевченко Світлана</Styled.Text>
-                  <Styled.Text>Місто Київ </Styled.Text>
-                  <Styled.Text>Градинська 11б, 85</Styled.Text>
-                  <Styled.Text>+38 068 564 77 99</Styled.Text>
-                </FormikStyledRadioField>
-                <FormikStyledRadioField name="address_id" value="2">
-                  <Styled.Text>Шевченко Світлана</Styled.Text>
-                  <Styled.Text>Місто Харків</Styled.Text>
-                  <Styled.Text>Трінклера 18, 65</Styled.Text>
-                  <Styled.Text>+38 068 564 77 99</Styled.Text>
-                </FormikStyledRadioField>
+                {addresses.map((address) => (
+                  <FormikStyledRadioField name="address_id" value={`${address.id}`}>
+                    <Styled.Text>Шевченко Світлана</Styled.Text>
+                    <Styled.Text>{address.city}</Styled.Text>
+                    <Styled.Text>
+                      {address.street} {address.house}
+                      {address.apartment && `, ${address.apartment}`}
+                    </Styled.Text>
+                    <Styled.Text>{address.postal}</Styled.Text>
+                    <Styled.Text>+38 068 564 77 99</Styled.Text>
+                  </FormikStyledRadioField>
+                ))}
               </FormikStyledRadioFieldset>
             </Styled.Column>
           </Styled.Flex>
