@@ -1,16 +1,14 @@
-import React from 'react';
-// import * as Styled from './OrderPaymentAndDelivery.styled';
+import React, { useState } from 'react';
 import { OrderPaymentAndDeliveryNewAddress } from './OrderPaymentAndDeliveryNewAddress';
 import { OrderPaymentAndDeliveryOptions } from './OrderPaymentAndDeliveryOptions';
+import addressService from '../../../../services/address.service';
 
 export const OrderPaymentAndDelivery: React.FC = () => {
-  // eslint-disable-next-line no-console
-  console.log();
+  const [addresses, setAddresses] = useState(addressService.addresses);
 
-  return (
-    <>
-      <OrderPaymentAndDeliveryNewAddress />
-      <OrderPaymentAndDeliveryOptions />
-    </>
+  return addresses.length > 0 ? (
+    <OrderPaymentAndDeliveryOptions {...{ addresses }} />
+  ) : (
+    <OrderPaymentAndDeliveryNewAddress {...{ setAddresses }} />
   );
 };

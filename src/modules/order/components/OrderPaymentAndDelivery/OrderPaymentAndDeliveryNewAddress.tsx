@@ -3,13 +3,17 @@ import React from 'react';
 import { Field, Form, Formik } from 'formik';
 import * as Styled from './OrderPaymentAndDeliveryNewAddress.styled';
 import { Button } from '../../../common/button/button.styled';
-import { IAddNewAddress } from '../../../../types/address';
+import { IAddNewAddress, IAddress } from '../../../../types/address';
 import addressService from '../../../../services/address.service';
 import { addressValidationSchema } from '../../../../schemas/address.schema';
 
-export const OrderPaymentAndDeliveryNewAddress: React.FC = () => {
+interface IProps {
+  setAddresses: React.Dispatch<React.SetStateAction<IAddress[]>>;
+}
+
+export const OrderPaymentAndDeliveryNewAddress: React.FC<IProps> = ({ setAddresses }) => {
   // eslint-disable-next-line no-console
-  console.log();
+  console.log('');
 
   return (
     <Styled.Wrapper>
@@ -19,6 +23,10 @@ export const OrderPaymentAndDeliveryNewAddress: React.FC = () => {
         onSubmit={(values, { setSubmitting }) => {
           const newAddress: IAddNewAddress = { ...values };
           addressService.add(newAddress);
+          console.log('submitting');
+          console.log(newAddress);
+          console.log(addressService.addresses);
+          setAddresses(addressService.addresses);
           setSubmitting(false);
         }}
       >
