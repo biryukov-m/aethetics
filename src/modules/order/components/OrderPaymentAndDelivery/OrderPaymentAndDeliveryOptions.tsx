@@ -3,9 +3,13 @@ import { Formik, Form } from 'formik';
 import * as Styled from './OrderPaymentAndDeliveryOptions.styled';
 import { FormikStyledRadioFieldset } from '../../../common/FormikStyledRadio/FormikStyledRadioFieldset/FormikStyledRadioFieldset';
 import { FormikStyledRadioField } from '../../../common/FormikStyledRadio/FormikStyledRadioField/FormikStyledRadioField';
-import addressService from '../../../../services/address.service';
+import { IAddress } from '../../../../types/address';
 
-export const OrderPaymentAndDeliveryOptions: React.FC = () => {
+interface IProps {
+  addresses: IAddress[];
+}
+
+export const OrderPaymentAndDeliveryOptions: React.FC<IProps> = ({ addresses }) => {
   type DeliveryType = 'by_courier' | 'new_post';
   type PaymentType = 'on_delivery' | 'with_card';
 
@@ -21,8 +25,6 @@ export const OrderPaymentAndDeliveryOptions: React.FC = () => {
     address_id: '0'
   };
 
-  const { addresses } = addressService;
-
   return (
     <Formik {...{ initialValues }} onSubmit={(values) => console.log(values)}>
       {({ values }) => (
@@ -37,7 +39,6 @@ export const OrderPaymentAndDeliveryOptions: React.FC = () => {
                   <Styled.Text>Доставка кур’єром (безкоштовно від 2000 грн)</Styled.Text>
                 </FormikStyledRadioField>
               </FormikStyledRadioFieldset>
-
               <FormikStyledRadioFieldset legend="Оберіть спосіб оплати:">
                 <FormikStyledRadioField name="payment_method" value="on_delivery">
                   <Styled.Text>Оплата при отриманні</Styled.Text>
@@ -50,8 +51,8 @@ export const OrderPaymentAndDeliveryOptions: React.FC = () => {
 
             <Styled.Column>
               <FormikStyledRadioFieldset legend="Оберіть адресу доставки:">
-                {addresses.map((address) => (
-                  <FormikStyledRadioField name="address_id" value={`${address.id}`}>
+                {addresses.map((address, idx) => (
+                  <FormikStyledRadioField key={idx} name="address_id" value={`${address.id}`}>
                     <Styled.Text>Шевченко Світлана</Styled.Text>
                     <Styled.Text>{address.city}</Styled.Text>
                     <Styled.Text>
