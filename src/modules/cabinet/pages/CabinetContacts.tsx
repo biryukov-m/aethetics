@@ -1,22 +1,24 @@
 import React from 'react';
+import { Button, ButtonArrowRight } from '../../common/button/button.styled';
+import * as Styled from './CabinetContacts.styled';
 
 const CabinetContacts: React.FC = () => (
   <>
-    <h3 className="tab-link mobile active" data-for="tab-contacts">
+    <Styled.Header className="tab-link mobile active" data-for="tab-contacts">
       Контактна інформація
-    </h3>
-    <div className="tab contacts active" id="tab-contacts">
+    </Styled.Header>
+    <Styled.Wrapper className="tab contacts active" id="tab-contacts">
       <form action="post" className="for-contacts">
-        <div className="flex">
-          <div className="column">
+        <Styled.Flex>
+          <Styled.Column>
             <label htmlFor="name">Ваше ім’я</label>
             <input type="text" className="name" id="name" placeholder="Світлана" />
             <label htmlFor="surname">Ваше прізвище</label>
             <input type="text" className="surname" id="surname" placeholder="Світлана" />
             <label htmlFor="email">E-mail</label>
             <input type="email" className="email" id="email" placeholder="shevSv002@gmail.com" />
-          </div>
-          <div className="column">
+          </Styled.Column>
+          <Styled.Column>
             <label htmlFor="telephone">Номер телефону</label>
             <input
               type="telephone"
@@ -31,16 +33,16 @@ const CabinetContacts: React.FC = () => (
               id="date-of-birth"
               placeholder="8.10.1989"
             />
-            <button type="button" className="btn-arrow-right exit">
-              <span>Вийти</span>
-            </button>
-          </div>
-        </div>
-        <button type="submit" className="btn">
-          <span>Зберегти</span>
-        </button>
+            <Styled.ExitBtnContainer>
+              <ButtonArrowRight>Вийти</ButtonArrowRight>
+            </Styled.ExitBtnContainer>
+          </Styled.Column>
+        </Styled.Flex>
+        <Styled.SubmitBtnContainer>
+          <Button type="submit">Зберегти</Button>
+        </Styled.SubmitBtnContainer>
       </form>
-    </div>
+    </Styled.Wrapper>
   </>
 );
 

@@ -99,7 +99,7 @@
         }
         .tab {
           overflow: hidden;
-          display: none;
+
           @media (max-width: 767px) {
             animation: scroll 0.3s ease-in;
             position: relative;
