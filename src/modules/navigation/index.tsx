@@ -9,6 +9,11 @@ import Cabinet from '../cabinet/pages/Cabinet';
 import Contacts from '../contacts/pages/Contacts';
 import DeliveryPayment from '../delivery-payment/pages/DeliveryPayment';
 import Order from '../order/pages/Order';
+import CabinetAddress from '../cabinet/pages/CabinetAddress';
+import CabinetContacts from '../cabinet/pages/CabinetContacts';
+import CabinetFavourites from '../cabinet/pages/CabinetFavourites';
+import CabinetHistory from '../cabinet/pages/CabinetHistory';
+import { ROUTER_KEYS } from '../../constants/routerKeys';
 
 export const MainRouter = () => (
   <Router>
@@ -21,7 +26,12 @@ export const MainRouter = () => (
         <Route path="blog/:id" element={<Blog />} />
         <Route path="blog" element={<Blog />} />
         <Route path="contacts" element={<Contacts />} />
-        <Route path="cabinet" element={<Cabinet />} />
+        <Route path={ROUTER_KEYS.cabinet.root} element={<Cabinet />}>
+          <Route path={ROUTER_KEYS.cabinet.address} element={<CabinetAddress />} />
+          <Route path={ROUTER_KEYS.cabinet.contacts} element={<CabinetContacts />} />
+          <Route path={ROUTER_KEYS.cabinet.favourites} element={<CabinetFavourites />} />
+          <Route path={ROUTER_KEYS.cabinet.history} element={<CabinetHistory />} />
+        </Route>
         <Route path="order" element={<Order />} />
       </Route>
     </Routes>

@@ -1,46 +1,41 @@
 import React from 'react';
+import { Outlet } from 'react-router-dom';
 import CabinetTabs from './CabinetTabs';
-import CabinetContacts from './CabinetContacts';
-import CabinetAddress from './CabinetAddress';
-import CabinetFavourites from './CabinetFavourites';
-import CabinetHistory from './CabinetHistory';
+import * as Styled from './Cabinet.styled';
 
 const Cabinet: React.FC = () => {
-  const handleTabsClick = (event: React.MouseEvent) => {
-    const target = event.target as Element;
-    if (target.classList.contains('tab-link')) {
-      document.querySelector('.tab.active')?.classList.remove('active');
+  // eslint-disable-next-line no-console
+  console.log('1');
+  // const handleTabsClick = (event: React.MouseEvent) => {
+  //   const target = event.target as Element;
+  //   if (target.classList.contains('tab-link')) {
+  //     document.querySelector('.tab.active')?.classList.remove('active');
 
-      const id = target.getAttribute('data-for');
-      if (id) {
-        document.getElementById(id)?.classList.add('active');
-      }
+  //     const id = target.getAttribute('data-for');
+  //     if (id) {
+  //       document.getElementById(id)?.classList.add('active');
+  //     }
 
-      const links = document.querySelectorAll('.tab-link');
-      links?.forEach((link) => {
-        if (link.getAttribute('data-for') === id) {
-          link.classList.add('active');
-        } else {
-          link.classList.remove('active');
-        }
-      });
-    }
-  };
+  //     const links = document.querySelectorAll('.tab-link');
+  //     links?.forEach((link) => {
+  //       if (link.getAttribute('data-for') === id) {
+  //         link.classList.add('active');
+  //       } else {
+  //         link.classList.remove('active');
+  //       }
+  //     });
+  //   }
+  // };
   return (
-    <section role="article" className="cabinet" onClick={handleTabsClick}>
+    <Styled.Section>
       <div className="layout">
-        <div className="wrapper">
-          <h2>Особистий кабінет</h2>
+        <Styled.Wrapper>
+          <Styled.Header>Особистий кабінет</Styled.Header>
           <CabinetTabs />
-          <div className="window">
-            <CabinetContacts />
-            <CabinetAddress />
-            <CabinetFavourites />
-            <CabinetHistory />
-          </div>
-        </div>
+          <Outlet />
+        </Styled.Wrapper>
       </div>
-    </section>
+    </Styled.Section>
   );
 };
 
