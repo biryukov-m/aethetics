@@ -1,19 +1,21 @@
 import React from 'react';
+import { IAddress } from '../../../types/address';
 
-type Props = {
-  name: string;
-  city: string;
-  street: string;
-  telephone: string;
-};
-
-const CabinetAddressBlock: React.FC<Props> = ({ name, city, street, telephone }) => (
+const CabinetAddressBlock: React.FC<IAddress> = ({
+  city,
+  street,
+  house,
+  id,
+  postal,
+  apartment
+}) => (
   <div className="contact">
-    <div className="nth">1</div>
-    <p>{name}</p>
+    <div className="nth">{id}</div>
     <p>{city}</p>
-    <p>{street}5</p>
-    <p>{telephone}</p>
+    <p>
+      {street}, {house} {apartment ? ` ,${apartment}` : ''}
+    </p>
+    <p>{postal}</p>
     <div className="buttons">
       <span>Редагувати</span>
       <span>Видалити</span>
