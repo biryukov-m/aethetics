@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { COLORS, FONTS } from '../../theme';
+import IconBtnArrowRight from '../../../assets/images/icon-button-arrow-right.png';
 
 // TODO: add props for different types of button
 export interface IButton {
@@ -17,17 +18,15 @@ export const Button = styled.button<IButton>`
   cursor: pointer;
   font-family: ${FONTS.FAMILIES.normal};
   font-style: normal;
-  font-weight: 400;
+  font-weight: ${FONTS.WEIGHTS.normal};
   font-size: ${FONTS.SIZES.l};
   color: ${COLORS.creamy};
   transition: all 0.2s ease-in;
-
   @media (max-width: 1140px) {
     width: 132px;
     height: 42px;
     font-size: 18px;
   }
-
   &::before {
     content: '';
     display: block;
@@ -47,7 +46,6 @@ export const Button = styled.button<IButton>`
       height: 40px;
     }
   }
-
   &:hover {
     transform: translate(8px, -8px);
     @media (max-width: 1140px) {
@@ -68,7 +66,6 @@ export const MiniButton = styled(Button)`
     height: 25px;
     font-size: ${FONTS.SIZES.xs};
   }
-
   &::before {
     width: 96px;
     height: 25px;
@@ -80,8 +77,58 @@ export const MiniButton = styled(Button)`
       height: 25px;
     }
   }
-
   &:hover {
     transform: translate(4px, -4px);
+  }
+`;
+
+export const ButtonArrowRight = styled.button`
+  width: 200px;
+  height: 50px;
+  border: 2px solid ${COLORS.accent};
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  position: relative;
+  transition: transform 0.2s ease-in;
+  font-family: ${FONTS.FAMILIES.normal};
+  font-style: normal;
+  font-weight: ${FONTS.WEIGHTS.normal};
+  font-size: ${FONTS.SIZES.m};
+  padding-bottom: 6px;
+  color: ${COLORS.accent};
+  position: relative;
+  left: -1px;
+  &::before {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 71px;
+    height: 12px;
+    background: url(${IconBtnArrowRight});
+    right: -38px;
+    transition: transform 0.2s ease-in;
+  }
+  &:hover::before {
+    transform: translate(4px, 0);
+  }
+
+  @media (max-width: 1140px) {
+    width: 132px;
+    height: 42px;
+    border: 1px solid ${COLORS.accent};
+    span {
+      font-size: ${FONTS.SIZES.s};
+      padding-bottom: 4px;
+      left: -1px;
+    }
+    &::before {
+      width: 34px;
+      height: 7px;
+      background-size: cover;
+      right: -13px;
+      background-position-x: -8px;
+    }
   }
 `;
