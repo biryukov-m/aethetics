@@ -1,11 +1,13 @@
 import React from 'react';
 
 import { Field, Form, Formik } from 'formik';
+import { Link } from 'react-router-dom';
 import * as Styled from './OrderPaymentAndDeliveryNewAddress.styled';
 import { Button } from '../../../common/button/button.styled';
 import { IAddNewAddress, IAddress } from '../../../../types/address';
 import addressService from '../../../../services/address.service';
 import { addressValidationSchema } from '../../../../schemas/address.schema';
+import { ROUTER_KEYS } from '../../../../constants/routerKeys';
 
 interface IProps {
   setAddresses: React.Dispatch<React.SetStateAction<IAddress[]>>;
@@ -14,6 +16,12 @@ interface IProps {
 export const OrderPaymentAndDeliveryNewAddress: React.FC<IProps> = ({ setAddresses }) => {
   // eslint-disable-next-line no-console
   console.log('');
+
+  return (
+    <Link to={{ pathname: `${ROUTER_KEYS.cabinet.root}/${ROUTER_KEYS.cabinet.address}` }}>
+      Add new ADDRESS
+    </Link>
+  );
 
   return (
     <Styled.Wrapper>
