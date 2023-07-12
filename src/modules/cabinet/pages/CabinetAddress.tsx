@@ -1,30 +1,18 @@
 import React from 'react';
 import CabinetAddressBlock from './CabinetAddressBlock';
+import addressService from '../../../services/address.service';
 
-const addresses = [
-  {
-    id: 1,
-    name: 'Шевченко Світлана',
-    city: 'Місто Київ',
-    street: 'Градинська 11б, 85',
-    telephone: '+38 068 564 77 99'
-  },
-  {
-    id: 2,
-    name: 'Шевченко Світлана',
-    city: 'Місто Харків',
-    street: 'Трінклера 18, 65',
-    telephone: '+38 068 564 77 99'
-  }
-];
+const { addresses } = addressService;
 
 const generatedAddressBlocks = addresses.map((address, idx) => (
   <CabinetAddressBlock
-    name={address.name}
+    key={idx}
+    id={idx}
     city={address.city}
     street={address.street}
-    telephone={address.telephone}
-    key={idx}
+    house={address.house}
+    apartment={address.apartment}
+    postal={address.postal}
   />
 ));
 
