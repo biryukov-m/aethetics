@@ -1,7 +1,7 @@
 import React from 'react';
-import RatingBar from '../../common/ratingBar/RatingBar';
-import ButtonGreenMini from '../../common/buttonGreenMini/ButtonGreenMini';
-import { Product } from '../../../types/types';
+import RatingBar from '../../../common/ratingBar/RatingBar';
+import ButtonGreenMini from '../../../common/buttonGreenMini/ButtonGreenMini';
+import { Product } from '../../../../types/types';
 
 const CabinetFavouritesItem: React.FC<Product> = ({
   imageUrl,

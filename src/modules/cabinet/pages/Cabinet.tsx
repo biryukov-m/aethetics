@@ -1,6 +1,6 @@
 import React from 'react';
 import { Outlet } from 'react-router-dom';
-import CabinetTabs from './CabinetTabs';
+import CabinetTabs from '../components/Tabs/CabinetTabs';
 import * as Styled from './Cabinet.styled';
 
 const Cabinet: React.FC = () => {

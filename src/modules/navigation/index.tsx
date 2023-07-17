@@ -9,10 +9,10 @@ import Cabinet from '../cabinet/pages/Cabinet';
 import Contacts from '../contacts/pages/Contacts';
 import DeliveryPayment from '../delivery-payment/pages/DeliveryPayment';
 import Order from '../order/pages/Order';
-import CabinetAddress from '../cabinet/pages/CabinetAddress';
-import CabinetContacts from '../cabinet/pages/CabinetContacts';
-import CabinetFavourites from '../cabinet/pages/CabinetFavourites';
-import CabinetHistory from '../cabinet/pages/CabinetHistory';
+import CabinetAddress from '../cabinet/components/Address/CabinetAddress';
+import CabinetContacts from '../cabinet/components/Contacts/CabinetContacts';
+import CabinetFavourites from '../cabinet/components/Favourites/CabinetFavourites';
+import CabinetHistory from '../cabinet/components/History/CabinetHistory';
 import { ROUTER_KEYS } from '../../constants/routerKeys';
 
 export const MainRouter = () => (

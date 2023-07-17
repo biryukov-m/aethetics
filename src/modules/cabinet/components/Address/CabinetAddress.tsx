@@ -1,6 +1,6 @@
 import React from 'react';
 import CabinetAddressBlock from './CabinetAddressBlock';
-import addressService from '../../../services/address.service';
+import addressService from '../../../../services/address.service';
 
 const { addresses } = addressService;
 
