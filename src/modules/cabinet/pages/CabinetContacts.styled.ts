@@ -41,14 +41,14 @@ export const Header = styled.h3`
 `;
 export const Wrapper = styled.div`
   margin-bottom: 30px;
-  @media (max-width: 767px) {
+  @media (max-width: ${MEDIA.tablet}px) {
     margin-bottom: 20px;
   }
   form {
     max-width: 1016px;
     margin: 0 auto;
     position: relative;
-    @media (max-width: 767px) {
+    @media (max-width: ${MEDIA.tablet}px) {
       display: block;
     }
     label,
@@ -60,13 +60,13 @@ export const Wrapper = styled.div`
       line-height: 150%;
       font-weight: 400;
       color: $text;
-      @media (max-width: 767px) {
+      @media (max-width: ${MEDIA.tablet}px) {
         font-size: clamp(14px, 3.3vw, 19px);
       }
     }
     label {
       margin-bottom: 3px;
-      @media (max-width: 767px) {
+      @media (max-width: ${MEDIA.tablet}px) {
         margin-bottom: 0;
       }
     }
@@ -76,7 +76,7 @@ export const Wrapper = styled.div`
       color: $text;
       padding: 5px 8px 10px;
       margin-bottom: 28px;
-      @media (max-width: 767px) {
+      @media (max-width: ${MEDIA.tablet}px) {
         margin-bottom: 15px;
       }
       &::placeholder {
@@ -91,7 +91,7 @@ export const Flex = styled.div`
   justify-content: space-between;
   gap: 15px;
   margin-bottom: 24px;
-  @media (max-width: 767px) {
+  @media (max-width: ${MEDIA.tablet}px) {
     flex-direction: column;
     gap: 0;
     margin: 0;
@@ -101,13 +101,13 @@ export const Column = styled.div`
   display: flex;
   flex-direction: column;
   width: 368px;
-  @media (max-width: 767px) {
+  @media (max-width: ${MEDIA.tablet}px) {
     width: 100%;
     justify-content: space-between;
   }
   &:last-of-type input:last-of-type {
     margin-bottom: 61px;
-    @media (max-width: 767px) {
+    @media (max-width: ${MEDIA.tablet}px) {
       margin-bottom: 20px;
     }
   }
@@ -115,10 +115,12 @@ export const Column = styled.div`
 export const ExitBtnContainer = styled.div`
   margin-top: 5px;
   margin-right: 12px;
-  @media (max-width: 767px) {
+  @media (max-width: ${MEDIA.tablet}px) {
     align-self: flex-end;
   }
 `;
 export const SubmitBtnContainer = styled.div`
-  margin-top: -42px;
+  @media (max-width: ${MEDIA.tablet}px) {
+    margin-top: -42px;
+  }
 `;
