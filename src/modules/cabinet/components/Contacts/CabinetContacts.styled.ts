@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { FONTS, MEDIA } from '../../../theme';
-import expandIcon from '../../../assets/images/icon-expand-more.png';
+import expandIcon from '../../../../assets/images/icon-expand-more.png';
 
 export const Header = styled.h3`
   display: none;

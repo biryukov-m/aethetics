@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ROUTER_KEYS } from '../../../constants/routerKeys';
+import { ROUTER_KEYS } from '../../../../constants/routerKeys';
 import * as Styled from './CabinetTabs.styled';
 
 const CabinetTabs: React.FC = () => (

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, ButtonArrowRight } from '../../common/button/button.styled';
+import { Button, ButtonArrowRight } from '../../../common/button/button.styled';
 import * as Styled from './CabinetContacts.styled';
 
 const CabinetContacts: React.FC = () => (
