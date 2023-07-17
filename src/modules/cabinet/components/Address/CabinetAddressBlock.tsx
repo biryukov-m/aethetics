@@ -1,5 +1,5 @@
 import React from 'react';
-import { IAddress } from '../../../types/address';
+import { IAddress } from '../../../../types/address';
 
 const CabinetAddressBlock: React.FC<IAddress> = ({
   city,
