@@ -96,8 +96,9 @@ const articles: Article[] = [
 ];
 
 const DeliveryPayment: React.FC = () => {
-  const generatedArticles = articles.map((article) => (
+  const generatedArticles = articles.map((article, idx) => (
     <DeliveryPaymentArticle
+      key={idx}
       header={article.header}
       subheader={article.subheader}
       content={HTMLReactParser(article.content) as JSX.Element}
