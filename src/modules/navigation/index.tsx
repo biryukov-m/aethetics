@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
+import { Route, BrowserRouter as Router, Routes, Navigate } from 'react-router-dom';
 import Layout from '../layout/Layout';
 import Main from '../main/pages/Main';
 import Catalogue from '../catalogue/pages/catalogue/Catalogue';
@@ -19,7 +19,7 @@ export const MainRouter = () => (
   <Router>
     <Routes>
       <Route path="/" element={<Layout />}>
-        <Route path="/" element={<Main />} />
+        <Route index element={<Main />} />
         <Route path="catalogue" element={<Catalogue />} />
         <Route path="product/:id" element={<ProductCard />} />
         <Route path="delivery-and-payment" element={<DeliveryPayment />} />
@@ -27,6 +27,7 @@ export const MainRouter = () => (
         <Route path="blog" element={<Blog />} />
         <Route path="contacts" element={<Contacts />} />
         <Route path={ROUTER_KEYS.cabinet.root} element={<Cabinet />}>
+          <Route index element={<Navigate to={ROUTER_KEYS.cabinet.contacts} />} />
           <Route path={ROUTER_KEYS.cabinet.address} element={<CabinetAddress />} />
           <Route path={ROUTER_KEYS.cabinet.contacts} element={<CabinetContacts />} />
           <Route path={ROUTER_KEYS.cabinet.favourites} element={<CabinetFavourites />} />
