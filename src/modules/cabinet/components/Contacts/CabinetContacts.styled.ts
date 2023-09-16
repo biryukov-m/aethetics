@@ -1,44 +1,8 @@
 import styled from 'styled-components';
-import { FONTS, MEDIA } from '../../../theme';
-import expandIcon from '../../../../assets/images/icon-expand-more.png';
+import { MEDIA } from '../../../theme';
+import { MobileTab } from '../../pages/Cabinet.styled';
 
-export const Header = styled.h3`
-  display: none;
-  @media (max-width: ${MEDIA.tablet}px) {
-    display: block;
-    font-size: clamp(${FONTS.SIZES.s}, 3.3vw, ${FONTS.SIZES.m});
-    line-height: 100%;
-    padding: 10px;
-    border: 1px solid #000;
-    margin-bottom: 20px;
-    position: relative;
-    &::after {
-      position: absolute;
-      display: block;
-      content: '';
-      top: 16px;
-      right: 3%;
-      width: 11px;
-      height: 6px;
-      background: url(${expandIcon}) no-repeat center;
-    }
-    &:hover,
-    &.active {
-      cursor: pointer;
-      font-weight: ${FONTS.WEIGHTS.bold};
-    }
-    &.active {
-      @media (max-width: ${MEDIA.tablet}px) {
-        &::after {
-          transform: rotate(180deg);
-        }
-        &:hover {
-          cursor: default;
-        }
-      }
-    }
-  }
-`;
+export const Header = styled(MobileTab)``;
 export const Wrapper = styled.div`
   margin-bottom: 30px;
   @media (max-width: ${MEDIA.tablet}px) {
