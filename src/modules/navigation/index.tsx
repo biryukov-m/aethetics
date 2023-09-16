@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route, BrowserRouter as Router, Routes, Navigate } from 'react-router-dom';
+import { Navigate, Route, BrowserRouter as Router, Routes } from 'react-router-dom';
 import Layout from '../layout/Layout';
 import Main from '../main/pages/Main';
 import Catalogue from '../catalogue/pages/catalogue/Catalogue';

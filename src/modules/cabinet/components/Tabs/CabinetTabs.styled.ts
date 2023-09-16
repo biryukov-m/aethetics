@@ -9,28 +9,25 @@ export const Tabs = styled.ul`
     display: none;
   }
 `;
-export const ListItem = styled.li`
+export const ListItem = styled.li<{ $active: boolean }>`
   display: block;
   padding-bottom: 7px;
   a {
     font-family: ${FONTS.FAMILIES.normal};
     font-style: normal;
-    font-weight: ${FONTS.WEIGHTS.light};
+    font-weight: ${(props) => (props.$active ? FONTS.WEIGHTS.normal : FONTS.WEIGHTS.light)};
     font-size: ${FONTS.SIZES.l};
+    text-decoration: ${(props) => (props.$active ? 'underline' : 'none')};
     color: ${COLORS.text};
     cursor: pointer;
     position: relative;
-    text-decoration: none;
     @media (max-width: 1140px) {
       font-size: clamp(${FONTS.SIZES.m}, 2.3vw, ${FONTS.SIZES.l});
     }
-    &.active,
+
     &:hover {
-      font-weight: ${FONTS.WEIGHTS.normal};
-      letter-spacing: -0.3px;
-      margin: 0;
       &::before {
-        display: block;
+        display: ${(props) => (props.$active ? 'none' : 'block')};
         content: '';
         position: absolute;
         bottom: 0;
