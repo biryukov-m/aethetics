@@ -5,13 +5,13 @@ import * as Styled from './Cabinet.styled';
 
 const Cabinet: React.FC = () => (
   <Styled.Section>
-    <div className="layout">
+    <Styled.Layout>
       <Styled.Wrapper>
         <Styled.Header>Особистий кабінет</Styled.Header>
         <CabinetTabs />
         <Outlet />
       </Styled.Wrapper>
-    </div>
+    </Styled.Layout>
   </Styled.Section>
 );
 export default Cabinet;
