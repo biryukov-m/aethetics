@@ -8,6 +8,13 @@ export const Section = styled.section`
     margin: 30px 0 10px;
   }
 `;
+export const Layout = styled.div`
+  width: 1074px;
+  margin: 0 auto;
+  @media (max-width: 1140px) {
+    width: 96%;
+  }
+`;
 export const Wrapper = styled.div`
   width: 100%;
   max-width: 1016px;
@@ -26,6 +33,10 @@ export const Header = styled.h2`
 `;
 export const MobileTab = styled.h3`
   display: none;
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
   @media (max-width: ${MEDIA.tablet}px) {
     display: block;
     font-size: clamp(${FONTS.SIZES.s}, 3.3vw, ${FONTS.SIZES.m});
