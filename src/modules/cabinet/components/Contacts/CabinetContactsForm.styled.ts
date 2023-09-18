@@ -1,5 +1,46 @@
 import styled from 'styled-components';
-import { MEDIA } from '../../../theme';
+import { COLORS, FONTS, MEDIA } from '../../../theme';
+
+export const Form = styled.form`
+  max-width: 1016px;
+  margin: 0 auto;
+  position: relative;
+  @media (max-width: ${MEDIA.tablet}px) {
+    display: block;
+  }
+  label,
+  input,
+  input::placeholder {
+    font-family: ${FONTS.FAMILIES.normal};
+    font-style: normal;
+    font-size: ${FONTS.SIZES.m};
+    line-height: 150%;
+    font-weight: 400;
+    color: $text;
+    @media (max-width: ${MEDIA.tablet}px) {
+      font-size: clamp(14px, 3.3vw, 19px);
+    }
+  }
+  label {
+    margin-bottom: 3px;
+    @media (max-width: ${MEDIA.tablet}px) {
+      margin-bottom: 0;
+    }
+  }
+  input {
+    border-radius: 0;
+    border: 1px solid #000;
+    color: ${COLORS.black};
+    padding: 5px 8px 10px;
+    margin-bottom: 28px;
+    @media (max-width: ${MEDIA.tablet}px) {
+      margin-bottom: 15px;
+    }
+    &::placeholder {
+      color: #b3b3b2;
+    }
+  }
+`;
 
 export const Flex = styled.div`
   display: flex;
