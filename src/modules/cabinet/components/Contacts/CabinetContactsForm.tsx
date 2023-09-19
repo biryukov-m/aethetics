@@ -4,7 +4,7 @@ import { Button, ButtonArrowRight } from '../../../common/button/button.styled';
 import * as Styled from './CabinetContactsForm.styled';
 
 export const CabinetContactsForm: React.FC = () => (
-  <form action="post" className="for-contacts">
+  <Styled.Form action="post" className="for-contacts">
     <Styled.Flex>
       <Styled.Column>
         <label htmlFor="name">Ваше ім’я</label>
@@ -32,5 +32,5 @@ export const CabinetContactsForm: React.FC = () => (
     <Styled.SubmitBtnContainer>
       <Button type="submit">Зберегти</Button>
     </Styled.SubmitBtnContainer>
-  </form>
+  </Styled.Form>
 );

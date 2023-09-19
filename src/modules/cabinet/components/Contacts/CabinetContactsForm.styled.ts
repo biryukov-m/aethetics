@@ -16,7 +16,7 @@ export const Form = styled.form`
     font-size: ${FONTS.SIZES.m};
     line-height: 150%;
     font-weight: 400;
-    color: $text;
+    color: ${COLORS.text};
     @media (max-width: ${MEDIA.tablet}px) {
       font-size: clamp(14px, 3.3vw, 19px);
     }
