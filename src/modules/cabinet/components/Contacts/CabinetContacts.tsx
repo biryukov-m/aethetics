@@ -1,14 +1,14 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { ROUTER_KEYS } from '../../../../constants/routerKeys';
-import * as Styled from './CabinetContacts.styled';
 import { CabinetContactsFilled } from './CabinetContactsFilled';
 import { CabinetContactsForm } from './CabinetContactsForm';
+import * as Styled from '../../pages/Cabinet.styled';
 
 const CabinetContacts: React.FC = () => (
   <>
-    <Styled.Header className="active">Контактна інформація</Styled.Header>
-    <Styled.Wrapper>
+    <Styled.MobileTab className="active">Контактна інформація</Styled.MobileTab>
+    <Styled.MobileTabContent>
       <CabinetContactsForm />
       <CabinetContactsFilled
         name="Оксана"
@@ -17,20 +17,20 @@ const CabinetContacts: React.FC = () => (
         phone="+380 66 329 97 45"
         dob="12.10.1999"
       />
-    </Styled.Wrapper>
-    <Styled.Header>
+    </Styled.MobileTabContent>
+    <Styled.MobileTab>
       <Link to={`/${ROUTER_KEYS.cabinet.root}/${ROUTER_KEYS.cabinet.address}`}>Адресна книга</Link>
-    </Styled.Header>
-    <Styled.Header>
+    </Styled.MobileTab>
+    <Styled.MobileTab>
       <Link to={`/${ROUTER_KEYS.cabinet.root}/${ROUTER_KEYS.cabinet.favourites}`}>
         Список бажань
       </Link>
-    </Styled.Header>
-    <Styled.Header>
+    </Styled.MobileTab>
+    <Styled.MobileTab>
       <Link to={`/${ROUTER_KEYS.cabinet.root}/${ROUTER_KEYS.cabinet.history}`}>
         Історія замовлень
       </Link>
-    </Styled.Header>
+    </Styled.MobileTab>
   </>
 );
 

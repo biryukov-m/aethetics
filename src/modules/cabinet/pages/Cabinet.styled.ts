@@ -72,3 +72,26 @@ export const MobileTab = styled.h3`
     }
   }
 `;
+export const MobileTabContent = styled.div`
+  // Included mobile tab animation start
+  overflow: hidden;
+  @media (max-width: ${MEDIA.tablet}px) {
+    animation: scroll 0.3s ease-in;
+    position: relative;
+    @keyframes scroll {
+      from {
+        top: -500px;
+        opacity: 0;
+      }
+      to {
+        top: 0;
+        opacity: 1;
+      }
+    }
+  }
+  // Included mobile tab animation end
+  margin-bottom: 30px;
+  @media (max-width: ${MEDIA.tablet}px) {
+    margin-bottom: 20px;
+  }
+`;

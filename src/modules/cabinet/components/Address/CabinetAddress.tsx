@@ -1,48 +1,31 @@
 import React from 'react';
-import CabinetAddressBlock from './CabinetAddressBlock';
-import addressService from '../../../../services/address.service';
+import { Link } from 'react-router-dom';
 
-const { addresses } = addressService;
-
-const generatedAddressBlocks = addresses.map((address, idx) => (
-  <CabinetAddressBlock
-    key={idx}
-    id={idx}
-    city={address.city}
-    street={address.street}
-    house={address.house}
-    apartment={address.apartment}
-    postal={address.postal}
-  />
-));
+import * as Styled from '../../pages/Cabinet.styled';
+import { ROUTER_KEYS } from '../../../../constants/routerKeys';
+import { CabinetAddressForm } from './CabinetAddressForm';
 
 const CabinetAddress: React.FC = () => (
   <>
-    <h3 className="tab-link mobile" data-for="tab-address">
+    <Styled.MobileTab>
+      <Link to={`/${ROUTER_KEYS.cabinet.root}/${ROUTER_KEYS.cabinet.contacts}`}>
+        Контактна інформація
+      </Link>
+    </Styled.MobileTab>
+    <Styled.MobileTabContent>
       Адресна книга
-    </h3>
-    <div className="tab address" id="tab-address">
-      <form action="post" className="for-address">
-        <div className="flex">
-          <div className="column addresses">{generatedAddressBlocks}</div>
-          <div className="column">
-            <p>Додати нову адресу:</p>
-            <input type="full-name" className="full-name" id="full-name" placeholder="ПІБ" />
-            <input type="text" className="city" id="city" placeholder="Місто" />
-            <div className="group">
-              <input type="text" className="street" id="street" placeholder="Вулиця" />
-              <input type="text" className="house" id="house" placeholder="Корпус" />
-              <input type="text" className="apartment" id="apartment" placeholder="Квартира" />
-            </div>
-            <input type="text" className="postal" id="postal" placeholder="Поштове відділення" />
-            <input type="tel" className="telephone" id="telephone" placeholder="Номер телефону" />
-          </div>
-        </div>
-        <button type="submit" className="btn">
-          <span>Зберегти</span>
-        </button>
-      </form>
-    </div>
+      <CabinetAddressForm />
+    </Styled.MobileTabContent>
+    <Styled.MobileTab>
+      <Link to={`/${ROUTER_KEYS.cabinet.root}/${ROUTER_KEYS.cabinet.favourites}`}>
+        Список бажань
+      </Link>
+    </Styled.MobileTab>
+    <Styled.MobileTab>
+      <Link to={`/${ROUTER_KEYS.cabinet.root}/${ROUTER_KEYS.cabinet.history}`}>
+        Історія замовлень
+      </Link>
+    </Styled.MobileTab>
   </>
 );
 
