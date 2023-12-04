@@ -2,6 +2,7 @@ import React from 'react';
 import * as Styled from './CabinetAddressForm.styled';
 import addressService from '../../../../services/address.service';
 import CabinetAddressBlock from './CabinetAddressBlock';
+import { Button as StyledButton } from '../../../common/button/button.styled';
 
 const { addresses } = addressService;
 const generatedAddressBlocks = addresses.map((address, idx) => (
@@ -17,24 +18,24 @@ const generatedAddressBlocks = addresses.map((address, idx) => (
 ));
 
 export const CabinetAddressForm: React.FC = () => (
-  <Styled.Form action="post" className="for-address">
+  <Styled.Form action="post">
     <Styled.Flex>
-      <div className="column addresses">{generatedAddressBlocks}</div>
+      {generatedAddressBlocks.length > 0 && <Styled.Column>{generatedAddressBlocks}</Styled.Column>}
       <Styled.Column>
-        <p>Додати нову адресу:</p>
-        <input type="full-name" className="full-name" id="full-name" placeholder="ПІБ" />
-        <input type="text" className="city" id="city" placeholder="Місто" />
-        <div className="group">
-          <input type="text" className="street" id="street" placeholder="Вулиця" />
-          <input type="text" className="house" id="house" placeholder="Корпус" />
-          <input type="text" className="apartment" id="apartment" placeholder="Квартира" />
-        </div>
-        <input type="text" className="postal" id="postal" placeholder="Поштове відділення" />
-        <input type="tel" className="telephone" id="telephone" placeholder="Номер телефону" />
+        <Styled.Paragraph>Додати нову адресу:</Styled.Paragraph>
+        <Styled.Input type="text" id="full-name" placeholder="ПІБ" />
+        <Styled.Input type="text" id="city" placeholder="Місто" />
+        <Styled.HorizontalGroup>
+          <Styled.Input type="text" id="street" placeholder="Вулиця" />
+          <Styled.Input type="text" id="house" placeholder="Корпус" />
+          <Styled.Input type="text" id="apartment" placeholder="Квартира" />
+        </Styled.HorizontalGroup>
+        <Styled.Input type="text" id="postal" placeholder="Поштове відділення" />
+        <Styled.Input type="tel" id="telephone" placeholder="Номер телефону" />
+        <Styled.ButtonContainer>
+          <StyledButton type="submit">Зберегти</StyledButton>
+        </Styled.ButtonContainer>
       </Styled.Column>
     </Styled.Flex>
-    <button type="submit" className="btn">
-      <span>Зберегти</span>
-    </button>
   </Styled.Form>
 );

@@ -1,6 +1,9 @@
 import React from 'react';
 
-import { Button, ButtonArrowRight } from '../../../common/button/button.styled';
+import {
+  Button as StyledButton,
+  ButtonArrowRight as StyledButtonArrowRight
+} from '../../../common/button/button.styled';
 import * as Styled from './CabinetContactsForm.styled';
 
 export const CabinetContactsForm: React.FC = () => (
@@ -25,12 +28,12 @@ export const CabinetContactsForm: React.FC = () => (
         <label htmlFor="date-of-birth">Дата народження</label>
         <input type="text" className="date-of-birth" id="date-of-birth" placeholder="8.10.1989" />
         <Styled.ExitBtnContainer>
-          <ButtonArrowRight>Вийти</ButtonArrowRight>
+          <StyledButtonArrowRight>Вийти</StyledButtonArrowRight>
         </Styled.ExitBtnContainer>
       </Styled.Column>
     </Styled.Flex>
     <Styled.SubmitBtnContainer>
-      <Button type="submit">Зберегти</Button>
+      <StyledButton type="submit">Зберегти</StyledButton>
     </Styled.SubmitBtnContainer>
   </Styled.Form>
 );
