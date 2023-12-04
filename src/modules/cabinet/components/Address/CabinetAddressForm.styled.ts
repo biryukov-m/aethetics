@@ -1,6 +1,50 @@
 import styled from 'styled-components';
 import { COLORS, FONTS, MEDIA } from '../../../theme';
 
+export const Paragraph = styled.p`
+  font-family: ${FONTS.FAMILIES.normal};
+  font-style: normal;
+  font-size: ${FONTS.SIZES.m};
+  line-height: 150%;
+  font-weight: 400;
+  color: ${COLORS.text};
+  margin-bottom: 13px;
+  @media (max-width: ${MEDIA.tablet}px) {
+    font-size: clamp(14px, 3.3vw, 19px);
+    margin-bottom: 8px;
+  }
+`;
+export const Input = styled.input`
+  border-radius: 0;
+  border: 1px solid ${COLORS.black};
+  color: ${COLORS.black};
+  padding: 10px 5px;
+  margin-bottom: 10px;
+  font-family: ${FONTS.FAMILIES.normal};
+  font-style: normal;
+  font-size: ${FONTS.SIZES.m};
+  line-height: 150%;
+  font-weight: 400;
+  color: ${COLORS.text};
+  @media (max-width: ${MEDIA.tablet}px) {
+    margin-bottom: 5px;
+    font-size: clamp(14px, 2.5vw, 18px);
+    line-height: 120%;
+    padding: 10px 5px;
+  }
+  &::placeholder {
+    font-family: ${FONTS.FAMILIES.normal};
+    font-style: normal;
+    font-size: ${FONTS.SIZES.m};
+    line-height: 150%;
+    font-weight: 400;
+    color: ${COLORS.grey_text};
+    @media (max-width: ${MEDIA.tablet}px) {
+      font-size: clamp(14px, 2.5vw, 18px);
+      line-height: 120%;
+    }
+  }
+`;
 export const Form = styled.form`
   max-width: 928px;
   margin: 0 auto;
@@ -8,40 +52,7 @@ export const Form = styled.form`
   @media (max-width: ${MEDIA.tablet}px) {
     display: block;
   }
-  label,
-  input,
-  input::placeholder {
-    font-family: ${FONTS.FAMILIES.normal};
-    font-style: normal;
-    font-size: ${FONTS.SIZES.m};
-    line-height: 150%;
-    font-weight: 400;
-    color: ${COLORS.text};
-    @media (max-width: ${MEDIA.tablet}px) {
-      font-size: clamp(14px, 3.3vw, 19px);
-    }
-  }
-  label {
-    margin-bottom: 3px;
-    @media (max-width: ${MEDIA.tablet}px) {
-      margin-bottom: 0;
-    }
-  }
-  input {
-    border-radius: 0;
-    border: 1px solid #000;
-    color: ${COLORS.black};
-    padding: 5px 8px 10px;
-    margin-bottom: 28px;
-    @media (max-width: ${MEDIA.tablet}px) {
-      margin-bottom: 15px;
-    }
-    &::placeholder {
-      color: #b3b3b2;
-    }
-  }
 `;
-
 export const Flex = styled.div`
   display: flex;
   flex-direction: row;
@@ -51,10 +62,9 @@ export const Flex = styled.div`
   @media (max-width: ${MEDIA.tablet}px) {
     flex-direction: column;
     gap: 0;
-    margin: 0;
+    margin-bottom: 20px;
   }
 `;
-
 export const Column = styled.div`
   display: flex;
   flex-direction: column;
@@ -98,7 +108,7 @@ export const Column = styled.div`
       font-weight: 200;
       font-size: 40px;
       text-align: center;
-      color: #fff;
+      color: ${COLORS.white};
       background-color: $accent;
       @media (max-width: 767px) {
         width: 30px;
@@ -138,42 +148,23 @@ export const Column = styled.div`
       }
     }
   }
-  p {
-    margin-bottom: 13px;
-    @media (max-width: 767px) {
-      font-size: clamp(14px, 2.5vw, 18px);
-      line-height: 120%;
-      margin-bottom: 8px;
-    }
-  }
+`;
+export const HorizontalGroup = styled.div`
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
   input {
-    margin-bottom: 10px;
-    @media (max-width: 767px) {
-      font-size: clamp(14px, 2.5vw, 18px);
-      line-height: 120%;
+    margin: 0;
+    width: 100px;
+    height: 50px;
+    @media (max-width: ${MEDIA.tablet}px) {
       padding: 10px 5px;
-    }
-    &::placeholder {
-      @media (max-width: 767px) {
-        font-size: clamp(14px, 2.5vw, 18px);
-        line-height: 120%;
-      }
-    }
-  }
-  .group {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 10px;
-    input {
       margin: 0;
-      width: 100px;
-      height: 50px;
-      @media (max-width: 767px) {
-        padding: 10px 5px;
-        margin: 0;
-        width: 25%;
-        height: 39px;
-      }
+      width: 25%;
+      height: 40px;
     }
   }
+`;
+export const ButtonContainer = styled.div`
+  margin-top: 18px;
 `;

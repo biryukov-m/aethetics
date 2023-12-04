@@ -13,7 +13,7 @@ const CabinetAddress: React.FC = () => (
       </Link>
     </Styled.MobileTab>
     <Styled.MobileTabContent>
-      Адресна книга
+      <Styled.MobileTab>Адресна книга</Styled.MobileTab>
       <CabinetAddressForm />
     </Styled.MobileTabContent>
     <Styled.MobileTab>
