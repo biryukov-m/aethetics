@@ -1,24 +1,24 @@
 import React from 'react';
 import { IAddress } from '../../../../types/address';
 
-const CabinetAddressBlock: React.FC<IAddress> = ({
-  city,
-  street,
-  house,
-  id,
-  postal,
-  apartment
-}) => (
+interface IProps {
+  address: IAddress;
+  removeHandler(id: number): void;
+}
+
+const CabinetAddressBlock: React.FC<IProps> = ({ address, removeHandler }) => (
   <div className="contact">
-    <div className="nth">{id}</div>
-    <p>{city}</p>
+    <div className="nth">{address.id}</div>
+    <p>{address.city}</p>
     <p>
-      {street}, {house} {apartment ? ` ,${apartment}` : ''}
+      {address.street}, {address.house} {address.apartment ? ` ,${address.apartment}` : ''}
     </p>
-    <p>{postal}</p>
+    <p>{address.postal}</p>
     <div className="buttons">
       <span>Редагувати</span>
-      <span>Видалити</span>
+      <button type="button" onClick={() => removeHandler(address.id)}>
+        Видалити
+      </button>
     </div>
   </div>
 );
