@@ -21,31 +21,42 @@ export const CabinetAddressForm: React.FC<IProps> = ({ setAddresses }) => (
       setSubmitting(false);
     }}
   >
-    {({ isSubmitting }) => (
+    {({ isSubmitting, errors, touched }) => (
       <Styled.Wrapper>
         <Form>
           <Styled.Paragraph>Додати нову адресу:</Styled.Paragraph>
-          <Field type="text" className="city" id="city" name="city" placeholder="Місто" required />
+
+          <Field
+            type="text"
+            className={errors.city && touched.city ? 'error' : null}
+            id="city"
+            name="city"
+            placeholder="Місто"
+            required
+          />
+
           <Styled.InputGroup>
             <Field
               type="text"
-              className="street"
+              className={errors.street && touched.street ? 'error' : null}
               id="street"
               name="street"
               placeholder="Вулиця"
               required
             />
+
             <Field
               type="text"
-              className="house"
+              className={errors.house && touched.house ? 'error' : null}
               id="house"
               name="house"
               placeholder="Корпус"
               required
             />
+
             <Field
               type="text"
-              className="apartment"
+              className={errors.apartment && touched.apartment ? 'error' : null}
               id="apartment"
               name="apartment"
               placeholder="Квартира"
@@ -54,7 +65,7 @@ export const CabinetAddressForm: React.FC<IProps> = ({ setAddresses }) => (
 
           <Field
             type="text"
-            className="postal"
+            className={errors.postal && touched.postal ? 'error' : null}
             name="postal"
             id="postal"
             placeholder="Поштове відділення або індекс"
@@ -66,6 +77,11 @@ export const CabinetAddressForm: React.FC<IProps> = ({ setAddresses }) => (
               Зберегти
             </StyledButton>
           </Styled.ButtonContainer>
+          {touched.city && <Styled.Error>{errors.city}</Styled.Error>}
+          {touched.street && <Styled.Error>{errors.street}</Styled.Error>}
+          {touched.house && <Styled.Error>{errors.house}</Styled.Error>}
+          {touched.apartment && <Styled.Error>{errors.apartment}</Styled.Error>}
+          {touched.postal && <Styled.Error>{errors.postal}</Styled.Error>}
         </Form>
       </Styled.Wrapper>
     )}
