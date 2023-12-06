@@ -33,6 +33,9 @@ export const Wrapper = styled.div`
       }
     }
   }
+  input.error {
+    border-color: rgb(200, 10, 10);
+  }
 `;
 export const Paragraph = styled.p`
   font-family: ${FONTS.FAMILIES.normal};
@@ -60,4 +63,18 @@ export const InputGroup = styled.div`
 `;
 export const ButtonContainer = styled.div`
   margin-top: 18px;
+`;
+export const Error = styled.p`
+  margin-bottom: 10px;
+  font-family: ${FONTS.FAMILIES.normal};
+  font-style: normal;
+  font-size: ${FONTS.SIZES.xs};
+  line-height: 150%;
+  font-weight: 400;
+  color: ${COLORS.error};
+  @media (max-width: ${MEDIA.tablet}px) {
+    margin-bottom: 5px;
+    font-size: ${FONTS.SIZES.xxs};
+    line-height: 120%;
+  }
 `;

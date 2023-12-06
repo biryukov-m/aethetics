@@ -4,5 +4,6 @@ export const COLORS = {
   text: '#484847',
   grey_text: '#b3b3b2',
   white: '#ffffff',
-  black: '#000000'
+  black: '#000000',
+  error: '#ff4d4d'
 };
