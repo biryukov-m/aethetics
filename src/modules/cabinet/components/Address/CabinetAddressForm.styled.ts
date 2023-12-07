@@ -32,9 +32,9 @@ export const Wrapper = styled.div`
         line-height: 120%;
       }
     }
-  }
-  input.error {
-    border-color: rgb(200, 10, 10);
+    &.error {
+      border-color: rgb(200, 10, 10);
+    }
   }
 `;
 export const Paragraph = styled.p`
@@ -50,7 +50,6 @@ export const Paragraph = styled.p`
     margin-bottom: 8px;
   }
 `;
-// export const Input = styled.input``;
 export const InputGroup = styled.div`
   display: flex;
   justify-content: space-between;
