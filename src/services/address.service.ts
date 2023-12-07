@@ -17,10 +17,20 @@ class AddressService {
 
   private getNextId() {
     if (this.addresses.length === 0) {
-      return 0;
+      return 1;
     }
     const ids = this.addresses.map((address) => address.id);
     return Math.max(...ids) + 1;
+  }
+
+  private recalculateIds() {
+    if (this.addresses.length > 0) {
+      const recalculated = this.addresses.map((address, idx) => {
+        address.id = idx + 1;
+        return address;
+      });
+      this.addresses = [...recalculated];
+    }
   }
 
   add(address: IAddNewAddress) {
@@ -32,6 +42,7 @@ class AddressService {
     const foundAddress = this.getById(id);
     if (foundAddress) {
       this.addresses = this.addresses.filter((address) => address.id !== id);
+      this.recalculateIds();
     }
   }
 
