@@ -25,11 +25,11 @@ const CabinetAddress: React.FC = () => {
         <Styled.MobileTab>Адресна книга</Styled.MobileTab>
         <Styled.Flex>
           {addresses.length > 0 && (
-            <Styled.Column>
+            <Styled.LeftColumn>
               {addresses.map((address, idx) => (
                 <CabinetAddressBlock removeHandler={removeHandler} key={idx} address={address} />
               ))}
-            </Styled.Column>
+            </Styled.LeftColumn>
           )}
           <Styled.Column>
             <CabinetAddressForm setAddresses={setAddresses} />

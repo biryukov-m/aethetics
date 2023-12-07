@@ -1,4 +1,5 @@
 import React from 'react';
+import * as Styled from './CabinetAddressBlock.styled';
 import { IAddress } from '../../../../types/address';
 
 interface IProps {
@@ -7,20 +8,20 @@ interface IProps {
 }
 
 const CabinetAddressBlock: React.FC<IProps> = ({ address, removeHandler }) => (
-  <div className="contact">
-    <div className="nth">{address.id}</div>
-    <p>{address.city}</p>
-    <p>
+  <Styled.Item>
+    <Styled.Index>{address.id}</Styled.Index>
+    <Styled.Text>{address.city}</Styled.Text>
+    <Styled.Text>
       {address.street}, {address.house} {address.apartment ? ` ,${address.apartment}` : ''}
-    </p>
-    <p>{address.postal}</p>
-    <div className="buttons">
-      <span>Редагувати</span>
-      <button type="button" onClick={() => removeHandler(address.id)}>
+    </Styled.Text>
+    <Styled.Text>{address.postal}</Styled.Text>
+    <Styled.ButtonsContainer>
+      <Styled.Button type="button">Редагувати</Styled.Button>
+      <Styled.Button type="button" onClick={() => removeHandler(address.id)}>
         Видалити
-      </button>
-    </div>
-  </div>
+      </Styled.Button>
+    </Styled.ButtonsContainer>
+  </Styled.Item>
 );
 
 export default CabinetAddressBlock;
