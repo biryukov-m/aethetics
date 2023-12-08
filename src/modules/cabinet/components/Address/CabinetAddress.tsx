@@ -6,12 +6,17 @@ import { ROUTER_KEYS } from '../../../../constants/routerKeys';
 import { CabinetAddressForm } from './CabinetAddressForm';
 import addressService from '../../../../services/address.service';
 import CabinetAddressBlock from './CabinetAddressBlock';
+import { IAddress } from '../../../../types/address';
 
 const CabinetAddress: React.FC = () => {
   const [addresses, setAddresses] = useState(addressService.addresses);
+  const [updateAddress, setUpdateAddress] = useState<IAddress | null>(null);
   const removeHandler = (id: number) => {
     addressService.remove(id);
     setAddresses(addressService.addresses);
+  };
+  const updateHandler = (address: IAddress) => {
+    setUpdateAddress(address);
   };
   return (
     <>
@@ -27,12 +32,21 @@ const CabinetAddress: React.FC = () => {
           {addresses.length > 0 && (
             <Styled.LeftColumn>
               {addresses.map((address, idx) => (
-                <CabinetAddressBlock removeHandler={removeHandler} key={idx} address={address} />
+                <CabinetAddressBlock
+                  removeHandler={removeHandler}
+                  updateHandler={updateHandler}
+                  key={idx}
+                  address={address}
+                />
               ))}
             </Styled.LeftColumn>
           )}
           <Styled.Column>
-            <CabinetAddressForm setAddresses={setAddresses} />
+            <CabinetAddressForm
+              setAddresses={setAddresses}
+              updateAddress={updateAddress}
+              setUpdateAddress={setUpdateAddress}
+            />
           </Styled.Column>
         </Styled.Flex>
       </Styled.MobileTabContent>

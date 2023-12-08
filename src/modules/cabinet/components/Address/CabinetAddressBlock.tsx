@@ -5,9 +5,10 @@ import { IAddress } from '../../../../types/address';
 interface IProps {
   address: IAddress;
   removeHandler(id: number): void;
+  updateHandler(address: IAddress): void;
 }
 
-const CabinetAddressBlock: React.FC<IProps> = ({ address, removeHandler }) => (
+const CabinetAddressBlock: React.FC<IProps> = ({ address, removeHandler, updateHandler }) => (
   <Styled.Item>
     <Styled.Index>{address.id}</Styled.Index>
     <Styled.Text>{address.city}</Styled.Text>
@@ -16,7 +17,9 @@ const CabinetAddressBlock: React.FC<IProps> = ({ address, removeHandler }) => (
     </Styled.Text>
     <Styled.Text>{address.postal}</Styled.Text>
     <Styled.ButtonsContainer>
-      <Styled.Button type="button">Редагувати</Styled.Button>
+      <Styled.Button type="button" onClick={() => updateHandler(address)}>
+        Редагувати
+      </Styled.Button>
       <Styled.Button type="button" onClick={() => removeHandler(address.id)}>
         Видалити
       </Styled.Button>
