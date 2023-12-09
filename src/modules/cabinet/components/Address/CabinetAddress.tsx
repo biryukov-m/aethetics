@@ -37,6 +37,7 @@ const CabinetAddress: React.FC = () => {
                   updateHandler={updateHandler}
                   key={idx}
                   address={address}
+                  updating={address.uuid === updateAddress?.uuid}
                 />
               ))}
             </Styled.LeftColumn>
