@@ -3,7 +3,7 @@ import { Field, Form, Formik } from 'formik';
 import * as Styled from './CabinetAddressForm.styled';
 import { Button as StyledButton } from '../../../common/button/button.styled';
 import { addressValidationSchema } from '../../../../schemas/address.schema';
-import { IAddNewAddress, IAddress } from '../../../../types/address';
+import { IAddNewAddress, IAddress, IUpdateAddress } from '../../../../types/address';
 import addressService from '../../../../services/address.service';
 
 interface IProps {
@@ -37,7 +37,7 @@ export const CabinetAddressForm: React.FC<IProps> = ({
           const newAddress: IAddNewAddress = { ...values };
           addressService.add(newAddress);
         } else {
-          const updatedAddress: IAddress = { id: updateAddress.id, ...values };
+          const updatedAddress: IUpdateAddress = { uuid: updateAddress.uuid, ...values };
           addressService.update(updatedAddress);
         }
         setAddresses(addressService.addresses);

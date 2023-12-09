@@ -1,11 +1,11 @@
 import React from 'react';
 import * as Styled from './CabinetAddressBlock.styled';
-import { IAddress } from '../../../../types/address';
+import { IAddress, IUpdateAddress } from '../../../../types/address';
 
 interface IProps {
   address: IAddress;
-  removeHandler(id: number): void;
-  updateHandler(address: IAddress): void;
+  removeHandler(uuid: string): void;
+  updateHandler(address: IUpdateAddress): void;
 }
 
 const CabinetAddressBlock: React.FC<IProps> = ({ address, removeHandler, updateHandler }) => (
@@ -20,7 +20,7 @@ const CabinetAddressBlock: React.FC<IProps> = ({ address, removeHandler, updateH
       <Styled.Button type="button" onClick={() => updateHandler(address)}>
         Редагувати
       </Styled.Button>
-      <Styled.Button type="button" onClick={() => removeHandler(address.id)}>
+      <Styled.Button type="button" onClick={() => removeHandler(address.uuid)}>
         Видалити
       </Styled.Button>
     </Styled.ButtonsContainer>

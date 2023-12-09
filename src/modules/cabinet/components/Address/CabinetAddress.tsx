@@ -11,8 +11,8 @@ import { IAddress } from '../../../../types/address';
 const CabinetAddress: React.FC = () => {
   const [addresses, setAddresses] = useState(addressService.addresses);
   const [updateAddress, setUpdateAddress] = useState<IAddress | null>(null);
-  const removeHandler = (id: number) => {
-    addressService.remove(id);
+  const removeHandler = (uuid: string) => {
+    addressService.remove(uuid);
     setAddresses(addressService.addresses);
   };
   const updateHandler = (address: IAddress) => {
