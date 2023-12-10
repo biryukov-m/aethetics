@@ -1,16 +1,9 @@
 import React from 'react';
+import { IContacts } from '../../../../types/contacts';
 import { Button } from '../../../common/button/button.styled';
 import * as Styled from './CabinetContactsFilled.styled';
 
-interface IProps {
-  name: string;
-  surname: string;
-  email: string;
-  phone: string;
-  dob: string;
-}
-
-export const CabinetContactsFilled: React.FC<IProps> = ({ name, surname, email, phone, dob }) => (
+export const CabinetContactsFilled: React.FC<IContacts> = ({ name, surname, email, tel, dob }) => (
   <>
     <Styled.Grid>
       <Styled.Container>
@@ -27,11 +20,11 @@ export const CabinetContactsFilled: React.FC<IProps> = ({ name, surname, email, 
       </Styled.Container>
       <Styled.Container>
         <Styled.Label>Номер телефону:</Styled.Label>
-        <Styled.Text>{phone}</Styled.Text>
+        <Styled.Text>{tel}</Styled.Text>
       </Styled.Container>
       <Styled.Container>
         <Styled.Label>Дата народження:</Styled.Label>
-        <Styled.Text>{dob}</Styled.Text>
+        <Styled.Text>{dob || ''}</Styled.Text>
       </Styled.Container>
     </Styled.Grid>
     <Styled.BtnContainer>

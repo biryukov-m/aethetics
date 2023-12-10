@@ -1,12 +1,5 @@
 import STORAGE_KEYS from '../constants/storageKeys';
-
-interface IContact {
-  name: string;
-  surname: string;
-  tel: string;
-  email: string;
-  dob?: string;
-}
+import { IContacts } from '../types/contacts';
 
 class ContactsService {
   get contacts() {
@@ -14,12 +7,12 @@ class ContactsService {
     return contacts ? JSON.parse(contacts) : { name: '', surname: '', tel: '', email: '', dob: '' };
   }
 
-  set contacts(contacts: IContact) {
+  set contacts(contacts: IContacts) {
     const contactsString = JSON.stringify(contacts);
     sessionStorage.setItem(STORAGE_KEYS.contacts, contactsString);
   }
 
-  update(updateInfo: IContact) {
+  update(updateInfo: IContacts) {
     const { contacts } = this;
     const newContact = { ...contacts, ...updateInfo };
     this.contacts = newContact;

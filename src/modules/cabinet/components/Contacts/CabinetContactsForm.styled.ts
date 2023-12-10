@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { COLORS, FONTS, MEDIA } from '../../../theme';
 
-export const Form = styled.form`
+export const Wrapper = styled.div`
   max-width: 1016px;
   margin: 0 auto;
   position: relative;
@@ -81,3 +81,4 @@ export const SubmitBtnContainer = styled.div`
     margin-top: -42px;
   }
 `;
+export const Error = styled.span``;

@@ -1,39 +1,70 @@
+import { Field, Form, Formik } from 'formik';
 import React from 'react';
-
+import { contactsValidationSchema } from '../../../../schemas/contacts.schema';
+import contactsService from '../../../../services/contacts.service';
+import { IContacts } from '../../../../types/contacts';
 import {
   Button as StyledButton,
   ButtonArrowRight as StyledButtonArrowRight
 } from '../../../common/button/button.styled';
 import * as Styled from './CabinetContactsForm.styled';
 
-export const CabinetContactsForm: React.FC = () => (
-  <Styled.Form action="post" className="for-contacts">
-    <Styled.Flex>
-      <Styled.Column>
-        <label htmlFor="name">Ваше ім’я</label>
-        <input type="text" className="name" id="name" placeholder="Світлана" />
-        <label htmlFor="surname">Ваше прізвище</label>
-        <input type="text" className="surname" id="surname" placeholder="Світлана" />
-        <label htmlFor="email">E-mail</label>
-        <input type="email" className="email" id="email" placeholder="shevSv002@gmail.com" />
-      </Styled.Column>
-      <Styled.Column>
-        <label htmlFor="telephone">Номер телефону</label>
-        <input
-          type="telephone"
-          className="telephone"
-          id="telephone"
-          placeholder="+38 068 564 77 99"
-        />
-        <label htmlFor="date-of-birth">Дата народження</label>
-        <input type="text" className="date-of-birth" id="date-of-birth" placeholder="8.10.1989" />
-        <Styled.ExitBtnContainer>
-          <StyledButtonArrowRight>Вийти</StyledButtonArrowRight>
-        </Styled.ExitBtnContainer>
-      </Styled.Column>
-    </Styled.Flex>
-    <Styled.SubmitBtnContainer>
-      <StyledButton type="submit">Зберегти</StyledButton>
-    </Styled.SubmitBtnContainer>
-  </Styled.Form>
+interface IProps {
+  setContacts: React.Dispatch<React.SetStateAction<IContacts>>;
+}
+
+export const CabinetContactsForm: React.FC<IProps> = ({ setContacts }) => (
+  <Formik
+    initialValues={{
+      name: '',
+      surname: '',
+      tel: '',
+      email: '',
+      dob: ''
+    }}
+    validationSchema={contactsValidationSchema}
+    onSubmit={(values, { setSubmitting }) => {
+      const newContact = { ...values };
+      contactsService.contacts = newContact;
+      console.log(values);
+      setSubmitting(false);
+      setContacts(contactsService.contacts);
+    }}
+  >
+    {({ isSubmitting, errors, touched }) => (
+      <Form>
+        <Styled.Wrapper className="for-contacts">
+          <Styled.Flex>
+            <Styled.Column>
+              <label htmlFor="name">Ваше ім’я</label>
+              <Field type="text" name="name" id="name" placeholder="Світлана" />
+              <label htmlFor="surname">Ваше прізвище</label>
+              <Field type="text" name="surname" id="surname" placeholder="Світлана" />
+              <label htmlFor="email">E-mail</label>
+              <Field type="email" name="email" id="email" placeholder="shevSv002@gmail.com" />
+            </Styled.Column>
+            <Styled.Column>
+              <label htmlFor="tel">Номер телефону</label>
+              <Field type="tel" name="tel" id="tel" placeholder="+38 068 564 77 99" />
+              <label htmlFor="dob">Дата народження</label>
+              <Field type="text" name="dob" id="dob" placeholder="8.10.1989" />
+              <Styled.ExitBtnContainer>
+                <StyledButtonArrowRight>Вийти</StyledButtonArrowRight>
+              </Styled.ExitBtnContainer>
+            </Styled.Column>
+          </Styled.Flex>
+          <Styled.SubmitBtnContainer>
+            <StyledButton type="submit" disabled={isSubmitting}>
+              Зберегти
+            </StyledButton>
+          </Styled.SubmitBtnContainer>
+        </Styled.Wrapper>
+        {touched.name && <Styled.Error>{errors.name}</Styled.Error>}
+        {touched.surname && <Styled.Error>{errors.surname}</Styled.Error>}
+        {touched.email && <Styled.Error>{errors.email}</Styled.Error>}
+        {touched.tel && <Styled.Error>{errors.tel}</Styled.Error>}
+        {touched.dob && <Styled.Error>{errors.dob}</Styled.Error>}
+      </Form>
+    )}
+  </Formik>
 );
