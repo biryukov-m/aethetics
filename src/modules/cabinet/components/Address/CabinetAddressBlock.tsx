@@ -15,7 +15,7 @@ const CabinetAddressBlock: React.FC<IProps> = ({
   updateHandler,
   updating = false
 }) => (
-  <Styled.Item className={updating ? 'updating' : ''}>
+  <Styled.Item $updating={updating}>
     <Styled.Index>{address.id}</Styled.Index>
     <Styled.Text>{address.city}</Styled.Text>
     <Styled.Text>

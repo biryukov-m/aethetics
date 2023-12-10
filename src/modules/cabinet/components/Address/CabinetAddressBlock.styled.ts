@@ -1,24 +1,21 @@
 import styled from 'styled-components';
 import { COLORS, FONTS, MEDIA } from '../../../theme';
 
-export const Item = styled.div`
+export const Item = styled.div<{ $updating?: boolean }>`
   width: 100%;
   position: relative;
   margin-bottom: 20px;
   padding: 8px 8px 8px 60px;
+  box-shadow: ${(props) =>
+    props.$updating &&
+    'rgb(255, 255, 255, 1) 52px 0px 0px 0px inset, rgba(255, 255, 0, 0.2) -315px 0px 0px 0px inset;'};
   @media (max-width: ${MEDIA.tablet}px) {
     width: unset;
     padding: 4px 4px 4px 35px;
-
     margin-bottom: 0;
-  }
-  &.updating {
-    box-shadow: rgb(255, 255, 255, 1) 52px 0px 0px 0px inset,
-      rgba(255, 255, 0, 0.2) -315px 0px 0px 0px inset;
-    @media (max-width: ${MEDIA.tablet}px) {
-      box-shadow: rgb(255, 255, 255, 1) 32px 0px 0px 0px inset,
-        rgba(255, 255, 0, 0.2) -400px 0px 0px 0px inset;
-    }
+    box-shadow: ${(props) =>
+      props.$updating &&
+      'rgb(255, 255, 255, 1) 32px 0px 0px 0px inset, rgba(255, 255, 0, 0.2) -400px 0px 0px 0px inset;'};
   }
 `;
 export const Index = styled.div`
