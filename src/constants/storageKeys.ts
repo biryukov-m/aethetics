@@ -1,6 +1,7 @@
 const STORAGE_KEYS = {
   basket: 'basket',
-  address: 'address'
+  address: 'address',
+  contacts: 'contacts'
 };
 
 export default STORAGE_KEYS;
