@@ -19,7 +19,8 @@ const CabinetAddressBlock: React.FC<IProps> = ({
     <Styled.Index>{address.id}</Styled.Index>
     <Styled.Text>{address.city}</Styled.Text>
     <Styled.Text>
-      {address.street}, {address.house} {address.apartment ? ` ,${address.apartment}` : ''}
+      {address.street} {address.house}
+      {address.apartment ? `, ${address.apartment}` : ''}
     </Styled.Text>
     <Styled.Text>{address.postal}</Styled.Text>
     <Styled.ButtonsContainer>
