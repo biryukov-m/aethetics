@@ -25,9 +25,8 @@ const CabinetAddress: React.FC = () => {
           Контактна інформація
         </Link>
       </Styled.MobileTab>
-
       <Styled.MobileTabContent>
-        <Styled.MobileTab>Адресна книга</Styled.MobileTab>
+        <Styled.MobileTab $active>Адресна книга</Styled.MobileTab>
         <Styled.Flex>
           {addresses.length > 0 && (
             <Styled.LeftColumn>

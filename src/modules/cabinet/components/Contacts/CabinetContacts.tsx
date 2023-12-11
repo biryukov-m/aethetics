@@ -11,7 +11,7 @@ const CabinetContacts: React.FC = () => {
   const [updating, setUpdating] = useState(false);
   return (
     <>
-      <Styled.MobileTab className="active">Контактна інформація</Styled.MobileTab>
+      <Styled.MobileTab $active>Контактна інформація</Styled.MobileTab>
       <Styled.MobileTabContent>
         {contacts && contacts.name.length > 0 ? (
           updating ? (

@@ -31,12 +31,8 @@ export const Header = styled.h2`
     font-size: clamp(${FONTS.SIZES.m}, 3.7vw, ${FONTS.SIZES.xl});
   }
 `;
-export const MobileTab = styled.h3`
+export const MobileTab = styled.h3<{ $active?: boolean }>`
   display: none;
-  a {
-    color: inherit;
-    text-decoration: none;
-  }
   @media (max-width: ${MEDIA.tablet}px) {
     display: block;
     font-size: clamp(${FONTS.SIZES.s}, 3.3vw, ${FONTS.SIZES.m});
@@ -55,20 +51,23 @@ export const MobileTab = styled.h3`
       height: 6px;
       background: url(${expandIcon}) no-repeat center;
     }
-    &:hover,
-    &.active {
-      cursor: pointer;
-      font-weight: ${FONTS.WEIGHTS.bold};
-    }
-    &.active {
+    ${(props) =>
+      props.$active &&
+      `font-weight: ${FONTS.WEIGHTS.bold};       
       @media (max-width: ${MEDIA.tablet}px) {
         &::after {
           transform: rotate(180deg);
         }
-        &:hover {
-          cursor: default;
-        }
-      }
+      }`}
+  }
+  a {
+    color: inherit;
+    text-decoration: none;
+    width: 100%;
+    height: 100%;
+    &:hover {
+      cursor: pointer;
+      font-weight: ${FONTS.WEIGHTS.bold};
     }
   }
 `;
