@@ -43,17 +43,41 @@ export const CabinetContactsForm: React.FC<IProps> = ({
           <Styled.Flex>
             <Styled.Column>
               <label htmlFor="name">Ваше ім’я</label>
-              <Field type="text" name="name" id="name" placeholder="Світлана" />
+              <Field
+                type="text"
+                name="name"
+                id="name"
+                autocomplete="given-name"
+                placeholder="Світлана"
+              />
               <label htmlFor="surname">Ваше прізвище</label>
-              <Field type="text" name="surname" id="surname" placeholder="Світлана" />
+              <Field
+                type="text"
+                name="surname"
+                id="surname"
+                autocomplete="family-name"
+                placeholder="Світлана"
+              />
               <label htmlFor="email">E-mail</label>
-              <Field type="email" name="email" id="email" placeholder="shevSv002@gmail.com" />
+              <Field
+                type="email"
+                name="email"
+                id="email"
+                autocomplete="email"
+                placeholder="shevSv002@gmail.com"
+              />
             </Styled.Column>
             <Styled.Column>
               <label htmlFor="tel">Номер телефону</label>
-              <Field type="tel" name="tel" id="tel" placeholder="+38 068 564 77 99" />
+              <Field
+                type="tel"
+                name="tel"
+                id="tel"
+                autocomplete="tel"
+                placeholder="+38 068 564 77 99"
+              />
               <label htmlFor="dob">Дата народження</label>
-              <Field type="text" name="dob" id="dob" placeholder="8.10.1989" />
+              <Field type="text" name="dob" id="dob" autocomplete="bday" placeholder="8.10.1989" />
               <Styled.ExitBtnContainer>
                 <StyledButtonArrowRight>Вийти</StyledButtonArrowRight>
               </Styled.ExitBtnContainer>

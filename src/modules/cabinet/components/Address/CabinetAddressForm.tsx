@@ -61,6 +61,7 @@ export const CabinetAddressForm: React.FC<IProps> = ({
               name="city"
               placeholder="Місто"
               required
+              autocomplete="shiping city address-level2"
             />
 
             <Styled.InputGroup>
@@ -71,6 +72,7 @@ export const CabinetAddressForm: React.FC<IProps> = ({
                 name="street"
                 placeholder="Вулиця"
                 required
+                autocomplete="shiping street address-level3"
               />
 
               <Field
@@ -80,6 +82,7 @@ export const CabinetAddressForm: React.FC<IProps> = ({
                 name="house"
                 placeholder="Корпус"
                 required
+                autocomplete="shiping address-level4"
               />
 
               <Field
@@ -98,6 +101,7 @@ export const CabinetAddressForm: React.FC<IProps> = ({
               id="postal"
               placeholder="Поштове відділення або індекс"
               required
+              autocomplete="shipping postal-code"
             />
 
             <Styled.ButtonContainer>
