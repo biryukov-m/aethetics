@@ -8,18 +8,24 @@ import contactsService from '../../../../services/contacts.service';
 
 const CabinetContacts: React.FC = () => {
   const [contacts, setContacts] = useState(contactsService.contacts);
+  const [updating, setUpdating] = useState(false);
   return (
     <>
       <Styled.MobileTab className="active">Контактна інформація</Styled.MobileTab>
       <Styled.MobileTabContent>
-        <CabinetContactsForm setContacts={setContacts} />
-        <CabinetContactsFilled
-          name={contacts.name}
-          surname={contacts.surname}
-          email={contacts.email}
-          tel={contacts.tel}
-          dob={contacts.dob}
-        />
+        {contacts && contacts.name.length > 0 ? (
+          updating ? (
+            <CabinetContactsForm
+              setContacts={setContacts}
+              setUpdating={setUpdating}
+              initialValues={contacts}
+            />
+          ) : (
+            <CabinetContactsFilled contacts={contacts} setUpdating={setUpdating} />
+          )
+        ) : (
+          <CabinetContactsForm setContacts={setContacts} setUpdating={setUpdating} />
+        )}
       </Styled.MobileTabContent>
       <Styled.MobileTab>
         <Link to={`/${ROUTER_KEYS.cabinet.root}/${ROUTER_KEYS.cabinet.address}`}>

@@ -11,23 +11,29 @@ import * as Styled from './CabinetContactsForm.styled';
 
 interface IProps {
   setContacts: React.Dispatch<React.SetStateAction<IContacts>>;
+  setUpdating: React.Dispatch<React.SetStateAction<boolean>>;
+  initialValues?: IContacts;
 }
 
-export const CabinetContactsForm: React.FC<IProps> = ({ setContacts }) => (
+export const CabinetContactsForm: React.FC<IProps> = ({
+  setContacts,
+  setUpdating,
+  initialValues = {
+    name: '',
+    surname: '',
+    tel: '',
+    email: '',
+    dob: ''
+  }
+}) => (
   <Formik
-    initialValues={{
-      name: '',
-      surname: '',
-      tel: '',
-      email: '',
-      dob: ''
-    }}
+    initialValues={initialValues}
     validationSchema={contactsValidationSchema}
     onSubmit={(values, { setSubmitting }) => {
       const newContact = { ...values };
       contactsService.contacts = newContact;
-      console.log(values);
       setSubmitting(false);
+      setUpdating(false);
       setContacts(contactsService.contacts);
     }}
   >
