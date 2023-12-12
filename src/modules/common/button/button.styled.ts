@@ -132,3 +132,19 @@ export const ButtonArrowRight = styled.button`
     }
   }
 `;
+
+export const ButtonWhite = styled(ButtonArrowRight)`
+  transition: all 0.2s linear;
+  color: ${COLORS.accent};
+  &:hover {
+    background-color: ${COLORS.accent};
+    color: ${COLORS.white};
+    border-color: ${COLORS.white};
+  }
+  &::before {
+    display: none;
+  }
+  &:hover::before {
+    transform: none;
+  }
+`;

@@ -5,19 +5,22 @@ import contactsService from '../../../../services/contacts.service';
 import { IContacts } from '../../../../types/contacts';
 import {
   Button as StyledButton,
-  ButtonArrowRight as StyledButtonArrowRight
+  ButtonArrowRight as StyledButtonArrowRight,
+  ButtonWhite as StyledButtonWhite
 } from '../../../common/button/button.styled';
 import * as Styled from './CabinetContactsForm.styled';
 
 interface IProps {
   setContacts: React.Dispatch<React.SetStateAction<IContacts>>;
-  setUpdating: React.Dispatch<React.SetStateAction<boolean>>;
+  isUpdating: boolean;
+  setIsUpdating: React.Dispatch<React.SetStateAction<boolean>>;
   initialValues?: IContacts;
 }
 
 export const CabinetContactsForm: React.FC<IProps> = ({
   setContacts,
-  setUpdating,
+  isUpdating,
+  setIsUpdating,
   initialValues = {
     name: '',
     surname: '',
@@ -28,18 +31,19 @@ export const CabinetContactsForm: React.FC<IProps> = ({
 }) => (
   <Formik
     initialValues={initialValues}
+    enableReinitialize
     validationSchema={contactsValidationSchema}
     onSubmit={(values, { setSubmitting }) => {
       const newContact = { ...values };
       contactsService.contacts = newContact;
       setSubmitting(false);
-      setUpdating(false);
+      setIsUpdating(false);
       setContacts(contactsService.contacts);
     }}
   >
     {({ isSubmitting, errors, touched }) => (
       <Form>
-        <Styled.Wrapper className="for-contacts">
+        <Styled.Wrapper>
           <Styled.Flex>
             <Styled.Column>
               <label htmlFor="name">Ваше ім’я</label>
@@ -79,7 +83,19 @@ export const CabinetContactsForm: React.FC<IProps> = ({
               <label htmlFor="dob">Дата народження</label>
               <Field type="text" name="dob" id="dob" autocomplete="bday" placeholder="8.10.1989" />
               <Styled.ExitBtnContainer>
-                <StyledButtonArrowRight>Вийти</StyledButtonArrowRight>
+                {isUpdating ? (
+                  <StyledButtonWhite
+                    onClick={() => {
+                      contactsService.remove();
+                      setContacts(contactsService.contacts);
+                      setIsUpdating(false);
+                    }}
+                  >
+                    Видалити контакти
+                  </StyledButtonWhite>
+                ) : (
+                  <StyledButtonArrowRight>Вийти</StyledButtonArrowRight>
+                )}
               </Styled.ExitBtnContainer>
             </Styled.Column>
           </Styled.Flex>
