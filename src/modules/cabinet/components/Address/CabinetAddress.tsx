@@ -14,6 +14,9 @@ const CabinetAddress: React.FC = () => {
   const removeHandler = (uuid: string) => {
     addressService.remove(uuid);
     setAddresses(addressService.addresses);
+    if (updateAddress?.uuid === uuid) {
+      setUpdateAddress(null);
+    }
   };
   const updateHandler = (address: IAddress) => {
     setUpdateAddress(address);

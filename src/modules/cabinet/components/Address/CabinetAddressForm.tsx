@@ -32,7 +32,7 @@ export const CabinetAddressForm: React.FC<IProps> = ({
       enableReinitialize
       initialValues={initialValues}
       validationSchema={addressValidationSchema}
-      onSubmit={(values, { setSubmitting }) => {
+      onSubmit={(values, { setSubmitting, resetForm }) => {
         if (updateAddress === null) {
           const newAddress: IAddNewAddress = { ...values };
           addressService.add(newAddress);
@@ -43,6 +43,7 @@ export const CabinetAddressForm: React.FC<IProps> = ({
         setAddresses(addressService.addresses);
         setSubmitting(false);
         setUpdateAddress(null);
+        resetForm();
       }}
     >
       {({ isSubmitting, errors, touched }) => (
