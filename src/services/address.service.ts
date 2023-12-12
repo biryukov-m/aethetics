@@ -1,5 +1,6 @@
+import { v4 as uuidv4 } from 'uuid';
 import STORAGE_KEYS from '../constants/storageKeys';
-import { IAddNewAddress, IAddress } from '../types/address';
+import { IAddNewAddress, IAddress, IUpdateAddress } from '../types/address';
 
 class AddressService {
   get addresses() {
@@ -11,8 +12,8 @@ class AddressService {
     localStorage.setItem(STORAGE_KEYS.address, JSON.stringify(addresses));
   }
 
-  getById(id: number) {
-    return this.addresses.find((address) => address.id === id);
+  getByUUID(uuid: string) {
+    return this.addresses.find((address) => address.uuid === uuid);
   }
 
   private getNextId() {
@@ -21,6 +22,10 @@ class AddressService {
     }
     const ids = this.addresses.map((address) => address.id);
     return Math.max(...ids) + 1;
+  }
+
+  private generateUUID(): string {
+    return uuidv4();
   }
 
   private recalculateIds() {
@@ -34,29 +39,30 @@ class AddressService {
   }
 
   add(address: IAddNewAddress) {
-    const addressWithId = { ...address, id: this.getNextId() };
-    this.addresses = [...this.addresses, addressWithId];
+    const newAddress = { ...address, id: this.getNextId(), uuid: this.generateUUID() };
+    this.addresses = [...this.addresses, newAddress];
   }
 
-  remove(id: number) {
-    const foundAddress = this.getById(id);
+  remove(uuid: string) {
+    const foundAddress = this.getByUUID(uuid);
     if (foundAddress) {
-      this.addresses = this.addresses.filter((address) => address.id !== id);
+      this.addresses = this.addresses.filter((address) => address.uuid !== uuid);
       this.recalculateIds();
     }
   }
 
-  update(address: IAddress) {
+  update(address: IUpdateAddress) {
     const { addresses } = this;
-    const foundAddress = this.getById(address.id);
+    const foundAddress = this.getByUUID(address.uuid);
     if (foundAddress) {
       const updatedAddress = { ...foundAddress, ...address };
       this.addresses = addresses.map((item) => {
-        if (item.id === address.id) {
+        if (item.uuid === address.uuid) {
           return updatedAddress;
         }
         return item;
       });
+      this.recalculateIds();
     }
   }
 }

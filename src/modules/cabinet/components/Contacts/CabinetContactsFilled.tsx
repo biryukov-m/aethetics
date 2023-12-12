@@ -1,41 +1,41 @@
 import React from 'react';
+import { IContacts } from '../../../../types/contacts';
 import { Button } from '../../../common/button/button.styled';
 import * as Styled from './CabinetContactsFilled.styled';
 
 interface IProps {
-  name: string;
-  surname: string;
-  email: string;
-  phone: string;
-  dob: string;
+  contacts: IContacts;
+  setIsUpdating: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-export const CabinetContactsFilled: React.FC<IProps> = ({ name, surname, email, phone, dob }) => (
+export const CabinetContactsFilled: React.FC<IProps> = ({ contacts, setIsUpdating }) => (
   <>
     <Styled.Grid>
       <Styled.Container>
         <Styled.Label>Ім’я:</Styled.Label>
-        <Styled.Text>{name}</Styled.Text>
+        <Styled.Text>{contacts.name}</Styled.Text>
       </Styled.Container>
       <Styled.Container>
         <Styled.Label>Прізвище:</Styled.Label>
-        <Styled.Text>{surname}</Styled.Text>
+        <Styled.Text>{contacts.surname}</Styled.Text>
       </Styled.Container>
       <Styled.Container>
         <Styled.Label>E-mail:</Styled.Label>
-        <Styled.Text>{email}</Styled.Text>
+        <Styled.Text>{contacts.email}</Styled.Text>
       </Styled.Container>
       <Styled.Container>
         <Styled.Label>Номер телефону:</Styled.Label>
-        <Styled.Text>{phone}</Styled.Text>
+        <Styled.Text>{contacts.tel}</Styled.Text>
       </Styled.Container>
       <Styled.Container>
         <Styled.Label>Дата народження:</Styled.Label>
-        <Styled.Text>{dob}</Styled.Text>
+        <Styled.Text>{contacts.dob || ''}</Styled.Text>
       </Styled.Container>
     </Styled.Grid>
     <Styled.BtnContainer>
-      <Button type="submit">Редагувати</Button>
+      <Button type="button" onClick={() => setIsUpdating(true)}>
+        Редагувати
+      </Button>
     </Styled.BtnContainer>
   </>
 );

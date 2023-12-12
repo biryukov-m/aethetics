@@ -3,7 +3,7 @@ import { Field, Form, Formik } from 'formik';
 import * as Styled from './CabinetAddressForm.styled';
 import { Button as StyledButton } from '../../../common/button/button.styled';
 import { addressValidationSchema } from '../../../../schemas/address.schema';
-import { IAddNewAddress, IAddress } from '../../../../types/address';
+import { IAddNewAddress, IAddress, IUpdateAddress } from '../../../../types/address';
 import addressService from '../../../../services/address.service';
 
 interface IProps {
@@ -32,17 +32,18 @@ export const CabinetAddressForm: React.FC<IProps> = ({
       enableReinitialize
       initialValues={initialValues}
       validationSchema={addressValidationSchema}
-      onSubmit={(values, { setSubmitting }) => {
+      onSubmit={(values, { setSubmitting, resetForm }) => {
         if (updateAddress === null) {
           const newAddress: IAddNewAddress = { ...values };
           addressService.add(newAddress);
         } else {
-          const updatedAddress: IAddress = { id: updateAddress.id, ...values };
+          const updatedAddress: IUpdateAddress = { uuid: updateAddress.uuid, ...values };
           addressService.update(updatedAddress);
         }
         setAddresses(addressService.addresses);
         setSubmitting(false);
         setUpdateAddress(null);
+        resetForm();
       }}
     >
       {({ isSubmitting, errors, touched }) => (
@@ -61,6 +62,7 @@ export const CabinetAddressForm: React.FC<IProps> = ({
               name="city"
               placeholder="Місто"
               required
+              autocomplete="shiping city address-level2"
             />
 
             <Styled.InputGroup>
@@ -71,6 +73,7 @@ export const CabinetAddressForm: React.FC<IProps> = ({
                 name="street"
                 placeholder="Вулиця"
                 required
+                autocomplete="shiping street address-level3"
               />
 
               <Field
@@ -80,6 +83,7 @@ export const CabinetAddressForm: React.FC<IProps> = ({
                 name="house"
                 placeholder="Корпус"
                 required
+                autocomplete="shiping address-level4"
               />
 
               <Field
@@ -98,6 +102,7 @@ export const CabinetAddressForm: React.FC<IProps> = ({
               id="postal"
               placeholder="Поштове відділення або індекс"
               required
+              autocomplete="shipping postal-code"
             />
 
             <Styled.ButtonContainer>

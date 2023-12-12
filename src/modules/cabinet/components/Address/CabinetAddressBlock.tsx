@@ -1,26 +1,33 @@
 import React from 'react';
 import * as Styled from './CabinetAddressBlock.styled';
-import { IAddress } from '../../../../types/address';
+import { IAddress, IUpdateAddress } from '../../../../types/address';
 
 interface IProps {
   address: IAddress;
-  removeHandler(id: number): void;
-  updateHandler(address: IAddress): void;
+  removeHandler(uuid: string): void;
+  updateHandler(address: IUpdateAddress): void;
+  updating: boolean;
 }
 
-const CabinetAddressBlock: React.FC<IProps> = ({ address, removeHandler, updateHandler }) => (
-  <Styled.Item>
+const CabinetAddressBlock: React.FC<IProps> = ({
+  address,
+  removeHandler,
+  updateHandler,
+  updating = false
+}) => (
+  <Styled.Item $updating={updating}>
     <Styled.Index>{address.id}</Styled.Index>
     <Styled.Text>{address.city}</Styled.Text>
     <Styled.Text>
-      {address.street}, {address.house} {address.apartment ? ` ,${address.apartment}` : ''}
+      {address.street} {address.house}
+      {address.apartment ? `, ${address.apartment}` : ''}
     </Styled.Text>
     <Styled.Text>{address.postal}</Styled.Text>
     <Styled.ButtonsContainer>
       <Styled.Button type="button" onClick={() => updateHandler(address)}>
         Редагувати
       </Styled.Button>
-      <Styled.Button type="button" onClick={() => removeHandler(address.id)}>
+      <Styled.Button type="button" onClick={() => removeHandler(address.uuid)}>
         Видалити
       </Styled.Button>
     </Styled.ButtonsContainer>

@@ -11,9 +11,12 @@ import { IAddress } from '../../../../types/address';
 const CabinetAddress: React.FC = () => {
   const [addresses, setAddresses] = useState(addressService.addresses);
   const [updateAddress, setUpdateAddress] = useState<IAddress | null>(null);
-  const removeHandler = (id: number) => {
-    addressService.remove(id);
+  const removeHandler = (uuid: string) => {
+    addressService.remove(uuid);
     setAddresses(addressService.addresses);
+    if (updateAddress?.uuid === uuid) {
+      setUpdateAddress(null);
+    }
   };
   const updateHandler = (address: IAddress) => {
     setUpdateAddress(address);
@@ -25,9 +28,8 @@ const CabinetAddress: React.FC = () => {
           Контактна інформація
         </Link>
       </Styled.MobileTab>
-
       <Styled.MobileTabContent>
-        <Styled.MobileTab>Адресна книга</Styled.MobileTab>
+        <Styled.MobileTab $active>Адресна книга</Styled.MobileTab>
         <Styled.Flex>
           {addresses.length > 0 && (
             <Styled.LeftColumn>
@@ -37,6 +39,7 @@ const CabinetAddress: React.FC = () => {
                   updateHandler={updateHandler}
                   key={idx}
                   address={address}
+                  updating={address.uuid === updateAddress?.uuid}
                 />
               ))}
             </Styled.LeftColumn>
