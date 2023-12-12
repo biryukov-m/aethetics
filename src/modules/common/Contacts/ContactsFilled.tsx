@@ -1,14 +1,14 @@
 import React from 'react';
-import { IContacts } from '../../../../types/contacts';
-import { Button } from '../../../common/button/button.styled';
-import * as Styled from './CabinetContactsFilled.styled';
+import { IContacts } from '../../../types/contacts';
+import { Button } from '../button/button.styled';
+import * as Styled from './ContactsFilled.styled';
 
 interface IProps {
   contacts: IContacts;
   setIsUpdating: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-export const CabinetContactsFilled: React.FC<IProps> = ({ contacts, setIsUpdating }) => (
+export const ContactsFilled: React.FC<IProps> = ({ contacts, setIsUpdating }) => (
   <>
     <Styled.Grid>
       <Styled.Container>

@@ -1,14 +1,14 @@
 import { Field, Form, Formik } from 'formik';
 import React from 'react';
-import { contactsValidationSchema } from '../../../../schemas/contacts.schema';
-import contactsService from '../../../../services/contacts.service';
-import { IContacts } from '../../../../types/contacts';
+import { contactsValidationSchema } from '../../../schemas/contacts.schema';
+import contactsService from '../../../services/contacts.service';
+import { IContacts } from '../../../types/contacts';
 import {
   Button as StyledButton,
   ButtonArrowRight as StyledButtonArrowRight,
   ButtonWhite as StyledButtonWhite
-} from '../../../common/button/button.styled';
-import * as Styled from './CabinetContactsForm.styled';
+} from '../button/button.styled';
+import * as Styled from './ContactsForm.styled';
 
 interface IProps {
   setContacts: React.Dispatch<React.SetStateAction<IContacts>>;
@@ -17,7 +17,7 @@ interface IProps {
   initialValues?: IContacts;
 }
 
-export const CabinetContactsForm: React.FC<IProps> = ({
+export const ContactsForm: React.FC<IProps> = ({
   setContacts,
   isUpdating,
   setIsUpdating,
