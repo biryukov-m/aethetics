@@ -3,7 +3,7 @@ import { COLORS, FONTS } from '../theme';
 
 export const Overlay = styled.div`
   position: absolute;
-  z-index: 100;
+  z-index: 1000;
   height: 5000vh;
   left: 0;
   right: 0;
@@ -11,7 +11,7 @@ export const Overlay = styled.div`
 export const Wrapper = styled.div`
   position: absolute;
   right: 0;
-  z-index: 1;
+  z-index: 100;
   width: 515px;
   background: ${COLORS.white};
   padding: 26px;
