@@ -5,10 +5,10 @@ import * as Styled from './ContactsFilled.styled';
 
 interface IProps {
   contacts: IContacts;
-  setIsUpdating: React.Dispatch<React.SetStateAction<boolean>>;
+  handleContactsUpdate: () => void;
 }
 
-export const ContactsFilled: React.FC<IProps> = ({ contacts, setIsUpdating }) => (
+export const ContactsFilled: React.FC<IProps> = ({ contacts, handleContactsUpdate }) => (
   <>
     <Styled.Grid>
       <Styled.Container>
@@ -33,7 +33,7 @@ export const ContactsFilled: React.FC<IProps> = ({ contacts, setIsUpdating }) =>
       </Styled.Container>
     </Styled.Grid>
     <Styled.BtnContainer>
-      <Button type="button" onClick={() => setIsUpdating(true)}>
+      <Button type="button" onClick={() => handleContactsUpdate()}>
         Редагувати
       </Button>
     </Styled.BtnContainer>

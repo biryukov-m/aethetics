@@ -1,13 +1,7 @@
 import styled from 'styled-components';
 import { COLORS, FONTS, MEDIA } from '../../theme';
 
-export const Wrapper = styled.div`
-  max-width: 1016px;
-  margin: 0 auto;
-  position: relative;
-  @media (max-width: ${MEDIA.tablet}px) {
-    display: block;
-  }
+export const Container = styled.div`
   label,
   input,
   input::placeholder {
@@ -41,7 +35,6 @@ export const Wrapper = styled.div`
     }
   }
 `;
-
 export const Flex = styled.div`
   display: flex;
   flex-direction: row;
@@ -69,9 +62,7 @@ export const Column = styled.div`
     }
   }
 `;
-export const ExitBtnContainer = styled.div`
-  margin-top: 5px;
-  margin-right: 12px;
+export const SecondaryBtnContainer = styled.div`
   @media (max-width: ${MEDIA.tablet}px) {
     align-self: flex-end;
   }
@@ -81,4 +72,3 @@ export const SubmitBtnContainer = styled.div`
     margin-top: -42px;
   }
 `;
-export const Error = styled.span``;

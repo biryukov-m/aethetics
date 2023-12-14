@@ -11,39 +11,29 @@ import {
 import * as Styled from './ContactsForm.styled';
 
 interface IProps {
-  setContacts: React.Dispatch<React.SetStateAction<IContacts>>;
   isUpdating: boolean;
-  setIsUpdating: React.Dispatch<React.SetStateAction<boolean>>;
-  initialValues?: IContacts;
+  handleContactsUpdate: () => void;
+  initialValues: IContacts;
 }
 
 export const ContactsForm: React.FC<IProps> = ({
-  setContacts,
   isUpdating,
-  setIsUpdating,
-  initialValues = {
-    name: '',
-    surname: '',
-    tel: '',
-    email: '',
-    dob: ''
-  }
+  handleContactsUpdate,
+  initialValues
 }) => (
   <Formik
     initialValues={initialValues}
     enableReinitialize
     validationSchema={contactsValidationSchema}
     onSubmit={(values, { setSubmitting }) => {
-      const newContact = { ...values };
-      contactsService.contacts = newContact;
+      contactsService.contacts = { ...values };
       setSubmitting(false);
-      setIsUpdating(false);
-      setContacts(contactsService.contacts);
+      handleContactsUpdate();
     }}
   >
-    {({ isSubmitting, errors, touched }) => (
+    {({ isSubmitting }) => (
       <Form>
-        <Styled.Wrapper>
+        <Styled.Container>
           <Styled.Flex>
             <Styled.Column>
               <label htmlFor="name">Ваше ім’я</label>
@@ -51,7 +41,7 @@ export const ContactsForm: React.FC<IProps> = ({
                 type="text"
                 name="name"
                 id="name"
-                autocomplete="given-name"
+                autoComplete="given-name"
                 placeholder="Світлана"
               />
               <label htmlFor="surname">Ваше прізвище</label>
@@ -59,7 +49,7 @@ export const ContactsForm: React.FC<IProps> = ({
                 type="text"
                 name="surname"
                 id="surname"
-                autocomplete="family-name"
+                autoComplete="family-name"
                 placeholder="Світлана"
               />
               <label htmlFor="email">E-mail</label>
@@ -67,7 +57,7 @@ export const ContactsForm: React.FC<IProps> = ({
                 type="email"
                 name="email"
                 id="email"
-                autocomplete="email"
+                autoComplete="email"
                 placeholder="shevSv002@gmail.com"
               />
             </Styled.Column>
@@ -77,26 +67,26 @@ export const ContactsForm: React.FC<IProps> = ({
                 type="tel"
                 name="tel"
                 id="tel"
-                autocomplete="tel"
+                autoComplete="tel"
                 placeholder="+38 068 564 77 99"
               />
               <label htmlFor="dob">Дата народження</label>
-              <Field type="text" name="dob" id="dob" autocomplete="bday" placeholder="8.10.1989" />
-              <Styled.ExitBtnContainer>
+              <Field type="text" name="dob" id="dob" autoComplete="bday" placeholder="8.10.1989" />
+              <Styled.SecondaryBtnContainer>
                 {isUpdating ? (
                   <StyledButtonWhite
                     onClick={() => {
                       contactsService.remove();
-                      setContacts(contactsService.contacts);
-                      setIsUpdating(false);
+                      handleContactsUpdate();
                     }}
+                    disabled={isSubmitting}
                   >
                     Видалити контакти
                   </StyledButtonWhite>
                 ) : (
-                  <StyledButtonArrowRight>Вийти</StyledButtonArrowRight>
+                  <StyledButtonArrowRight disabled={isSubmitting}>Вийти</StyledButtonArrowRight>
                 )}
-              </Styled.ExitBtnContainer>
+              </Styled.SecondaryBtnContainer>
             </Styled.Column>
           </Styled.Flex>
           <Styled.SubmitBtnContainer>
@@ -104,12 +94,7 @@ export const ContactsForm: React.FC<IProps> = ({
               Зберегти
             </StyledButton>
           </Styled.SubmitBtnContainer>
-        </Styled.Wrapper>
-        {touched.name && <Styled.Error>{errors.name}</Styled.Error>}
-        {touched.surname && <Styled.Error>{errors.surname}</Styled.Error>}
-        {touched.email && <Styled.Error>{errors.email}</Styled.Error>}
-        {touched.tel && <Styled.Error>{errors.tel}</Styled.Error>}
-        {touched.dob && <Styled.Error>{errors.dob}</Styled.Error>}
+        </Styled.Container>
       </Form>
     )}
   </Formik>
