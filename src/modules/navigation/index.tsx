@@ -6,7 +6,7 @@ import Catalogue from '../catalogue/pages/catalogue/Catalogue';
 import ProductCard from '../catalogue/pages/product-card/ProductCard';
 import Blog from '../blog/pages/blog/Blog';
 import Cabinet from '../cabinet/pages/Cabinet';
-import Contacts from '../contacts/pages/Contacts';
+import ShopContacts from '../contacts/pages/ShopContacts';
 import DeliveryPayment from '../delivery-payment/pages/DeliveryPayment';
 import Order from '../order/pages/Order';
 import CabinetAddress from '../cabinet/components/Address/CabinetAddress';
@@ -25,7 +25,7 @@ export const MainRouter = () => (
         <Route path="delivery-and-payment" element={<DeliveryPayment />} />
         <Route path="blog/:id" element={<Blog />} />
         <Route path="blog" element={<Blog />} />
-        <Route path="contacts" element={<Contacts />} />
+        <Route path="contacts" element={<ShopContacts />} />
         <Route path={ROUTER_KEYS.cabinet.root} element={<Cabinet />}>
           <Route index element={<Navigate to={ROUTER_KEYS.cabinet.contacts} />} />
           <Route path={ROUTER_KEYS.cabinet.address} element={<CabinetAddress />} />
