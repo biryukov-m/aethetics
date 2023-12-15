@@ -52,14 +52,6 @@ export const ContactsForm: React.FC<IProps> = ({
                 autoComplete="family-name"
                 placeholder="Світлана"
               />
-              <label htmlFor="email">E-mail</label>
-              <Field
-                type="email"
-                name="email"
-                id="email"
-                autoComplete="email"
-                placeholder="shevSv002@gmail.com"
-              />
             </Styled.Column>
             <Styled.Column>
               <label htmlFor="tel">Номер телефону</label>
@@ -70,8 +62,25 @@ export const ContactsForm: React.FC<IProps> = ({
                 autoComplete="tel"
                 placeholder="+38 068 564 77 99"
               />
-              <label htmlFor="dob">Дата народження</label>
-              <Field type="text" name="dob" id="dob" autoComplete="bday" placeholder="8.10.1989" />
+              <label htmlFor="email">E-mail</label>
+              <Field
+                type="email"
+                name="email"
+                id="email"
+                autoComplete="email"
+                placeholder="shevSv002@gmail.com"
+              />
+            </Styled.Column>
+          </Styled.Flex>
+          <Styled.FlexBtns>
+            <Styled.Column>
+              <Styled.SubmitBtnContainer>
+                <StyledButton type="submit" disabled={isSubmitting}>
+                  Зберегти
+                </StyledButton>
+              </Styled.SubmitBtnContainer>
+            </Styled.Column>
+            <Styled.Column>
               <Styled.SecondaryBtnContainer>
                 {isUpdating ? (
                   <StyledButtonWhite
@@ -81,19 +90,14 @@ export const ContactsForm: React.FC<IProps> = ({
                     }}
                     disabled={isSubmitting}
                   >
-                    Видалити контакти
+                    Видалити
                   </StyledButtonWhite>
                 ) : (
                   <StyledButtonArrowRight disabled={isSubmitting}>Вийти</StyledButtonArrowRight>
                 )}
               </Styled.SecondaryBtnContainer>
             </Styled.Column>
-          </Styled.Flex>
-          <Styled.SubmitBtnContainer>
-            <StyledButton type="submit" disabled={isSubmitting}>
-              Зберегти
-            </StyledButton>
-          </Styled.SubmitBtnContainer>
+          </Styled.FlexBtns>
         </Styled.Container>
       </Form>
     )}

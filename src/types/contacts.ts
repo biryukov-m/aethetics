@@ -3,5 +3,4 @@ export interface IContacts {
   surname: string;
   tel: string;
   email: string;
-  dob?: string;
 }

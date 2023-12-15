@@ -4,7 +4,7 @@ import { IContacts } from '../types/contacts';
 class ContactsService {
   get contacts() {
     const contacts = sessionStorage.getItem(STORAGE_KEYS.contacts);
-    return contacts ? JSON.parse(contacts) : { name: '', surname: '', tel: '', email: '', dob: '' };
+    return contacts ? JSON.parse(contacts) : { name: '', surname: '', tel: '', email: '' };
   }
 
   set contacts(contacts: IContacts) {
@@ -19,7 +19,7 @@ class ContactsService {
   }
 
   remove() {
-    this.contacts = { name: '', surname: '', tel: '', email: '', dob: '' };
+    this.contacts = { name: '', surname: '', tel: '', email: '' };
   }
 }
 const contactsService = new ContactsService();

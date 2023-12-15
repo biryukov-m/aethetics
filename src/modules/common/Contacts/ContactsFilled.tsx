@@ -27,10 +27,6 @@ export const ContactsFilled: React.FC<IProps> = ({ contacts, handleContactsUpdat
         <Styled.Label>Номер телефону:</Styled.Label>
         <Styled.Text>{contacts.tel}</Styled.Text>
       </Styled.Container>
-      <Styled.Container>
-        <Styled.Label>Дата народження:</Styled.Label>
-        <Styled.Text>{contacts.dob || ''}</Styled.Text>
-      </Styled.Container>
     </Styled.Grid>
     <Styled.BtnContainer>
       <Button type="button" onClick={() => handleContactsUpdate()}>
