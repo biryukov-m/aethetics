@@ -3,7 +3,7 @@ import React from 'react';
 import { contactsValidationSchema } from '../../../schemas/contacts.schema';
 import contactsService from '../../../services/contacts.service';
 import { IContacts } from '../../../types/contacts';
-import { Button as StyledButton, ButtonWhite as StyledButtonWhite } from '../button/button.styled';
+import { Button as StyledButton, ButtonWhite as StyledButtonWhite } from '../styled/button.styled';
 import * as Styled from './ContactsForm.styled';
 
 interface IProps {

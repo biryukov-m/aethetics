@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import * as Styled from './BasketModal.styled';
 import basketService from '../../services/basket.service';
-import { Button as StyledButton } from '../common/button/button.styled';
+import { Button as StyledButton } from '../common/styled/button.styled';
 import { CloseButton } from '../common/CloseButton/CloseButton.component';
 import { BasketItem } from './BasketItem/BasketItem.component';
 import { BasketContext } from './Basket.provider';

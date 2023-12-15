@@ -1,6 +1,6 @@
 import React from 'react';
 import { IContacts } from '../../../types/contacts';
-import { Button } from '../button/button.styled';
+import { Button } from '../styled/button.styled';
 import * as Styled from './ContactsFilled.styled';
 
 interface IProps {

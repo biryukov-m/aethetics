@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ButtonArrowRight as StyledButtonArrowRight } from '../../../common/button/button.styled';
+import { ButtonArrowRight as StyledButtonArrowRight } from '../../../common/styled/button.styled';
 
 type Props = {
   id: string;

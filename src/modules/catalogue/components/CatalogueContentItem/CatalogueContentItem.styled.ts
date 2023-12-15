@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import * as Styled from '../../../common/button/button.styled';
+import * as Styled from '../../../common/styled/button.styled';
 
 export const Button = styled(Styled.MiniButton)`
   @media screen and (max-width: 950px) {
