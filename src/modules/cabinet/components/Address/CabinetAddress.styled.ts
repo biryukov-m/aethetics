@@ -8,9 +8,7 @@ export const Flex = styled.div`
   justify-content: space-between;
   position: relative;
   gap: 25px;
-  margin: 0 auto;
   margin-bottom: 30px;
-  max-width: 928px;
   @media (max-width: ${MEDIA.tablet}px) {
     flex-direction: column;
     gap: 0;
