@@ -25,7 +25,7 @@ export const Button = styled.button<IButton>`
   @media (max-width: ${MEDIA.tablet}px) {
     width: 132px;
     height: 42px;
-    font-size: 18px;
+    font-size: ${FONTS.SIZES.s};
   }
   &::before {
     content: '';
@@ -61,21 +61,12 @@ export const MiniButton = styled(Button)`
   width: 97px;
   height: 25px;
   font-size: ${FONTS.SIZES.xs};
-  @media (max-width: ${MEDIA.tablet}px) {
-    width: 97px;
-    height: 25px;
-    font-size: ${FONTS.SIZES.xs};
-  }
   &::before {
     width: 96px;
     height: 25px;
     transform: translate(4px, -4px);
     font-size: 14px;
     line-height: 150%;
-    @media (max-width: ${MEDIA.tablet}px) {
-      width: 96px;
-      height: 25px;
-    }
   }
   &:hover {
     transform: translate(4px, -4px);

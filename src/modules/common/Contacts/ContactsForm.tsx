@@ -3,11 +3,7 @@ import React from 'react';
 import { contactsValidationSchema } from '../../../schemas/contacts.schema';
 import contactsService from '../../../services/contacts.service';
 import { IContacts } from '../../../types/contacts';
-import {
-  Button as StyledButton,
-  ButtonArrowRight as StyledButtonArrowRight,
-  ButtonWhite as StyledButtonWhite
-} from '../button/button.styled';
+import { Button as StyledButton, ButtonWhite as StyledButtonWhite } from '../button/button.styled';
 import * as Styled from './ContactsForm.styled';
 
 interface IProps {
@@ -50,7 +46,7 @@ export const ContactsForm: React.FC<IProps> = ({
                 name="surname"
                 id="surname"
                 autoComplete="family-name"
-                placeholder="Світлана"
+                placeholder="Шевченко"
               />
             </Styled.Column>
             <Styled.Column>
@@ -93,7 +89,7 @@ export const ContactsForm: React.FC<IProps> = ({
                     Видалити
                   </StyledButtonWhite>
                 ) : (
-                  <StyledButtonArrowRight disabled={isSubmitting}>Вийти</StyledButtonArrowRight>
+                  <StyledButtonWhite disabled={isSubmitting}>Вийти</StyledButtonWhite>
                 )}
               </Styled.SecondaryBtnContainer>
             </Styled.Column>
