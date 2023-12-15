@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { COLORS, FONTS } from '../../../theme';
+import { COLORS, FONTS, MEDIA } from '../../../theme';
 
 export const Tabs = styled.ul`
   display: flex;
@@ -21,7 +21,7 @@ export const ListItem = styled.li<{ $active: boolean }>`
     color: ${COLORS.text};
     cursor: pointer;
     position: relative;
-    @media (max-width: 1140px) {
+    @media (max-width: ${MEDIA.tablet}px) {
       font-size: clamp(${FONTS.SIZES.m}, 2.3vw, ${FONTS.SIZES.l});
     }
 

@@ -18,7 +18,7 @@ const BlogFeedArticle: React.FC<Props> = ({ id, imageUrl, header, text }) => (
       {text}
       <div className="button-show-details">
         <StyledButtonArrowRight>
-          <Link to={`/blog/${id}`} />
+          <Link to={`/blog/${id}`}>Детальніше</Link>
         </StyledButtonArrowRight>
       </div>
     </div>
