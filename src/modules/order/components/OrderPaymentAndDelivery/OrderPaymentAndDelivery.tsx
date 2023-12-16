@@ -5,7 +5,6 @@ import * as Styled from './OrderPaymentAndDelivery.styled';
 import { FormikStyledRadioFieldset } from '../../../common/FormikStyledRadio/FormikStyledRadioFieldset/FormikStyledRadioFieldset';
 import { FormikStyledRadioField } from '../../../common/FormikStyledRadio/FormikStyledRadioField/FormikStyledRadioField';
 import addressService from '../../../../services/address.service';
-import contactsService from '../../../../services/contacts.service';
 import { ROUTER_KEYS } from '../../../../constants/routerKeys';
 
 export const OrderPaymentAndDelivery: React.FC = () => {
@@ -23,21 +22,16 @@ export const OrderPaymentAndDelivery: React.FC = () => {
     address_uuid: '0'
   };
   const { addresses } = addressService;
-  const { contacts } = contactsService;
 
   const renderAddresses = () =>
     addresses.map((address, idx) => (
       <FormikStyledRadioField key={idx} name="address_uuid" value={`${address.uuid}`}>
-        <Styled.Text>
-          {contacts.name} {contacts.surname}
-        </Styled.Text>
         <Styled.Text>{address.city}</Styled.Text>
         <Styled.Text>
           {address.street} {address.house}
           {address.apartment && `, ${address.apartment}`}
         </Styled.Text>
         <Styled.Text>{address.postal}</Styled.Text>
-        <Styled.Text>{contacts.tel}</Styled.Text>
       </FormikStyledRadioField>
     ));
 
