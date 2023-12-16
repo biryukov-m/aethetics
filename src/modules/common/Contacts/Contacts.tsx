@@ -1,18 +1,27 @@
 import React, { useEffect, useState } from 'react';
+import { To, useNavigate } from 'react-router-dom';
 import contactsService from '../../../services/contacts.service';
 import { ContactsFilled } from './ContactsFilled';
 import { ContactsForm } from './ContactsForm';
 
-export const Contacts: React.FC = () => {
+interface IProps {
+  logout?: boolean;
+  redirect?: To;
+}
+
+export const Contacts: React.FC<IProps> = ({ logout, redirect }) => {
   const [contacts, setContacts] = useState(contactsService.contacts);
   const [isUpdating, setIsUpdating] = useState(false);
+  const navigate = useNavigate();
 
   useEffect(() => {
     setContacts(contactsService.contacts);
   }, [isUpdating]);
 
   const handleOnSubmit = () => {
-    if (isUpdating) {
+    if (redirect) {
+      navigate(redirect);
+    } else if (isUpdating) {
       setIsUpdating(false);
     } else {
       setContacts(contactsService.contacts);
@@ -27,8 +36,9 @@ export const Contacts: React.FC = () => {
     return (
       <ContactsForm
         isUpdating={isUpdating}
-        handleContactsUpdate={handleOnSubmit}
+        handleOnSubmit={handleOnSubmit}
         initialValues={contacts}
+        logout={logout}
       />
     );
   }

@@ -8,14 +8,16 @@ import * as Styled from './ContactsForm.styled';
 
 interface IProps {
   isUpdating: boolean;
-  handleContactsUpdate: () => void;
+  handleOnSubmit?: () => void;
   initialValues: IContacts;
+  logout?: boolean;
 }
 
 export const ContactsForm: React.FC<IProps> = ({
   isUpdating,
-  handleContactsUpdate,
-  initialValues
+  handleOnSubmit,
+  initialValues,
+  logout = false
 }) => (
   <Formik
     initialValues={initialValues}
@@ -24,7 +26,9 @@ export const ContactsForm: React.FC<IProps> = ({
     onSubmit={(values, { setSubmitting }) => {
       contactsService.contacts = { ...values };
       setSubmitting(false);
-      handleContactsUpdate();
+      if (handleOnSubmit) {
+        handleOnSubmit();
+      }
     }}
   >
     {({ isSubmitting }) => (
@@ -82,14 +86,16 @@ export const ContactsForm: React.FC<IProps> = ({
                   <StyledButtonWhite
                     onClick={() => {
                       contactsService.remove();
-                      handleContactsUpdate();
+                      if (handleOnSubmit) {
+                        handleOnSubmit();
+                      }
                     }}
                     disabled={isSubmitting}
                   >
                     Видалити
                   </StyledButtonWhite>
                 ) : (
-                  <StyledButtonWhite disabled={isSubmitting}>Вийти</StyledButtonWhite>
+                  logout && <StyledButtonWhite disabled={isSubmitting}>Вийти</StyledButtonWhite>
                 )}
               </Styled.SecondaryBtnContainer>
             </Styled.Column>

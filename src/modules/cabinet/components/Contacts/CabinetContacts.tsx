@@ -8,7 +8,7 @@ const CabinetContacts: React.FC = () => (
   <>
     <Styled.MobileTab $active>Контактна інформація</Styled.MobileTab>
     <Styled.MobileTabContent>
-      <Contacts />
+      <Contacts logout />
     </Styled.MobileTabContent>
     <Styled.MobileTab>
       <Link to={`/${ROUTER_KEYS.cabinet.root}/${ROUTER_KEYS.cabinet.address}`}>Адресна книга</Link>
