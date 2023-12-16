@@ -6,6 +6,6 @@ import { ROUTER_KEYS } from '../../../../constants/routerKeys';
 
 export const OrderPersonalData: React.FC = () => (
   <Styled.Wrapper>
-    <Contacts redirect={`/${ROUTER_KEYS.cabinet.root}`} />
+    <Contacts redirect={`/${ROUTER_KEYS.order.root}/${ROUTER_KEYS.order.delivery}`} />
   </Styled.Wrapper>
 );

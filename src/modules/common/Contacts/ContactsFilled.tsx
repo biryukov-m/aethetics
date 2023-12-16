@@ -5,10 +5,10 @@ import * as Styled from './ContactsFilled.styled';
 
 interface IProps {
   contacts: IContacts;
-  handleContactsUpdate: () => void;
+  handleOnEdit: () => void;
 }
 
-export const ContactsFilled: React.FC<IProps> = ({ contacts, handleContactsUpdate }) => (
+export const ContactsFilled: React.FC<IProps> = ({ contacts, handleOnEdit }) => (
   <>
     <Styled.Grid>
       <Styled.Container>
@@ -29,7 +29,7 @@ export const ContactsFilled: React.FC<IProps> = ({ contacts, handleContactsUpdat
       </Styled.Container>
     </Styled.Grid>
     <Styled.BtnContainer>
-      <Button type="button" onClick={() => handleContactsUpdate()}>
+      <Button type="button" onClick={() => handleOnEdit()}>
         Редагувати
       </Button>
     </Styled.BtnContainer>

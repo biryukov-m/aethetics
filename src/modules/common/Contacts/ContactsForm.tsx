@@ -7,15 +7,17 @@ import { Button as StyledButton, ButtonWhite as StyledButtonWhite } from '../sty
 import * as Styled from './ContactsForm.styled';
 
 interface IProps {
-  isUpdating: boolean;
-  handleOnSubmit?: () => void;
+  isEditing: boolean;
+  handleOnSubmit: () => void;
+  handleOnRemove: () => void;
   initialValues: IContacts;
   logout?: boolean;
 }
 
 export const ContactsForm: React.FC<IProps> = ({
-  isUpdating,
+  isEditing,
   handleOnSubmit,
+  handleOnRemove,
   initialValues,
   logout = false
 }) => (
@@ -26,9 +28,7 @@ export const ContactsForm: React.FC<IProps> = ({
     onSubmit={(values, { setSubmitting }) => {
       contactsService.contacts = { ...values };
       setSubmitting(false);
-      if (handleOnSubmit) {
-        handleOnSubmit();
-      }
+      handleOnSubmit();
     }}
   >
     {({ isSubmitting }) => (
@@ -82,13 +82,11 @@ export const ContactsForm: React.FC<IProps> = ({
             </Styled.Column>
             <Styled.Column>
               <Styled.SecondaryBtnContainer>
-                {isUpdating ? (
+                {isEditing ? (
                   <StyledButtonWhite
                     onClick={() => {
                       contactsService.remove();
-                      if (handleOnSubmit) {
-                        handleOnSubmit();
-                      }
+                      handleOnRemove();
                     }}
                     disabled={isSubmitting}
                   >

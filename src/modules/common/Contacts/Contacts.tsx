@@ -11,37 +11,42 @@ interface IProps {
 
 export const Contacts: React.FC<IProps> = ({ logout, redirect }) => {
   const [contacts, setContacts] = useState(contactsService.contacts);
-  const [isUpdating, setIsUpdating] = useState(false);
+  const [isEditing, setIsEditing] = useState(false);
   const navigate = useNavigate();
 
   useEffect(() => {
     setContacts(contactsService.contacts);
-  }, [isUpdating]);
+  }, [isEditing]);
 
   const handleOnSubmit = () => {
     if (redirect) {
       navigate(redirect);
-    } else if (isUpdating) {
-      setIsUpdating(false);
+    } else if (isEditing) {
+      setIsEditing(false);
     } else {
       setContacts(contactsService.contacts);
     }
   };
 
-  const turnOnContactsUpdate = () => {
-    setIsUpdating(true);
+  const handleOnRemove = () => {
+    setIsEditing(false);
   };
 
-  if (!contacts || contacts.name.length === 0 || isUpdating) {
+  const handleOnEdit = () => {
+    setIsEditing(true);
+  };
+
+  if (!contacts || contacts.name.length === 0 || isEditing) {
     return (
       <ContactsForm
-        isUpdating={isUpdating}
+        isEditing={isEditing}
         handleOnSubmit={handleOnSubmit}
+        handleOnRemove={handleOnRemove}
         initialValues={contacts}
         logout={logout}
       />
     );
   }
 
-  return <ContactsFilled contacts={contacts} handleContactsUpdate={turnOnContactsUpdate} />;
+  return <ContactsFilled contacts={contacts} handleOnEdit={handleOnEdit} />;
 };
