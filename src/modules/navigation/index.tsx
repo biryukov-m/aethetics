@@ -14,6 +14,8 @@ import CabinetContacts from '../cabinet/components/Contacts/CabinetContacts';
 import CabinetFavourites from '../cabinet/components/Favourites/CabinetFavourites';
 import CabinetHistory from '../cabinet/components/History/CabinetHistory';
 import { ROUTER_KEYS } from '../../constants/routerKeys';
+import { OrderPersonalData } from '../order/components/OrderPersonalData/OrderPersonalData';
+import { OrderPaymentAndDelivery } from '../order/components/OrderPaymentAndDelivery/OrderPaymentAndDelivery';
 
 export const MainRouter = () => (
   <Router>
@@ -33,7 +35,11 @@ export const MainRouter = () => (
           <Route path={ROUTER_KEYS.cabinet.favourites} element={<CabinetFavourites />} />
           <Route path={ROUTER_KEYS.cabinet.history} element={<CabinetHistory />} />
         </Route>
-        <Route path="order" element={<Order />} />
+        <Route path={ROUTER_KEYS.order.root} element={<Order />}>
+          <Route index element={<Navigate to={ROUTER_KEYS.order.contacts} />} />
+          <Route path={ROUTER_KEYS.order.contacts} element={<OrderPersonalData />} />
+          <Route path={ROUTER_KEYS.order.delivery} element={<OrderPaymentAndDelivery />} />
+        </Route>
       </Route>
     </Routes>
   </Router>

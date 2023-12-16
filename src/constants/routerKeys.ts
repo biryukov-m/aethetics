@@ -5,5 +5,10 @@ export const ROUTER_KEYS = {
     contacts: 'contacts',
     favourites: 'favourites',
     history: 'history'
+  },
+  order: {
+    root: 'order',
+    contacts: 'contacts',
+    delivery: 'delivery'
   }
 };
