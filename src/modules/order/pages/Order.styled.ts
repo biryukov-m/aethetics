@@ -1,6 +1,8 @@
 import styled from 'styled-components';
 import { COLORS, FONTS, MEDIA } from '../../theme';
+import { Layout as GlobalLayout } from '../../common/styled/layout.styled';
 
+export const Layout = styled(GlobalLayout)``;
 export const Header = styled.h3`
   text-align: center;
   font-size: 40px;
