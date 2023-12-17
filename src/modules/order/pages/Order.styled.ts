@@ -1,6 +1,8 @@
 import styled from 'styled-components';
 import { COLORS, FONTS, MEDIA } from '../../theme';
+import { Layout as GlobalLayout } from '../../common/styled/layout.styled';
 
+export const Layout = styled(GlobalLayout)``;
 export const Header = styled.h3`
   text-align: center;
   font-size: 40px;
@@ -29,27 +31,27 @@ export const Tab = styled.div`
   &:nth-last-of-type(1) {
     margin-right: 15px;
   }
-  span {
-    color: ${COLORS.black};
-    font-size: ${FONTS.SIZES.l};
-    font-family: ${FONTS.FAMILIES.normal};
-    @media screen and (max-width: ${MEDIA.tablet}px) {
-      font-size: ${FONTS.SIZES.m};
-    }
-    @media screen and (max-width: ${MEDIA.mobile}px) {
-      font-size: ${FONTS.SIZES.s};
-    }
+`;
+export const Text = styled.span`
+  color: ${COLORS.black};
+  font-size: ${FONTS.SIZES.l};
+  font-family: ${FONTS.FAMILIES.normal};
+  @media screen and (max-width: ${MEDIA.tablet}px) {
+    font-size: ${FONTS.SIZES.m};
+  }
+  @media screen and (max-width: ${MEDIA.mobile}px) {
+    font-size: ${FONTS.SIZES.s};
   }
 `;
-export const Counter = styled.div`
+export const Counter = styled.div<{ $active?: boolean }>`
   border-radius: 50%;
   width: 50px;
   height: 50px;
   font-family: ${FONTS.FAMILIES.normal};
   font-size: ${FONTS.SIZES.xl};
   font-weight: ${FONTS.WEIGHTS.normal};
-  background-color: ${COLORS.white};
-  color: ${COLORS.accent};
+  background-color: ${(props) => (props.$active ? `${COLORS.accent}` : `${COLORS.white}`)};
+  color: ${(props) => (props.$active ? `${COLORS.creamy}` : `${COLORS.accent}`)};
   border: 1px solid ${COLORS.accent};
   text-align: center;
   vertical-align: middle;
@@ -62,9 +64,5 @@ export const Counter = styled.div`
     font-size: ${FONTS.SIZES.s};
     width: 20px;
     height: 20px;
-  }
-  &.active {
-    background-color: ${COLORS.accent};
-    color: ${COLORS.creamy};
   }
 `;

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import HeroImg from '../../../assets/images/image-contacts-hero.png';
 
-const Contacts: React.FC = () => {
+const ShopContacts: React.FC = () => {
   const [submitted, setSubmitted] = useState(false);
   return (
     <section className="contacts">
@@ -54,4 +54,4 @@ const Contacts: React.FC = () => {
   );
 };
 
-export default Contacts;
+export default ShopContacts;

@@ -1,39 +1,43 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { Outlet, useLocation, useNavigate } from 'react-router-dom';
 import * as Styled from './Order.styled';
 import { OrderBasket } from '../components/OrderBasket/OrderBasket';
-import { OrderPersonalData } from '../components/OrderPersonalData/OrderPersonalData';
-import { OrderPaymentAndDelivery } from '../components/OrderPaymentAndDelivery/OrderPaymentAndDelivery';
-
-type TabName = 'PERSONAL_DATA' | 'PAYMENT_AND_DELIVERY';
+import { ROUTER_KEYS } from '../../../constants/routerKeys';
 
 const Order: React.FC = () => {
-  const [activeTab, setActiveTab] = useState<TabName>('PERSONAL_DATA');
-  const handleTabClick = (e: React.MouseEvent, name: TabName) => {
-    setActiveTab(name);
-  };
+  const navigate = useNavigate();
+  const location = useLocation();
+  const currentPath = location.pathname;
 
   return (
-    <section className="order">
-      <div className="layout">
+    <section>
+      <Styled.Layout>
         <Styled.Header>Оформлення замовлення</Styled.Header>
         <Styled.Tabs>
-          <Styled.Tab onClick={(e) => handleTabClick(e, 'PERSONAL_DATA')}>
-            <Styled.Counter className={activeTab === 'PERSONAL_DATA' ? 'active' : ''}>
+          <Styled.Tab onClick={() => navigate(`${ROUTER_KEYS.order.contacts}`)}>
+            <Styled.Counter
+              $active={currentPath.includes(
+                `${ROUTER_KEYS.order.root}/${ROUTER_KEYS.order.contacts}`
+              )}
+            >
               1
             </Styled.Counter>
-            <span>Особисті дані</span>
+            <Styled.Text>Особисті дані</Styled.Text>
           </Styled.Tab>
-          <Styled.Tab onClick={(e) => handleTabClick(e, 'PAYMENT_AND_DELIVERY')}>
-            <Styled.Counter className={activeTab === 'PAYMENT_AND_DELIVERY' ? 'active' : ''}>
+          <Styled.Tab onClick={() => navigate(`${ROUTER_KEYS.order.delivery}`)}>
+            <Styled.Counter
+              $active={currentPath.includes(
+                `${ROUTER_KEYS.order.root}/${ROUTER_KEYS.order.delivery}`
+              )}
+            >
               2
             </Styled.Counter>
-            <span>Оплата / Доставка</span>
+            <Styled.Text>Оплата / Доставка</Styled.Text>
           </Styled.Tab>
         </Styled.Tabs>
-        {activeTab === 'PERSONAL_DATA' && <OrderPersonalData />}
-        {activeTab === 'PAYMENT_AND_DELIVERY' && <OrderPaymentAndDelivery />}
+        <Outlet />
         <OrderBasket />
-      </div>
+      </Styled.Layout>
     </section>
   );
 };

@@ -1,13 +1,8 @@
 import styled from 'styled-components';
-import { COLORS, FONTS, MEDIA } from '../../../theme';
+import { COLORS, FONTS, MEDIA } from '../../theme';
 
-export const Wrapper = styled.div`
-  max-width: 1016px;
-  margin: 0 auto;
-  position: relative;
-  @media (max-width: ${MEDIA.tablet}px) {
-    display: block;
-  }
+export const Container = styled.div`
+  width: 100%;
   label,
   input,
   input::placeholder {
@@ -41,7 +36,6 @@ export const Wrapper = styled.div`
     }
   }
 `;
-
 export const Flex = styled.div`
   display: flex;
   flex-direction: row;
@@ -54,6 +48,11 @@ export const Flex = styled.div`
     margin: 0;
   }
 `;
+export const FlexBtns = styled(Flex)`
+  @media (max-width: ${MEDIA.tablet}px) {
+    flex-direction: row;
+  }
+`;
 export const Column = styled.div`
   display: flex;
   flex-direction: column;
@@ -62,23 +61,13 @@ export const Column = styled.div`
     width: 100%;
     justify-content: space-between;
   }
-  &:last-of-type input:last-of-type {
-    margin-bottom: 61px;
-    @media (max-width: ${MEDIA.tablet}px) {
-      margin-bottom: 20px;
-    }
-  }
 `;
-export const ExitBtnContainer = styled.div`
-  margin-top: 5px;
-  margin-right: 12px;
+export const SecondaryBtnContainer = styled.div`
   @media (max-width: ${MEDIA.tablet}px) {
     align-self: flex-end;
   }
 `;
 export const SubmitBtnContainer = styled.div`
   @media (max-width: ${MEDIA.tablet}px) {
-    margin-top: -42px;
   }
 `;
-export const Error = styled.span``;

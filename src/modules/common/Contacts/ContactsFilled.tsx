@@ -1,14 +1,14 @@
 import React from 'react';
-import { IContacts } from '../../../../types/contacts';
-import { Button } from '../../../common/button/button.styled';
-import * as Styled from './CabinetContactsFilled.styled';
+import { IContacts } from '../../../types/contacts';
+import { Button } from '../styled/button.styled';
+import * as Styled from './ContactsFilled.styled';
 
 interface IProps {
   contacts: IContacts;
-  setIsUpdating: React.Dispatch<React.SetStateAction<boolean>>;
+  handleOnEdit: () => void;
 }
 
-export const CabinetContactsFilled: React.FC<IProps> = ({ contacts, setIsUpdating }) => (
+export const ContactsFilled: React.FC<IProps> = ({ contacts, handleOnEdit }) => (
   <>
     <Styled.Grid>
       <Styled.Container>
@@ -27,13 +27,9 @@ export const CabinetContactsFilled: React.FC<IProps> = ({ contacts, setIsUpdatin
         <Styled.Label>Номер телефону:</Styled.Label>
         <Styled.Text>{contacts.tel}</Styled.Text>
       </Styled.Container>
-      <Styled.Container>
-        <Styled.Label>Дата народження:</Styled.Label>
-        <Styled.Text>{contacts.dob || ''}</Styled.Text>
-      </Styled.Container>
     </Styled.Grid>
     <Styled.BtnContainer>
-      <Button type="button" onClick={() => setIsUpdating(true)}>
+      <Button type="button" onClick={() => handleOnEdit()}>
         Редагувати
       </Button>
     </Styled.BtnContainer>

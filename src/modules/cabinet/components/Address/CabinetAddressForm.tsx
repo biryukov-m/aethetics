@@ -1,7 +1,7 @@
 import React from 'react';
 import { Field, Form, Formik } from 'formik';
 import * as Styled from './CabinetAddressForm.styled';
-import { Button as StyledButton } from '../../../common/button/button.styled';
+import { Button as StyledButton } from '../../../common/styled/button.styled';
 import { addressValidationSchema } from '../../../../schemas/address.schema';
 import { IAddNewAddress, IAddress, IUpdateAddress } from '../../../../types/address';
 import addressService from '../../../../services/address.service';
@@ -62,7 +62,7 @@ export const CabinetAddressForm: React.FC<IProps> = ({
               name="city"
               placeholder="Місто"
               required
-              autocomplete="shiping city address-level2"
+              autoComplete="shiping city address-level2"
             />
 
             <Styled.InputGroup>
@@ -73,7 +73,7 @@ export const CabinetAddressForm: React.FC<IProps> = ({
                 name="street"
                 placeholder="Вулиця"
                 required
-                autocomplete="shiping street address-level3"
+                autoComplete="shiping street address-level3"
               />
 
               <Field
@@ -83,7 +83,7 @@ export const CabinetAddressForm: React.FC<IProps> = ({
                 name="house"
                 placeholder="Корпус"
                 required
-                autocomplete="shiping address-level4"
+                autoComplete="shiping address-level4"
               />
 
               <Field
@@ -102,7 +102,7 @@ export const CabinetAddressForm: React.FC<IProps> = ({
               id="postal"
               placeholder="Поштове відділення або індекс"
               required
-              autocomplete="shipping postal-code"
+              autoComplete="shipping postal-code"
             />
 
             <Styled.ButtonContainer>

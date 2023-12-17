@@ -6,7 +6,7 @@ import Catalogue from '../catalogue/pages/catalogue/Catalogue';
 import ProductCard from '../catalogue/pages/product-card/ProductCard';
 import Blog from '../blog/pages/blog/Blog';
 import Cabinet from '../cabinet/pages/Cabinet';
-import Contacts from '../contacts/pages/Contacts';
+import ShopContacts from '../contacts/pages/ShopContacts';
 import DeliveryPayment from '../delivery-payment/pages/DeliveryPayment';
 import Order from '../order/pages/Order';
 import CabinetAddress from '../cabinet/components/Address/CabinetAddress';
@@ -14,6 +14,8 @@ import CabinetContacts from '../cabinet/components/Contacts/CabinetContacts';
 import CabinetFavourites from '../cabinet/components/Favourites/CabinetFavourites';
 import CabinetHistory from '../cabinet/components/History/CabinetHistory';
 import { ROUTER_KEYS } from '../../constants/routerKeys';
+import { OrderPersonalData } from '../order/components/OrderPersonalData/OrderPersonalData';
+import { OrderPaymentAndDelivery } from '../order/components/OrderPaymentAndDelivery/OrderPaymentAndDelivery';
 
 export const MainRouter = () => (
   <Router>
@@ -25,7 +27,7 @@ export const MainRouter = () => (
         <Route path="delivery-and-payment" element={<DeliveryPayment />} />
         <Route path="blog/:id" element={<Blog />} />
         <Route path="blog" element={<Blog />} />
-        <Route path="contacts" element={<Contacts />} />
+        <Route path="contacts" element={<ShopContacts />} />
         <Route path={ROUTER_KEYS.cabinet.root} element={<Cabinet />}>
           <Route index element={<Navigate to={ROUTER_KEYS.cabinet.contacts} />} />
           <Route path={ROUTER_KEYS.cabinet.address} element={<CabinetAddress />} />
@@ -33,7 +35,11 @@ export const MainRouter = () => (
           <Route path={ROUTER_KEYS.cabinet.favourites} element={<CabinetFavourites />} />
           <Route path={ROUTER_KEYS.cabinet.history} element={<CabinetHistory />} />
         </Route>
-        <Route path="order" element={<Order />} />
+        <Route path={ROUTER_KEYS.order.root} element={<Order />}>
+          <Route index element={<Navigate to={ROUTER_KEYS.order.contacts} />} />
+          <Route path={ROUTER_KEYS.order.contacts} element={<OrderPersonalData />} />
+          <Route path={ROUTER_KEYS.order.delivery} element={<OrderPaymentAndDelivery />} />
+        </Route>
       </Route>
     </Routes>
   </Router>
