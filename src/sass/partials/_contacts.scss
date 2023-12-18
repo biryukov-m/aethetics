@@ -61,7 +61,7 @@
             height: 300px;
           }
           h2 {
-            font-family: "Poiret One";
+            font-family: 'Poiret One';
             font-style: normal;
             font-weight: 400;
             font-size: 60px;
@@ -72,7 +72,7 @@
             }
           }
           h3 {
-            font-family: "Poiret One";
+            font-family: 'Poiret One';
             font-style: normal;
             font-weight: 400;
             font-size: 40px;
@@ -93,7 +93,7 @@
 
           &::before {
             position: absolute;
-            content: "";
+            content: '';
             display: block;
             height: 1px;
             left: 0;
@@ -121,7 +121,7 @@
               margin-bottom: 10px;
             }
             h2 {
-              font-family: "Candara";
+              font-family: 'Candara';
               font-style: normal;
               font-weight: 400;
               color: $creamy;
@@ -173,7 +173,7 @@
             justify-content: flex-end;
             input {
               padding: 5px 14px 13px;
-              font-family: "Candara";
+              font-family: 'Candara';
               font-style: normal;
               background: none;
               font-weight: 400;
@@ -188,7 +188,7 @@
                 font-size: clamp(15px, 2vw, 20px);
               }
               &::placeholder {
-                font-family: "Candara";
+                font-family: 'Candara';
                 font-style: normal;
                 font-weight: 400;
                 font-size: 20px;
