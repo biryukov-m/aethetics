@@ -1,6 +1,6 @@
 import React from 'react';
 import MainPageHero from '../../../../assets/images/image-main-page-hero.png';
-import ButtonGreen from '../../../common/ButtonGreen/ButtonGreen';
+import ButtonGreen from '../../../common/components/ButtonGreen/ButtonGreen';
 
 const FirstView: React.FC = () => (
   <section className="first-view">

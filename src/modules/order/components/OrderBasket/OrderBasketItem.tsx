@@ -1,8 +1,8 @@
 import React, { useContext } from 'react';
 import * as Styled from './OrderBasketItem.styled';
 import { BasketContext } from '../../../basket-modal/Basket.provider';
-import { QuantityInput } from '../../../common/QuantityInput/QuantityInput.component';
-import { CloseButton } from '../../../common/CloseButton/CloseButton.component';
+import { QuantityInput } from '../../../common/components/QuantityInput/QuantityInput.component';
+import { CloseButton } from '../../../common/components/CloseButton/CloseButton.component';
 import useProductSummaryCost from '../../../hooks/useProductSummaryConst';
 import useFetchProduct from '../../../hooks/useFetchProduct';
 import { IBasketItem } from '../../../../services/basket.service';

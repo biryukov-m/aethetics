@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import * as Styled from './BasketItem.styled';
 import { IBasketItem } from '../../../services/basket.service';
 import CloseIcon from '../../../assets/images/icon-delete-default-no-borders.png';
-import { QuantityInput } from '../../common/QuantityInput/QuantityInput.component';
+import { QuantityInput } from '../../common/components/QuantityInput/QuantityInput.component';
 import { BasketContext } from '../Basket.provider';
 import useProductSummaryCost from '../../hooks/useProductSummaryConst';
 import useFetchProduct from '../../hooks/useFetchProduct';

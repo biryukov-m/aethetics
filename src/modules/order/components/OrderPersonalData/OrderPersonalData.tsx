@@ -1,7 +1,7 @@
 import React from 'react';
 
 import * as Styled from './OrderPersonalData.styled';
-import { Contacts } from '../../../common/Contacts/Contacts';
+import { Contacts } from '../../../common/components/Contacts/Contacts';
 import { ROUTER_KEYS } from '../../../../constants/routerKeys';
 
 export const OrderPersonalData: React.FC = () => (

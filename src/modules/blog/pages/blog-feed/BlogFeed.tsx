@@ -1,6 +1,6 @@
 import React from 'react';
 import BlogFeedArticle from './BlogFeedArticle';
-import ButtonArrowBottom from '../../../common/buttonArrowBottom/ButtonArrowBottom';
+import ButtonArrowBottom from '../../../common/components/buttonArrowBottom/ButtonArrowBottom';
 import ArticleOneImage from '../../../../assets/images/image-main-page-article-preview-1.png';
 import ArticleTwoImage from '../../../../assets/images/image-main-page-article-preview-2.png';
 import ArticleThreeImage from '../../../../assets/images/image-main-page-article-preview-3.png';

@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import * as Styled from './BasketModal.styled';
 import { Button as StyledButton } from '../common/styled/button.styled';
-import { CloseButton } from '../common/CloseButton/CloseButton.component';
+import { CloseButton } from '../common/components/CloseButton/CloseButton.component';
 import { BasketItem } from './BasketItem/BasketItem.component';
 import { BasketContext } from './Basket.provider';
 import useFetchTotalCost from '../hooks/useFetchTotalCost';

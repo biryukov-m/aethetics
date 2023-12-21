@@ -1,6 +1,6 @@
 import React from 'react';
 import * as Styled from './CloseButton.styled';
-import Icon from '../../../assets/images/icon-delete-default.png';
+import Icon from '../../../../assets/images/icon-delete-default.png';
 
 interface IProps {
   onClick?: React.MouseEventHandler<HTMLButtonElement>;

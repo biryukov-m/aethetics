@@ -1,5 +1,5 @@
 import React from 'react';
-import Slider from '../../common/slider/Slider';
+import Slider from '../../common/components/slider/Slider';
 import FirstView from '../components/first-view/FirstView';
 import BlogFeed from '../../blog/pages/blog-feed/BlogFeed';
 

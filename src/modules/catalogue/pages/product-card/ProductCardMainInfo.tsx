@@ -1,6 +1,6 @@
 import React, { ChangeEventHandler, useContext, useState } from 'react';
-import RatingBar from '../../../common/ratingBar/RatingBar';
-import GoBack from '../../../common/goBack/GoBack';
+import RatingBar from '../../../common/components/ratingBar/RatingBar';
+import GoBack from '../../../common/components/goBack/GoBack';
 import * as Styled from '../../../common/styled/button.styled';
 import { IBasketItemQuantity } from '../../../../services/basket.service';
 import { BasketContext } from '../../../basket-modal/Basket.provider';
