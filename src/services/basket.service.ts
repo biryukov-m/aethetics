@@ -53,10 +53,10 @@ class BasketService {
   }
 
   async getProductSummaryCost(id: IBasketItemId) {
-    const product = productService.getById(id);
+    const product = await productService.getById(id);
     const record = this.findByProductId(id);
     if (product && record) {
-      const { price } = await product;
+      const { price } = product;
       const { quantity } = record;
       return price * quantity;
     }

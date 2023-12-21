@@ -8,8 +8,10 @@ class ProductService {
   }
 
   async getById(id: string) {
-    const product = (await sanityClient.fetch(`*[_type == "product" && _id == ${id}]`)) as IProduct;
-    return product;
+    const product = (await sanityClient.fetch(
+      `*[_type == "product" && _id == "${id}"]`
+    )) as IProduct[];
+    return product.length > 0 ? product[0] : null;
   }
 }
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import CatalogueContentItem from './CatalogueContentItem/CatalogueContentItem.component';
+import CatalogueContentItem from './CatalogueContentItem/CatalogueContentItem';
 import useFetchProducts from '../../common/hooks/useFetchProducts';
 
 const CatalogueContent: React.FC = () => {

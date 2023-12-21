@@ -8,7 +8,6 @@ import useFetchProduct from '../../../common/hooks/useFetchProduct';
 const ProductCard: React.FC = () => {
   const { id } = useParams<{ id: string }>();
   const { product, error } = useFetchProduct(id || '');
-
   // TODO: implement favourite
   const isFavourite = false;
   // TODO: implement get review functionality

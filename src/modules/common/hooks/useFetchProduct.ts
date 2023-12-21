@@ -13,11 +13,13 @@ const useFetchProduct = (id: IProductId) => {
           throw new Error(`Error fetching product with ID ${id}`);
         }
         const fetchedProduct = await productService.getById(id);
+        if (!fetchedProduct) {
+          throw new Error(`Can't find product with id ${id}`);
+        }
         setProduct(fetchedProduct);
-      } catch (e) {
-        console.error(e);
+      } catch (err) {
         setProduct(null);
-        if (typeof e === 'string') setError(e);
+        if (typeof err === 'string') setError(err);
       }
     };
 
