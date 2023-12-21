@@ -52,27 +52,32 @@ class BasketService {
     }
   }
 
-  getProductSummaryCost(id: IBasketItemId) {
+  async getProductSummaryCost(id: IBasketItemId) {
     const product = productService.getById(id);
     const record = this.findByProductId(id);
     if (product && record) {
-      const { price } = product;
+      const { price } = await product;
       const { quantity } = record;
       return price * quantity;
     }
   }
 
-  getTotalCost() {
+  async getTotalCost() {
     const { basket } = this;
 
-    const totalPrice = basket.reduce((total, itemInBasket) => {
-      const itemInCatalogue = productService.getById(itemInBasket.id);
+    const promises = basket.map(async (itemInBasket) => {
+      const itemInCatalogue = await productService.getById(itemInBasket.id);
+
       if (itemInCatalogue) {
         const itemSummaryCost = itemInCatalogue.price * itemInBasket.quantity;
-        return total + itemSummaryCost;
+        return itemSummaryCost;
       }
-      return total;
-    }, 0);
+
+      return 0;
+    });
+
+    const results = await Promise.all(promises);
+    const totalPrice = results.reduce((total, itemSummaryCost) => total + itemSummaryCost, 0);
 
     return totalPrice;
   }
