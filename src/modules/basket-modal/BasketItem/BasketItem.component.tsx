@@ -4,8 +4,8 @@ import { IBasketItem } from '../../../services/basket.service';
 import CloseIcon from '../../../assets/images/icon-delete-default-no-borders.png';
 import { QuantityInput } from '../../common/QuantityInput/QuantityInput.component';
 import { BasketContext } from '../Basket.provider';
-import useProductSummaryCost from '../../common/hooks/useProductSummaryConst';
-import useFetchProduct from '../../common/hooks/useFetchProduct';
+import useProductSummaryCost from '../../hooks/useProductSummaryConst';
+import useFetchProduct from '../../hooks/useFetchProduct';
 import getSanityImageUrl from '../../../utils/getSanityImageUrl';
 
 interface IProps {

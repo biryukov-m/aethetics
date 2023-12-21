@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 
-import basketService from '../../../services/basket.service';
-import { IProductId } from '../../../types/products';
+import basketService from '../../services/basket.service';
+import { IProductId } from '../../types/products';
 
 const useProductSummaryCost = (id: IProductId) => {
   const [productSummaryCost, setProductSummaryCost] = useState<number | null>(null);

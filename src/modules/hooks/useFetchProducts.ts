@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
-import productService from '../../../services/products.service';
-import { ProductModel } from '../../models/Product.model';
+import productService from '../../services/products.service';
+import { ProductModel } from '../models/Product.model';
 
 const useFetchProducts = () => {
   const [products, setProducts] = useState<ProductModel[] | null>(null);

@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import basketService, { IBasketItem } from '../../../services/basket.service';
+import basketService, { IBasketItem } from '../../services/basket.service';
 
 const useFetchTotalCost = (basket: IBasketItem[]) => {
   const [totalCost, setTotalCost] = useState<number | null>(null);

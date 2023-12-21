@@ -3,8 +3,8 @@ import * as Styled from './OrderBasketItem.styled';
 import { BasketContext } from '../../../basket-modal/Basket.provider';
 import { QuantityInput } from '../../../common/QuantityInput/QuantityInput.component';
 import { CloseButton } from '../../../common/CloseButton/CloseButton.component';
-import useProductSummaryCost from '../../../common/hooks/useProductSummaryConst';
-import useFetchProduct from '../../../common/hooks/useFetchProduct';
+import useProductSummaryCost from '../../../hooks/useProductSummaryConst';
+import useFetchProduct from '../../../hooks/useFetchProduct';
 import { IBasketItem } from '../../../../services/basket.service';
 import getSanityImageUrl from '../../../../utils/getSanityImageUrl';
 

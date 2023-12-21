@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import * as Styled from './OrderBasket.styled';
 import { BasketContext } from '../../../basket-modal/Basket.provider';
 import OrderBasketItem from './OrderBasketItem';
-import useFetchTotalCost from '../../../common/hooks/useFetchTotalCost';
+import useFetchTotalCost from '../../../hooks/useFetchTotalCost';
 
 export const OrderBasket: React.FC = () => {
   const { basket } = useContext(BasketContext);

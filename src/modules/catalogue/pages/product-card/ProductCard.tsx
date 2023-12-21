@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom';
 import ProductCardMainInfo from './ProductCardMainInfo';
 import ProductCardTabs from './ProductCardTabs';
 import ProductCardRelatedProducts from './ProductCardRelatedProducts';
-import useFetchProduct from '../../../common/hooks/useFetchProduct';
+import useFetchProduct from '../../../hooks/useFetchProduct';
 
 const ProductCard: React.FC = () => {
   const { id } = useParams<{ id: string }>();

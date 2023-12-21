@@ -1,6 +1,6 @@
 import React from 'react';
 import CatalogueContentItem from './CatalogueContentItem/CatalogueContentItem';
-import useFetchProducts from '../../common/hooks/useFetchProducts';
+import useFetchProducts from '../../hooks/useFetchProducts';
 
 const CatalogueContent: React.FC = () => {
   const { products, error } = useFetchProducts();
