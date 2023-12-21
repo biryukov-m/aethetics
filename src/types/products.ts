@@ -1,4 +1,4 @@
-export type IProductId = number;
+export type IProductId = string;
 export type IProductName = string;
 export type IProductImageUrl = string;
 export type IProductAlt = string;
@@ -8,11 +8,9 @@ export type IProductDescription = string;
 export type IProductComposition = string;
 
 export interface IProduct {
-  id: IProductId;
+  _id: IProductId;
   name: IProductName;
-  imageUrl: IProductImageUrl;
-  imageAlt: IProductAlt;
-  rating: IProductRating;
+  image: { imageAlt: string; asset: { _ref: string } };
   price: IProductPrice;
   description: IProductDescription;
   composition: IProductComposition;

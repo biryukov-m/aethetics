@@ -1,18 +1,20 @@
 import React, { useContext } from 'react';
 import * as Styled from './BasketItem.styled';
-import basketService, { IBasketItem } from '../../../services/basket.service';
-import productService from '../../../services/products.service';
+import { IBasketItem } from '../../../services/basket.service';
 import CloseIcon from '../../../assets/images/icon-delete-default-no-borders.png';
 import { QuantityInput } from '../../common/QuantityInput/QuantityInput.component';
 import { BasketContext } from '../Basket.provider';
+import useProductSummaryCost from '../../common/hooks/useProductSummaryConst';
+import useFetchProduct from '../../common/hooks/useFetchProduct';
+import getSanityImageUrl from '../../../utils/getSanityImageUrl';
 
 interface IProps {
   item: IBasketItem;
 }
 
 export const BasketItem: React.FC<IProps> = ({ item }) => {
-  const product = productService.getById(item.id);
-  const productSummaryCost = basketService.getProductSummaryCost(item.id);
+  const { product, error: productError } = useFetchProduct(item.id);
+  const { productSummaryCost, error: summaryError } = useProductSummaryCost(item.id);
   const { remove, updateQuantity } = useContext(BasketContext);
 
   const removeFromBasketHandler = () => {
@@ -26,10 +28,12 @@ export const BasketItem: React.FC<IProps> = ({ item }) => {
   };
 
   if (product) {
+    const imageUrl = getSanityImageUrl(product.image);
+
     return (
       <Styled.Flex>
         <Styled.ImageCol>
-          <img src={product.imageUrl} alt={product.imageAlt} />
+          <img src={imageUrl} alt={product.image.imageAlt} />
         </Styled.ImageCol>
         <Styled.NameAndQuantityCol>
           <Styled.Name>{product.name}</Styled.Name>
@@ -45,10 +49,10 @@ export const BasketItem: React.FC<IProps> = ({ item }) => {
           <Styled.RemoveBtn onClick={removeFromBasketHandler}>
             <img src={CloseIcon} alt="remove from basket" />
           </Styled.RemoveBtn>
-          <Styled.Price>{productSummaryCost} грн</Styled.Price>
+          <Styled.Price>{productSummaryCost || summaryError} грн</Styled.Price>
         </Styled.RemoveAndPriceCol>
       </Styled.Flex>
     );
   }
-  return <>Product with id {item.id} not found </>;
+  return <h3>{productError}</h3>;
 };
