@@ -1,43 +1,36 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
-import {
-  IProductAlt,
-  IProductId,
-  IProductImageUrl,
-  IProductName,
-  IProductPrice
-} from '../../../../types/products';
 import * as Styled from './CatalogueContentItem.styled';
 import BasketIconDefault from '../../../../assets/images/icon-basket-default.png';
 import BasketIconHover from '../../../../assets/images/icon-basket-hover.png';
 import { BasketContext } from '../../../basket-modal/Basket.provider';
+import getSanityImageUrl from '../../../../utils/getSanityImageUrl';
+import { ProductModel } from '../../../models/Product.model';
 
 type IProps = {
-  id: IProductId;
-  name: IProductName;
-  imageUrl: IProductImageUrl;
-  imageAlt: IProductAlt;
-  price: IProductPrice;
+  product: ProductModel;
 };
 
-const CatalogueContentItem: React.FC<IProps> = ({ id, name, imageUrl, imageAlt, price }) => {
+const CatalogueContentItem: React.FC<IProps> = ({ product }) => {
   const { add } = useContext(BasketContext);
-  const handleAddToBasketClick = () => add(id, 1);
+  const handleAddToBasketClick = () => add(product._id, 1);
+
+  const imageUrl = getSanityImageUrl(product.image);
 
   return (
     <div className="item">
       <div className="image-holder">
-        <img src={imageUrl} alt={imageAlt} />
+        <img src={imageUrl} alt={product.image.imageAlt} />
         <span className="heart" />
       </div>
       <div className="name">
-        <p>{name}</p>
+        <p>{product.name}</p>
       </div>
       <div className="price">
-        <p>{price} грн</p>
+        <p>{product.price} грн</p>
       </div>
       <div className="controls">
-        <Link to={`/product/${id}`}>Детальніше</Link>
+        <Link to={`/product/${product._id}`}>Детальніше</Link>
         <Styled.Button onClick={handleAddToBasketClick}>
           В кошик
           <img className="default" src={BasketIconDefault} alt="Basket icon" />

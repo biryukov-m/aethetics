@@ -1,6 +1,6 @@
 import React from 'react';
-import RatingBar from '../../../common/ratingBar/RatingBar';
-import ButtonGreenMini from '../../../common/buttonGreenMini/ButtonGreenMini';
+import RatingBar from '../../../common/components/ratingBar/RatingBar';
+import ButtonGreenMini from '../../../common/components/buttonGreenMini/ButtonGreenMini';
 import { Product } from '../../../../types/types';
 
 const CabinetFavouritesItem: React.FC<Product> = ({

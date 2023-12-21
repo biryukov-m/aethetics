@@ -1,9 +1,9 @@
 import React from 'react';
 
-import IconInstagramDefault from '../../../assets/images/icon-instagram-default.png';
-import IconEmailDefault from '../../../assets/images/icon-email-default.png';
-import IconPhoneDefault from '../../../assets/images/icon-phone-default.png';
-import IconAddressDefault from '../../../assets/images/icon-address-default.png';
+import IconInstagramDefault from '../../../../assets/images/icon-instagram-default.png';
+import IconEmailDefault from '../../../../assets/images/icon-email-default.png';
+import IconPhoneDefault from '../../../../assets/images/icon-phone-default.png';
+import IconAddressDefault from '../../../../assets/images/icon-address-default.png';
 
 const BottomContacts: React.FC = () => (
   <section className="bottom-contacts">

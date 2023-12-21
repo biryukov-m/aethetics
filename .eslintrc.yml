@@ -122,11 +122,9 @@ rules:
   '@typescript-eslint/no-throw-literal': 'off'
 
 # ⭐ Overrides
-overrides: [
-
-    # {
-    #   files: ['*.ts', '*.tsx'],
-    #   rules: { 'no-undef': 'off' },
-    #   parserOptions: { project: ['./app/tsconfig.json'] }
-    # }
-  ]
+overrides: []
+# {
+#   files: ['*.ts', '*.tsx'],
+#   rules: { 'no-undef': 'off' },
+#   parserOptions: { project: ['./app/tsconfig.json'] }
+# }

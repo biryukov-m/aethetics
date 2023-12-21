@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { To, useNavigate } from 'react-router-dom';
-import contactsService from '../../../services/contacts.service';
+import contactsService from '../../../../services/contacts.service';
 import { ContactsFilled } from './ContactsFilled';
 import { ContactsForm } from './ContactsForm';
 

@@ -1,6 +1,6 @@
 import React from 'react';
 import BlogArticle from './BlogArticle';
-import GoBack from '../../../common/goBack/GoBack';
+import GoBack from '../../../common/components/goBack/GoBack';
 
 const Blog: React.FC = () => (
   <section className="blog">

@@ -1,7 +1,7 @@
 import React from 'react';
-import ButtonWhite from '../../../common/ButtonWhite/ButtonWhite';
-import ButtonArrowBottom from '../../../common/buttonArrowBottom/ButtonArrowBottom';
-import RatingBar from '../../../common/ratingBar/RatingBar';
+import ButtonWhite from '../../../common/components/ButtonWhite/ButtonWhite';
+import ButtonArrowBottom from '../../../common/components/buttonArrowBottom/ButtonArrowBottom';
+import RatingBar from '../../../common/components/ratingBar/RatingBar';
 
 export type IProps = {
   reviews: {

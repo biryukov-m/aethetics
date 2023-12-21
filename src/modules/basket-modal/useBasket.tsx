@@ -1,5 +1,5 @@
 import { useCallback, useState } from 'react';
-import basketService, { IBasketItem } from '../../services/basket.service';
+import basketService, { IBasketItem, IBasketItemId } from '../../services/basket.service';
 
 export const useBasket = () => {
   const [basket, setBasket] = useState<IBasketItem[]>(basketService.basket);
@@ -7,7 +7,7 @@ export const useBasket = () => {
   const updateStateFromStorage = () => setBasket(basketService.basket);
 
   const add = useCallback(
-    (id: number, quantity: number) => {
+    (id: IBasketItemId, quantity: number) => {
       basketService.add(id, quantity);
       updateStateFromStorage();
     },
@@ -15,7 +15,7 @@ export const useBasket = () => {
   );
 
   const remove = useCallback(
-    (id: number) => {
+    (id: IBasketItemId) => {
       basketService.remove(id);
       updateStateFromStorage();
     },
@@ -23,7 +23,7 @@ export const useBasket = () => {
   );
 
   const updateQuantity = useCallback(
-    (id: number, quantity: number) => {
+    (id: IBasketItemId, quantity: number) => {
       basketService.updateQuantity(id, quantity);
       updateStateFromStorage();
     },

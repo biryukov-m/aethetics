@@ -1,7 +1,7 @@
 import React from 'react';
 import * as Styled from './ArrowButton.styled';
-import icon from '../../../assets/images/icon-arrow.png';
-import iconHover from '../../../assets/images/icon-arrow-hover.png';
+import icon from '../../../../assets/images/icon-arrow.png';
+import iconHover from '../../../../assets/images/icon-arrow-hover.png';
 
 interface IProps {
   onClick?: () => void;

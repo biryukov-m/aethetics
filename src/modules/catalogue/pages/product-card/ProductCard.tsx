@@ -3,11 +3,11 @@ import { useParams } from 'react-router-dom';
 import ProductCardMainInfo from './ProductCardMainInfo';
 import ProductCardTabs from './ProductCardTabs';
 import ProductCardRelatedProducts from './ProductCardRelatedProducts';
-import productService from '../../../../services/products.service';
+import useFetchProduct from '../../../hooks/useFetchProduct';
 
 const ProductCard: React.FC = () => {
-  const { id } = useParams();
-  const product = productService.getById(Number(id));
+  const { id } = useParams<{ id: string }>();
+  const { product, error } = useFetchProduct(id || '');
   // TODO: implement favourite
   const isFavourite = false;
   // TODO: implement get review functionality
@@ -36,17 +36,15 @@ const ProductCard: React.FC = () => {
     }
   ];
 
-  if (product) {
-    return (
-      <>
-        <ProductCardMainInfo {...product} favourite={isFavourite} />
-        <ProductCardTabs {...product} {...{ reviews }} />
-        <ProductCardRelatedProducts />
-      </>
-    );
-  }
-
-  return <h3>404</h3>;
+  return product ? (
+    <>
+      <ProductCardMainInfo product={product} favourite={isFavourite} />
+      <ProductCardTabs {...product} {...{ reviews }} />
+      <ProductCardRelatedProducts />
+    </>
+  ) : (
+    <h3>{error}</h3>
+  );
 };
 
 export default ProductCard;

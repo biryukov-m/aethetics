@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { ROUTER_KEYS } from '../../../../constants/routerKeys';
-import { Contacts } from '../../../common/Contacts/Contacts';
+import { Contacts } from '../../../common/components/Contacts/Contacts';
 import * as Styled from '../../pages/Cabinet.styled';
 
 const CabinetContacts: React.FC = () => (

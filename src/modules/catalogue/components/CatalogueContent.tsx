@@ -1,15 +1,15 @@
 import React from 'react';
-import CatalogueContentItem from './CatalogueContentItem/CatalogueContentItem.component';
-import productService from '../../../services/products.service';
+import CatalogueContentItem from './CatalogueContentItem/CatalogueContentItem';
+import useFetchProducts from '../../hooks/useFetchProducts';
 
 const CatalogueContent: React.FC = () => {
-  const products = productService.getAll();
+  const { products, error } = useFetchProducts();
 
-  return (
+  return products ? (
     <div className="column">
       <div className="items">
         {products.map((product) => (
-          <CatalogueContentItem key={product.id} {...product} />
+          <CatalogueContentItem key={product._id} product={product} />
         ))}
       </div>
       <div className="button-show-more">
@@ -18,6 +18,8 @@ const CatalogueContent: React.FC = () => {
         </div>
       </div>
     </div>
+  ) : (
+    <h3>{error}</h3>
   );
 };
 

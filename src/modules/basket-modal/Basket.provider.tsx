@@ -1,12 +1,12 @@
 import React, { createContext, useMemo } from 'react';
-import { IBasketItem } from '../../services/basket.service';
+import { IBasketItem, IBasketItemId } from '../../services/basket.service';
 import { useBasket } from './useBasket';
 
 interface IBasketContextProps {
   basket: IBasketItem[];
-  add: (id: number, quantity: number) => void;
-  remove: (id: number) => void;
-  updateQuantity: (id: number, quantity: number) => void;
+  add: (id: IBasketItemId, quantity: number) => void;
+  remove: (id: IBasketItemId) => void;
+  updateQuantity: (id: IBasketItemId, quantity: number) => void;
 }
 
 export const BasketContext = createContext({} as IBasketContextProps);

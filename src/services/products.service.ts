@@ -1,21 +1,20 @@
-import { PRODUCTS } from '../data/products';
+import { sanityClient } from '../constants/sanityConfig';
+import { createProductModel } from '../modules/models/Product.model';
 import { IProduct } from '../types/products';
 
 class ProductService {
-  products: IProduct[];
-
-  constructor() {
-    this.products = PRODUCTS;
+  async getAll() {
+    const products = (await sanityClient.fetch('*[_type == "product"]')) as IProduct[];
+    return products && products.length > 0
+      ? products.map((product) => createProductModel(product))
+      : null;
   }
 
-  getAll() {
-    return this.products;
-  }
-
-  getById(id: number) {
-    const products = this.getAll();
-    const foundProduct = products.find((product) => product.id === id);
-    return foundProduct;
+  async getById(id: string) {
+    const product = (await sanityClient.fetch(
+      `*[_type == "product" && _id == "${id}"]`
+    )) as IProduct[];
+    return product.length > 0 ? createProductModel(product[0]) : null;
   }
 }
 
