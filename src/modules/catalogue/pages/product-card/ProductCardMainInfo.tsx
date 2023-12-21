@@ -3,12 +3,12 @@ import RatingBar from '../../../common/ratingBar/RatingBar';
 import GoBack from '../../../common/goBack/GoBack';
 import * as Styled from '../../../common/styled/button.styled';
 import { IBasketItemQuantity } from '../../../../services/basket.service';
-import { IProduct } from '../../../../types/products';
 import { BasketContext } from '../../../basket-modal/Basket.provider';
 import getSanityImageUrl from '../../../../utils/getSanityImageUrl';
+import { ProductModel } from '../../../models/Product.model';
 
 interface IProps {
-  product: IProduct;
+  product: ProductModel;
   favourite?: boolean;
 }
 

@@ -1,9 +1,10 @@
 import { useEffect, useState } from 'react';
-import { IProduct, IProductId } from '../../../types/products';
+import { IProductId } from '../../../types/products';
 import productService from '../../../services/products.service';
+import { ProductModel } from '../../models/Product.model';
 
 const useFetchProduct = (id: IProductId) => {
-  const [product, setProduct] = useState<IProduct | null>(null);
+  const [product, setProduct] = useState<ProductModel | null>(null);
   const [error, setError] = useState<null | string>(null);
 
   useEffect(() => {

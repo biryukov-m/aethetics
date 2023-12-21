@@ -1,15 +1,14 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
-
-import { IProduct } from '../../../../types/products';
 import * as Styled from './CatalogueContentItem.styled';
 import BasketIconDefault from '../../../../assets/images/icon-basket-default.png';
 import BasketIconHover from '../../../../assets/images/icon-basket-hover.png';
 import { BasketContext } from '../../../basket-modal/Basket.provider';
 import getSanityImageUrl from '../../../../utils/getSanityImageUrl';
+import { ProductModel } from '../../../models/Product.model';
 
 type IProps = {
-  product: IProduct;
+  product: ProductModel;
 };
 
 const CatalogueContentItem: React.FC<IProps> = ({ product }) => {
