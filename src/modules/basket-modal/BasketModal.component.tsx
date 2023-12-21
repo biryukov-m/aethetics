@@ -1,11 +1,11 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import * as Styled from './BasketModal.styled';
-import basketService from '../../services/basket.service';
 import { Button as StyledButton } from '../common/styled/button.styled';
 import { CloseButton } from '../common/CloseButton/CloseButton.component';
 import { BasketItem } from './BasketItem/BasketItem.component';
 import { BasketContext } from './Basket.provider';
+import useFetchTotalCost from '../common/hooks/useFetchTotalCost';
 
 interface IProps {
   closeHandler(): void;
@@ -13,11 +13,11 @@ interface IProps {
 
 const BasketModal: React.FC<IProps> = ({ closeHandler }) => {
   const { basket } = useContext(BasketContext);
+  const totalCost = useFetchTotalCost(basket);
 
   const handleBasketClick = (e: React.MouseEvent) => e.stopPropagation();
 
-  if (basket && basket.length > 0) {
-    const totalCost = basketService.getTotalCost();
+  if (basket && basket.length > 0 && totalCost !== null) {
     return (
       <Styled.Overlay onClick={closeHandler}>
         <Styled.Wrapper onClick={(e) => handleBasketClick(e)}>
