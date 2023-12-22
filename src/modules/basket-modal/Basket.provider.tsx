@@ -11,7 +11,7 @@ interface IBasketContextProps {
 
 export const BasketContext = createContext({} as IBasketContextProps);
 
-export const BasketProvider = ({ children }: { children: React.ReactNode }) => {
+export const BasketContextProvider = ({ children }: { children: React.ReactNode }) => {
   const { basket, add, remove, updateQuantity } = useBasket();
 
   const basketContextValue = useMemo(
