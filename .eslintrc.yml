@@ -11,6 +11,7 @@ extends:
   - plugin:prettier/recommended
   - airbnb
   - airbnb-typescript
+  - plugin:@tanstack/eslint-plugin-query/recommended
 
 # ⭐ Parser
 parser: '@typescript-eslint/parser'
@@ -29,6 +30,7 @@ plugins:
   - react
   - '@typescript-eslint'
   - prettier
+  - '@tanstack/eslint-plugin-query'
 
 # ⭐ Settings
 settings:
