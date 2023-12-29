@@ -13,8 +13,8 @@ interface IProps {
 }
 
 export const BasketItem: React.FC<IProps> = ({ item }) => {
-  const { product, error: productError } = useFetchProduct(item.id);
-  const { productSummaryCost, error: summaryError } = useProductSummaryCost(item.id);
+  const { data: product, error: productError, isPending } = useFetchProduct(item.id);
+  const { productSummaryCost } = useProductSummaryCost(item.id);
   const { remove, updateQuantity } = useContext(BasketContext);
 
   const removeFromBasketHandler = () => {
@@ -26,6 +26,22 @@ export const BasketItem: React.FC<IProps> = ({ item }) => {
   const decreaseQuantityHandler = () => {
     updateQuantity(item.id, -1);
   };
+
+  if (isPending) {
+    return (
+      <Styled.Flex>
+        <Styled.ImageCol>...</Styled.ImageCol>
+        <Styled.Name>...</Styled.Name>
+      </Styled.Flex>
+    );
+  }
+
+  if (productError) {
+    <Styled.Flex>
+      <Styled.ImageCol>...</Styled.ImageCol>
+      <Styled.Name>Сталась помилка: {productError.message}</Styled.Name>
+    </Styled.Flex>;
+  }
 
   if (product) {
     const imageUrl = getSanityImageUrl(product.image);
@@ -49,10 +65,10 @@ export const BasketItem: React.FC<IProps> = ({ item }) => {
           <Styled.RemoveBtn onClick={removeFromBasketHandler}>
             <img src={CloseIcon} alt="remove from basket" />
           </Styled.RemoveBtn>
-          <Styled.Price>{productSummaryCost || summaryError} грн</Styled.Price>
+          <Styled.Price>{productSummaryCost} грн</Styled.Price>
         </Styled.RemoveAndPriceCol>
       </Styled.Flex>
     );
   }
-  return <h3>{productError}</h3>;
+  return <h3>Сталась невідома помилка :(</h3>;
 };

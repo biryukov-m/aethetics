@@ -5,7 +5,6 @@ import { IProductId } from '../../types/products';
 
 const useProductSummaryCost = (id: IProductId) => {
   const [productSummaryCost, setProductSummaryCost] = useState<number | null>(null);
-  const [error, setError] = useState<string | null>(null);
   useEffect(() => {
     const calculateSummaryCost = async () => {
       try {
@@ -17,13 +16,13 @@ const useProductSummaryCost = (id: IProductId) => {
         }
       } catch (e) {
         setProductSummaryCost(null);
-        if (typeof e === 'string') setError(e);
       }
     };
     calculateSummaryCost();
+    console.log(productSummaryCost);
   }, []);
 
-  return { productSummaryCost, error };
+  return { productSummaryCost };
 };
 
 export default useProductSummaryCost;

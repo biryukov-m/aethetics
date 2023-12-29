@@ -7,7 +7,7 @@ import useFetchProduct from '../../../hooks/useFetchProduct';
 
 const ProductCard: React.FC = () => {
   const { id } = useParams<{ id: string }>();
-  const { product, error } = useFetchProduct(id || '');
+  const { data, error, isPending } = useFetchProduct(id || '');
   // TODO: implement favourite
   const isFavourite = false;
   // TODO: implement get review functionality
@@ -36,14 +36,22 @@ const ProductCard: React.FC = () => {
     }
   ];
 
-  return product ? (
+  if (isPending) {
+    return <h3>Завантажуємо...</h3>;
+  }
+
+  if (error) {
+    return <h3>Помилка: {error.message}</h3>;
+  }
+
+  return data ? (
     <>
-      <ProductCardMainInfo product={product} favourite={isFavourite} />
-      <ProductCardTabs {...product} {...{ reviews }} />
+      <ProductCardMainInfo product={data} favourite={isFavourite} />
+      <ProductCardTabs {...data} {...{ reviews }} />
       <ProductCardRelatedProducts />
     </>
   ) : (
-    <h3>{error}</h3>
+    <h3>Сталась помилка :(</h3>
   );
 };
 

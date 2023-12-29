@@ -13,8 +13,8 @@ interface IProps {
 }
 
 const OrderBasketItem: React.FC<IProps> = ({ item }) => {
-  const { productSummaryCost, error: summaryError } = useProductSummaryCost(item.id);
-  const { product, error: productError } = useFetchProduct(item.id);
+  const { productSummaryCost } = useProductSummaryCost(item.id);
+  const { data, error, isPending } = useFetchProduct(item.id);
   const { remove, updateQuantity } = useContext(BasketContext);
 
   const removeFromBasketHandler = () => {
@@ -27,15 +27,31 @@ const OrderBasketItem: React.FC<IProps> = ({ item }) => {
     updateQuantity(item.id, -1);
   };
 
-  if (product) {
-    const imageUrl = getSanityImageUrl(product.image);
+  if (isPending) {
+    return (
+      <Styled.Flex>
+        <Styled.ImageCol>...</Styled.ImageCol>
+        <Styled.Name>...</Styled.Name>
+        <CloseButton onClick={removeFromBasketHandler} />
+      </Styled.Flex>
+    );
+  }
 
+  if (error) {
+    <Styled.Flex>
+      <Styled.ImageCol>...</Styled.ImageCol>
+      <Styled.Name>Сталась помилка: {error.message}</Styled.Name>
+    </Styled.Flex>;
+  }
+
+  if (data) {
+    const imageUrl = getSanityImageUrl(data.image);
     return (
       <Styled.Flex>
         <Styled.ImageCol>
-          <img src={imageUrl} alt={product.image.imageAlt} />
+          <img src={imageUrl} alt={data.image.imageAlt} />
         </Styled.ImageCol>
-        <Styled.Name>{product.name}</Styled.Name>
+        <Styled.Name>{data.name}</Styled.Name>
         <Styled.QuantityInputWrapper>
           <QuantityInput
             value={item.quantity}
@@ -43,12 +59,13 @@ const OrderBasketItem: React.FC<IProps> = ({ item }) => {
             onDecrease={decreaseQuantityHandler}
           />
         </Styled.QuantityInputWrapper>
-        <Styled.Price>{productSummaryCost || summaryError} грн</Styled.Price>
+        <Styled.Price>{productSummaryCost} !грн</Styled.Price>
         <CloseButton onClick={removeFromBasketHandler} />
       </Styled.Flex>
     );
   }
-  return <h3>{productError}</h3>;
+
+  return <h3>невідома помилка :(</h3>;
 };
 
 export default OrderBasketItem;
