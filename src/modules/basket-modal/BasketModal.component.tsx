@@ -5,7 +5,6 @@ import { Button as StyledButton } from '../common/styled/button.styled';
 import { CloseButton } from '../common/components/CloseButton/CloseButton.component';
 import { BasketItem } from './BasketItem/BasketItem.component';
 import { BasketContext } from './Basket.provider';
-import useFetchTotalCost from '../hooks/useFetchTotalCost';
 
 interface IProps {
   closeHandler(): void;
@@ -13,7 +12,7 @@ interface IProps {
 
 const BasketModal: React.FC<IProps> = ({ closeHandler }) => {
   const { basket } = useContext(BasketContext);
-  const totalCost = useFetchTotalCost(basket);
+  const totalCost = 0;
 
   const handleBasketClick = (e: React.MouseEvent) => e.stopPropagation();
 
@@ -28,7 +27,7 @@ const BasketModal: React.FC<IProps> = ({ closeHandler }) => {
           <Styled.SubHeader>В кошику {basket.length} товарів</Styled.SubHeader>
           <>
             {basket.map((item) => (
-              <BasketItem key={item.id} {...{ item }} />
+              <BasketItem key={item.id} _id={item.id} quantity={item.quantity} />
             ))}
           </>
           <Styled.TotalPrice>Загальна сума: {totalCost} грн</Styled.TotalPrice>
