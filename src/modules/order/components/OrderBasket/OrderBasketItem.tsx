@@ -3,28 +3,28 @@ import * as Styled from './OrderBasketItem.styled';
 import { BasketContext } from '../../../basket-modal/Basket.provider';
 import { QuantityInput } from '../../../common/components/QuantityInput/QuantityInput.component';
 import { CloseButton } from '../../../common/components/CloseButton/CloseButton.component';
-import useProductSummaryCost from '../../../hooks/useProductSummaryConst';
 import useFetchProduct from '../../../hooks/useFetchProduct';
-import { IBasketItem } from '../../../../services/basket.service';
+import basketService, { IBasketItemQuantity } from '../../../../services/basket.service';
 import getSanityImageUrl from '../../../../utils/getSanityImageUrl';
+import { ProductModel } from '../../../models/Product.model';
 
 interface IProps {
-  item: IBasketItem;
+  _id: ProductModel['_id'];
+  quantity: IBasketItemQuantity;
 }
 
-const OrderBasketItem: React.FC<IProps> = ({ item }) => {
-  const { productSummaryCost } = useProductSummaryCost(item.id);
-  const { data, error, isPending } = useFetchProduct(item.id);
+const OrderBasketItem: React.FC<IProps> = ({ _id, quantity }) => {
+  const { data: product, error, isPending } = useFetchProduct(_id);
   const { remove, updateQuantity } = useContext(BasketContext);
 
   const removeFromBasketHandler = () => {
-    remove(item.id);
+    remove(_id);
   };
   const increaseQuantityHandler = () => {
-    updateQuantity(item.id, 1);
+    updateQuantity(_id, 1);
   };
   const decreaseQuantityHandler = () => {
-    updateQuantity(item.id, -1);
+    updateQuantity(_id, -1);
   };
 
   if (isPending) {
@@ -44,28 +44,30 @@ const OrderBasketItem: React.FC<IProps> = ({ item }) => {
     </Styled.Flex>;
   }
 
-  if (data) {
-    const imageUrl = getSanityImageUrl(data.image);
+  if (product) {
+    const imageUrl = getSanityImageUrl(product.image);
+    const productSummaryCost = basketService.getProductSummaryCost(product.price, _id);
+
     return (
       <Styled.Flex>
         <Styled.ImageCol>
-          <img src={imageUrl} alt={data.image.imageAlt} />
+          <img src={imageUrl} alt={product.image.imageAlt} />
         </Styled.ImageCol>
-        <Styled.Name>{data.name}</Styled.Name>
+        <Styled.Name>{product.name}</Styled.Name>
         <Styled.QuantityInputWrapper>
           <QuantityInput
-            value={item.quantity}
+            value={quantity}
             onIncrease={increaseQuantityHandler}
             onDecrease={decreaseQuantityHandler}
           />
         </Styled.QuantityInputWrapper>
-        <Styled.Price>{productSummaryCost} !грн</Styled.Price>
+        <Styled.Price>{productSummaryCost} грн</Styled.Price>
         <CloseButton onClick={removeFromBasketHandler} />
       </Styled.Flex>
     );
   }
 
-  return <h3>невідома помилка :(</h3>;
+  return <h3>Сталась невідома помилка :(</h3>;
 };
 
 export default OrderBasketItem;

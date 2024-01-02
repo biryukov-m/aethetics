@@ -1,30 +1,30 @@
 import React, { useContext } from 'react';
 import * as Styled from './BasketItem.styled';
-import { IBasketItem } from '../../../services/basket.service';
+import basketService, { IBasketItemQuantity } from '../../../services/basket.service';
 import CloseIcon from '../../../assets/images/icon-delete-default-no-borders.png';
 import { QuantityInput } from '../../common/components/QuantityInput/QuantityInput.component';
 import { BasketContext } from '../Basket.provider';
-import useProductSummaryCost from '../../hooks/useProductSummaryConst';
 import useFetchProduct from '../../hooks/useFetchProduct';
 import getSanityImageUrl from '../../../utils/getSanityImageUrl';
+import { ProductModel } from '../../models/Product.model';
 
 interface IProps {
-  item: IBasketItem;
+  _id: ProductModel['_id'];
+  quantity: IBasketItemQuantity;
 }
 
-export const BasketItem: React.FC<IProps> = ({ item }) => {
-  const { data: product, error: productError, isPending } = useFetchProduct(item.id);
-  const { productSummaryCost } = useProductSummaryCost(item.id);
+export const BasketItem: React.FC<IProps> = ({ _id, quantity }) => {
+  const { data: product, error: productError, isPending } = useFetchProduct(_id);
   const { remove, updateQuantity } = useContext(BasketContext);
 
   const removeFromBasketHandler = () => {
-    remove(item.id);
+    remove(_id);
   };
   const increaseQuantityHandler = () => {
-    updateQuantity(item.id, 1);
+    updateQuantity(_id, 1);
   };
   const decreaseQuantityHandler = () => {
-    updateQuantity(item.id, -1);
+    updateQuantity(_id, -1);
   };
 
   if (isPending) {
@@ -45,6 +45,7 @@ export const BasketItem: React.FC<IProps> = ({ item }) => {
 
   if (product) {
     const imageUrl = getSanityImageUrl(product.image);
+    const productSummaryCost = basketService.getProductSummaryCost(product.price, _id);
 
     return (
       <Styled.Flex>
@@ -55,7 +56,7 @@ export const BasketItem: React.FC<IProps> = ({ item }) => {
           <Styled.Name>{product.name}</Styled.Name>
           <Styled.QuantityInputWrapper>
             <QuantityInput
-              value={item.quantity}
+              value={quantity}
               onIncrease={increaseQuantityHandler}
               onDecrease={decreaseQuantityHandler}
             />
