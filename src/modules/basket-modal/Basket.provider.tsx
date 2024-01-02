@@ -1,6 +1,5 @@
-import React, { createContext, useMemo } from 'react';
-import { IBasketItem, IBasketItemId } from '../../services/basket.service';
-import { useBasket } from './useBasket';
+import React, { createContext, useCallback, useMemo, useState } from 'react';
+import basketService, { IBasketItem, IBasketItemId } from '../../services/basket.service';
 
 interface IBasketContextProps {
   basket: IBasketItem[];
@@ -12,7 +11,35 @@ interface IBasketContextProps {
 export const BasketContext = createContext({} as IBasketContextProps);
 
 export const BasketContextProvider = ({ children }: { children: React.ReactNode }) => {
-  const { basket, add, remove, updateQuantity } = useBasket();
+  const [basket, setBasket] = useState<IBasketItem[]>(basketService.basket);
+  const updateStateFromStorage = () => {
+    const newBasket = basketService.basket;
+    setBasket(newBasket);
+  };
+
+  const add = useCallback(
+    (id: IBasketItemId, quantity: number) => {
+      basketService.add(id, quantity);
+      updateStateFromStorage();
+    },
+    [updateStateFromStorage]
+  );
+
+  const remove = useCallback(
+    (id: IBasketItemId) => {
+      basketService.remove(id);
+      updateStateFromStorage();
+    },
+    [updateStateFromStorage]
+  );
+
+  const updateQuantity = useCallback(
+    (id: IBasketItemId, quantity: number) => {
+      basketService.updateQuantity(id, quantity);
+      updateStateFromStorage();
+    },
+    [updateStateFromStorage]
+  );
 
   const basketContextValue = useMemo(
     () => ({
@@ -23,6 +50,5 @@ export const BasketContextProvider = ({ children }: { children: React.ReactNode 
     }),
     [basket]
   );
-
   return <BasketContext.Provider value={basketContextValue}>{children}</BasketContext.Provider>;
 };
