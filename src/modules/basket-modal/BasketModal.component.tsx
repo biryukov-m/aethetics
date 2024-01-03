@@ -1,10 +1,12 @@
-import React, { useContext } from 'react';
+import React, { useContext, useMemo } from 'react';
 import { Link } from 'react-router-dom';
 import * as Styled from './BasketModal.styled';
 import { Button as StyledButton } from '../common/styled/button.styled';
 import { CloseButton } from '../common/components/CloseButton/CloseButton.component';
 import { BasketItem } from './BasketItem/BasketItem.component';
 import { BasketContext } from './Basket.provider';
+import { queryClient } from '../common/api/queryClient';
+import { useFetchTotalCost } from '../hooks/useFetchTotalCost';
 
 interface IProps {
   closeHandler(): void;
@@ -12,9 +14,14 @@ interface IProps {
 
 const BasketModal: React.FC<IProps> = ({ closeHandler }) => {
   const { basket } = useContext(BasketContext);
-  const totalCost = 0;
+  const totalCost = useFetchTotalCost(basket, queryClient);
 
   const handleBasketClick = (e: React.MouseEvent) => e.stopPropagation();
+
+  const basketItems = useMemo(
+    () => basket.map((item) => <BasketItem key={item.id} _id={item.id} quantity={item.quantity} />),
+    [basket]
+  );
 
   if (basket && basket.length > 0 && totalCost !== null) {
     return (
@@ -25,11 +32,7 @@ const BasketModal: React.FC<IProps> = ({ closeHandler }) => {
             <CloseButton onClick={closeHandler} />
           </Styled.HeaderContainer>
           <Styled.SubHeader>В кошику {basket.length} товарів</Styled.SubHeader>
-          <>
-            {basket.map((item) => (
-              <BasketItem key={item.id} _id={item.id} quantity={item.quantity} />
-            ))}
-          </>
+          {basketItems}
           <Styled.TotalPrice>Загальна сума: {totalCost} грн</Styled.TotalPrice>
           <Styled.ContinueShopping onClick={closeHandler}>
             Продовжити покупки
