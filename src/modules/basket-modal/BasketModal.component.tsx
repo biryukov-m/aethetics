@@ -7,6 +7,7 @@ import { BasketItem } from './BasketItem/BasketItem.component';
 import { BasketContext } from './Basket.provider';
 import { queryClient } from '../common/api/queryClient';
 import { useFetchTotalCost } from '../hooks/useFetchTotalCost';
+import { ROUTER_KEYS } from '../../constants/appKeys';
 
 interface IProps {
   closeHandler(): void;
@@ -37,7 +38,7 @@ const BasketModal: React.FC<IProps> = ({ closeHandler }) => {
           <Styled.ContinueShopping onClick={closeHandler}>
             Продовжити покупки
           </Styled.ContinueShopping>
-          <Link to="/order">
+          <Link to={`/${ROUTER_KEYS.order.root}`}>
             <StyledButton onClick={closeHandler}>Купити</StyledButton>
           </Link>
         </Styled.Wrapper>

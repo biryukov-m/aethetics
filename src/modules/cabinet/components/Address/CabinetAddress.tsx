@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 import * as Styled from './CabinetAddress.styled';
-import { ROUTER_KEYS } from '../../../../constants/routerKeys';
+import { ROUTER_KEYS } from '../../../../constants/appKeys';
 import { CabinetAddressForm } from './CabinetAddressForm';
 import addressService from '../../../../services/address.service';
 import CabinetAddressBlock from './CabinetAddressBlock';

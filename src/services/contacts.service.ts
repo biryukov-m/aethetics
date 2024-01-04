@@ -1,4 +1,4 @@
-import STORAGE_KEYS from '../constants/storageKeys';
+import { STORAGE_KEYS } from '../constants/appKeys';
 import { IContacts } from '../types/contacts';
 
 class ContactsService {

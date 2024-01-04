@@ -13,7 +13,7 @@ import CabinetAddress from '../cabinet/components/Address/CabinetAddress';
 import CabinetContacts from '../cabinet/components/Contacts/CabinetContacts';
 import CabinetFavourites from '../cabinet/components/Favourites/CabinetFavourites';
 import CabinetHistory from '../cabinet/components/History/CabinetHistory';
-import { ROUTER_KEYS } from '../../constants/routerKeys';
+import { ROUTER_KEYS } from '../../constants/appKeys';
 import { OrderPersonalData } from '../order/components/OrderPersonalData/OrderPersonalData';
 import { OrderPaymentAndDelivery } from '../order/components/OrderPaymentAndDelivery/OrderPaymentAndDelivery';
 
@@ -22,12 +22,12 @@ export const MainRouter = () => (
     <Routes>
       <Route path="/" element={<Layout />}>
         <Route index element={<Main />} />
-        <Route path="catalogue" element={<Catalogue />} />
-        <Route path="product/:id" element={<ProductCard />} />
-        <Route path="delivery-and-payment" element={<DeliveryPayment />} />
-        <Route path="blog/:id" element={<Blog />} />
-        <Route path="blog" element={<Blog />} />
-        <Route path="contacts" element={<ShopContacts />} />
+        <Route path={ROUTER_KEYS.catalogue} element={<Catalogue />} />
+        <Route path={`${ROUTER_KEYS.product}/:id`} element={<ProductCard />} />
+        <Route path={ROUTER_KEYS.deliveryAndPayment} element={<DeliveryPayment />} />
+        <Route path={`${ROUTER_KEYS.blog}/:id`} element={<Blog />} />
+        <Route path={ROUTER_KEYS.blog} element={<Blog />} />
+        <Route path={ROUTER_KEYS.contacts} element={<ShopContacts />} />
         <Route path={ROUTER_KEYS.cabinet.root} element={<Cabinet />}>
           <Route index element={<Navigate to={ROUTER_KEYS.cabinet.contacts} />} />
           <Route path={ROUTER_KEYS.cabinet.address} element={<CabinetAddress />} />

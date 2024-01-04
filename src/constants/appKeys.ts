@@ -1,16 +1,21 @@
 export const ROUTER_KEYS = {
+  blog: 'blog',
   cabinet: {
-    root: 'cabinet',
     address: 'address',
     contacts: 'contacts',
     favourites: 'favourites',
-    history: 'history'
+    history: 'history',
+    root: 'cabinet'
   },
+  catalogue: 'catalogue',
+  contacts: 'contacts',
+  deliveryAndPayment: 'delivery-and-payment',
   order: {
-    root: 'order',
     contacts: 'contacts',
-    delivery: 'delivery'
-  }
+    delivery: 'delivery',
+    root: 'order'
+  },
+  product: 'product'
 };
 
 export const STORAGE_KEYS = {

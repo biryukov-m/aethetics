@@ -6,6 +6,7 @@ import BasketIconHover from '../../../../assets/images/icon-basket-hover.png';
 import { BasketContext } from '../../../basket-modal/Basket.provider';
 import getSanityImageUrl from '../../../../utils/getSanityImageUrl';
 import { ProductModel } from '../../../models/Product.model';
+import { ROUTER_KEYS } from '../../../../constants/appKeys';
 
 type IProps = {
   product: ProductModel;
@@ -30,7 +31,7 @@ const CatalogueContentItem: React.FC<IProps> = ({ product }) => {
         <p>{product.price} грн</p>
       </div>
       <div className="controls">
-        <Link to={`/product/${product._id}`}>Детальніше</Link>
+        <Link to={`/${ROUTER_KEYS.product}/${product._id}`}>Детальніше</Link>
         <Styled.Button onClick={handleAddToBasketClick}>
           В кошик
           <img className="default" src={BasketIconDefault} alt="Basket icon" />

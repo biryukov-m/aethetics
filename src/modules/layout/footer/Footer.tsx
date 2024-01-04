@@ -8,6 +8,7 @@ import VisaDefault from '../../../assets/images/icon-visa-default.png';
 import Visa360Default from '../../../assets/images/icon-360-visa-default.png';
 import ApayDefault from '../../../assets/images/icon-apay-default.png';
 import Apay360Default from '../../../assets/images/icon-360-apay-default.png';
+import { ROUTER_KEYS } from '../../../constants/appKeys';
 
 const Footer: React.FC = () => (
   <footer>
@@ -20,16 +21,16 @@ const Footer: React.FC = () => (
         </div>
         <ul className="menu">
           <li>
-            <Link to="/catalogue">Каталог</Link>
+            <Link to={`/${ROUTER_KEYS.catalogue}`}>Каталог</Link>
           </li>
           <li>
-            <Link to="/delivery-and-payment">Доставка та оплата</Link>
+            <Link to={`/${ROUTER_KEYS.deliveryAndPayment}`}>Доставка та оплата</Link>
           </li>
           <li>
-            <Link to="/blog">Блог</Link>
+            <Link to={`/${ROUTER_KEYS.blog}`}>Блог</Link>
           </li>
           <li>
-            <Link to="/contacts">Контакти</Link>
+            <Link to={`/${ROUTER_KEYS.contacts}`}>Контакти</Link>
           </li>
         </ul>
         <div className="working-hours">

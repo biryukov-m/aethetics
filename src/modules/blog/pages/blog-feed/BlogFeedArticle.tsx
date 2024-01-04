@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { ButtonArrowRight as StyledButtonArrowRight } from '../../../common/styled/button.styled';
+import { ROUTER_KEYS } from '../../../../constants/appKeys';
 
 type Props = {
   id: string;
@@ -18,7 +19,7 @@ const BlogFeedArticle: React.FC<Props> = ({ id, imageUrl, header, text }) => (
       {text}
       <div className="button-show-details">
         <StyledButtonArrowRight>
-          <Link to={`/blog/${id}`}>Детальніше</Link>
+          <Link to={`/${ROUTER_KEYS.blog}/${id}`}>Детальніше</Link>
         </StyledButtonArrowRight>
       </div>
     </div>

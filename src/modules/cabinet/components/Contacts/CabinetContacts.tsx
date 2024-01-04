@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ROUTER_KEYS } from '../../../../constants/routerKeys';
+import { ROUTER_KEYS } from '../../../../constants/appKeys';
 import { Contacts } from '../../../common/components/Contacts/Contacts';
 import * as Styled from '../../pages/Cabinet.styled';
 

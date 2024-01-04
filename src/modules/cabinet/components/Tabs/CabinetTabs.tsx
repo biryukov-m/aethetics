@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { ROUTER_KEYS } from '../../../../constants/routerKeys';
+import { ROUTER_KEYS } from '../../../../constants/appKeys';
 import * as Styled from './CabinetTabs.styled';
 
 const getCurrentCabinetTab = () => {

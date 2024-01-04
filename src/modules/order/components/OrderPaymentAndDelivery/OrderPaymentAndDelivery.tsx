@@ -5,7 +5,7 @@ import * as Styled from './OrderPaymentAndDelivery.styled';
 import { FormikStyledRadioFieldset } from '../../../common/FormikStyledRadio/FormikStyledRadioFieldset/FormikStyledRadioFieldset';
 import { FormikStyledRadioField } from '../../../common/FormikStyledRadio/FormikStyledRadioField/FormikStyledRadioField';
 import addressService from '../../../../services/address.service';
-import { ROUTER_KEYS } from '../../../../constants/routerKeys';
+import { ROUTER_KEYS } from '../../../../constants/appKeys';
 
 export const OrderPaymentAndDelivery: React.FC = () => {
   type DeliveryType = 'by_courier' | 'new_post';

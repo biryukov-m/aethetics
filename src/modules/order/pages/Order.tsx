@@ -2,7 +2,7 @@ import React from 'react';
 import { Outlet, useLocation, useNavigate } from 'react-router-dom';
 import * as Styled from './Order.styled';
 import { OrderBasket } from '../components/OrderBasket/OrderBasket';
-import { ROUTER_KEYS } from '../../../constants/routerKeys';
+import { ROUTER_KEYS } from '../../../constants/appKeys';
 
 const Order: React.FC = () => {
   const navigate = useNavigate();
