@@ -36,6 +36,8 @@ export const OrderPaymentAndDelivery: React.FC = () => {
     ));
 
   return (
+    // TODO: Finish order form when backend ready
+    // eslint-disable-next-line no-console
     <Formik {...{ initialValues }} onSubmit={(values) => console.log(values)}>
       {({ values }) => (
         <Form>
