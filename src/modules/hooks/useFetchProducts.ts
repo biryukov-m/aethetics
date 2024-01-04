@@ -1,28 +1,14 @@
-import { useEffect, useState } from 'react';
+import { useQuery } from '@tanstack/react-query';
 import productService from '../../services/products.service';
-import { ProductModel } from '../models/Product.model';
+import { QUERY_KEYS } from '../../constants/appKeys';
 
 const useFetchProducts = () => {
-  const [products, setProducts] = useState<ProductModel[] | null>(null);
-  const [error, setError] = useState<string | null>(null);
+  const { isPending, data, error } = useQuery({
+    queryKey: [QUERY_KEYS.products],
+    queryFn: () => productService.getAll()
+  });
 
-  useEffect(() => {
-    const fetchProducts = async () => {
-      try {
-        const fetchedProducts = await productService.getAll();
-        if (fetchedProducts) {
-          setProducts(fetchedProducts);
-        } else {
-          throw new Error('Cant fetch products');
-        }
-      } catch (e) {
-        setProducts(null);
-        if (typeof e === 'string') setError(e);
-      }
-    };
-    fetchProducts();
-  }, []);
-
-  return { products, error };
+  return { isPending, data, error };
 };
+
 export default useFetchProducts;

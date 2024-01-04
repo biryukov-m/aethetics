@@ -3,12 +3,23 @@ import CatalogueContentItem from './CatalogueContentItem/CatalogueContentItem';
 import useFetchProducts from '../../hooks/useFetchProducts';
 
 const CatalogueContent: React.FC = () => {
-  const { products, error } = useFetchProducts();
+  const { isPending, data, error } = useFetchProducts();
 
-  return products ? (
+  if (error) return <h3>{error.message}</h3>;
+  if (isPending) {
+    return (
+      <div className="column">
+        <div className="items">
+          <h3>Завантажуємо...</h3>
+        </div>
+      </div>
+    );
+  }
+
+  return data ? (
     <div className="column">
       <div className="items">
-        {products.map((product) => (
+        {data.map((product) => (
           <CatalogueContentItem key={product._id} product={product} />
         ))}
       </div>
@@ -19,7 +30,7 @@ const CatalogueContent: React.FC = () => {
       </div>
     </div>
   ) : (
-    <h3>{error}</h3>
+    <h3>Сталася помилка, не можемо знайти товари</h3>
   );
 };
 

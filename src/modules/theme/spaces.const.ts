@@ -1,4 +1,3 @@
-// eslint-disable-next-line import/prefer-default-export
 export const SPACES = {
   xxl: '6rem',
   xl: '1.75rem',

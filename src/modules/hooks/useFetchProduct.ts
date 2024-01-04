@@ -1,33 +1,16 @@
-import { useEffect, useState } from 'react';
+import { useQuery } from '@tanstack/react-query';
 import { IProductId } from '../../types/products';
 import productService from '../../services/products.service';
-import { ProductModel } from '../models/Product.model';
+import { QUERY_KEYS } from '../../constants/appKeys';
 
 const useFetchProduct = (id: IProductId) => {
-  const [product, setProduct] = useState<ProductModel | null>(null);
-  const [error, setError] = useState<null | string>(null);
+  const { data, error, isPending } = useQuery({
+    queryKey: [QUERY_KEYS.product, id],
+    queryFn: () => productService.getById(id),
+    staleTime: 60000
+  });
 
-  useEffect(() => {
-    const fetchProduct = async () => {
-      try {
-        if (!(typeof id === 'string') || !(id.length > 0)) {
-          throw new Error(`Error fetching product with ID ${id}`);
-        }
-        const fetchedProduct = await productService.getById(id);
-        if (!fetchedProduct) {
-          throw new Error(`Can't find product with id ${id}`);
-        }
-        setProduct(fetchedProduct);
-      } catch (err) {
-        setProduct(null);
-        if (typeof err === 'string') setError(err);
-      }
-    };
-
-    fetchProduct();
-  }, [id]);
-
-  return { product, error };
+  return { data, error, isPending };
 };
 
 export default useFetchProduct;

@@ -1,34 +1,51 @@
 import React, { useContext } from 'react';
 import * as Styled from './BasketItem.styled';
-import { IBasketItem } from '../../../services/basket.service';
+import basketService, { IBasketItemQuantity } from '../../../services/basket.service';
 import CloseIcon from '../../../assets/images/icon-delete-default-no-borders.png';
 import { QuantityInput } from '../../common/components/QuantityInput/QuantityInput.component';
 import { BasketContext } from '../Basket.provider';
-import useProductSummaryCost from '../../hooks/useProductSummaryConst';
 import useFetchProduct from '../../hooks/useFetchProduct';
 import getSanityImageUrl from '../../../utils/getSanityImageUrl';
+import { ProductModel } from '../../models/Product.model';
 
 interface IProps {
-  item: IBasketItem;
+  _id: ProductModel['_id'];
+  quantity: IBasketItemQuantity;
 }
 
-export const BasketItem: React.FC<IProps> = ({ item }) => {
-  const { product, error: productError } = useFetchProduct(item.id);
-  const { productSummaryCost, error: summaryError } = useProductSummaryCost(item.id);
+export const BasketItem: React.FC<IProps> = ({ _id, quantity }) => {
+  const { data: product, error: productError, isPending } = useFetchProduct(_id);
   const { remove, updateQuantity } = useContext(BasketContext);
 
   const removeFromBasketHandler = () => {
-    remove(item.id);
+    remove(_id);
   };
   const increaseQuantityHandler = () => {
-    updateQuantity(item.id, 1);
+    updateQuantity(_id, 1);
   };
   const decreaseQuantityHandler = () => {
-    updateQuantity(item.id, -1);
+    updateQuantity(_id, -1);
   };
+
+  if (isPending) {
+    return (
+      <Styled.Flex>
+        <Styled.ImageCol>...</Styled.ImageCol>
+        <Styled.Name>...</Styled.Name>
+      </Styled.Flex>
+    );
+  }
+
+  if (productError) {
+    <Styled.Flex>
+      <Styled.ImageCol>...</Styled.ImageCol>
+      <Styled.Name>Сталась помилка: {productError.message}</Styled.Name>
+    </Styled.Flex>;
+  }
 
   if (product) {
     const imageUrl = getSanityImageUrl(product.image);
+    const productSummaryCost = basketService.getProductSummaryCost(product.price, _id);
 
     return (
       <Styled.Flex>
@@ -39,7 +56,7 @@ export const BasketItem: React.FC<IProps> = ({ item }) => {
           <Styled.Name>{product.name}</Styled.Name>
           <Styled.QuantityInputWrapper>
             <QuantityInput
-              value={item.quantity}
+              value={quantity}
               onIncrease={increaseQuantityHandler}
               onDecrease={decreaseQuantityHandler}
             />
@@ -49,10 +66,10 @@ export const BasketItem: React.FC<IProps> = ({ item }) => {
           <Styled.RemoveBtn onClick={removeFromBasketHandler}>
             <img src={CloseIcon} alt="remove from basket" />
           </Styled.RemoveBtn>
-          <Styled.Price>{productSummaryCost || summaryError} грн</Styled.Price>
+          <Styled.Price>{productSummaryCost} грн</Styled.Price>
         </Styled.RemoveAndPriceCol>
       </Styled.Flex>
     );
   }
-  return <h3>{productError}</h3>;
+  return <h3>Сталась невідома помилка :(</h3>;
 };

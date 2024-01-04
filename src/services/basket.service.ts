@@ -1,5 +1,5 @@
 import { IProductId } from '../types/products';
-import productService from './products.service';
+import { ProductModel } from '../modules/models/Product.model';
 
 export type IBasketItemId = IProductId;
 export type IBasketItemQuantity = number;
@@ -52,34 +52,13 @@ class BasketService {
     }
   }
 
-  async getProductSummaryCost(id: IBasketItemId) {
-    const product = await productService.getById(id);
-    const record = this.findByProductId(id);
-    if (product && record) {
-      const { price } = product;
+  getProductSummaryCost(price: ProductModel['price'], _id: ProductModel['_id']) {
+    const record = this.findByProductId(_id);
+    if (price && record) {
       const { quantity } = record;
       return price * quantity;
     }
-  }
-
-  async getTotalCost() {
-    const { basket } = this;
-
-    const promises = basket.map(async (itemInBasket) => {
-      const itemInCatalogue = await productService.getById(itemInBasket.id);
-
-      if (itemInCatalogue) {
-        const itemSummaryCost = itemInCatalogue.price * itemInBasket.quantity;
-        return itemSummaryCost;
-      }
-
-      return 0;
-    });
-
-    const results = await Promise.all(promises);
-    const totalPrice = results.reduce((total, itemSummaryCost) => total + itemSummaryCost, 0);
-
-    return totalPrice;
+    return 0;
   }
 
   getTotalItemsQuantity() {
