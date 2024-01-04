@@ -1,10 +1,11 @@
 import { useQuery } from '@tanstack/react-query';
 import { IProductId } from '../../types/products';
 import productService from '../../services/products.service';
+import { QUERY_KEYS } from '../../constants/appKeys';
 
 const useFetchProduct = (id: IProductId) => {
   const { data, error, isPending } = useQuery({
-    queryKey: ['product', id],
+    queryKey: [QUERY_KEYS.product, id],
     queryFn: () => productService.getById(id),
     staleTime: 60000
   });

@@ -12,3 +12,14 @@ export const ROUTER_KEYS = {
     delivery: 'delivery'
   }
 };
+
+export const STORAGE_KEYS = {
+  basket: 'basket',
+  address: 'address',
+  contacts: 'contacts'
+};
+
+export const QUERY_KEYS = {
+  product: 'product',
+  products: 'products'
+};
