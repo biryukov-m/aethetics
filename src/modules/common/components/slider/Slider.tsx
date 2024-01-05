@@ -10,7 +10,7 @@ const Slider: React.FC = () => (
       <img className="desktop" src={MainSlideOne} alt="moisturizing serum" />
       <article className="text">
         <h2>Новинка від AESTHETICS</h2>
-        <h4>Зволожуюча сиворотка для обличчя</h4>
+        <h4>Зволожуюча сироватка для обличчя</h4>
       </article>
       <div className="slider-controls">
         <div className="radio active" />
