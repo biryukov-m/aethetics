@@ -1,5 +1,5 @@
 import { IProductId } from '../types/products';
-import { ProductModel } from '../modules/models/Product.model';
+import { ProductModel } from '../modules/models/ProductModel';
 
 export type IBasketItemId = IProductId;
 export type IBasketItemQuantity = number;
@@ -41,6 +41,10 @@ class BasketService {
   findByProductId(id: IBasketItemId) {
     const { basket } = this;
     return basket.find((item) => item.id === id);
+  }
+
+  getQuantityOfProductId(id: IBasketItemId) {
+    return this.findByProductId(id)?.quantity;
   }
 
   updateQuantity(id: IBasketItemId, quantity: IBasketItemQuantity) {

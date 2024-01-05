@@ -14,7 +14,7 @@ export const useFetchTotalCost = (basket: IBasketItem[], queryClient: QueryClien
       await Promise.all(
         basket.map(async (item) => {
           const product = await queryClient.fetchQuery({
-            queryKey: [QUERY_KEYS.product, item.id],
+            queryKey: [QUERY_KEYS.product.name, 'total_cost', item.id],
             queryFn: () => productService.getById(item.id)
           });
 

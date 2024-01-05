@@ -5,11 +5,11 @@ import BasketIconDefault from '../../../../assets/images/icon-basket-default.png
 import BasketIconHover from '../../../../assets/images/icon-basket-hover.png';
 import { BasketContext } from '../../../basket-modal/Basket.provider';
 import getSanityImageUrl from '../../../../utils/getSanityImageUrl';
-import { ProductModel } from '../../../models/Product.model';
 import { ROUTER_KEYS } from '../../../../constants/appKeys';
+import { ProductModelMin } from '../../../models';
 
 type IProps = {
-  product: ProductModel;
+  product: ProductModelMin;
 };
 
 const CatalogueContentItem: React.FC<IProps> = ({ product }) => {

@@ -6,7 +6,7 @@ import { CloseButton } from '../../../common/components/CloseButton/CloseButton.
 import useFetchProduct from '../../../hooks/useFetchProduct';
 import basketService, { IBasketItemQuantity } from '../../../../services/basket.service';
 import getSanityImageUrl from '../../../../utils/getSanityImageUrl';
-import { ProductModel } from '../../../models/Product.model';
+import { ProductModel } from '../../../models/ProductModel';
 
 interface IProps {
   _id: ProductModel['_id'];

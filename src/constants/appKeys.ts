@@ -25,6 +25,18 @@ export const STORAGE_KEYS = {
 };
 
 export const QUERY_KEYS = {
-  product: 'product',
-  products: 'products'
+  product: {
+    name: 'product',
+    options: {
+      minimized: 'minimized',
+      full: 'full'
+    }
+  },
+  products: {
+    name: 'products',
+    options: {
+      minimized: 'minimized',
+      full: 'full'
+    }
+  }
 };
