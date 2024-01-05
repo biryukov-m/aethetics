@@ -41,5 +41,18 @@ export const ProductSchema: SchemaTypeDefinition = {
       type: 'text',
       title: 'Composition',
     },
+    {
+      name: 'category',
+      type: 'reference',
+      to: [{type: 'productCategory'}],
+      title: 'Category',
+      validation: (rule) => rule.required(),
+    },
+    {
+      name: 'tags',
+      type: 'array',
+      title: 'Tags',
+      of: [{type: 'reference', to: [{type: 'tag'}]}],
+    },
   ],
 }
