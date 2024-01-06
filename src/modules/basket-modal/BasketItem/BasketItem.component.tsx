@@ -14,7 +14,6 @@ interface IBasketProps {
 
 export const BasketItem: React.FC<IBasketProps> = ({ product, quantity }) => {
   const { remove, updateQuantity } = useContext(BasketContext);
-
   const removeFromBasketHandler = () => {
     remove(product._id);
   };

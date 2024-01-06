@@ -20,15 +20,13 @@ const BasketModal: React.FC<IProps> = ({ closeHandler }) => {
     <Styled.Overlay onClick={closeHandler}>
       <Styled.Wrapper onClick={(e) => handleBasketClick(e)}>
         <Styled.HeaderContainer>
-          <Styled.Header>
-            {isBasketExists ? 'Ваше замовлення' : 'Тут буде ваше замовлення'}
-          </Styled.Header>
+          {isBasketExists && <Styled.Header>Ваше замовлення</Styled.Header>}
           <CloseButton onClick={closeHandler} />
         </Styled.HeaderContainer>
         {isBasketExists ? (
           <BasketWithData basket={basket} />
         ) : (
-          <Styled.SubHeader>Кошик ще порожній</Styled.SubHeader>
+          <Styled.SubHeader>Кошик порожній</Styled.SubHeader>
         )}
         <Styled.ContinueShopping onClick={closeHandler}>Продовжити покупки</Styled.ContinueShopping>
         {isBasketExists && (
