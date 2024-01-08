@@ -1,22 +1,25 @@
-import { useQuery } from '@tanstack/react-query';
+import { useQueries } from '@tanstack/react-query';
 import { useEffect, useState } from 'react';
 import { QUERY_KEYS } from '../../constants/appKeys';
 import basketService, { IBasketItem } from '../../services/basket.service';
 import productService from '../../services/products.service';
+import { ProductModelMin } from '../models';
 
 export const useFetchBasket = (basket: IBasketItem[]) => {
-  const idsFromBasket = basket.map((item) => item.id);
   const [totalCost, setTotalCost] = useState(0);
-  const { isPending, data, error } = useQuery({
-    queryKey: [QUERY_KEYS.products.name, QUERY_KEYS.products.options.minimized, ...idsFromBasket],
-    queryFn: () => productService.getByIds(idsFromBasket)
+  const queriesResults = useQueries({
+    queries: basket.map((item) => ({
+      queryKey: [QUERY_KEYS.product.name, QUERY_KEYS.product.options.minimized, item.id],
+      queryFn: () => productService.getByIdMin(item.id)
+    }))
   });
 
   useEffect(() => {
-    if (!isPending && !error && data) {
-      setTotalCost(basketService.countTotalCost(data));
+    if (queriesResults.every((result) => !result.isError && !result.isPending && result.data)) {
+      const products = queriesResults.map((result) => result.data);
+      setTotalCost(basketService.countTotalCost(products as ProductModelMin[]));
     }
-  }, [basket, data]);
+  }, [basket, queriesResults]);
 
-  return { isPending, data, totalCost };
+  return { queriesResults, totalCost };
 };

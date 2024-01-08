@@ -3,20 +3,22 @@ import * as Styled from './BasketModal.styled';
 import { IBasketItem } from '../../services/basket.service';
 import { BasketItem } from './BasketItem/BasketItem.component';
 import { useFetchBasket } from '../hooks/useFetchBasket';
+import { ProductModelMin } from '../models';
 
 interface IProps {
   basket: IBasketItem[];
 }
 
 export const BasketWithData: React.FC<IProps> = ({ basket }) => {
-  const { isPending, data, totalCost } = useFetchBasket(basket);
+  const { queriesResults, totalCost } = useFetchBasket(basket);
 
-  if (isPending) {
+  if (queriesResults.some((result) => result.isPending)) {
     return <Styled.SubHeader>Завантажуємо...</Styled.SubHeader>;
   }
 
-  if (data) {
-    const basketItems = data.map((item) => (
+  if (queriesResults.every((result) => result.status === 'success')) {
+    const products = queriesResults.map((result) => result.data) as ProductModelMin[];
+    const basketItems = products.map((item) => (
       <BasketItem
         key={item._id}
         product={item}
