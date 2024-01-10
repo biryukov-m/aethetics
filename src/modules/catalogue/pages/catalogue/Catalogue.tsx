@@ -1,6 +1,6 @@
 import React from 'react';
 import CatalogueFilter from '../../components/CatalogueFilter';
-import CatalogueContent from '../../components/CatalogueContent';
+import CatalogueContent from '../../components/CatalogueContent/CatalogueContent';
 import CatalogueRecentlyViewed from '../../components/CatalogueRecentlyViewed';
 
 const Catalogue: React.FC = () => (

@@ -187,35 +187,5 @@
         }
       }
     }
-    .column {
-      .items {
-        display: flex;
-        width: 100%;
-        flex-direction: row;
-        margin-bottom: 44px;
-        margin-top: 2px;
-        flex-wrap: wrap;
-        row-gap: 30px;
-        justify-content: space-between;
-        @media (max-width: 1140px) {
-          gap: 16px;
-          justify-content: center;
-        }
-        &:after {
-          @media (max-width: 1140px) {
-            display: block;
-            content: '';
-            width: 260px;
-          }
-          @media (max-width: 767px) {
-            width: clamp(156px, 43vw, 260px);
-          }
-        }
-      }
-    }
-  }
-  .button-show-more {
-    width: fit-content;
-    margin: 0 auto;
   }
 }

@@ -29,7 +29,6 @@ export const Button = styled(Styled.MiniButton)`
       display: block;
     }
   }
-
   &:hover {
     @media (max-width: ${MEDIA.tablet}px) {
       transition: none;
@@ -42,21 +41,18 @@ export const Button = styled(Styled.MiniButton)`
       }
     }
   }
-
   > img {
     display: none;
   }
 `;
 export const Container = styled.div`
-  width: 260px;
-  padding: 13px 13px 8px;
-  border: 1px solid ${COLORS.black};
-  @media (max-width: 950px) {
-    width: clamp(156px, 24vw, 260px);
-    padding: 5px 5px 10px;
+  padding: 12px 12px 8px;
+  border: 1px solid transparent;
+  @media screen and (max-width: ${MEDIA.tablet}px) {
+    border: 1px solid ${COLORS.black};
   }
-  @media (max-width: 767px) {
-    width: clamp(156px, 43vw, 260px);
+  @media screen and (max-width: ${MEDIA.mobile}px) {
+    padding: 5px 5px 10px;
   }
   &:hover {
     border: 1px solid ${COLORS.accent};
@@ -81,7 +77,7 @@ export const Heart = styled.span`
   background: url(${FavIcon}) no-repeat;
   background-position: center;
   cursor: pointer;
-  @media (max-width: 950px) {
+  @media (max-width: ${MEDIA.tablet}px) {
     right: 1.5%;
     top: 1%;
     width: 24px;
