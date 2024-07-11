@@ -1,5 +1,5 @@
 import React from 'react';
-import CatalogueFilter from '../../components/CatalogueFilter';
+import CatalogueFilter from '../../components/CatalogueFilter/CatalogueFilter';
 import CatalogueContent from '../../components/CatalogueContent/CatalogueContent';
 import CatalogueRecentlyViewed from '../../components/CatalogueRecentlyViewed';
 
