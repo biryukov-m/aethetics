@@ -14,7 +14,11 @@ const CatalogueFilterSection: React.FC<IProps> = ({ header, options, priceSectio
     <Styled.Wrapper>
       <Styled.Header>
         <Styled.HeaderText onClick={() => setIsExpanded(!isExpanded)}>{header}</Styled.HeaderText>
-        {isExpanded ? <Styled.UnExpandIcon /> : <Styled.ExpandIcon />}
+        {isExpanded ? (
+          <Styled.UnExpandIcon onClick={() => setIsExpanded(!isExpanded)} />
+        ) : (
+          <Styled.ExpandIcon onClick={() => setIsExpanded(!isExpanded)} />
+        )}
       </Styled.Header>
       {isExpanded && priceSection ? (
         <Styled.PriceSection>
@@ -23,9 +27,11 @@ const CatalogueFilterSection: React.FC<IProps> = ({ header, options, priceSectio
           <input className="maximal" type="number" placeholder="до" />
         </Styled.PriceSection>
       ) : (
-        <ul>
-          {options && options.map((option) => <CatalogueFilterSectionOption name={option} />)}
-        </ul>
+        isExpanded && (
+          <ul>
+            {options && options.map((option) => <CatalogueFilterSectionOption name={option} />)}
+          </ul>
+        )
       )}
     </Styled.Wrapper>
   );
