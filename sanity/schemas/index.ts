@@ -1,6 +1,13 @@
 import {ProductSchema} from './product'
-import {TagSchema} from './tag'
-import {TagCategorySchema} from './tagCategory'
-import {ProductCategorySchema} from './productCategory'
+import {CategorySchema} from './category'
+import {AgeGroupSchema} from './ageGroup'
+import {PurposeSchema} from './purpose'
+import {SkinTypeSchema} from './skinType'
 
-export const schemaTypes = [ProductSchema, TagSchema, TagCategorySchema, ProductCategorySchema]
+export const schemaTypes = [
+  ProductSchema,
+  CategorySchema,
+  AgeGroupSchema,
+  PurposeSchema,
+  SkinTypeSchema,
+]

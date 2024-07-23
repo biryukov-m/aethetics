@@ -1,14 +1,15 @@
 import {SchemaTypeDefinition} from 'sanity'
 
-export const ProductCategorySchema: SchemaTypeDefinition = {
-  name: 'productCategory',
+export const CategorySchema: SchemaTypeDefinition = {
+  name: 'category',
+  title: 'Category',
   type: 'document',
-  title: 'Product Category',
   fields: [
     {
       name: 'name',
+      title: 'Name',
       type: 'string',
-      title: 'name',
+      description: 'The name of the category, e.g., Toner, Mask.',
       validation: (rule) => rule.required(),
     },
   ],
