@@ -1,15 +1,10 @@
 import { sanityClient } from '../constants/sanityConfig';
 import { createProductModelMin } from '../modules/models';
 import { createProductModel } from '../modules/models/ProductModel';
-import { IProduct } from '../types/products';
+import { IProduct, IProductFilters } from '../types/products';
 
-// TODO: implement filtering
-// interface IProductFilters {
-//   category?: string;
-//   minPrice?: number;
-//   maxPrice?: number;
-//   tags?: string[];
-// }
+// TODO: implement filterin
+
 class ProductService {
   private async fetchProducts(query: string) {
     try {
@@ -21,8 +16,31 @@ class ProductService {
 
   // TODO: filtering
   // async getFiltered(filters: IProductFilters) {
-  async getFiltered() {
-    const query = '*[_type == "product"]';
+  async getFiltered(filters: IProductFilters = {}) {
+    let query = '*[_type == "product"]';
+    const conditions = [];
+
+    if (filters.category) conditions.push(`category->name == "${filters.category}"`);
+    if (filters.skinType) conditions.push(`"${filters.skinType}" in skinTypes[]->name`);
+    if (filters.ageGroup) conditions.push(`"${filters.ageGroup}" in ageGroups[]->name`);
+    if (filters.purpose) conditions.push(`"${filters.purpose}" in purposes[]->name`);
+
+    if (conditions.length > 0) {
+      query += `[${conditions.join(' && ')}]`;
+    }
+
+    // query += `{
+    //   name,
+    //   description,
+    //   price,
+    //   "category": category->name,
+    //   "skinTypes": skinTypes[]->name,
+    //   "ageGroups": ageGroups[]->name,
+    //   "purposes": purposes[]->name,
+    //   "ingredients": ingredients[]->name,
+    //   mainImage
+    // }`;
+
     const products = await this.fetchProducts(query);
     return products ? products.map((product) => createProductModelMin(product)) : products;
   }

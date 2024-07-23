@@ -1,13 +1,31 @@
 import { sanityClient } from '../constants/sanityConfig';
-import { createCategoryModel } from '../modules/models/CategoryModel';
-import { ICategory } from '../types/category';
+import { IAllFilters } from '../types/filter';
 
 class CategoriesService {
-  async getCategories() {
+  async getAllFilters() {
     try {
-      const query = '*[_type == "productCategory"]';
-      const categories = await sanityClient.fetch<ICategory[]>(query);
-      return categories ? categories.map((category) => createCategoryModel(category)) : categories;
+      const query = `
+        {
+          "ageGroups": *[_type == "ageGroup"] {
+            _id,
+            name
+          },
+          "categories": *[_type == "category"] {
+            _id,
+            name
+          },
+          "skinTypes": *[_type == "skinType"] {
+            _id,
+            name
+          },
+          "purposes": *[_type == "purpose"] {
+            _id,
+            name
+          }
+        }
+      `;
+      const filters = await sanityClient.fetch<IAllFilters>(query);
+      return filters || null;
     } catch {
       return null;
     }

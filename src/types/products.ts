@@ -15,3 +15,10 @@ export interface IProduct {
   description: IProductDescription;
   composition: IProductComposition;
 }
+
+export interface IProductFilters {
+  category?: string;
+  skinType?: string;
+  ageGroup?: string;
+  purpose?: string;
+}

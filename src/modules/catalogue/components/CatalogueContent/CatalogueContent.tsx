@@ -1,11 +1,38 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useLocation, useNavigate } from 'react-router-dom';
+import queryString from 'query-string';
 import CatalogueContentItem from '../CatalogueContentItem/CatalogueContentItem';
 import useFetchProducts from '../../../hooks/useFetchProducts';
 import * as Styled from './CatalogueContent.styled';
 import { ButtonArrowBottom as StyledButtonArrowBottom } from '../../../common/styled/button.styled';
+import { IProductFilters } from '../../../../types/products';
 
-const CatalogueContent: React.FC = () => {
-  const { isPending, data, error } = useFetchProducts();
+interface IProps {
+  filters: IProductFilters;
+  setFilters: React.Dispatch<React.SetStateAction<IProductFilters>>;
+}
+
+const CatalogueContent: React.FC<IProps> = ({ filters, setFilters }) => {
+  const location = useLocation();
+  const navigate = useNavigate();
+
+  const { isPending, data, error } = useFetchProducts(filters);
+
+  useEffect(() => {
+    const parsed = queryString.parse(location.search);
+    setFilters((prevFilters) => ({
+      ...prevFilters,
+      ...parsed
+    }));
+  }, [location.search]);
+
+  useEffect(() => {
+    const search = queryString.stringify(filters);
+    navigate({
+      pathname: '/catalogue',
+      search: `?${search}`
+    });
+  }, [filters]);
 
   if (error) return <h3>{error.message}</h3>;
   if (isPending) {
