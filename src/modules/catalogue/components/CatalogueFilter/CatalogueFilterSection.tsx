@@ -10,21 +10,22 @@ interface IProps {
 
 const CatalogueFilterSection: React.FC<IProps> = ({ header, options, priceSection = false }) => {
   const [isExpanded, setIsExpanded] = useState(true);
+  const handleExpand = () => setIsExpanded(!isExpanded);
   return (
     <Styled.Wrapper>
       <Styled.Header>
-        <Styled.HeaderText onClick={() => setIsExpanded(!isExpanded)}>{header}</Styled.HeaderText>
+        <Styled.HeaderText onClick={handleExpand}>{header}</Styled.HeaderText>
         {isExpanded ? (
-          <Styled.UnExpandIcon onClick={() => setIsExpanded(!isExpanded)} />
+          <Styled.UnExpandIcon onClick={handleExpand} />
         ) : (
-          <Styled.ExpandIcon onClick={() => setIsExpanded(!isExpanded)} />
+          <Styled.ExpandIcon onClick={handleExpand} />
         )}
       </Styled.Header>
       {isExpanded && priceSection ? (
         <Styled.PriceSection>
-          <input className="minimal" type="number" placeholder="від" />
+          <input type="number" placeholder="від" />
           <span />
-          <input className="maximal" type="number" placeholder="до" />
+          <input type="number" placeholder="до" />
         </Styled.PriceSection>
       ) : (
         isExpanded && (

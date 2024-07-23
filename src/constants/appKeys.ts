@@ -38,5 +38,8 @@ export const QUERY_KEYS = {
       minimized: 'minimized',
       full: 'full'
     }
+  },
+  categories: {
+    name: 'categories'
   }
 };
