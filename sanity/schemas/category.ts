@@ -2,7 +2,7 @@ import {SchemaTypeDefinition} from 'sanity'
 
 export const CategorySchema: SchemaTypeDefinition = {
   name: 'category',
-  title: 'Category',
+  title: 'Категорія',
   type: 'document',
   fields: [
     {

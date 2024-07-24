@@ -6,26 +6,27 @@ class CategoriesService {
     try {
       const query = `
         {
-          "ageGroups": *[_type == "ageGroup"] {
+          "Вікова категорія": *[_type == "ageGroup"] {
             _id,
-            name
+            name 
           },
-          "categories": *[_type == "category"] {
+          "Тип": *[_type == "category"] {
             _id,
-            name
+            name 
           },
-          "skinTypes": *[_type == "skinType"] {
+          "Тип шкіри": *[_type == "skinType"] {
             _id,
-            name
+            name 
           },
-          "purposes": *[_type == "purpose"] {
+          "Призначення": *[_type == "purpose"] {
             _id,
-            name
+            name 
           }
         }
       `;
       const filters = await sanityClient.fetch<IAllFilters>(query);
-      return filters || null;
+      const result = Object.entries(filters).map((obj) => ({ title: obj[0], options: obj[1] }));
+      return result || null;
     } catch {
       return null;
     }

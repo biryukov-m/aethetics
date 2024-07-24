@@ -2,7 +2,7 @@ import {SchemaTypeDefinition} from 'sanity'
 
 export const PurposeSchema: SchemaTypeDefinition = {
   name: 'purpose',
-  title: 'Purpose',
+  title: 'Призначення',
   type: 'document',
   fields: [
     {

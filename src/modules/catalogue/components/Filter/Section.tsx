@@ -6,14 +6,13 @@ import Filter from './Filter';
 
 interface IProps extends React.SelectHTMLAttributes<HTMLSelectElement> {
   header: string;
-  options: IFilter[];
+  options?: IFilter[];
   priceSection?: boolean;
 }
 
 const Section: React.FC<IProps> = ({ header, options, priceSection = false }) => {
   const [isExpanded, setIsExpanded] = useState(true);
   const handleExpand = () => setIsExpanded(!isExpanded);
-  console.log(options);
 
   return (
     <Styled.Wrapper>
@@ -32,7 +31,11 @@ const Section: React.FC<IProps> = ({ header, options, priceSection = false }) =>
           <input type="number" placeholder="до" />
         </Styled.PriceSection>
       ) : (
-        isExpanded && <ul>{options && options.map((option) => <Filter name={option.name} />)}</ul>
+        isExpanded && (
+          <ul>
+            {options && options.map((option, idx) => <Filter key={idx} name={option.name} />)}
+          </ul>
+        )
       )}
     </Styled.Wrapper>
   );

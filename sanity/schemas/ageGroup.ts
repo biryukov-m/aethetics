@@ -2,7 +2,7 @@ import {SchemaTypeDefinition} from 'sanity'
 
 export const AgeGroupSchema: SchemaTypeDefinition = {
   name: 'ageGroup',
-  title: 'Age Group',
+  title: 'Вікова категорія',
   type: 'document',
   fields: [
     {

@@ -2,7 +2,7 @@ import {SchemaTypeDefinition} from 'sanity'
 
 export const SkinTypeSchema: SchemaTypeDefinition = {
   name: 'skinType',
-  title: 'Skin Type',
+  title: 'Тип шкіри',
   type: 'document',
   fields: [
     {

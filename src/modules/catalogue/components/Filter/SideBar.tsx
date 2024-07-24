@@ -19,7 +19,7 @@ const SideBar: React.FC<IProps> = ({ setFilters }) => {
   };
 
   const { data: filters, error, isPending } = useFetchCategories();
-
+  // TODO: Spinner
   if (isPending) {
     return <>...</>;
   }
@@ -28,15 +28,15 @@ const SideBar: React.FC<IProps> = ({ setFilters }) => {
     return <>Сталася помилка </>;
   }
 
-  return filters ? (
-    <Styled.Wrapper>
-      {Object.entries(filters).map((filterArr) => (
-        <Section header={filterArr[0]} onChange={handleFilterChange} options={filterArr[1]} />
-      ))}
-      {/* <Section priceSection header="Ціна" /> */}
-    </Styled.Wrapper>
-  ) : (
-    <>Немає категорій</>
+  return (
+    (filters && (
+      <Styled.Wrapper>
+        {filters.map((f, idx) => (
+          <Section key={idx} header={f.title} options={f.options} onChange={handleFilterChange} />
+        ))}
+        <Section priceSection header="Ціна" />
+      </Styled.Wrapper>
+    )) || <>Немає категорій</>
   );
 };
 
