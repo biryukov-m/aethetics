@@ -4,14 +4,13 @@ import IconFilterOpen from '../../../../assets/images/icon-filter-open.png';
 import IconFilterClose from '../../../../assets/images/icon-filter-close.png';
 
 export const Wrapper = styled.div`
-  margin-bottom: 8px;
+  margin-bottom: 16px;
 `;
 export const Header = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 17px;
-  margin-right: 3px;
+  margin-bottom: 8px;
 `;
 
 export const HeaderText = styled.h4`

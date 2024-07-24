@@ -1,7 +1,7 @@
 import React from 'react';
 import * as Styled from './CatalogueFilter.styled';
 import CatalogueFilterSection from './CatalogueFilterSection';
-import useFetchCategories from '../../../hooks/useFetchFilters';
+import useFetchFilters from '../../../hooks/useFetchFilters';
 import { IProductFilters } from '../../../../types/products';
 
 interface IProps {
@@ -18,7 +18,7 @@ const CatalogueFilter: React.FC<IProps> = ({ setFilters }) => {
     }));
   };
 
-  const { data: filters, error, isPending } = useFetchCategories();
+  const { data: filters, error, isPending } = useFetchFilters();
   // TODO: Spinner
   if (isPending) {
     return <>...</>;
