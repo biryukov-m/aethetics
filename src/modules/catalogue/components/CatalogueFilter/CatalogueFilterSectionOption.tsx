@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
-import * as Styled from './Filter.styled';
+import * as Styled from './CatalogueFilterSectionOption.styled';
 
 interface IProps {
   name: string;
 }
 
-const Filter: React.FC<IProps> = ({ name }) => {
+const CatalogueFilterSectionOption: React.FC<IProps> = ({ name }) => {
   const [isChecked, setIsChecked] = useState(false);
   return (
     <Styled.ListItem $checked={isChecked} onClick={() => setIsChecked(!isChecked)}>
@@ -14,4 +14,4 @@ const Filter: React.FC<IProps> = ({ name }) => {
   );
 };
 
-export default Filter;
+export default CatalogueFilterSectionOption;

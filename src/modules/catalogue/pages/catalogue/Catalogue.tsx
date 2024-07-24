@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import CatalogueFiltersSideBar from '../../components/Filter/SideBar';
+import CatalogueFiltersSideBar from '../../components/CatalogueFilter/CatalogueFilter';
 import CatalogueContent from '../../components/CatalogueContent/CatalogueContent';
 import CatalogueRecentlyViewed from '../../components/CatalogueRecentlyViewed';
 import * as CommonStyled from '../../../common/styled/layout.styled';

@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
-import * as Styled from './Section.styled';
-
+import * as Styled from './CatalogueFilterSection.styled';
 import { IFilter } from '../../../../types/filter';
-import Filter from './Filter';
+import CatalogueFilterSectionOption from './CatalogueFilterSectionOption';
 
 interface IProps extends React.SelectHTMLAttributes<HTMLSelectElement> {
   header: string;
@@ -10,7 +9,7 @@ interface IProps extends React.SelectHTMLAttributes<HTMLSelectElement> {
   priceSection?: boolean;
 }
 
-const Section: React.FC<IProps> = ({ header, options, priceSection = false }) => {
+const CatalogueFilterSection: React.FC<IProps> = ({ header, options, priceSection = false }) => {
   const [isExpanded, setIsExpanded] = useState(true);
   const handleExpand = () => setIsExpanded(!isExpanded);
 
@@ -33,7 +32,10 @@ const Section: React.FC<IProps> = ({ header, options, priceSection = false }) =>
       ) : (
         isExpanded && (
           <ul>
-            {options && options.map((option, idx) => <Filter key={idx} name={option.name} />)}
+            {options &&
+              options.map((option, idx) => (
+                <CatalogueFilterSectionOption key={idx} name={option.name} />
+              ))}
           </ul>
         )
       )}
@@ -41,4 +43,4 @@ const Section: React.FC<IProps> = ({ header, options, priceSection = false }) =>
   );
 };
 
-export default Section;
+export default CatalogueFilterSection;

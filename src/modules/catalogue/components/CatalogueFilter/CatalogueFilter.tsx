@@ -1,6 +1,6 @@
 import React from 'react';
-import * as Styled from './SideBar.styled';
-import Section from './Section';
+import * as Styled from './CatalogueFilter.styled';
+import CatalogueFilterSection from './CatalogueFilterSection';
 import useFetchCategories from '../../../hooks/useFetchFilters';
 import { IProductFilters } from '../../../../types/products';
 
@@ -9,7 +9,7 @@ interface IProps {
   setFilters: React.Dispatch<React.SetStateAction<IProductFilters>>;
 }
 
-const SideBar: React.FC<IProps> = ({ setFilters }) => {
+const CatalogueFilter: React.FC<IProps> = ({ setFilters }) => {
   const handleFilterChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
     setFilters((prevFilters) => ({
@@ -32,12 +32,17 @@ const SideBar: React.FC<IProps> = ({ setFilters }) => {
     (filters && (
       <Styled.Wrapper>
         {filters.map((f, idx) => (
-          <Section key={idx} header={f.title} options={f.options} onChange={handleFilterChange} />
+          <CatalogueFilterSection
+            key={idx}
+            header={f.title}
+            options={f.options}
+            onChange={handleFilterChange}
+          />
         ))}
-        <Section priceSection header="Ціна" />
+        <CatalogueFilterSection priceSection header="Ціна" onChange={handleFilterChange} />
       </Styled.Wrapper>
     )) || <>Немає категорій</>
   );
 };
 
-export default SideBar;
+export default CatalogueFilter;
