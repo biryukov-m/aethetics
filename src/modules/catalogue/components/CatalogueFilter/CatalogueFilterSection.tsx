@@ -23,21 +23,20 @@ const CatalogueFilterSection: React.FC<IProps> = ({ header, options, priceSectio
           <Styled.ExpandIcon onClick={handleExpand} />
         )}
       </Styled.Header>
-      {isExpanded && priceSection ? (
+      {isExpanded && !priceSection && (
+        <ul>
+          {options &&
+            options.map((option, idx) => (
+              <CatalogueFilterSectionOption key={idx} name={option.name} />
+            ))}
+        </ul>
+      )}
+      {isExpanded && priceSection && (
         <Styled.PriceSection>
           <input type="number" placeholder="від" />
           <span />
           <input type="number" placeholder="до" />
         </Styled.PriceSection>
-      ) : (
-        isExpanded && (
-          <ul>
-            {options &&
-              options.map((option, idx) => (
-                <CatalogueFilterSectionOption key={idx} name={option.name} />
-              ))}
-          </ul>
-        )
       )}
     </Styled.Wrapper>
   );
