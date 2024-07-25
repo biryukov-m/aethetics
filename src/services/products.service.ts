@@ -3,8 +3,6 @@ import { createProductModelMin } from '../modules/models';
 import { createProductModel } from '../modules/models/ProductModel';
 import { IProduct, IProductFilters } from '../types/products';
 
-// TODO: implement filterin
-
 class ProductService {
   private async fetchProducts(query: string) {
     try {
@@ -14,34 +12,33 @@ class ProductService {
     }
   }
 
-  // TODO: filtering
-  // async getFiltered(filters: IProductFilters) {
-  async getFiltered(filters: IProductFilters = {}) {
-    let query = '*[_type == "product"]';
-    const conditions = [];
+  async getFiltered(filters: IProductFilters) {
+    const conditions: string[] = [];
 
-    if (filters.category) conditions.push(`category->name == "${filters.category}"`);
-    if (filters.skinType) conditions.push(`"${filters.skinType}" in skinTypes[]->name`);
-    if (filters.ageGroup) conditions.push(`"${filters.ageGroup}" in ageGroups[]->name`);
-    if (filters.purpose) conditions.push(`"${filters.purpose}" in purposes[]->name`);
-
-    if (conditions.length > 0) {
-      query += `[${conditions.join(' && ')}]`;
+    if (filters.category && filters.category.length > 0) {
+      conditions.push(`category->name in ${JSON.stringify(filters.category)}`);
+    }
+    if (filters.skinType && filters.skinType.length > 0) {
+      filters.skinType.forEach((skintype) =>
+        conditions.push(`("${skintype}" in skinTypes[]->name)`)
+      );
+    }
+    if (filters.ageGroup && filters.ageGroup.length > 0) {
+      filters.ageGroup.forEach((skintype) =>
+        conditions.push(`("${skintype}" in ageGroups[]->name)`)
+      );
+    }
+    if (filters.purpose && filters.purpose.length > 0) {
+      filters.purpose.forEach((skintype) => conditions.push(`("${skintype}" in purpose[]->name)`));
     }
 
-    // query += `{
-    //   name,
-    //   description,
-    //   price,
-    //   "category": category->name,
-    //   "skinTypes": skinTypes[]->name,
-    //   "ageGroups": ageGroups[]->name,
-    //   "purposes": purposes[]->name,
-    //   "ingredients": ingredients[]->name,
-    //   mainImage
-    // }`;
+    const query = `*[_type == "product" ${
+      conditions.length > 0 ? '&& ' + conditions.join(' && ') : ''
+    }]`;
 
     const products = await this.fetchProducts(query);
+    console.log('Constructed Query:', query); // For debugging
+    console.log('Filtered Products:', products); // For debugging
     return products ? products.map((product) => createProductModelMin(product)) : products;
   }
 

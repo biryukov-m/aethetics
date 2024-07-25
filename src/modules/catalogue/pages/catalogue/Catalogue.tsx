@@ -9,11 +9,13 @@ import { IProductFilters } from '../../../../types/products';
 
 const Catalogue: React.FC = () => {
   const [filters, setFilters] = useState<IProductFilters>({
-    category: '',
-    skinType: '',
-    ageGroup: '',
-    purpose: ''
+    category: [],
+    skinType: [],
+    ageGroup: [],
+    purpose: []
   });
+
+  console.log('Filters:', filters);
 
   return (
     <>

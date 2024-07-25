@@ -17,8 +17,8 @@ export interface IProduct {
 }
 
 export interface IProductFilters {
-  category?: string;
-  skinType?: string;
-  ageGroup?: string;
-  purpose?: string;
+  category?: string[];
+  skinType?: string[];
+  ageGroup?: string[];
+  purpose?: string[];
 }

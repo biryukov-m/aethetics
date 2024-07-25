@@ -10,15 +10,30 @@ interface IProps {
 }
 
 const CatalogueFilter: React.FC<IProps> = ({ setFilters }) => {
-  const handleFilterChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
-    const { name, value } = e.target;
-    setFilters((prevFilters) => ({
-      ...prevFilters,
-      [name]: value
-    }));
-  };
-
   const { data: filters, error, isPending } = useFetchFilters();
+
+  const handleFilterChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { name, value, checked } = e.target;
+    setFilters((prevFilters) => {
+      const filterValues = (prevFilters[name as keyof IProductFilters] || []) as string[];
+      if (checked) {
+        // Add value to filter if it doesn't already exist
+        if (!filterValues.includes(value)) {
+          return {
+            ...prevFilters,
+            [name]: [...filterValues, value]
+          };
+        }
+      } else {
+        // Remove value from filter
+        return {
+          ...prevFilters,
+          [name]: filterValues.filter((item: string) => item !== value)
+        };
+      }
+      return prevFilters;
+    });
+  };
   // TODO: Spinner
   if (isPending) {
     return <>...</>;
@@ -31,15 +46,19 @@ const CatalogueFilter: React.FC<IProps> = ({ setFilters }) => {
   return (
     (filters && (
       <Styled.Wrapper>
-        {filters.map((f, idx) => (
+        {filters.map((f) => (
           <CatalogueFilterSection
-            key={idx}
+            key={f.title}
             header={f.title}
             options={f.options}
-            onChange={handleFilterChange}
+            handleFilterChange={handleFilterChange}
           />
         ))}
-        <CatalogueFilterSection priceSection header="Ціна" onChange={handleFilterChange} />
+        <CatalogueFilterSection
+          priceSection
+          header="Ціна"
+          handleFilterChange={handleFilterChange}
+        />
       </Styled.Wrapper>
     )) || <>Немає категорій</>
   );

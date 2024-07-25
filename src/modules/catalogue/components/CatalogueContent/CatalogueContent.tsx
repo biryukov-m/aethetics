@@ -14,30 +14,30 @@ interface IProps {
 }
 
 const CatalogueContent: React.FC<IProps> = ({ filters, setFilters }) => {
-  const location = useLocation();
-  const navigate = useNavigate();
+  // const location = useLocation();
+  // const navigate = useNavigate();
 
   const { isPending, data, error } = useFetchProducts(filters);
 
-  useEffect(() => {
-    const parsed = queryString.parse(location.search);
-    setFilters((prevFilters) => ({
-      ...prevFilters,
-      ...parsed
-    }));
-  }, [location.search]);
+  // const updateURL = (newFilters: IProductFilters) => {
+  //   const search = queryString.stringify(newFilters);
+  //   navigate({
+  //     pathname: `/${ROUTER_KEYS.catalogue}`,
+  //     search: `?${search}`
+  //   });
+  // };
 
-  useEffect(() => {
-    updateURL(filters);
-  }, [filters]);
+  // useEffect(() => {
+  //   const parsed = queryString.parse(location.search);
+  //   setFilters((prevFilters) => ({
+  //     ...prevFilters,
+  //     ...parsed
+  //   }));
+  // }, [location.search]);
 
-  const updateURL = (newFilters: IProductFilters) => {
-    const search = queryString.stringify(newFilters);
-    navigate({
-      pathname: `/${ROUTER_KEYS.catalogue}`,
-      search: `?${search}`
-    });
-  };
+  // useEffect(() => {
+  //   updateURL(filters);
+  // }, [filters]);
 
   if (error) return <h3>{error.message}</h3>;
   if (isPending) {

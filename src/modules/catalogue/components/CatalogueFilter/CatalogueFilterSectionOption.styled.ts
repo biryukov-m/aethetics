@@ -3,7 +3,8 @@ import { FONTS } from '../../../theme';
 import IconCheckboxDef from '../../../../assets/images/icon-checkbox-default.png';
 import IconCheckboxChecked from '../../../../assets/images/icon-checkbox-alt-checked.png';
 
-export const ListItem = styled.li<{ $checked: boolean }>`
+export const Label = styled.label<{ $checked: boolean }>`
+  display: block;
   font-family: ${FONTS.FAMILIES.normal};
   font-style: normal;
   font-weight: ${FONTS.WEIGHTS.normal};
@@ -23,8 +24,9 @@ export const ListItem = styled.li<{ $checked: boolean }>`
     top: 3px;
     width: 20px;
     height: 20px;
-    /* TODO: Fix resolving URL bag here */
-    /* background-image: ${(props) => (props.$checked ? IconCheckboxChecked : IconCheckboxDef)}; */
-    /* background: url(${IconCheckboxChecked}); */
+    background-image: url(${(props) => (props.$checked ? IconCheckboxChecked : IconCheckboxDef)});
+  }
+  input {
+    display: none;
   }
 `;

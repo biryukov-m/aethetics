@@ -7,9 +7,15 @@ interface IProps extends React.SelectHTMLAttributes<HTMLSelectElement> {
   header: string;
   options?: IFilter[];
   priceSection?: boolean;
+  handleFilterChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
-const CatalogueFilterSection: React.FC<IProps> = ({ header, options, priceSection = false }) => {
+const CatalogueFilterSection: React.FC<IProps> = ({
+  header,
+  options,
+  handleFilterChange,
+  priceSection = false
+}) => {
   const [isExpanded, setIsExpanded] = useState(true);
   const handleExpand = () => setIsExpanded(!isExpanded);
 
@@ -24,12 +30,17 @@ const CatalogueFilterSection: React.FC<IProps> = ({ header, options, priceSectio
         )}
       </Styled.Header>
       {isExpanded && !priceSection && (
-        <ul>
+        <fieldset>
           {options &&
-            options.map((option, idx) => (
-              <CatalogueFilterSectionOption key={idx} name={option.name} />
+            options.map((option) => (
+              <CatalogueFilterSectionOption
+                key={option._id}
+                name={header}
+                value={option.name}
+                handleFilterChange={handleFilterChange}
+              />
             ))}
-        </ul>
+        </fieldset>
       )}
       {isExpanded && priceSection && (
         <Styled.PriceSection>

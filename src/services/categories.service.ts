@@ -6,19 +6,19 @@ class CategoriesService {
     try {
       const query = `
         {
-          "Вікова категорія": *[_type == "ageGroup"] {
+          "ageGroup": *[_type == "ageGroup"] {
             _id,
             name 
           },
-          "Тип": *[_type == "category"] {
+          "category": *[_type == "category"] {
             _id,
             name 
           },
-          "Тип шкіри": *[_type == "skinType"] {
+          "skinType": *[_type == "skinType"] {
             _id,
             name 
           },
-          "Призначення": *[_type == "purpose"] {
+          "purpose": *[_type == "purpose"] {
             _id,
             name 
           }
@@ -28,8 +28,8 @@ class CategoriesService {
       const filters = Object.entries(data).map((obj) => ({ title: obj[0], options: obj[1] }));
       const idx = filters.findIndex((f) => f.title === 'Тип');
       if (idx !== -1) {
-        const [typeFilter] = filters.splice(idx, 1); // Удаляем объект с тайтлом "Тип"
-        filters.unshift(typeFilter); // Вставляем его на первое место
+        const [typeFilter] = filters.splice(idx, 1);
+        filters.unshift(typeFilter);
       }
 
       return filters || null;
