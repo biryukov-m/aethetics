@@ -23,7 +23,7 @@ const Catalogue: React.FC = () => {
         <CommonStyled.Layout>
           <CatalogueSorting />
           <Styled.Container>
-            <CatalogueFilter {...{ setFilters }} />
+            <CatalogueFilter currentFilters={filters} setFilters={setFilters} />
             <CatalogueContent {...{ filters, setFilters }} />
           </Styled.Container>
         </CommonStyled.Layout>

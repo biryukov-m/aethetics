@@ -1,5 +1,5 @@
 import { sanityClient } from '../constants/sanityConfig';
-import { IAllFilters } from '../types/filter';
+import { IProductFilters } from '../types/products';
 
 class CategoriesService {
   async getAllFilters() {
@@ -24,7 +24,7 @@ class CategoriesService {
           }
         }
       `;
-      const data = await sanityClient.fetch<IAllFilters>(query);
+      const data = await sanityClient.fetch<IProductFilters>(query);
       const filters = Object.entries(data).map((obj) => ({ title: obj[0], options: obj[1] }));
       const idx = filters.findIndex((f) => f.title === 'Тип');
       if (idx !== -1) {

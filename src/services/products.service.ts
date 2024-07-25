@@ -19,21 +19,17 @@ class ProductService {
       conditions.push(`category->name in ${JSON.stringify(filters.category)}`);
     }
     if (filters.skinType && filters.skinType.length > 0) {
-      filters.skinType.forEach((skintype) =>
-        conditions.push(`("${skintype}" in skinTypes[]->name)`)
-      );
+      filters.skinType.forEach((i) => conditions.push(`("${i}" in skinTypes[]->name)`));
     }
     if (filters.ageGroup && filters.ageGroup.length > 0) {
-      filters.ageGroup.forEach((skintype) =>
-        conditions.push(`("${skintype}" in ageGroups[]->name)`)
-      );
+      filters.ageGroup.forEach((i) => conditions.push(`("${i}" in ageGroups[]->name)`));
     }
     if (filters.purpose && filters.purpose.length > 0) {
-      filters.purpose.forEach((skintype) => conditions.push(`("${skintype}" in purpose[]->name)`));
+      filters.purpose.forEach((i) => conditions.push(`("${i}" in purposes[]->name)`));
     }
 
     const query = `*[_type == "product" ${
-      conditions.length > 0 ? '&& ' + conditions.join(' && ') : ''
+      conditions.length > 0 ? `&& ${conditions.join(' && ')}` : ''
     }]`;
 
     const products = await this.fetchProducts(query);

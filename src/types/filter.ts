@@ -1,11 +1,4 @@
-export interface IFilter {
+export interface IFilterOption {
   _id: string;
   name: string;
-}
-
-export interface IAllFilters {
-  ageGroups: IFilter[];
-  categories: IFilter[];
-  skinTypes: IFilter[];
-  purposes: IFilter[];
 }
