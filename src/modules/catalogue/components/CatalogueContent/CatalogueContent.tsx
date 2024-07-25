@@ -6,6 +6,7 @@ import useFetchProducts from '../../../hooks/useFetchProducts';
 import * as Styled from './CatalogueContent.styled';
 import { ButtonArrowBottom as StyledButtonArrowBottom } from '../../../common/styled/button.styled';
 import { IProductFilters } from '../../../../types/products';
+import { ROUTER_KEYS } from '../../../../constants/appKeys';
 
 interface IProps {
   filters: IProductFilters;
@@ -27,12 +28,16 @@ const CatalogueContent: React.FC<IProps> = ({ filters, setFilters }) => {
   }, [location.search]);
 
   useEffect(() => {
-    const search = queryString.stringify(filters);
+    updateURL(filters);
+  }, [filters]);
+
+  const updateURL = (newFilters: IProductFilters) => {
+    const search = queryString.stringify(newFilters);
     navigate({
-      pathname: '/catalogue',
+      pathname: `/${ROUTER_KEYS.catalogue}`,
       search: `?${search}`
     });
-  }, [filters]);
+  };
 
   if (error) return <h3>{error.message}</h3>;
   if (isPending) {
