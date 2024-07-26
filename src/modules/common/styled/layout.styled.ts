@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const Layout = styled.div`
   display: block;
   position: relative;
-  overflow: hidden;
+  overflow: visible;
   box-sizing: border-box;
   height: auto;
   width: 1074px;

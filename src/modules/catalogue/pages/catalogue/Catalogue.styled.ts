@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
 export const Wrapper = styled.section`
+  overflow: visible;
   margin: 64px 0 23px;
   @media (max-width: 1140px) {
     margin: 12px 0;
@@ -13,5 +14,7 @@ export const Container = styled.div`
 
   @media (max-width: 1140px) {
     margin: 0;
+    display: block;
+    position: relative;
   }
 `;
