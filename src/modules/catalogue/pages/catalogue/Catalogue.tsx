@@ -54,7 +54,7 @@ const Catalogue: React.FC = () => {
 
   const handleFiltersToggle = () => {
     setFiltersVisible((prev) => !prev);
-    setUserInteracted(true); // Track that user has interacted with filters
+    setUserInteracted(true);
   };
 
   console.log('Filters:', filters);

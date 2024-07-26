@@ -21,7 +21,7 @@ const CatalogueContent: React.FC<IProps> = ({ filters }) => {
     );
   }
 
-  return data ? (
+  return data && data.length > 0 ? (
     <Styled.Wrapper>
       <Styled.Grid>
         {data.map((product) => (
@@ -33,7 +33,7 @@ const CatalogueContent: React.FC<IProps> = ({ filters }) => {
       </Styled.ButtonWrapper>
     </Styled.Wrapper>
   ) : (
-    <h3>Сталася помилка, не можемо знайти товари</h3>
+    <h3>Товарів не знайдено</h3>
   );
 };
 
