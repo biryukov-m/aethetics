@@ -15,22 +15,30 @@ const CatalogueFilter: React.FC<IProps> = ({ currentFilters, setFilters }) => {
   const { updateUrlFilters } = useUrlFilters(setFilters);
 
   const handleFilterChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const { name, value, checked } = e.target;
+    const { name, value, checked, type } = e.target;
+
     setFilters((prevFilters) => {
-      const filterValues = (prevFilters[name as keyof IProductFilters] || []) as string[];
       let newFilters: IProductFilters = { ...prevFilters };
 
-      if (checked) {
-        if (!filterValues.includes(value)) {
+      if (type === 'checkbox') {
+        const filterValues = (prevFilters[name as keyof IProductFilters] || []) as string[];
+        if (checked) {
+          if (!filterValues.includes(value)) {
+            newFilters = {
+              ...prevFilters,
+              [name]: [...filterValues, value]
+            };
+          }
+        } else {
           newFilters = {
             ...prevFilters,
-            [name]: [...filterValues, value]
+            [name]: filterValues.filter((item: string) => item !== value)
           };
         }
-      } else {
+      } else if (type === 'number') {
         newFilters = {
           ...prevFilters,
-          [name]: filterValues.filter((item: string) => item !== value)
+          [name]: value ? parseInt(value, 10) : null
         };
       }
 

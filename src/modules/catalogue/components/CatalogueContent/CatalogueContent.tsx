@@ -1,43 +1,16 @@
-import React, { useEffect } from 'react';
-import { useLocation, useNavigate } from 'react-router-dom';
-import queryString from 'query-string';
+import React from 'react';
 import CatalogueContentItem from '../CatalogueContentItem/CatalogueContentItem';
 import useFetchProducts from '../../../hooks/useFetchProducts';
 import * as Styled from './CatalogueContent.styled';
 import { ButtonArrowBottom as StyledButtonArrowBottom } from '../../../common/styled/button.styled';
 import { IProductFilters } from '../../../../types/products';
-import { ROUTER_KEYS } from '../../../../constants/appKeys';
 
 interface IProps {
   filters: IProductFilters;
-  setFilters: React.Dispatch<React.SetStateAction<IProductFilters>>;
 }
 
-const CatalogueContent: React.FC<IProps> = ({ filters, setFilters }) => {
-  // const location = useLocation();
-  // const navigate = useNavigate();
-
+const CatalogueContent: React.FC<IProps> = ({ filters }) => {
   const { isPending, data, error } = useFetchProducts(filters);
-
-  // const updateURL = (newFilters: IProductFilters) => {
-  //   const search = queryString.stringify(newFilters);
-  //   navigate({
-  //     pathname: `/${ROUTER_KEYS.catalogue}`,
-  //     search: `?${search}`
-  //   });
-  // };
-
-  // useEffect(() => {
-  //   const parsed = queryString.parse(location.search);
-  //   setFilters((prevFilters) => ({
-  //     ...prevFilters,
-  //     ...parsed
-  //   }));
-  // }, [location.search]);
-
-  // useEffect(() => {
-  //   updateURL(filters);
-  // }, [filters]);
 
   if (error) return <h3>{error.message}</h3>;
   if (isPending) {

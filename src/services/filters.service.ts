@@ -43,15 +43,26 @@ class FiltersService {
       category: searchParams.get('category')?.split(',') ?? [],
       skinType: searchParams.get('skinType')?.split(',') ?? [],
       ageGroup: searchParams.get('ageGroup')?.split(',') ?? [],
-      purpose: searchParams.get('purpose')?.split(',') ?? []
+      purpose: searchParams.get('purpose')?.split(',') ?? [],
+      minPrice: searchParams.get('minPrice')
+        ? parseInt(searchParams.get('minPrice')!, 10)
+        : undefined,
+      maxPrice: searchParams.get('maxPrice')
+        ? parseInt(searchParams.get('maxPrice')!, 10)
+        : undefined
     };
   }
 
   updateUrlFilters(newFilters: IProductFilters): URLSearchParams {
     const params = new URLSearchParams();
     Object.keys(newFilters).forEach((key) => {
-      if ((newFilters[key as keyof IProductFilters]?.length ?? 0) > 0) {
-        params.set(key, newFilters[key as keyof IProductFilters]!.join(','));
+      const value = newFilters[key as keyof IProductFilters];
+      if (Array.isArray(value) && value.length > 0) {
+        params.set(key, value.join(','));
+      } else if (value !== null && value !== undefined && !Array.isArray(value)) {
+        params.set(key, value.toString());
+      } else {
+        params.delete(key);
       }
     });
     return params;

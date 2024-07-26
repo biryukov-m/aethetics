@@ -53,7 +53,10 @@ const CatalogueFilterSection: React.FC<IProps> = ({
                 value={option.name}
                 handleFilterChange={handleFilterChange}
                 checked={
-                  currentFilters[header as keyof IProductFilters]?.includes(option.name) ?? false
+                  Array.isArray(currentFilters[header as keyof IProductFilters]) &&
+                  (currentFilters[header as keyof IProductFilters] as string[]).includes(
+                    option.name
+                  )
                 }
               />
             ))}
@@ -61,9 +64,21 @@ const CatalogueFilterSection: React.FC<IProps> = ({
       )}
       {isExpanded && priceSection && (
         <Styled.PriceSection>
-          <input type="number" placeholder="від" />
+          <input
+            type="number"
+            name="minPrice"
+            placeholder="від"
+            value={currentFilters.minPrice ?? ''}
+            onChange={handleFilterChange}
+          />
           <span />
-          <input type="number" placeholder="до" />
+          <input
+            type="number"
+            name="maxPrice"
+            placeholder="до"
+            value={currentFilters.maxPrice ?? ''}
+            onChange={handleFilterChange}
+          />
         </Styled.PriceSection>
       )}
     </Styled.Wrapper>

@@ -19,13 +19,32 @@ class ProductService {
       conditions.push(`category->name in ${JSON.stringify(filters.category)}`);
     }
     if (filters.skinType && filters.skinType.length > 0) {
-      filters.skinType.forEach((i) => conditions.push(`("${i}" in skinTypes[]->name)`));
+      filters.skinType.forEach((i) => {
+        if (i) {
+          conditions.push(`("${i}" in skinTypes[]->name)`);
+        }
+      });
     }
     if (filters.ageGroup && filters.ageGroup.length > 0) {
-      filters.ageGroup.forEach((i) => conditions.push(`("${i}" in ageGroups[]->name)`));
+      filters.ageGroup.forEach((i) => {
+        if (i) {
+          conditions.push(`("${i}" in ageGroups[]->name)`);
+        }
+      });
     }
     if (filters.purpose && filters.purpose.length > 0) {
-      filters.purpose.forEach((i) => conditions.push(`("${i}" in purposes[]->name)`));
+      filters.purpose.forEach((i) => {
+        if (i) {
+          conditions.push(`("${i}" in purposes[]->name)`);
+        }
+      });
+    }
+
+    if (filters.minPrice != null) {
+      conditions.push(`price >= ${filters.minPrice}`);
+    }
+    if (filters.maxPrice != null) {
+      conditions.push(`price <= ${filters.maxPrice}`);
     }
 
     const query = `*[_type == "product" ${

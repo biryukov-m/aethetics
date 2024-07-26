@@ -21,4 +21,6 @@ export interface IProductFilters {
   skinType?: string[];
   ageGroup?: string[];
   purpose?: string[];
+  minPrice?: number;
+  maxPrice?: number;
 }
