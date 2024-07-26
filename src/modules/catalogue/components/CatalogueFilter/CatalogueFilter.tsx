@@ -5,6 +5,7 @@ import CatalogueFilterSection from './CatalogueFilterSection';
 import useFetchFilters from '../../../hooks/useFetchFilters';
 import { IProductFilters } from '../../../../types/products';
 import { ROUTER_KEYS } from '../../../../constants/appKeys';
+import useUrlFilters from '../../../hooks/useUrlFilters';
 
 interface IProps {
   currentFilters: IProductFilters;
@@ -13,19 +14,7 @@ interface IProps {
 
 const CatalogueFilter: React.FC<IProps> = ({ currentFilters, setFilters }) => {
   const { data: filters, error, isPending } = useFetchFilters();
-  const navigate = useNavigate();
-  const location = useLocation();
-
-  useEffect(() => {
-    const params = new URLSearchParams(location.search);
-    const initialFilters: IProductFilters = {
-      category: params.get('category')?.split(',') ?? [],
-      skinType: params.get('skinType')?.split(',') ?? [],
-      ageGroup: params.get('ageGroup')?.split(',') ?? [],
-      purpose: params.get('purpose')?.split(',') ?? []
-    };
-    setFilters(initialFilters);
-  }, [location.search, setFilters]);
+  const { updateUrlFilters } = useUrlFilters(setFilters);
 
   const handleFilterChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value, checked } = e.target;
@@ -47,19 +36,12 @@ const CatalogueFilter: React.FC<IProps> = ({ currentFilters, setFilters }) => {
         };
       }
 
-      const params = new URLSearchParams(location.search);
-      Object.keys(newFilters).forEach((key) => {
-        if ((newFilters[key as keyof IProductFilters]?.length ?? 0) > 0) {
-          params.set(key, newFilters[key as keyof IProductFilters]!.join(','));
-        } else {
-          params.delete(key);
-        }
-      });
-      navigate({ pathname: `/${ROUTER_KEYS.catalogue}`, search: params.toString() });
+      updateUrlFilters(newFilters);
 
       return newFilters ?? prevFilters;
     });
   };
+
   // TODO: Spinner
   if (isPending) {
     return <>...</>;
