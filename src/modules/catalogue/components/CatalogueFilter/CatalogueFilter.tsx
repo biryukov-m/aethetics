@@ -1,10 +1,8 @@
-import React, { useEffect } from 'react';
-import { useNavigate, useLocation } from 'react-router-dom';
+import React from 'react';
 import * as Styled from './CatalogueFilter.styled';
 import CatalogueFilterSection from './CatalogueFilterSection';
 import useFetchFilters from '../../../hooks/useFetchFilters';
 import { IProductFilters } from '../../../../types/products';
-import { ROUTER_KEYS } from '../../../../constants/appKeys';
 import useUrlFilters from '../../../hooks/useUrlFilters';
 
 interface IProps {
@@ -13,7 +11,7 @@ interface IProps {
 }
 
 const CatalogueFilter: React.FC<IProps> = ({ currentFilters, setFilters }) => {
-  const { data: filters, error, isPending } = useFetchFilters();
+  const { data: filterHeaders, error, isPending } = useFetchFilters();
   const { updateUrlFilters } = useUrlFilters(setFilters);
 
   const handleFilterChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -52,9 +50,9 @@ const CatalogueFilter: React.FC<IProps> = ({ currentFilters, setFilters }) => {
   }
 
   return (
-    (filters && (
+    (filterHeaders && (
       <Styled.Wrapper>
-        {filters.map((f) => (
+        {filterHeaders.map((f) => (
           <CatalogueFilterSection
             key={f.title}
             header={f.title}

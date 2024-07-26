@@ -1,7 +1,7 @@
 import { sanityClient } from '../constants/sanityConfig';
 import { IProductFilters } from '../types/products';
 
-class CategoriesService {
+class FiltersService {
   async getAllFilters() {
     try {
       const query = `
@@ -26,7 +26,7 @@ class CategoriesService {
       `;
       const data = await sanityClient.fetch<IProductFilters>(query);
       const filters = Object.entries(data).map((obj) => ({ title: obj[0], options: obj[1] }));
-      const idx = filters.findIndex((f) => f.title === 'Тип');
+      const idx = filters.findIndex((f) => f.title === 'category');
       if (idx !== -1) {
         const [typeFilter] = filters.splice(idx, 1);
         filters.unshift(typeFilter);
@@ -37,8 +37,27 @@ class CategoriesService {
       return null;
     }
   }
+
+  getInitialFilters(searchParams: URLSearchParams): IProductFilters {
+    return {
+      category: searchParams.get('category')?.split(',') ?? [],
+      skinType: searchParams.get('skinType')?.split(',') ?? [],
+      ageGroup: searchParams.get('ageGroup')?.split(',') ?? [],
+      purpose: searchParams.get('purpose')?.split(',') ?? []
+    };
+  }
+
+  updateUrlFilters(newFilters: IProductFilters): URLSearchParams {
+    const params = new URLSearchParams();
+    Object.keys(newFilters).forEach((key) => {
+      if ((newFilters[key as keyof IProductFilters]?.length ?? 0) > 0) {
+        params.set(key, newFilters[key as keyof IProductFilters]!.join(','));
+      }
+    });
+    return params;
+  }
 }
 
-const categoriesService = new CategoriesService();
+const filtersService = new FiltersService();
 
-export default categoriesService;
+export default filtersService;

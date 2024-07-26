@@ -1,11 +1,11 @@
 import { useQuery } from '@tanstack/react-query';
 import { QUERY_KEYS } from '../../constants/appKeys';
-import categoriesService from '../../services/categories.service';
+import filtersService from '../../services/filters.service';
 
 const useFetchFilters = () => {
   const { data, error, isPending } = useQuery({
     queryKey: [QUERY_KEYS.categories.name],
-    queryFn: () => categoriesService.getAllFilters(),
+    queryFn: () => filtersService.getAllFilters(),
     staleTime: 60000
   });
 
