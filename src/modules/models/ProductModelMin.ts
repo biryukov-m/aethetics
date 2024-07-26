@@ -1,22 +1,18 @@
 import { IProduct } from '../../types/products';
 
-export class ProductModel {
+export class ProductModelMin {
   constructor(
     public _id: string,
     public name: string,
     public price: number,
-    public description: string,
-    public composition: string,
     public image: { imageAlt: string; asset: { _ref: string } }
   ) {}
 }
 
-export const createProductModel = (productFromServer: IProduct) =>
-  new ProductModel(
+export const createProductModelMin = (productFromServer: IProduct) =>
+  new ProductModelMin(
     productFromServer._id,
     productFromServer.name,
     productFromServer.price,
-    productFromServer.description,
-    productFromServer.composition,
     productFromServer.image
   );

@@ -15,3 +15,10 @@ export const TotalPrice = styled.p`
   font-size: ${FONTS.SIZES.m};
   text-align: right;
 `;
+export const Header = styled.h3`
+  font-family: ${FONTS.FAMILIES.normal};
+  font-weight: ${FONTS.WEIGHTS.light};
+  font-size: ${FONTS.SIZES.m};
+  margin-bottom: 48px;
+  text-align: right;
+`;

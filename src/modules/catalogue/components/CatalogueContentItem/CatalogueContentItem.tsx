@@ -5,11 +5,11 @@ import BasketIconDefault from '../../../../assets/images/icon-basket-default.png
 import BasketIconHover from '../../../../assets/images/icon-basket-hover.png';
 import { BasketContext } from '../../../basket-modal/Basket.provider';
 import getSanityImageUrl from '../../../../utils/getSanityImageUrl';
-import { ProductModel } from '../../../models/Product.model';
 import { ROUTER_KEYS } from '../../../../constants/appKeys';
+import { ProductModelMin } from '../../../models';
 
 type IProps = {
-  product: ProductModel;
+  product: ProductModelMin;
 };
 
 const CatalogueContentItem: React.FC<IProps> = ({ product }) => {
@@ -19,26 +19,26 @@ const CatalogueContentItem: React.FC<IProps> = ({ product }) => {
   const imageUrl = getSanityImageUrl(product.image);
 
   return (
-    <div className="item">
-      <div className="image-holder">
+    <Styled.Container>
+      <Styled.ImageHolder>
         <img src={imageUrl} alt={product.image.imageAlt} />
-        <span className="heart" />
-      </div>
-      <div className="name">
-        <p>{product.name}</p>
-      </div>
-      <div className="price">
-        <p>{product.price} грн</p>
-      </div>
-      <div className="controls">
+        <Styled.Heart />
+      </Styled.ImageHolder>
+      <Styled.Name>
+        <Styled.Paragraph>{product.name}</Styled.Paragraph>
+      </Styled.Name>
+      <Styled.Price>
+        <Styled.Paragraph>{product.price} грн</Styled.Paragraph>
+      </Styled.Price>
+      <Styled.ControlsContainer>
         <Link to={`/${ROUTER_KEYS.product}/${product._id}`}>Детальніше</Link>
         <Styled.Button onClick={handleAddToBasketClick}>
           В кошик
           <img className="default" src={BasketIconDefault} alt="Basket icon" />
           <img className="hover" src={BasketIconHover} alt="Basket icon" />
         </Styled.Button>
-      </div>
-    </div>
+      </Styled.ControlsContainer>
+    </Styled.Container>
   );
 };
 

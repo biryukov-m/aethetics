@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import { COLORS, FONTS, MEDIA } from '../../theme';
 import IconBtnArrowRight from '../../../assets/images/icon-button-arrow-right.png';
+import IconBtnArrowBottom from '../../../assets/images/icon-button-arrow-bottom.png';
 
 // TODO: add props for different types of button
 export interface IButton {
@@ -56,7 +57,6 @@ export const Button = styled.button<IButton>`
     }
   }
 `;
-
 export const MiniButton = styled(Button)`
   width: 97px;
   height: 25px;
@@ -72,7 +72,6 @@ export const MiniButton = styled(Button)`
     transform: translate(4px, -4px);
   }
 `;
-
 export const ButtonArrowRight = styled.button`
   width: 200px;
   height: 50px;
@@ -122,7 +121,6 @@ export const ButtonArrowRight = styled.button`
     color: inherit;
   }
 `;
-
 export const ButtonWhite = styled(ButtonArrowRight)`
   transition: all 0.2s linear;
   color: ${COLORS.accent};
@@ -136,5 +134,47 @@ export const ButtonWhite = styled(ButtonArrowRight)`
   }
   &:hover::before {
     transform: none;
+  }
+`;
+export const ButtonArrowBottom = styled.button`
+  width: 200px;
+  height: 50px;
+  border: 2px solid ${COLORS.accent};
+  display: flex;
+  margin-bottom: 22px;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  position: relative;
+  transition: transform 0.2s ease-in;
+  font-family: ${FONTS.FAMILIES.normal};
+  font-style: normal;
+  font-weight: ${FONTS.WEIGHTS.normal};
+  font-size: ${FONTS.SIZES.m};
+  color: ${COLORS.accent};
+  @media (max-width: ${MEDIA.tablet}px) {
+    width: 132px;
+    height: 42px;
+    border: 1px solid ${COLORS.accent};
+  }
+  &::before {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 12px;
+    height: 31px;
+    background: url(${IconBtnArrowBottom});
+    bottom: -18px;
+    transition: transform 0.2s ease-in;
+    @media (max-width: ${MEDIA.tablet}px) {
+      height: 26px;
+      bottom: -18px;
+      background-size: cover;
+      width: 10px;
+      background-repeat: no-repeat;
+    }
+  }
+  &:hover::before {
+    transform: translate(0, 4px);
   }
 `;

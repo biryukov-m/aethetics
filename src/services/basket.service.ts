@@ -1,5 +1,6 @@
 import { IProductId } from '../types/products';
-import { ProductModel } from '../modules/models/Product.model';
+import { ProductModel } from '../modules/models/ProductModel';
+import { ProductModelMin } from '../modules/models';
 
 export type IBasketItemId = IProductId;
 export type IBasketItemQuantity = number;
@@ -43,6 +44,10 @@ class BasketService {
     return basket.find((item) => item.id === id);
   }
 
+  getQuantityOfProductId(id: IBasketItemId) {
+    return this.findByProductId(id)?.quantity;
+  }
+
   updateQuantity(id: IBasketItemId, quantity: IBasketItemQuantity) {
     const { basket } = this;
     const foundProduct = this.findByProductId(id);
@@ -66,6 +71,16 @@ class BasketService {
     const totalItemsQuantity = basket.reduce((total, item) => total + item.quantity, 0);
     return totalItemsQuantity;
   }
+
+  countTotalCost = (productsArr: ProductModelMin[] | ProductModel[]) => {
+    if (!productsArr) return 0;
+    let totalPrice = 0;
+    productsArr.forEach((product) => {
+      const quantity = this.getQuantityOfProductId(product._id);
+      if (quantity) totalPrice += quantity * product.price;
+    });
+    return totalPrice;
+  };
 }
 
 const basketService = new BasketService();

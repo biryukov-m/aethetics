@@ -5,7 +5,7 @@ import * as Styled from '../../../common/styled/button.styled';
 import { IBasketItemQuantity } from '../../../../services/basket.service';
 import { BasketContext } from '../../../basket-modal/Basket.provider';
 import getSanityImageUrl from '../../../../utils/getSanityImageUrl';
-import { ProductModel } from '../../../models/Product.model';
+import { ProductModel } from '../../../models/ProductModel';
 
 interface IProps {
   product: ProductModel;
