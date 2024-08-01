@@ -2,7 +2,6 @@ import React from 'react';
 import { Navigate, Route, BrowserRouter as Router, Routes } from 'react-router-dom';
 import Layout from '../layout/Layout';
 import Main from '../main/pages/Main';
-import Catalogue from '../catalogue/pages/Catalogue/Catalogue';
 import ProductCard from '../catalogue/pages/product-card/ProductCard';
 import Blog from '../blog/pages/blog/Blog';
 import Cabinet from '../cabinet/pages/Cabinet';
@@ -16,6 +15,7 @@ import CabinetHistory from '../cabinet/components/History/CabinetHistory';
 import { ROUTER_KEYS } from '../../constants/appKeys';
 import { OrderPersonalData } from '../order/components/OrderPersonalData/OrderPersonalData';
 import { OrderPaymentAndDelivery } from '../order/components/OrderPaymentAndDelivery/OrderPaymentAndDelivery';
+import Catalogue from '../catalogue/pages/catalogue/Catalogue';
 
 export const MainRouter = () => (
   <Router>
