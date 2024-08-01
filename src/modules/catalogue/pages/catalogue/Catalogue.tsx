@@ -57,7 +57,6 @@ const Catalogue: React.FC = () => {
     setUserInteracted(true);
   };
 
-  console.log('Filters:', filters);
 
   return (
     <>

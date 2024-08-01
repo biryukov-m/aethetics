@@ -52,8 +52,6 @@ class ProductService {
     }]`;
 
     const products = await this.fetchProducts(query);
-    console.log('Constructed Query:', query); // For debugging
-    console.log('Filtered Products:', products); // For debugging
     return products ? products.map((product) => createProductModelMin(product)) : products;
   }
 
